@@ -12,9 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: f5a88012b21e814262436a864b13f053d836cf07
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
-translationtype: HT
+ms.openlocfilehash: 0f8e494ffdd73c666b8361488db0966af01d6876
+ms.sourcegitcommit: 66d997a5afcf32143a4d4817ec1608cbdf58a59f
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/11/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -44,7 +46,7 @@ Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及�
 
 1. 从命令行运行以下命令。
 
-   ```azurecli
+   ```azurecli-interactive
    az login
    ```
    
@@ -64,7 +66,7 @@ Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及�
 
 让我们在 Azure 的 *westus2* 区域创建一个名为“MyResourceGroup”的资源组。  为此，请键入以下命令：
 
-```azurecli
+```azurecli-interactive
 az group create -n MyResourceGroup -l westus2 
 ```
 
@@ -89,13 +91,13 @@ az group create -n MyResourceGroup -l westus2
 
 可以运行以下命令，使用常用的 UbuntuTLS 映像创建附有两个存储磁盘（大小分别为 10GB 和 20GB）的 Linux VM：
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20
 ```
 
 运行上述命令时，Azure CLI 2.0 将查找存储在 ~/.ssh 目录下的 SSH 密钥对。  如果尚未在该位置存储 SSH 密钥对，可让 Azure CLI 绕过 --generate-ssh-keys 参数，自动创建一个密钥对：
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --generate-ssh-keys
 ```
 
@@ -116,7 +118,7 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --generate-ssh-ke
 
 创建 VM 后，可以使用创建的 VM 的公共 IP 地址通过 **SSH** 登录到新的 Linux VM：
 
-```azurecli
+```azurecli-interactive
 ssh xx.xxx.xxx.xxx
 ```
 
@@ -160,7 +162,7 @@ Azure 要求避免使用很容易猜出的用户名/密码。 在可以使用哪
 > [!NOTE]
 > 运行此命令时，系统会提示你输入用户名和密码。
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
 ```
 
@@ -182,7 +184,7 @@ az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
 现在，请使用远程桌面和 VM 的公共 IP 地址（在 `az vm create` 的输出中返回）登录到新建的 Windows Server VM。  
 如果你使用的是基于 Windows 的系统，可以在命令行中使用 `mstsc` 命令来执行此操作：
 
-```azurecli
+```azurecli-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -194,13 +196,13 @@ mstsc /v:xx.xxx.xx.xxx
 
 所有新资源是使用一致的 `az <resource type name> create` 命名模式创建的。  例如，若要创建稍后可与新建的 VM 相关联的 Azure 网络负载均衡器，可以使用以下 create 命令：
 
-```azurecli
+```azurecli-interactive
 az network lb create -n MyLoadBalancer -g MyResourceGroup
 ```
 
 还可以使用以下 create 命令为基础结构创建新的专用虚拟网络（在 Azure 中通常称为“VNet”）：
 
-```azurecli
+```azurecli-interactive
 az network vnet create -n MyVirtualNetwork -g MyResourceGroup --address-prefix 10.0.0.0/16
 ```
 
@@ -208,13 +210,13 @@ Azure 和 Azure CLI 的强大之处在于，我们不仅可以使用它们来获
 
 例如，可以使用 Azure CLI 创建 Azure 应用服务。  Azure 应用服务是一个托管的平台服务，使用它能够十分方便地托管 Web 应用，而无需考虑基础结构。  创建 Azure 应用服务后，可以使用以下 create 命令在应用服务中创建两个新的 Azure Web 应用：
 
-```azurecli
+```azurecli-interactive
 # Create an Azure AppService that we can host any number of web apps within
 az appservice plan create -n MyAppServicePlan -g MyResourceGroup
 
 # Create Two Web Apps within the AppService (note: name param must be a unique DNS entry)
-az appservice web create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan 
-az appservice web create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan 
+az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan 
+az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan 
 ```
 
 了解 `az <resource type name> create` 模式的基础知识后，便可以轻松创建任何对象。 下面是一些常见的 Azure 资源类型，以及用于创建这些资源类型的相应 Azure CLI create 命令：
@@ -230,7 +232,7 @@ Managed Disk                az disk create
 Storage account             az storage account create
 Virtual Machine Scale Set   az vmss create
 Azure Container Service     az acs create
-Web App                     az appservice web create
+Web App                     az webapp create
 SQL Database Server         az sql server create
 Document DB                 az documentdb create
 ```
@@ -247,7 +249,7 @@ Document DB                 az documentdb create
 
 例如，下面使用的 `az vm create` 将启动 VM 部署，然后以快得多的速度返回（在完全启动 VM 之前即可返回）：
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
 ```
 
@@ -261,7 +263,7 @@ az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
 
 例如，`az vm list` 显示你的所有 VM 的列表。   
 
-```azurecli
+```azurecli-interactive
 az vm list 
 ```
 返回的值默认采用 JSON 格式（为了简洁起见，仅显示部分输出）。
@@ -296,7 +298,7 @@ az vm list
 
 可以根据需要使用 `--output` 选项修改输出格式。  运行 `az vm list` 命令可以使用易于阅读的*表*格式选项查看以前创建的 Linux 和 Windows Server VM，以及 VM 的最常见属性：
 
-```azurecli
+```azurecli-interactive
 az vm list --output table
 ```
 
@@ -309,7 +311,7 @@ MyWinVM    MyResourceGroup  westus2
 
 *tsv* 输出选项可以用于获取基于文本的、不带任何标头的制表符分隔格式。  如果你想要将输出传递到 grep 等其他基于文本的工具，此格式很有用。 
 
-```azurecli
+```azurecli-interactive
 az vm list --output tsv
 ```
 
@@ -325,8 +327,9 @@ None    None            /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/reso
 
 `list` 命令提供内置支持，可让用户按资源组名称轻松筛选资源。  例如，可向 `list` 命令传递 `--ResourceGroup` 或 `-g` 参数，以便只检索特定资源组中的这些资源：
 
+
 ```azurecli
-az vm list -g MyResouceGroup --output table
+az vm list -g MyResourceGroup --output table
 ```
 
 ```Output
@@ -340,7 +343,7 @@ MyWinVM    MyResourceGroup  westus2
 
 例如，执行以下命令可以查询任何资源组中包含字母“My”的任何 VM 资源：
 
-```azurecli
+```azurecli-interactive
 az vm list --output table --query "[?contains(resourceGroup,'MY')]" 
 ```
 
@@ -353,7 +356,7 @@ MYRESOURCEGROUP  Succeeded            MyWinVM    westus2     XXXXXXXX-XXXX-XXXX-
 
 然后，我们可以选择使用 JMESPath 查询的塑型功能来细化输出，以便同时输出不同的值。  例如，以下命令检索 VM 使用的 OS 磁盘类型，以确定 OS 是基于 Linux 还是基于 Windows：
 
-```azurecli
+```azurecli-interactive
 az vm list --output table --query "[?contains(resourceGroup,'MY')].{ VMName:name,OSType:storageProfile.osDisk.osType }" 
 ```
 
@@ -370,7 +373,7 @@ Azure CLI 中的 JMESPath 支持非常强大。  请在有关[查询](query-azur
 
 可以使用 Azure CLI 中的 `delete` 命令删除不再需要的资源。 可对任何资源使用 `delete` 命令，就像使用 `create` 命令时一样。
 
-```azurecli
+```azurecli-interactive
 az vm delete -n MyLinuxVM -g MyResourceGroup
 ```
 
@@ -385,7 +388,7 @@ EndTime                           Name                                  StartTim
 
 还可以使用 `delete` 命令一次性删除多个资源。 例如，以下命令将删除本入门教程中的所有示例使用的“MyResourceGroup”资源组中的所有资源。
 
-```azurecli
+```azurecli-interactive
 az group delete -n MyResourceGroup
 ```
 
@@ -405,19 +408,19 @@ Are you sure you want to perform this operation? (y/n): y
 
 Azure CLI 提供内置的帮助文档，其内容与可从命令行运行的 Web 文档相符：
 
-```azurecli
+```azurecli-interactive
 az [command-group [command]] -h
 ```
 
 例如，若要查看哪些命令和子组适用于 VM，请使用：
 
-```azurecli
+```azurecli-interactive
 az vm -h
 ```
 
 若要获取用于创建 VM 的命令的帮助，请使用：
 
-```azurecli
+```azurecli-interactive
 az vm create -h
 ```
 
@@ -429,6 +432,6 @@ az vm create -h
 
 ## <a name="send-us-your-feedback"></a>向我们发送你的反馈
 
-```azurecli
+```azurecli-interactive
 az feedback
 ```
