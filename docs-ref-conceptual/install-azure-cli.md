@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 664535701ad814f8ff85fefe8ecc45772777d0ba
-ms.sourcegitcommit: ec22ff07aedb5c47e5f636f2a9a341c3edbe7ca1
+ms.openlocfilehash: 7065ed5270ef9bfc70beea81d0bc442a7b4df38c
+ms.sourcegitcommit: c077bd5cbe07f7225714c41714d3981fa0d9928f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.lasthandoff: 05/16/2017
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
@@ -51,10 +52,19 @@ ms.contentlocale: zh-CN
 
 ## <a name="windows"></a>Windows
 
-Azure CLI 2.0 支持 Bash 命令语法，从而使基于 Windows 的 Ubuntu 上的 Bash 成为使用 CLI 的良好方式。
-如果不使用 Bash，可以在 Windows 命令行中安装并使用 CLI。
+可使用 MSI 安装 CLI 并在 Windows 命令行中使用它，或者可以在 Windows 中的 Bash on Ubuntu 上使用 apt-get 来安装 CLI。
 
-### <a name="bash-on-ubuntu-on-windows"></a>基于 Windows 的 Ubuntu 上的 Bash
+### <a name="msi-for-the-windows-command-line"></a>适用于 Windows 命令行的 MSI 
+
+要在 Windows 上安装 CLI 并在 Windows 命令行中使用它，请下载并运行 [msi](https://aka.ms/InstallAzureCliWindows)。
+
+> [!NOTE]
+> 使用 msi 进行安装时，`az component` 不受支持。
+> 要更新到最新 CLI，请再次运行 [msi](https://aka.ms/InstallAzureCliWindows)。
+> 
+> 要卸载 CLI，请再次运行 [msi](https://aka.ms/InstallAzureCliWindows) 并选择卸载。
+
+### <a name="apt-get-for-bash-on-ubuntu-on-windows"></a>适用于 Windows 中的 Bash on Ubuntu 的 apt-get
 
 1. 如果你的 Windows 上没有 Bash，请[安装它](https://msdn.microsoft.com/commandline/wsl/install_guide)。
 
@@ -80,38 +90,6 @@ Azure CLI 2.0 支持 Bash 命令语法，从而使基于 Windows 的 Ubuntu 上�
 > 若要更新 CLI，请再次运行 `sudo apt-get update && sudo apt-get install azure-cli`。
 > 
 > 若要卸载，请运行 `sudo apt-get remove azure-cli`。
-
-### <a name="windows-command-line"></a>Windows 命令行 
-
-1. 访问 Python 站点并[下载适用于 Windows 的 Python](https://www.python.org/downloads/)。
-   请务必在安装 Python 时安装 Pip 组件。
-   在安装完成后，将 Python 添加到 PATH 环境变量（安装程序将提示你）。
-
-2. 在命令提示符下检查 Python 安装。
-
-   ```bash
-   python --version
-   ```
-
-3. 使用 `pip` 安装 Azure CLI 2.0。
-
-   ```bash
-   pip install --user azure-cli
-   ```
-
-4. 将包含 az.bat 的文件夹添加到你的路径。
-   CLI `az.bat` 可以安装在 `%USERPROFILE%\AppData\Roaming\Python\Scripts` 或 `%USERPROFILE%\AppData\Roaming\Python\PythonXY\Scripts` 中，其中 `XY` 是你的 Python 版本（例如 `%USERPROFILE%\AppData\Roaming\Python\Python27\Scripts`）。
-   将包含 `az.bat` 的文件夹添加到你的路径。
-   
-4. 在命令提示符下使用 `az` 命令运行 Azure CLI 2.0。
-
-> [!NOTE]
-> 如果已安装 Azure CLI 2.0，并且希望查看是否安装了最新版本，请使用 `az --version` 查看已安装的是哪个版本。
-> 将该版本与 [https://pypi.python.org/pypi/azure-cli](https://pypi.python.org/pypi/azure-cli) 上提供的最新版本进行比较。
-> 
-> 若要更新到最新 CLI，请运行 `az component update`。
-> 
-> 若要卸载 CLI，请运行 `pip uninstall azure-cli`。
 
 ## <a name="linux"></a>Linux
 
@@ -213,7 +191,6 @@ docker run azuresdk/azure-cli-python:<version>
    ```
 
 ## <a name="troubleshooting"></a>故障排除
--------------------------------
 
 ### <a name="errors-with-curl-redirection"></a>有关 curl 重定向的错误
 
@@ -232,70 +209,6 @@ bash: line 1: syntax error near unexpected token `<'
 curl https://azurecliprod.blob.core.windows.net/install | bash
 ```
 
-
-### <a name="errors-on-install-with-cffi-or-cryptography"></a>使用 `cffi` 或加密包进行安装时出现的错误
-
-如果在 OS X 上进行安装时出现错误，请升级 `pip`。
-
-```bash
-pip install --upgrade --force-reinstall pip
-```
-
-如果在 **Debian** 或 **Ubuntu** 上安装时出现错误（如这些示例），请安装 `libssl-dev` 和 `libffi-dev`。
-
-```bash
-sudo apt-get update
-sudo apt-get install -y libssl-dev libffi-dev
-```
-
-另请安装适用于你的 Python 版本的 Python Dev。
-
-Python 2：
-
-```bash
-sudo apt-get install -y python-dev
-```
-
-Python 3：
-
-```bash
-sudo apt-get install -y python3-dev
-```
-
-Ubuntu 15 可能还需要 `build-essential`：
-
-```bash
-sudo apt-get install -y build-essential
-```
-
-### <a name="example-errors"></a>示例错误
-
-```
-Downloading cffi-1.5.2.tar.gz (388kB)
-    100% |################################| 389kB 3.9MB/s
-    Complete output from command python setup.py egg_info:
-
-        No working compiler found, or bogus compiler options
-        passed to the compiler from Python's distutils module.
-        See the error messages above.
-        (If they are about -mno-fused-madd and you are on OS/X 10.8,
-        see http://stackoverflow.com/questions/22313407/ .)
-
-    ----------------------------------------
-Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-77i2fido/cffi/
-```
-
-```
-#include <openssl/e_os2.h>
-                            ^
-compilation terminated.
-error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
-
-Failed building wheel for cryptography
-```
-
-请参阅 Stack Overflow 问题 - [Failed to install Python Cryptography package with PIP and setup.py](http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py)（无法使用 PIP 和 setup.py 安装 Python 加密包）
-
 ## <a name="uninstall"></a>卸载
 
 如果使用了 https://aka.ms/InstallAzureCli 上的脚本安装 CLI，可以通过这些步骤来卸载它。
@@ -312,7 +225,7 @@ Failed building wheel for cryptography
 > [!Note]
 > 默认安装位置是 `/Users/<username>`。
 
-如果使用了 pip、apt-get 或 Docker 安装 CLI，请使用相同的工具卸载它。
+如果使用了 apt-get、Docker 或 msi 安装 CLI，请使用相同的工具卸载。
 
 ## <a name="reporting-issues-and-feedback"></a>报告问题和反馈
 

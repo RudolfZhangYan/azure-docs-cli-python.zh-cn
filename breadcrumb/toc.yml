@@ -6,45 +6,59 @@
     tocHref: /cli/azure/overview
     topicHref: /cli/azure/overview
     items:
-    - name: Install
+    - name: 安装
       tocHref: /cli/azure/install-azure-cli
       topicHref: /cli/azure/install-azure-cli
-    - name: Get Started
+    - name: 入门
       tocHref: /cli/azure/get-started-with-azure-cli
       topicHref: /cli/azure/get-started-with-azure-cli
-    - name: Log in
+    - name: 登录
       tocHref: /cli/azure/authenticate-azure-cli
       topicHref: /cli/azure/authenticate-azure-cli
       items:
-      - name: Create a service principal
+      - name: 创建服务主体
         tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
         topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
-    - name: Output formats
+    - name: 交互模式
+      tocHref: /cli/azure/interactive-azure-cli
+      topicHref: /cli/azure/interactive-azure-cli
+    - name: 部署
+      items:
+      - name: 使用模板
+        tocHref: /azure/azure-resource-manager/resource-group-template-deploy-cli
+        topicHref: /azure/azure-resource-manager/resource-group-template-deploy-cli
+      - name: 导出模板
+        tocHref: /azure/azure-resource-manager/resource-manager-export-template-cli
+        topicHref: /azure/azure-resource-manager/resource-manager-export-template-cli
+      - name: 使用专用模板
+        tocHref: /azure-resource-manager/resource-manager-cli-sas-token
+        topicHref: /azure-resource-manager/resource-manager-cli-sas-token
+    - name: 输出格式
       tocHref: /cli/azure/format-output-azure-cli
       topicHref: /cli/azure/format-output-azure-cli
-    - name: Query
+    - name: 查询
       tocHref: /cli/azure/query-azure-cli
       topicHref: /cli/azure/query-azure-cli
-    - name: Subscriptions
+    - name: 订阅
       tocHref: /cli/azure/manage-azure-subscriptions-azure-cli
       topicHref: /cli/azure/manage-azure-subscriptions-azure-cli
-    - name: Release notes
+    - name: 发行说明
       tocHref: /cli/azure/release-notes-azure-cli
       topicHref: /cli/azure/release-notes-azure-cli
-    - name: Sample scripts
+    - name: 示例脚本
       items:
-      - name: Linux VMs
+      - name: Linux VM
         tocHref: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
         topicHref: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: Windows VMs
+      - name: Windows VM
         tocHref: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
         topicHref: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: Web Apps
+      - name: Web 应用
         tocHref: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
         topicHref: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: SQL Database
+      - name: SQL 数据库
         tocHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
         topicHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Reference
+    - name: 引用
       tocHref: /cli/azure
       topicHref: /cli/azure

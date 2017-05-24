@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 0f8e494ffdd73c666b8361488db0966af01d6876
-ms.sourcegitcommit: 66d997a5afcf32143a4d4817ec1608cbdf58a59f
+ms.openlocfilehash: 45e51918ec95494699bf781f66e4cd57bd06fbad
+ms.sourcegitcommit: b4cb5c910b2238cba342f70122feb158c4036844
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2017
+ms.lasthandoff: 05/18/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -40,6 +40,9 @@ Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及�
   
 如果收到错误，原因可能是安装 CLI 时出现问题。 请查看 [Azure CLI 2.0 安装文章](install-azure-cli.md#troubleshooting)的“安装故障排除”部分获得指导，或者在该页面底部的讨论区中发表评论以获得帮助。
 
+> [!Note]
+> 如果不希望安装 Azure CLI 2.0，可使用 [Cloud Shell](/azure/cloud-shell/overview) 在浏览器中运行它。
+
 ## <a name="log-in-to-azure"></a>登录 Azure
 
 安装 Azure CLI 2.0 后，下一步是安全地将它连接到你的 Azure 帐户。 为此，可以使用 `az login` 命令。
@@ -62,7 +65,7 @@ Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及�
 
 完成所有设置后，让我们使用 Azure CLI 在 Azure 中创建资源。
 
-首先，创建一个资源组。  使用 Azure 中的资源组可以管理你想要以逻辑方式分组在一起的多个资源。  例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
+首先，请创建一个资源组。  使用 Azure 中的资源组可以管理希望以逻辑方式分组的多个资源。  例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
 
 让我们在 Azure 的 *westus2* 区域创建一个名为“MyResourceGroup”的资源组。  为此，请键入以下命令：
 
@@ -89,7 +92,7 @@ az group create -n MyResourceGroup -l westus2
 
 创建资源组后，让我们在其中创建 Linux VM。
 
-可以运行以下命令，使用常用的 UbuntuTLS 映像创建附有两个存储磁盘（大小分别为 10GB 和 20GB）的 Linux VM：
+可以运行以下命令，使用常用的 UbuntuTLS 映像创建附有两个存储磁盘（大小分别为 10 GB 和 20 GB）的 Linux VM：
 
 ```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20
@@ -155,7 +158,7 @@ my-login@MyLinuxVM:~$
 
 ## <a name="create-a-windows-server-virtual-machine"></a>创建 Windows Server 虚拟机
 
-现在，让我们使用 `az vm create` 命令创建基于 Windows Server 2016 Datacenter 的 VM，并将其添加到用于 Linux VM 的同一个“MyResourceGroup”资源组。  与 Linux VM 示例中一样，我们还要使用 `--data-disk-sizes-gb` 参数附加两个存储磁盘。
+现在，让我们使用 `az vm create` 命令创建基于 Windows Server 2016 Datacenter 的 VM，并将其添加到用于 Linux VM 的同一个“MyResourceGroup”资源组。  与 Linux VM 示例一样，我们还要使用 `--data-disk-sizes-gb` 参数附加两个存储磁盘。
 
 Azure 要求避免使用很容易猜出的用户名/密码。 在可以使用哪些字符以及用户名和密码的最小长度方面，都有特定的规则。  
 
@@ -237,7 +240,7 @@ SQL Database Server         az sql server create
 Document DB                 az documentdb create
 ```
 
-请访问[参考文档](/azure/doc-ref-autogen)，详细了解可传递给上述每个命令的其他特定于资源的参数，以及可创建的资源类型。 
+请访问[参考文档](/cli/azure)，详细了解可传递给上述每个命令的其他特定于资源的参数，以及可创建的资源类型。 
 
 ## <a name="useful-tip-optimizing-create-operations-using---no-wait"></a>有用的提示：使用 --no-wait 优化创建操作
 
