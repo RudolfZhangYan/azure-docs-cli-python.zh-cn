@@ -12,54 +12,35 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 45e51918ec95494699bf781f66e4cd57bd06fbad
-ms.sourcegitcommit: b4cb5c910b2238cba342f70122feb158c4036844
+ms.openlocfilehash: 274336acbf09a21d45b6ef3868f5f7f21757831b
+ms.sourcegitcommit: 21c42ed07c9f7679e4860013ac5647cf31213f4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2017
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
 Azure CLI 2.0 是 Azure 的新命令行体验，用于管理 Azure 资源。
-它可以在 macOS、Linux 和 Windows 上使用。 
+可以通过 [Azure Cloud Shell](/azure/cloud-shell/overview) 在浏览器中使用它，也可以将其[安装](install-azure-cli.md)在 macOS、Linux 和 Windows 上，然后从命令行运行它。
 
 Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及生成可以针对 Azure Resource Manager 运行的自动化脚本。
 本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
 
 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
-## <a name="install-azure-cli"></a>安装 Azure CLI
+## <a name="connect"></a>连接
 
-首先，请确保已安装最新版本的 Azure CLI：
+入门的最简单方法是[启动  Cloud Shell](/azure.cloud-shell/quickstart)。
 
-1. 在所用的任何平台上[安装 Azure CLI 2.0](install-azure-cli.md)。
+1. 从 Azure 门户的顶部导航栏启动 Cloud Shell。
 
-2. 若要验证安装是否成功，请从命令行运行 `az --version`。 
+   ![Shell 图标](media/get-started-with-azure-cli/shell-icon.png)
 
-你应会看到计算机上安装的 Azure CLI 和其他依赖库的版本号。  
-  
-如果收到错误，原因可能是安装 CLI 时出现问题。 请查看 [Azure CLI 2.0 安装文章](install-azure-cli.md#troubleshooting)的“安装故障排除”部分获得指导，或者在该页面底部的讨论区中发表评论以获得帮助。
+2. 选择要使用的订阅并创建存储帐户。
 
-> [!Note]
-> 如果不希望安装 Azure CLI 2.0，可使用 [Cloud Shell](/azure/cloud-shell/overview) 在浏览器中运行它。
+   ![创建存储帐户](media/get-started-with-azure-cli/storage-prompt.png)
 
-## <a name="log-in-to-azure"></a>登录 Azure
-
-安装 Azure CLI 2.0 后，下一步是安全地将它连接到你的 Azure 帐户。 为此，可以使用 `az login` 命令。
-
-1. 从命令行运行以下命令。
-
-   ```azurecli-interactive
-   az login
-   ```
-   
-   此命令将输出要在下一步骤中使用的代码。 
-
-2. 使用 Web 浏览器打开页面 [https://aka.ms/devicelogin](https://aka.ms/devicelogin)，然后输入该代码。
-  
-3. 出现提示时，请使用 Azure 凭据登录。
-
-现在，可以在 Azure CLI 2.0 中针对帐户可用的 Azure 资源和服务运行命令。
+还可以[安装](install-azure-cli.md) CLI 并在本地从命令行运行它。
 
 ## <a name="create-a-resource-group"></a>创建资源组。
 
