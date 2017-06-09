@@ -12,9 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 5979acc5-21a5-41e2-a4b6-3183bfe6aa22
-ms.openlocfilehash: dcba9c5526ed56c3f20735a99e1fdcb913fc4392
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
-translationtype: HT
+ms.openlocfilehash: 23c743210ccc506935f6e78489ca0df2b99d46a1
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="using-jmespath-queries-with-azure-cli-20"></a>在 Azure CLI 2.0 中使用 JMESPath 查询
 
@@ -26,7 +28,7 @@ Azure CLI 2.0 中的每种资源类型（容器服务、Web 应用、VM 等）�
 
 采用 `table` 输出格式的简单 `list` 命令以易于阅读的表格格式返回每种资源类型的一组最常见的、组织有序的简单属性。
 
-```azurecli
+```azurecli-interactive
 az vm list --out table
 ```
 
@@ -42,7 +44,7 @@ KBDemo020    RGDEMO001        westus
 
 使用 `--query` 参数可以仅显示订阅中所有虚拟机的资源组名称和 VM 名称。
 
-```azurecli
+```azurecli-interactive
 az vm list \
   --query [*].[name,resourceGroup] --out table
 ```
@@ -64,7 +66,7 @@ KBDemo020   RGDEMO001
 在前面的示例中，可以看到列标题为“Column1”和“Column2”。  还可以将友好的标签或名称添加到所选的属性。  在以下示例中，我们已将标签“VMName”和“RGName”添加到所选的属性“name”和“resourceGroup”。
 
 
-```azurecli
+```azurecli-interactive
 az vm list \
   --query "[].{RGName:resourceGroup, VMName:name}" --out table
 ```
@@ -87,7 +89,7 @@ RGDEMO001  KBDemo020
 
 如果要选择的属性嵌套在 JSON 输出中的深层位置，则你需要提供该嵌套属性的完整路径。 以下示例演示如何通过 vm list 命令选择 VM 名称和 OS 类型。
 
-```azurecli
+```azurecli-interactive
 az vm list \
   --query "[].{VMName:name,OSType:storageProfile.osDisk.osType}" --out table
 ```
@@ -111,7 +113,7 @@ KBDemo020    Linux
 可以使用 JMESPath `contains` 函数来细化查询中返回的结果。
 在以下示例中，命令仅选择名称中包含文本“RGD”的 VM。  
 
-```azurecli
+```azurecli-interactive
 az vm list \
   --query "[?contains(resourceGroup,'RGD')].{ resource: resourceGroup, name: name }" --out table
 ```
@@ -125,7 +127,7 @@ RGDEMO001   KBDemo020
 
 在下一个示例中，结果将返回 vmSize 为“Standard_DS1”的 VM。
 
-```azurecli
+```azurecli-interactive
 az vm list \
   --query "[?contains(hardwareProfile.vmSize, 'Standard_DS1')]" --out table
 ```
@@ -146,7 +148,7 @@ DEMORG1          demovm222  e0f59516-1d69-4d54-b8a2-f6c4a5d031de  westus      Su
 
 `tsv` 输出格式是不带标题的制表符分隔文本。 可将它传递给 `grep` 和 `cut` 等命令，以进一步分析 `list` 输出中的特定值。 在以下示例中，`grep` 命令仅选择名称中包含文本“RGD”的 VM。  `cut` 命令仅选择在输出中显示第 8 个字段值（制表符分隔）。
 
-```azurecli
+```azurecli-interactive
 az vm list --out tsv | grep RGD | cut -f8
 ```
 

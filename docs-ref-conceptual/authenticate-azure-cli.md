@@ -12,9 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 65becd3a-9d69-4415-8a30-777d13a0e7aa
-ms.openlocfilehash: fea893ebd55811527e0e92375ffc081a52cdbb57
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
-translationtype: HT
+ms.openlocfilehash: 4ab4f0de38614eff00f55bad96ea886bb007f3c0
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
@@ -35,7 +37,7 @@ translationtype: HT
 > [!Note]
 > 此方法不适用于 Microsoft 帐户或已启用双重身份验证的帐户。
 
-```azurecli
+```azurecli-interactive
 az login -u <username> -p <password>
 ```
 
@@ -50,14 +52,13 @@ az login -u <username> -p <password>
 
 1. 使用服务主体登录。
 
-   ```azurecli
+   ```azurecli-interactive
    az login --service-principal -u "http://my-app" -p <password> --tenant <tenant>
    ```
 
    若要获取租户，请以交互方式登录，然后从订阅中获取 tenantId。
 
    ```azurecli
-   az login
    az account show
    ```
 

@@ -12,9 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: fab89cb8-dac1-4e21-9d34-5eadd5213c05
-ms.openlocfilehash: 10a168ae0c33207905d58b7b57ac9ad76d8d9bf4
-ms.sourcegitcommit: 73a73c8a17d95b116d33eee3287d938addc5c0ac
-translationtype: HT
+ms.openlocfilehash: 0ee794d5a732c6e8d2d52fca5810a874827930ae
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -50,7 +52,9 @@ Azure 服务主体是用户创建的应用、服务和自动化工具用来访�
 
 使用 `az ad app list` 获取有关应用程序的标识信息。
 
-```azurecli
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
+```azurecli-interactive
 az ad app list --display-name MyDemoWebApp
 ```
 
@@ -76,7 +80,7 @@ az ad app list --display-name MyDemoWebApp
 
 使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) 创建服务主体。 
 
-```azurecli
+```azurecli-interactive
 az ad sp create-for-rbac --name {appId} --password "{strong password}" 
 ``` 
 
@@ -95,7 +99,7 @@ az ad sp create-for-rbac --name {appId} --password "{strong password}"
 
 ### <a name="get-information-about-the-service-principal"></a>获取有关服务主体的信息
 
-```azurecli
+```azurecli-interactive
 az ad sp show --id a487e0c1-82af-47d9-9a0b-af184eb87646d
 ```
 
@@ -116,7 +120,7 @@ az ad sp show --id a487e0c1-82af-47d9-9a0b-af184eb87646d
 
 现在，可以使用 `az ad sp show` 输出的 *appId* 和*密码*，以应用的新服务主体身份登录。  提供 `az ad sp create-for-rbac` 结果中的*租户*值。
 
-```azurecli
+```azurecli-interactive
 az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password {password} --tenant {tenant}
 ``` 
 
@@ -157,14 +161,14 @@ Azure CLI 2.0 提供以下命令用于管理角色分配：
 
 本示例将“读取者”角色添加到前面的示例，并删除“参与者”角色：
 
-```azurecli
+```azurecli-interactive
 az role assignment create --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d --role Reader
 az role assignment delete --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d --role Contributor
 ```
 
 通过列出当前分配的角色来验证更改：
 
-```azurecli
+```azurecli-interactive
 az role assignment list --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d
 ```
 
@@ -195,7 +199,7 @@ az role assignment list --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d
 
 使用 `az ad sp reset-credentials` 可以重置服务主体的当前密码。
 
-```azurecli
+```azurecli-interactive
 az ad sp reset-credentials --name 20bce7de-3cd7-49f4-ab64-bb5b443838c3 --password {new-password}
 ```
 

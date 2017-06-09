@@ -12,9 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 74bdb727-481d-45f7-a44e-15d18dc55483
-ms.openlocfilehash: de37b1ad6aa55c9ac73b5b6b89d9507c86cc1245
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
-translationtype: HT
+ms.openlocfilehash: d1440cc1e99ccddb18d23306cc0fcdb4b8babf14
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Azure CLI 2.0 命令的输出格式
 
@@ -27,11 +29,13 @@ Azure CLI 2.0 使用 json 作为默认输出选项，但可让你通过多种方
 `table`  | 包含列标题的表。
 `tsv`    | 制表符分隔值。
 
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
 ## <a name="using-the-json-option"></a>使用 json 选项
 
 以下示例以默认 json 格式显示订阅中的虚拟机列表。
 
-```azurecli
+```azurecli-interactive
 az vm list --output json
 ```
 
@@ -69,7 +73,7 @@ az vm list --output json
 
 使用 table 选项可以提供易于阅读的输出集，但请注意，与前面的.json 示例不同，使用简单 `--output table` 时，嵌套的对象不会包含在输出中。  在同一示例中使用“table”输出格式会组织有序的最常见属性值列表。
 
-```azurecli
+```azurecli-interactive
 az vm list --out table
 ```
 
@@ -85,7 +89,7 @@ KBDemo020    RGDEMO001        westus
 
 可以使用 `--query` 参数来自定义要在列表输出中显示的属性和列。 以下示例演示如何只在 `list` 命令中选择 VM 名称和资源组名称。
 
-```azurecli
+```azurecli-interactive
 az vm list --query "[].{ resource: resourceGroup, name: name }" -o table
 ```
 
@@ -103,7 +107,7 @@ RGDEMO001   KBDemo020
 
 “tsv”输出格式返回不带标题和短划线的、基于文本的制表符分隔输出。 采用这种格式可在需要以某种形式处理文本的其他命令和工具中轻松使用输出。 在前面的示例中使用 `tsv` 选项会输出制表符分隔结果。
 
-```azurecli
+```azurecli-interactive
 az vm list --out tsv
 ```
 

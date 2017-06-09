@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
-ms.openlocfilehash: a28b24dd186fc567f36e52f8a0f5a7c2b0af060c
-ms.sourcegitcommit: c2d380f4ad8e7606850530db690855bcccfd6e86
+ms.openlocfilehash: 383fb6ebd90ac79f60869187b402d53d4f1791fd
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
@@ -23,9 +24,11 @@ ms.contentlocale: zh-CN
 但如果你使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。
 如果是这样，可将 Azure CLI 2.0 配置为针对特定的订阅执行命令。
 
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
 1. 获取帐户中所有订阅的列表。
 
-   ```azurecli
+   ```azurecli-interactive
    az account list --output table
    ```
 
@@ -39,7 +42,7 @@ ms.contentlocale: zh-CN
 
 1. 设置默认值。
  
-   ```azurecli
+   ```azurecli-interactive
    az account set --subscription "My Demos"
    ```
 
