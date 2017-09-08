@@ -13,22 +13,22 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 
 ms.openlocfilehash: de6a366b84efa5475fd6146ff29c32e32dfe4672
-ms.sourcegitcommit: 1791991b82e6ce8ad4a050cab1695e0c93734e08
+ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2017
+ms.lasthandoff: 09/04/2017
 ---
 # <a name="interactive-azure-cli-20"></a>交互式 Azure CLI 2.0
 
 通过运行 `az interactive` 命令，能够以交互模式使用 Azure CLI 2.0。
-你会进入交互式 shell，其中命令将自动完成，你有权访问命令说明、参数说明和命令示例。
+会进入交互式 shell，其中命令会自动完成，有权访问命令说明、参数说明和命令示例。
 
 ![交互模式](./media/interactive-azure-cli/webapp-create.png)
 
 > [!NOTE]
 > 此处并未使用默认样式，也不会在黑色背景下读取。
 
-如果尚未登录你的帐户，请使用 `login` 命令执行该操作。
+如果尚未登录帐户，请使用 `login` 命令执行该操作。
 
 ## <a name="configure"></a>配置
 

@@ -13,15 +13,15 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
 ms.openlocfilehash: 383fb6ebd90ac79f60869187b402d53d4f1791fd
-ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2017
+ms.lasthandoff: 09/04/2017
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
-如果你是 Azure 的新手，也许只有一个订阅。
-但如果你使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。
+如果是 Azure 的新手，也许只有一个订阅。
+但如果使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。
 如果是这样，可将 Azure CLI 2.0 配置为针对特定的订阅执行命令。
 
 [!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
