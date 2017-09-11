@@ -13,14 +13,14 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 74bdb727-481d-45f7-a44e-15d18dc55483
 ms.openlocfilehash: d1440cc1e99ccddb18d23306cc0fcdb4b8babf14
-ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2017
+ms.lasthandoff: 09/04/2017
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Azure CLI 2.0 命令的输出格式
 
-Azure CLI 2.0 使用 json 作为默认输出选项，但可让你通过多种方法设置任何命令的输出。  使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一。 
+Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。  使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一。 
 
 --output | 说明
 ---------|-------------------------------
@@ -39,7 +39,7 @@ Azure CLI 2.0 使用 json 作为默认输出选项，但可让你通过多种方
 az vm list --output json
 ```
 
-结果将采用此格式（为简洁起见，仅显示部分输出）。
+结果会采用此格式（为简洁起见，仅显示部分输出）。
 
 ```json
 [
@@ -112,11 +112,11 @@ az vm list --out tsv
 ```
 
 ```
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010    None    None    westus    DemoVM010            None    Succeeded    DEMORG1    None            Microsoft.Compute/virtualMachines    cbd56d9b-9340-44bc-a722-25f15b578444
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm212    None    None    westus    demovm212            None    Succeeded    DEMORG1    None            Microsoft.Compute/virtualMachines    4bdac85d-c2f7-410f-9907-ca7921d930b4
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm213    None    None    westus    demovm213            None    Succeeded    DEMORG1    None            Microsoft.Compute/virtualMachines    2131c664-221a-4b7f-9653-f6d542fbfa34
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo001VM    None    None    westus    KBDemo001VM            None    Succeeded    RGDEMO001    None            Microsoft.Compute/virtualMachines    14e74761-c17e-4530-a7be-9e4ff06ea74b
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None    None    westus    KBDemo020            None    Succeeded    RGDEMO001    None            Microsoft.Compute/virtualMachinesed36baa9-9b80-48a8-b4a9-854c7a858ece
+None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010    None    None    westus  DemoVM010           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   cbd56d9b-9340-44bc-a722-25f15b578444
+None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm212    None    None    westus  demovm212           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   4bdac85d-c2f7-410f-9907-ca7921d930b4
+None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm213    None    None    westus  demovm213           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   2131c664-221a-4b7f-9653-f6d542fbfa34
+None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo001VM    None    None    westus  KBDemo001VM         None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines   14e74761-c17e-4530-a7be-9e4ff06ea74b
+None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None   None    westus  KBDemo020           None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachinesed36baa9-9b80-48a8-b4a9-854c7a858ece
 ```
 
 下一示例演示如何将 `tsv` 输出传递给 `grep` 和 `cut` 等命令，以进一步分析 `list` 输出中的特定值。 `grep` 命令仅选择包含文本“RGD”的项，`cut` 命令仅选择在输出中显示第 8 个字符（制表符分隔）。

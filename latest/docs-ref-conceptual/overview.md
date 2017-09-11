@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 80ae9f6c-adb7-483c-bfb4-fbb958e075ba
 ms.openlocfilehash: 36a08835b9c4f6e71c5ddadbce8ba946c52a1e9b
-ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2017
+ms.lasthandoff: 09/04/2017
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
@@ -33,7 +33,7 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 请阅读[入门](get-started-with-azure-cli.md)一文，开始使用 CLI。
 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
-以下示例可帮助你了解如何使用 Azure CLI 2.0 执行常见方案：
+可借助以下示例了解如何使用 Azure CLI 2.0 执行常见方案：
 - [Linux 虚拟机](/azure/virtual-machines/virtual-machines-linux-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [Windows 虚拟机](/azure/virtual-machines/virtual-machines-windows-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [Web 应用](/azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
@@ -45,5 +45,5 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 
 
 > [!NOTE]
-> 如果你正在使用旧版 CLI (Azure CLI)，可以继续使用它。
+> 如果正在使用旧版 CLI (Azure CLI)，可以继续使用它。
 > 如果同时使用这两个版本的 CLI，请记住，`azure` 是旧 CLI (Azure CLI)，`az` 是新 CLI (Azure CLI 2.0)。 
