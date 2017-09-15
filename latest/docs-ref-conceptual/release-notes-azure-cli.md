@@ -12,13 +12,87 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: e893b99349bbf2a5eec8af254158eb07001f1da7
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: ad30efeb7efafcc5816160ee130665d37adb62c6
+ms.sourcegitcommit: e866977985ba0286fa05f41729dd7e7d9ce86f8e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="september-11-2017"></a>2017 年 9 月 11 日
+
+版本 2.0.17
+
+### <a name="core"></a>核心
+
+* 启用了命令模块在遥测中设置其自己的相关 ID
+* 修复了在遥测设置为诊断模式时的 JSON 转储问题
+
+### <a name="acs"></a>Acs
+
+* 添加了 `acs list-locations` 命令
+* 使 `ssh-key-file` 附带预期的默认值
+
+### <a name="appservice"></a>应用服务
+
+* 添加了在未包含活动服务计划的资源组中创建 Web 应用的功能
+
+### <a name="cdn"></a>CDN
+
+* 修复了 `cdn custom-domain create` 的“CustomDomain 不可迭代” bug。
+
+### <a name="extension"></a>扩展
+
+* 初始版本。
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了 `keyvault set-policy` 的权限区分大小写的问题。
+
+### <a name="network"></a>网络
+
+* 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`
+* 已为 `vnet subnet create/update` 将 `--private-access-services` 参数重命名为 `--service-endpoints`
+* 在 `nsg rule create/update` 中添加了对多个 IP 范围和端口范围的支持
+* 在 `lb create` 中添加了对 SKU 的支持
+* 在 `public-ip create` 中添加了对 SKU 的支持
+
+### <a name="resource"></a>资源
+
+* 允许在 `policy definition create` 和 `policy definition update` 中传入资源策略参数定义
+* 允许为 `policy assignment create` 传入参数值
+* 允许为所有参数传入 JSON 或文件
+* 更新了 API 版本
+
+### <a name="sql"></a>SQL
+
+* 添加了 `sql server vnet-rule` 命令
+
+### <a name="vm"></a>VM
+
+* 已修复：除非提供 `--scope`，否则不分配访问权限
+* 已修复：使用与门户相同的扩展命名
+* 已从 `[vm|vmss] create` 输出中删除了 `subscription`
+* 已修复：`[vm|vmss] create` SKU 无法应用于带映像的数据磁盘
+* 已修复：`vm format-secret --secrets` 不接受新行分隔的 ID
+
+## <a name="august-31-2017"></a>2017 年 8 月31 日
+
+版本 2.0.16
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了在尝试使用 `secret download` 自动解析机密编码时的 bug
+
+### <a name="sf"></a>Sf
+
+* 弃用所有支持 Service Fabric CLI (sfctl) 的命令
+
+### <a name="storage"></a>存储
+
+* 修复了无法在不支持 NetworkACLs 功能的区域中创建存储帐户的问题
+* 在 Blob 和文件上载过程中确定内容类型和内容编码（如果既未指定内容类型，也未指定内容编码）
 
 ## <a name="august-28-2017"></a>2017 年 8 月 28 日
 
