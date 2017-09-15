@@ -60,6 +60,22 @@
         - name: 更新
           uid: az_component_update
           displayName: az component update
+    - name: 分机
+      uid: az_extension
+      displayName: az extension
+      items:
+        - name: 添加
+          uid: az_extension_add
+          displayName: az extension add
+        - name: 列出
+          uid: az_extension_list
+          displayName: az extension list
+        - name: 删除
+          uid: az_extension_remove
+          displayName: az extension remove
+        - name: 显示
+          uid: az_extension_show
+          displayName: az extension show
     - name: Key Vault
       uid: az_keyvault
       displayName: az keyvault
@@ -1318,6 +1334,13 @@
                 - name: 删除
                   uid: az_network_vnet_gateway_root_cert_delete
                   displayName: az network vnet-gateway root-cert delete
+            - name: Vpn-Client
+              uid: az_network_vnet_gateway_vpn_client
+              displayName: az network vnet-gateway vpn-client
+              items:
+                - name: 生成
+                  uid: az_network_vnet_gateway_vpn_client_generate
+                  displayName: az network vnet-gateway vpn-client generate
         - name: 观察程序
           uid: az_network_watcher
           displayName: az network watcher
