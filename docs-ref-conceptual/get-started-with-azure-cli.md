@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 5d6d7abb34fa2be571a9a49f0f84380538592807
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: bfc865f9b34afd8f312808fa420ad987be2a7d34
+ms.sourcegitcommit: 792a4283245160072edcf2bee1482aba19b285d5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -73,7 +73,7 @@ az group create -n MyResourceGroup -l westus2
 
 创建资源组后，让我们在其中创建 Linux VM。
 
-可以运行以下命令，使用常用的 UbuntuLTS 映像创建附有两个存储磁盘（大小分别为 10 GB 和 20 GB）的 Linux VM：
+可以运行以下命令，使用常用的 UbuntuTLS 映像创建附有两个存储磁盘（大小分别为 10 GB 和 20 GB）的 Linux VM：
 
 ```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20

@@ -12,7 +12,6 @@
 ## [输出格式](format-output-azure-cli.md)
 ## [查询](query-azure-cli.md)
 ## [订阅](manage-azure-subscriptions-azure-cli.md)
-### [管理云](manage-clouds-azure-cli.md)
 ## [发行说明](release-notes-azure-cli.md)
 # 示例脚本
 ## [Linux VM](/azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
