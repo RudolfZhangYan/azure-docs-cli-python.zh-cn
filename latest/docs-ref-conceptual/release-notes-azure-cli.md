@@ -12,13 +12,73 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: ad30efeb7efafcc5816160ee130665d37adb62c6
-ms.sourcegitcommit: e866977985ba0286fa05f41729dd7e7d9ce86f8e
+ms.openlocfilehash: 72630c52b5e6afd69809ff19145717c0d65e0252
+ms.sourcegitcommit: 3a490ae3a2a1b2e63a062806f9b720fa4c6be01e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 09/25/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="september-22-2017"></a>2017 年 9 月 22 日
+
+版本 2.0.18
+
+### <a name="resource"></a>资源
+
+* 添加了对显示内置策略定义的支持
+* 添加了用于创建策略定义的支持模式参数
+* 为 `managedapp definition create` 添加了对 UI 定义和模板的支持
+* [重大更改] 将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`
+
+### <a name="network"></a>网络
+
+* 为 `network lb` 和 `network public-ip` 子命令添加了对可用性区域的支持
+* 为 `express-route` 添加了对 IPv6 Microsoft 对等互连的支持
+* 添加了 `asg` 应用程序安全组命令
+* 为 `nic [create|ip-config create|ip-config update]` 添加了 `--application-security-groups` 参数
+* 为 `nsg rule [create|update]` 添加了 `--source-asgs` 和 `--destination-asgs` 参数
+* 为 `vnet [create|update]` 添加了 `--ddos-protection` 和 `--vm-protection` 参数
+* 添加了 `network [vnet-gateway|vpn-client|show-url]` 命令
+
+### <a name="storage"></a>存储
+
+* 已修复了 `storage account network-rule` 命令在更新 SDK 后可能会失败的问题
+
+### <a name="eventgrid"></a>Eventgrid
+
+* 更新了 Azure 事件网格 Python SDK 以使用较新的 API 版本“2017-09-15-preview”
+
+### <a name="sql"></a>SQL
+
+* 将 `sql server list` 的参数 `--resource-group` 更改为可选。 如果未指定，将返回订阅中的所有 SQL 服务器
+* 为 `db [create|copy|restore|update|replica create|create|update]` 和 `dw [create|update]` 添加了 `--no-wait` 参数
+
+### <a name="keyvault"></a>KeyVault
+
+* 添加了对从代理后执行 Keyvault 命令的支持
+
+### <a name="vm"></a>VM
+
+* 为 `[vm|vmss|disk] create` 添加了对可用性区域的支持
+* 已修复了将 `--app-gateway ID` 与 `vmss create` 一起使用会导致故障的问题
+* 为 `vm create` 添加了 `--asgs` 参数
+* 添加了对使用 `vm run-command` 在 VM 上运行命令的支持
+* [预览] 添加了对使用 `vmss encryption` 进行 VMSS 磁盘加密的支持
+* 添加了对使用 `vm perform-maintenance` 在 VM 上执行维护的支持
+
+### <a name="acs"></a>ACS
+
+* [预览] 为适用于 ACS 预览区域的 `acs create` 添加了 `--orchestrator-release` 参数
+
+### <a name="appservice"></a>应用服务
+
+* 添加了使用 `webapp auth [update|show]` 更新和显示身份验证设置的功能
+
+### <a name="backup"></a>备份
+
+* 预览版
+
 
 ## <a name="september-11-2017"></a>2017 年 9 月 11 日
 
@@ -42,7 +102,7 @@ ms.lasthandoff: 09/13/2017
 
 * 修复了 `cdn custom-domain create` 的“CustomDomain 不可迭代” bug。
 
-### <a name="extension"></a>扩展
+### <a name="extension"></a>分机
 
 * 初始版本。
 
