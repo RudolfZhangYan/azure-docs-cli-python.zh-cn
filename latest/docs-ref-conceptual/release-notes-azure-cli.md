@@ -12,13 +12,71 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: 72630c52b5e6afd69809ff19145717c0d65e0252
-ms.sourcegitcommit: 3a490ae3a2a1b2e63a062806f9b720fa4c6be01e
+ms.openlocfilehash: 2ea9daa558200204750f19b5d22685587ff097ef
+ms.sourcegitcommit: 376bc0601aba890630dadd55908c1a65ddf40f5a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="october-9-2017"></a>2017 年 10 月 9 日
+
+版本 2.0.19
+
+### <a name="core"></a>核心
+
+* 在 Azure Stack 中添加了一个尾随斜杠用于处理 ADFS 机构 URL
+
+### <a name="appservice"></a>应用服务
+
+* 添加了新命令 `webapp update` 用于执行常规更新
+
+### <a name="batch"></a>批处理
+
+* 已更新为 Batch SDK 4.0.0
+* 更新了 VirtualMachineConfiguration 的 `--image`，用于支持除 publish:offer:sku:version 以外的 ARM 映像引用
+* 添加了对 Batch 扩展命令新 CLI 扩展模型的支持
+* 从组件模型中删除了 Batch 支持
+
+### <a name="batchai"></a>Batchai
+
+* Batch AI 模块初始版本
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了在 Azure Stack 中使用 ADFS 时发生的 Key Vault 身份验证问题。 [(#4448)](https://github.com/Azure/azure-cli/issues/4448)
+
+### <a name="network"></a>网络
+
+* 已将 `application-gateway address-pool create` 的 `--server` 参数更改为可选，以允许空地址池
+* 更新了 `traffic-manager` 以支持最新功能
+
+### <a name="resource"></a>资源
+
+* 在 `group` 中添加了对资源组名称使用 `--resource-group/-g` 选项的支持
+* 为 `account lock` 添加了命令用于处理订阅级锁
+* 为 `group lock` 添加了命令用于处理组级锁
+* 为 `resource lock` 添加了命令用于处理资源级锁
+
+### <a name="sql"></a>Sql
+
+* 添加了 SQL 透明数据加密 (TDE) 和自带密钥 TDE 的支持
+* 添加了 `db list-deleted` 命令和 `db restore --deleted-time` 参数，以便能够找到和还原已删除的数据库
+* 添加了 `db op list` 和 `db op cancel`，以便能够列出和取消正在对数据库执行的操作
+
+### <a name="storage"></a>存储
+
+* 添加了对文件共享快照的支持
+
+### <a name="vm"></a>Vm
+
+* 修复了 `vm show` 中的一个 bug：在缺少专用 IP 地址的情况下使用 `-d` 会导致崩溃
+* [预览] 添加了滚动升级到 `vmss create` 的支持
+* 添加了使用 `vm encryption enable` 更新加密设置的支持
+* 为 `vm create` 添加了 `--os-disk-size-gb` 参数
+* 为 Windows 中的 `vmss create` 添加了 `--license-type` 参数
+
 
 ## <a name="september-22-2017"></a>2017 年 9 月 22 日
 
@@ -247,7 +305,7 @@ ms.lasthandoff: 09/25/2017
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
 * 修复了处理资源文件 SAS URL 时的 bug
-* Batch 帐户终结点现在支持可选的 “https://” 前缀
+* Batch 帐户终结点现在支持可选的“https://”前缀
 * 支持将包含 100 多个任务的列表添加到作业
 * 添加了加载扩展命令模块的调试日志记录
 
@@ -435,7 +493,7 @@ vm (2.0.11)
 
 * 修复了策略创建操作不再清除现有策略的问题。 (#3934)
 
-### <a name="key-vault"></a>密钥保管库
+### <a name="key-vault"></a>Key Vault
 
 * 添加了 Key Vault 恢复功能的命令：
   * `keyvault` 子命令 `purge`、`recover`、`keyvault list-deleted`
