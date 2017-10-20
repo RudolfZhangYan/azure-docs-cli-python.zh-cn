@@ -5,18 +5,18 @@ keywords: Azure CLI 2.0, Azure Active Directory, Azure Active Directory, AD, RBA
 author: rloutlaw
 ms.author: routlaw
 manager: douge
-ms.date: 02/27/2017
+ms.date: 10/12/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: fab89cb8-dac1-4e21-9d34-5eadd5213c05
-ms.openlocfilehash: f37df762a9a605ea649b215f38f2e9866614f4ac
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 5ae8af014b821fe5297ea44056ef33c4570d1d47
+ms.sourcegitcommit: 5cfbea569fef193044da712708bc6957d3fb557c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 10/14/2017
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 09/04/2017
 
 Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将它视为具有特定角色的“用户标识”（登录名和密码，或者证书），它对资源的访问权限受到严格控制。 与普通的用户标识不同，它只需能够完成特定的任务。 如果只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。 
 
-目前，Azure CLI 2.0 仅支持创建基于密码的身份验证凭据。 本主题介绍如何创建具有特定密码的服务主体，并根据需要向它分配特定的角色。
+Azure CLI 2.0 支持创建基于密码的身份验证凭据和证书凭据。 在本主题中，我们将介绍这两种类型的凭据。
 
 ## <a name="verify-your-own-permission-level"></a>验证自己的权限级别
 
@@ -76,9 +76,9 @@ az ad app list --display-name MyDemoWebApp
 
 `--display-name` 选项可筛选返回的应用列表，以显示 `displayName` 以 MyDemoWebApp 开头的应用。
 
-### <a name="create-the-service-principal"></a>创建服务主体
+### <a name="create-a-service-principal-with-a-password"></a>创建使用密码的服务主体
 
-使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) 创建服务主体。 
+使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) 和 `--password` 参数来创建使用密码的服务主体。 如果未提供角色或作用域，那么对于当前已订阅，服务主体将默认为**参与者**角色。 如果在不使用 `--password` 或 `--cert` 参数的情况下创建服务主体，则将使用密码身份验证，并且会生成一个密码。
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name {appId} --password "{strong password}" 
@@ -96,6 +96,29 @@ az ad sp create-for-rbac --name {appId} --password "{strong password}"
 
  > [!WARNING] 
  > 请勿创建不安全的密码。  遵循 [Azure AD 密码规则和限制](/azure/active-directory/active-directory-passwords-policy)指导原则。
+
+### <a name="create-a-service-principal-with-a-self-signed-certificate"></a>创建使用自签名证书的服务主体
+
+使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) 和 `--create-cert` 参数来创建自签名证书。
+
+```azurecli-interactive
+az ad sp create-for-rbac --name {appId} --create-cert
+```
+
+```json
+{
+  "appId": "c495db57-82e0-4e2e-9369-069dff176858",
+  "displayName": "azure-cli-2017-10-12-22-15-38",
+  "fileWithCertAndPrivateKey": "<path>/<file-name>.pem",
+  "name": "http://MyDemoWebApp",
+  "password": null,
+  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+}
+```
+
+复制 `fileWithCertAndPrivateKey` 响应的值。 这是将用于身份验证的证书文件。
+
+有关使用证书的更多选项，请参阅 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac)。
 
 ### <a name="get-information-about-the-service-principal"></a>获取有关服务主体的信息
 
@@ -118,10 +141,10 @@ az ad sp show --id a487e0c1-82af-47d9-9a0b-af184eb87646d
 
 ### <a name="sign-in-using-the-service-principal"></a>使用服务主体登录
 
-现在，可以使用 `az ad sp show` 输出的 *appId* 和*密码*，以应用的新服务主体身份登录。  提供 `az ad sp create-for-rbac` 结果中的*租户*值。
+现在可以使用来自 `az ad sp show` 的 *appId* 以及密码或已创建证书的路径，作为应用的新服务主体登录。  提供 `az ad sp create-for-rbac` 结果中的*租户*值。
 
 ```azurecli-interactive
-az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password {password} --tenant {tenant}
+az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password {password-or-path-to-cert} --tenant {tenant}
 ``` 
 
 成功登录后，会看到以下输出：

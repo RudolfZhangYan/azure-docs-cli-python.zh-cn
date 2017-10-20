@@ -12,15 +12,17 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 65becd3a-9d69-4415-8a30-777d13a0e7aa
-ms.openlocfilehash: 4ab4f0de38614eff00f55bad96ea886bb007f3c0
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 3ba1dd840102c738ccd9eb62a0b9db612cec48d1
+ms.sourcegitcommit: 5cfbea569fef193044da712708bc6957d3fb557c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 10/14/2017
 ---
 # <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
-使用 Azure CLI 可通过多种方式进行登录和身份验证。 最简单的初始方法是通过浏览器以交互方式登录，或者通过命令行登录。 建议的方法是使用服务主体，这样能够创建可用于处理资源的非交互式帐户。 通过授予服务主体所需的最低适当权限，可以确保自动化脚本更加安全。
+使用 Azure CLI 可通过多种方式进行登录和身份验证。 最简单的初始方法是通过浏览器以交互方式登录，或者通过命令行登录。 建议的方法是使用服务主体，这样能够创建可用于处理资源的非交互式帐户。 通过授予服务主体所需的最低适当权限，可以确保自动化脚本更加安全。 
+
+私有凭据信息均不存储在本地。 身份验证令牌由 Azure 生成并存储。 登录后，如果本地登录令牌未经使用，那么将它在 14 天内保持有效。 本地登录令牌失效时，你将需要重新进行身份验证。
 
 使用 CLI 运行的命令可针对默认订阅运行。  如果有多个订阅，可能需要[确认默认订阅](manage-azure-subscriptions-azure-cli.md)并相应地进行更改。
 
