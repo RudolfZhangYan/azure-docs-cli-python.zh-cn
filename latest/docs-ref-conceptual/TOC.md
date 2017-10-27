@@ -4,6 +4,9 @@
 ## [Cloud Shell](/azure/cloud-shell/overview)
 ## [登录](authenticate-azure-cli.md)
 ### [创建服务主体](create-an-azure-service-principal-azure-cli.md)
+### 使用托管服务标识
+#### [为 Azure VM 配置 MSI](/azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+#### [在 Azure VM 上使用 MSI 登录](/azure/active-directory/msi-how-to-get-access-token-using-msi?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 ## [交互模式](interactive-azure-cli.md)
 ## 部署模板
 ### [使用部署模板](/azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
