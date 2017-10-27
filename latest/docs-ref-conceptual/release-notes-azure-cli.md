@@ -12,13 +12,54 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: 2ea9daa558200204750f19b5d22685587ff097ef
-ms.sourcegitcommit: 376bc0601aba890630dadd55908c1a65ddf40f5a
+ms.openlocfilehash: 429b099dabd27d9356e88791f955ec52acd2a5f9
+ms.sourcegitcommit: 9b36c15dc0e10024e23b8018604f5ef63c025de1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="october-24-2017"></a>2017 年 10 月 24 日
+
+版本 2.0.20
+
+### <a name="core"></a>核心
+
+* 已更新 `2017-03-09-profile` 以使用 `MGMT_STORAGE` API 版本 `2016-01-01`
+
+### <a name="acr"></a>ACR
+
+* 已更新资源管理以指向 `2017-10-01` API 版本
+* 已将“带来你自己的存储”SKU 更改为“经典”
+* 已将注册表 SKU 重命名为“基本”、“标准”和“高级”
+
+### <a name="acs"></a>ACS
+
+* [PREVIEW] 添加了 `az aks` 命令
+* 已修复 Kubernetes `get-credentials`
+
+### <a name="appservice"></a>应用服务
+
+* 已修复所下载 `webapp` 日志可能无效的问题
+
+### <a name="component"></a>组件
+
+* 为所有安装程序添加了更清晰的弃用消息并添加了确认提示
+
+### <a name="monitor"></a>监视
+
+* 添加了 `action-group` 命令
+
+### <a name="resource"></a>资源
+
+* 修复了 `group export` 中与 msrest 依赖项的最新版本不兼容的问题
+* 修复了 `policy assignment create` 以使用内置策略定义和策略集定义
+
+### <a name="vm"></a>VM
+
+* 为 `vmss create` 添加了 `--accelerated-networking` 参数
+
 
 ## <a name="october-9-2017"></a>2017 年 10 月 9 日
 
@@ -305,7 +346,7 @@ ms.lasthandoff: 10/11/2017
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
 * 修复了处理资源文件 SAS URL 时的 bug
-* Batch 帐户终结点现在支持可选的 “https://” 前缀
+* Batch 帐户终结点现在支持可选的“https://” 前缀
 * 支持将包含 100 多个任务的列表添加到作业
 * 添加了加载扩展命令模块的调试日志记录
 
@@ -493,7 +534,7 @@ vm (2.0.11)
 
 * 修复了策略创建操作不再清除现有策略的问题。 (#3934)
 
-### <a name="key-vault"></a>Key Vault
+### <a name="key-vault"></a>密钥保管库
 
 * 添加了 Key Vault 恢复功能的命令：
   * `keyvault` 子命令 `purge`、`recover`、`keyvault list-deleted`
