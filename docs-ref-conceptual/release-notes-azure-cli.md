@@ -12,77 +12,13 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: e893b99349bbf2a5eec8af254158eb07001f1da7
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 39e4710a29ac57730919b82ab76b9c9a4b9ca786
+ms.sourcegitcommit: 43d4f838d132ab9bcfa59dbda3b544c06373b6a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 08/22/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
-
-## <a name="august-28-2017"></a>2017 年 8 月 28 日
-
-版本 2.0.15
-
-### <a name="cli"></a>CLI
-
-* 在 `--version` 中添加了法律说明。
-
-### <a name="acs"></a>ACS
-
-* 更正了预览区域。
-* 正确设置了默认 `dns_name_prefix` 的格式。
-* 优化了 acs 命令输出。
-
-### <a name="appservice"></a>应用服务
-
-* [重大更改] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致问题
-* 为 `az webapp config container set --docker-custom-image-name` 的 `-i` 添加了新别名
-* 公开了 `az webapp log show`
-* 公开了 `az webapp delete` 中的新参数，用于保留应用服务计划、指标或 dns 注册
-* 已修复：正确检测槽位设置
-
-### <a name="iot"></a>IoT
-
-* 修复了 #3934：策略创建操作不再清除现有的策略
-
-### <a name="network"></a>网络
-
-* [重大更改] 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`
-* [重大更改] 已将 `vnet subnet [create|update]` 的选项 `--private-access-services` 重命名为 `--service-endpoints`
-* 在 `nsg rule [create|update]` 中添加了对多个 IP 和端口范围的支持
-* 在 `lb create` 中添加了对 SKU 的支持
-* 在 `public-ip create` 中添加了对 SKU 的支持
-
-### <a name="profile"></a>配置文件
-
-* 公开了 `--msi` 和 `--msi-port`，以便使用虚拟机的标识登录
-
-### <a name="service-fabric"></a>Service Fabric
-
-* 预览版
-* 简化了命令的注册表用户/密码规则
-* 修复了即使在参数中传入了密码，也提示用户输入密码的问题
-* 添加了对空 `registry_cred` 的支持
-
-### <a name="storage"></a>存储
-
-* 启用了设置 Blob 层
-* 为 `storage account [create|update]` 添加了 `--bypass` 和 `--default-action` 参数用于支持服务隧道
-* 添加了用于在 `storage account network-rule` 中添加 VNET 规则和基于 IP 的规则的命令  
-* 启用了使用客户管理的密钥进行服务加密的功能
-* [重大更改] 已将 `az storage account create and az storage account update` 命令的选项 `--encryption` 重命名为 `--encryption-services`
-* 修复了 #4220：`az storage account update encryption` - 语法不匹配
-
-### <a name="vm"></a>VM
-
-* 修复了使用 `--instance-id *` 时，针对 `vmss get-instance-view` 显示多余且错误的信息的问题
-* 在 `vmss create` 中添加了对 `--lb-sku` 的支持： 
-* 从 `[vm|vmss] create` 的管理员名称方块列表中删除了人员名称 
-* 修复了当无法从映像中提取计划信息时，`[vm|vmss] create` 引发错误的问题
-* 修复了创建包含内部 LB 的 vmms 规模集时发生崩溃的问题
-* 修复了 `--no-wait` 参数无法配合 `vm availability-set create` 工作的问题
-
 
 ## <a name="august-15-2017"></a>2017 年 8 月 15 日
 
@@ -113,7 +49,7 @@ ms.lasthandoff: 09/04/2017
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
 * 修复了处理资源文件 SAS URL 时的 bug
-* Batch 帐户终结点现在支持可选的 'https://' 前缀
+* Batch 帐户终结点现在支持可选的“https://”前缀
 * 支持将包含 100 多个任务的列表添加到作业
 * 添加了加载扩展命令模块的调试日志记录
 
