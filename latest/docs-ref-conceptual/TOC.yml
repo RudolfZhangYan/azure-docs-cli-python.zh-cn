@@ -34,6 +34,8 @@
       href: query-azure-cli.md
     - name: 订阅
       href: manage-azure-subscriptions-azure-cli.md
+    - name: 扩展
+      href: azure-cli-extensions.md
     - name: 发行说明
       href: release-notes-azure-cli.md
 - name: 示例脚本
