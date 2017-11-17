@@ -12,13 +12,119 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: 429b099dabd27d9356e88791f955ec52acd2a5f9
-ms.sourcegitcommit: 9b36c15dc0e10024e23b8018604f5ef63c025de1
+ms.openlocfilehash: 761bd61474e7c72fb2daeb756828f00196b56c3a
+ms.sourcegitcommit: bb649ebd7e7fce8fb5008ac1e2e2c33481a45df9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="november-14-2017"></a>2017 年 11 月 14 日
+
+版本 2.0.21
+
+### <a name="acr"></a>ACR
+
+* 添加了在复制区域中创建 Webhook 的支持
+
+
+### <a name="acs"></a>ACS
+
+* 已在 AKS 中将所有“代理”一词更改为“节点”
+* 弃用了 `acs create` 的 `--orchestrator-release` 选项
+* 已将 AKS 的默认 VM 大小更改为 `Standard_D1_v2`
+* 在 Windows 上修复了 `az aks browse`
+* 在 Windows 上修复了 `az aks get-credentials`
+
+### <a name="appservice"></a>应用服务
+
+* 添加了 Web 应用和函数应用的部署源 `config-zip`
+* 为 `az webapp log config` 添加了 `--docker-container-logging` 选项
+* 从 `az webapp log config` 的参数 `--web-server-logging` 中删除了 `storage` 选项
+* 完善了 `deployment user set` 的错误消息
+* 添加了创建 Linux 函数应用的支持
+* 固定 `list-locations`
+
+### <a name="batch"></a>批处理
+
+* 修复了在 pool create 命令中结合 `--image` 标志使用资源 ID 时出现的 bug
+
+### <a name="batchai"></a>Batchai
+
+* 在 `file-server create` 命令中提供了 `--vm-size` 的简短选项 `-s`（提供 VM 大小）
+* 为 `cluster create` 参数添加了存储帐户名称和密钥自变量
+* 纠正了 `job list-files` 和 `job stream-file` 的文档
+* 在 `job create` 命令中提供了 `--cluster-name` 的简短选项 `-r`（提供群集名称）
+
+### <a name="cloud"></a>云
+
+* 更改了 `cloud [register|update]`，以防止注册缺少所需终结点的云
+
+### <a name="container"></a>容器
+
+* 添加了打开多个端口的支持
+* 添加了容器组重启策略
+* 添加了将 Azure 文件共享装载为卷的支持
+* 更新了帮助器文档
+
+### <a name="data-lake-analytics"></a>数据湖分析
+
+* 更改了 `[job|account] list` 以返回更简洁的信息
+
+### <a name="data-lake-store"></a>Data Lake Store
+
+* 更改了 `account list` 以返回更简洁的信息
+
+### <a name="extension"></a>分机
+
+* 添加了 `extension list-available` 用于列出官方的 Microsoft 扩展
+* 为 `extension [add|update]` 添加了 `--name`，以便按名称安装扩展
+
+### <a name="iot"></a>IoT
+
+* 添加了对证书颁发机构 (CA) 和证书链的支持
+
+### <a name="monitor"></a>监视
+
+* 添加了 `activity-log alert` 命令
+
+### <a name="network"></a>网络
+
+* 添加了对 CAA DNS 记录的支持
+* 修复了无法使用 `traffic-manager profile update` 更新终结点的问题
+* 修复了在采用某种 VNET 创建方式时 `vnet update --dns-servers` 无法正常运行的问题
+* 修复了 `dns zone import` 错误导入相对 DNS 名称的问题
+
+### <a name="reservations"></a>保留
+
+* 初始预览版
+
+### <a name="resource"></a>资源
+
+* 添加了在 `--resource` 参数中指定资源 ID 的支持，以及对资源级锁的支持
+
+### <a name="sql"></a>SQL
+
+* 为 `sql server vnet-rule [create|update]` 添加了 `--ignore-missing-vnet-service-endpoint` 参数
+
+### <a name="storage"></a>存储
+
+* 更改了 `storage account create` 以使用 SKU `Standard_RAGRS` 作为默认值
+* 修复了处理包含非 ASCII 字符的文件/Blob 名称时出现的 bug
+* 修复了阻止在 `storage [blob|file] copy start-batch` 中使用 `--source-uri` 的 bug
+* 添加了在 `storage [blob|file] delete-batch` 中包含和删除多个对象的命令
+* 修复了使用 `storage metrics update` 启用指标时出现的问题
+* 修复了使用 `storage blob upload-batch` 时，如果文件超过 200GB 所出现的问题
+* 修复了 `storage account [create|update]` 忽略 `--bypass` 和 `--default-action` 的问题
+
+### <a name="vm"></a>VM
+
+* 修复了 `vmss create` 阻止使用 `Basic` 大小层的 bug
+* 针对包含计费信息的自定义映像，为 `[vm|vmss] create` 添加了 `--plan` 参数
+* 添加了 `vm secret `[add|remove|list]` 命令
+* 已将 `vm format-secret` 重命名为 `vm secret format`
+* 为 `vm encryption enable` 添加了 `--encrypt format` 参数
 
 ## <a name="october-24-2017"></a>2017 年 10 月 24 日
 
