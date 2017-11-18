@@ -12,13 +12,246 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: e893b99349bbf2a5eec8af254158eb07001f1da7
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 429b099dabd27d9356e88791f955ec52acd2a5f9
+ms.sourcegitcommit: 9b36c15dc0e10024e23b8018604f5ef63c025de1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="october-24-2017"></a>2017 年 10 月 24 日
+
+版本 2.0.20
+
+### <a name="core"></a>核心
+
+* 已更新 `2017-03-09-profile` 以使用 `MGMT_STORAGE` API 版本 `2016-01-01`
+
+### <a name="acr"></a>ACR
+
+* 已更新资源管理以指向 `2017-10-01` API 版本
+* 已将“带来你自己的存储”SKU 更改为“经典”
+* 已将注册表 SKU 重命名为“基本”、“标准”和“高级”
+
+### <a name="acs"></a>ACS
+
+* [PREVIEW] 添加了 `az aks` 命令
+* 已修复 Kubernetes `get-credentials`
+
+### <a name="appservice"></a>应用服务
+
+* 已修复所下载 `webapp` 日志可能无效的问题
+
+### <a name="component"></a>组件
+
+* 为所有安装程序添加了更清晰的弃用消息并添加了确认提示
+
+### <a name="monitor"></a>监视
+
+* 添加了 `action-group` 命令
+
+### <a name="resource"></a>资源
+
+* 修复了 `group export` 中与 msrest 依赖项的最新版本不兼容的问题
+* 修复了 `policy assignment create` 以使用内置策略定义和策略集定义
+
+### <a name="vm"></a>VM
+
+* 为 `vmss create` 添加了 `--accelerated-networking` 参数
+
+
+## <a name="october-9-2017"></a>2017 年 10 月 9 日
+
+版本 2.0.19
+
+### <a name="core"></a>核心
+
+* 在 Azure Stack 中添加了一个尾随斜杠用于处理 ADFS 机构 URL
+
+### <a name="appservice"></a>应用服务
+
+* 添加了新命令 `webapp update` 用于执行常规更新
+
+### <a name="batch"></a>批处理
+
+* 已更新为 Batch SDK 4.0.0
+* 更新了 VirtualMachineConfiguration 的 `--image`，用于支持除 publish:offer:sku:version 以外的 ARM 映像引用
+* 添加了对 Batch 扩展命令新 CLI 扩展模型的支持
+* 从组件模型中删除了 Batch 支持
+
+### <a name="batchai"></a>Batchai
+
+* Batch AI 模块初始版本
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了在 Azure Stack 中使用 ADFS 时发生的 Key Vault 身份验证问题。 [(#4448)](https://github.com/Azure/azure-cli/issues/4448)
+
+### <a name="network"></a>网络
+
+* 已将 `application-gateway address-pool create` 的 `--server` 参数更改为可选，以允许空地址池
+* 更新了 `traffic-manager` 以支持最新功能
+
+### <a name="resource"></a>资源
+
+* 在 `group` 中添加了对资源组名称使用 `--resource-group/-g` 选项的支持
+* 为 `account lock` 添加了命令用于处理订阅级锁
+* 为 `group lock` 添加了命令用于处理组级锁
+* 为 `resource lock` 添加了命令用于处理资源级锁
+
+### <a name="sql"></a>Sql
+
+* 添加了 SQL 透明数据加密 (TDE) 和自带密钥 TDE 的支持
+* 添加了 `db list-deleted` 命令和 `db restore --deleted-time` 参数，以便能够找到和还原已删除的数据库
+* 添加了 `db op list` 和 `db op cancel`，以便能够列出和取消正在对数据库执行的操作
+
+### <a name="storage"></a>存储
+
+* 添加了对文件共享快照的支持
+
+### <a name="vm"></a>Vm
+
+* 修复了 `vm show` 中的一个 bug：在缺少专用 IP 地址的情况下使用 `-d` 会导致崩溃
+* [预览] 添加了滚动升级到 `vmss create` 的支持
+* 添加了使用 `vm encryption enable` 更新加密设置的支持
+* 为 `vm create` 添加了 `--os-disk-size-gb` 参数
+* 为 Windows 中的 `vmss create` 添加了 `--license-type` 参数
+
+
+## <a name="september-22-2017"></a>2017 年 9 月 22 日
+
+版本 2.0.18
+
+### <a name="resource"></a>资源
+
+* 添加了对显示内置策略定义的支持
+* 添加了用于创建策略定义的支持模式参数
+* 为 `managedapp definition create` 添加了对 UI 定义和模板的支持
+* [重大更改] 将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`
+
+### <a name="network"></a>网络
+
+* 为 `network lb` 和 `network public-ip` 子命令添加了对可用性区域的支持
+* 为 `express-route` 添加了对 IPv6 Microsoft 对等互连的支持
+* 添加了 `asg` 应用程序安全组命令
+* 为 `nic [create|ip-config create|ip-config update]` 添加了 `--application-security-groups` 参数
+* 为 `nsg rule [create|update]` 添加了 `--source-asgs` 和 `--destination-asgs` 参数
+* 为 `vnet [create|update]` 添加了 `--ddos-protection` 和 `--vm-protection` 参数
+* 添加了 `network [vnet-gateway|vpn-client|show-url]` 命令
+
+### <a name="storage"></a>存储
+
+* 已修复了 `storage account network-rule` 命令在更新 SDK 后可能会失败的问题
+
+### <a name="eventgrid"></a>Eventgrid
+
+* 更新了 Azure 事件网格 Python SDK 以使用较新的 API 版本“2017-09-15-preview”
+
+### <a name="sql"></a>SQL
+
+* 将 `sql server list` 的参数 `--resource-group` 更改为可选。 如果未指定，将返回订阅中的所有 SQL 服务器
+* 为 `db [create|copy|restore|update|replica create|create|update]` 和 `dw [create|update]` 添加了 `--no-wait` 参数
+
+### <a name="keyvault"></a>KeyVault
+
+* 添加了对从代理后执行 Keyvault 命令的支持
+
+### <a name="vm"></a>VM
+
+* 为 `[vm|vmss|disk] create` 添加了对可用性区域的支持
+* 已修复了将 `--app-gateway ID` 与 `vmss create` 一起使用会导致故障的问题
+* 为 `vm create` 添加了 `--asgs` 参数
+* 添加了对使用 `vm run-command` 在 VM 上运行命令的支持
+* [预览] 添加了对使用 `vmss encryption` 进行 VMSS 磁盘加密的支持
+* 添加了对使用 `vm perform-maintenance` 在 VM 上执行维护的支持
+
+### <a name="acs"></a>ACS
+
+* [预览] 为适用于 ACS 预览区域的 `acs create` 添加了 `--orchestrator-release` 参数
+
+### <a name="appservice"></a>应用服务
+
+* 添加了使用 `webapp auth [update|show]` 更新和显示身份验证设置的功能
+
+### <a name="backup"></a>备份
+
+* 预览版
+
+
+## <a name="september-11-2017"></a>2017 年 9 月 11 日
+
+版本 2.0.17
+
+### <a name="core"></a>核心
+
+* 启用了命令模块在遥测中设置其自己的相关 ID
+* 修复了在遥测设置为诊断模式时的 JSON 转储问题
+
+### <a name="acs"></a>Acs
+
+* 添加了 `acs list-locations` 命令
+* 使 `ssh-key-file` 附带预期的默认值
+
+### <a name="appservice"></a>应用服务
+
+* 添加了在未包含活动服务计划的资源组中创建 Web 应用的功能
+
+### <a name="cdn"></a>CDN
+
+* 修复了 `cdn custom-domain create` 的“CustomDomain 不可迭代” bug。
+
+### <a name="extension"></a>分机
+
+* 初始版本。
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了 `keyvault set-policy` 的权限区分大小写的问题。
+
+### <a name="network"></a>网络
+
+* 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`
+* 已为 `vnet subnet create/update` 将 `--private-access-services` 参数重命名为 `--service-endpoints`
+* 在 `nsg rule create/update` 中添加了对多个 IP 范围和端口范围的支持
+* 在 `lb create` 中添加了对 SKU 的支持
+* 在 `public-ip create` 中添加了对 SKU 的支持
+
+### <a name="resource"></a>资源
+
+* 允许在 `policy definition create` 和 `policy definition update` 中传入资源策略参数定义
+* 允许为 `policy assignment create` 传入参数值
+* 允许为所有参数传入 JSON 或文件
+* 更新了 API 版本
+
+### <a name="sql"></a>SQL
+
+* 添加了 `sql server vnet-rule` 命令
+
+### <a name="vm"></a>VM
+
+* 已修复：除非提供 `--scope`，否则不分配访问权限
+* 已修复：使用与门户相同的扩展命名
+* 已从 `[vm|vmss] create` 输出中删除了 `subscription`
+* 已修复：`[vm|vmss] create` SKU 无法应用于带映像的数据磁盘
+* 已修复：`vm format-secret --secrets` 不接受新行分隔的 ID
+
+## <a name="august-31-2017"></a>2017 年 8 月31 日
+
+版本 2.0.16
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了在尝试使用 `secret download` 自动解析机密编码时的 bug
+
+### <a name="sf"></a>Sf
+
+* 弃用所有支持 Service Fabric CLI (sfctl) 的命令
+
+### <a name="storage"></a>存储
+
+* 修复了无法在不支持 NetworkACLs 功能的区域中创建存储帐户的问题
+* 在 Blob 和文件上载过程中确定内容类型和内容编码（如果既未指定内容类型，也未指定内容编码）
 
 ## <a name="august-28-2017"></a>2017 年 8 月 28 日
 
@@ -113,7 +346,7 @@ ms.lasthandoff: 09/04/2017
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
 * 修复了处理资源文件 SAS URL 时的 bug
-* Batch 帐户终结点现在支持可选的 'https://' 前缀
+* Batch 帐户终结点现在支持可选的“https://” 前缀
 * 支持将包含 100 多个任务的列表添加到作业
 * 添加了加载扩展命令模块的调试日志记录
 

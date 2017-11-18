@@ -1,22 +1,22 @@
 ---
 title: "安装 Azure CLI 2.0"
 description: "有关安装 Azure CLI 2.0 的参考文档"
-keywords: "Azure CLI 2.0, Azure CLI 2.0 参考, 安装 Azure CLI 2.0, Azure Python CLI, 卸载 Azure CLI 2.0, Azure CLI, 安装 Azure CLI, Azure CLI 参考"
+keywords: "Azure CLI,安装 Azure CLI,Azure Python CLI,Azure CLI 参考"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 08/17/2017
+ms.date: 11/01/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 00d5b555975007d7e57f04ce5d69f4f29e6d0219
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 2b56382355cad5313a604ed1f493a2bcbebf3e27
+ms.sourcegitcommit: e9b4c6dd9093980b69ca47f93f44ac54d0e5b68a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
@@ -29,6 +29,35 @@ ms.lasthandoff: 09/04/2017
 > 如果需要早期版本的 Azure CLI，请参阅[如何安装 Azure CLI 1.0](/azure/cli-install-nodejs)。
 
 ## <a name="a-namemacosinstall-on-macos"></a><a name="macOS"/>在 macOS 上安装
+
+在 macOS 上，将能够使用 [Homebrew](https://brew.sh/) 安装或手动安装。
+
+### <a name="install-with-homebrew"></a>使用 Homebrew 安装
+
+1. 如果尚未安装 Homebrew，请按照 [Homebrew 安装说明](https://docs.brew.sh/Installation.html)进行安装。
+
+2. 如果以前手动安装了 CLI，请按照[手动卸载](#UninstallManually)说明执行操作。
+
+3. 更新本地 Homebrew 存储库。
+
+   ```bash
+   brew update
+   ```
+
+4. 安装 `azure-cli` 包。
+
+  ```bash
+  brew install azure-cli
+  ```
+
+> [!NOTE]
+> 如果以前使用 Homebrew 安装了 Azure CLI 1.0，而不是安装该包，则可以通过常规 Homebrew 升级过程获取 CLI 2.0。
+>
+> ```bash
+> brew upgrade
+> ```
+
+### <a name="install-manually"></a>手动安装
 
 1. 安装包含 `curl` 的 Azure CLI 2.0。
 
@@ -46,11 +75,9 @@ ms.lasthandoff: 09/04/2017
 
 ## <a name="install-on-windows"></a>在 Windows 上安装
 
-可使用 MSI 安装 Azure CLI 2.0 并在 Windows 命令行中使用它，或者可以在 Windows 中的 Bash on Ubuntu 上使用 `apt-get` 来安装 CLI。
-
 ### <a name="install-with-msi-for-the-windows-command-line"></a>使用适用于 Windows 命令行的 MSI 安装 
 
-若要在 Windows 上安装 CLI 并在 Windows 命令行中使用它，请下载并运行 [MSI](https://aka.ms/InstallAzureCliWindows)。
+若要在 Windows 上安装 CLI 并在 Windows 命令行中使用它，请下载并运行 [Azure CLI 安装程序 (MSI)](https://aka.ms/InstallAzureCliWindows)。
 
 ### <a name="install-with-apt-get-for-bash-on-ubuntu-on-windows"></a>使用适用于 Windows 中的 Bash on Ubuntu 的 apt-get 安装
 
@@ -68,18 +95,21 @@ ms.lasthandoff: 09/04/2017
 4. 运行以下 sudo 命令：
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
 5.  在命令提示符下使用 `az` 命令运行 CLI。
 
-## <a name="install-on-debianubuntu-with-apt-get"></a>使用 apt-get 在 Debian/Ubuntu 上安装
+## <a name="install-with-apt-package-manager"></a>使用 apt 包管理器进行安装 
 
-对于基于 Debian/Ubuntu 的系统，可以通过 `apt-get` 安装 Azure CLI 2.0。
+对于使用 `apt` 包管理器的分发版（如 Ubuntu 或 Debian），可以通过 `apt-get` 安装 Azure CLI 2.0。
 
-1. 修改源列表。
+> [!NOTE]
+> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+
+1. 修改源列表：
  
    - 32 位系统
 
@@ -98,12 +128,68 @@ ms.lasthandoff: 09/04/2017
 2. 运行以下 sudo 命令：
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
 3.  在命令提示符下使用 `az` 命令运行 CLI。
+
+## <a name="install-with-yum-package-manager"></a>使用 yum 包管理器进行安装
+
+对于使用 `yum` 包管理器的分发版，如 Red Hat Enterprise Linux (RHEL)、Fedora 或 CentOS，可以通过 `yum` 安装 Azure CLI 2.0。
+
+> [!NOTE]
+> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+
+1. 导入 Microsoft 存储库密钥：
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+
+2. 创建本地 `azure-cli` 存储库信息：
+
+   ```bash
+   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+   ```
+
+3. 更新 `yum` 包索引并安装：
+
+   ```bash
+   yum check-update
+   sudo yum install azure-cli
+   ```
+
+4. 在命令提示符下使用 `az` 命令运行 CLI。
+
+## <a name="install-with-zypper-package-manager"></a>使用 zypper 包管理器进行安装
+
+对于使用 `zypper` 包管理器的分发版（如 OpenSUSE 或 SLE），可以通过 `zypper` 安装 Azure CLI 2.0。
+
+> [!NOTE]
+> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+
+1. 导入 Microsoft 存储库密钥：
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+
+2. 创建本地 `azure-cli` 存储库信息：
+
+   ```bash
+   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/azure-cli.repo'
+   ```
+
+3. 更新 `zypper` 包索引并安装：
+
+   ```bash
+   sudo zypper refresh
+   sudo zypper install azure-cli
+   ```
+
+4. 在命令提示符下使用 `az` 命令运行 CLI。
 
 ## <a name="install-with-docker"></a>使用 Docker 安装
 
@@ -111,9 +197,9 @@ ms.lasthandoff: 09/04/2017
 
 请使用 `docker run` 安装 CLI。
 
-  ```bash
-  docker run azuresdk/azure-cli-python:<version>
-  ```
+   ```bash
+   docker run -it azuresdk/azure-cli-python:<version>
+   ```
 
 请参阅我们的 [Docker 标记](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/)来了解可用版本。
 
@@ -123,12 +209,12 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 > 如果要从用户环境选取 SSH 密钥，可以使用 `-v ${HOME}:/root` 将 $HOME 装载为 `/root`。
 
 > ```bash
-> docker run -v ${HOME}:/root azuresdk/azure-cli-python:<version>
+> docker run -it -v ${HOME}:/root azuresdk/azure-cli-python:<version>
 > ```
 
-## <a name="a-namelinuxinstall-on-linux-without-apt-get"></a><a name="Linux"/>不使用 apt-get 在 Linux 上安装
+## <a name="a-namelinuxinstall-on-linux-without-a-package-manager"></a><a name="Linux"/>不使用包管理器在 Linux 上安装
 
-建议在可能的情况下使用 `apt-get` 安装 CLI。 对于不使用 `apt` 包管理器的分发版，可以手动安装。
+建议在可能的情况下使用包管理器安装 CLI。 如果不想要添加 Microsoft 的存储库，或使用的是不包含随附包的分发版，可以手动安装 CLI。
 
 1. 根据 Linux 分发版安装必备组件。
 
@@ -144,7 +230,7 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
    SUSE OpenSUSE 13.2    | sudo zypper refresh && sudo zypper --non-interactive install curl gcc python python-xml libffi-devel python-devel openssl-devel
    ```
 
-如果上面未列出你的分发版，则需要安装 [Python](https://www.python.org/downloads/)、[libffi](https://sourceware.org/libffi/) 和 [OpenSSL](https://www.openssl.org/source/)。
+如果上面未列出你的分发版，则需要安装 [Python 2.7 或更高版本](https://www.python.org/downloads/)、[libffi](https://sourceware.org/libffi/) 和 [OpenSSL](https://www.openssl.org/source/)。
 
 2. 请使用 `curl` 安装 CLI。
 
@@ -172,11 +258,15 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 curl https://azurecliprod.blob.core.windows.net/install | bash
 ```
 
-### <a name="homebrew-on-macos-installing-older-version"></a>装有旧版本的 Homebrew on macOS
+### <a name="az-command-not-found"></a>找不到 `az` 命令
 
-适用于 macOS 的 Homebrew `azure-cli` 公式目前已过期，将安装 1.x 版 CLI。 可以通过检查 `brew info azure-cli` 了解 CLI 是何时更新的。
+可能需要清除 shell 的命令哈希缓存。 运行
 
-然后，可以[卸载旧版本](#uninstall_brew)并遵照 [macOS 安装说明](#macOS)。
+```bash
+hash -r
+```
+
+并查看问题是否得以解决。 该命令也可能不在 `$PATH` 中。 请确保 `<install path>/bin` 出现在 `$PATH` 中，并重新启动 shell（如有必要）。
 
 ## <a name="uninstall-cli-1x-versions"></a>卸载 CLI 1.x 版本
 
@@ -190,17 +280,9 @@ curl https://azurecliprod.blob.core.windows.net/install | bash
   npm uninstall -g azure-cli
   ```
 
-### <a name="a-nameuninstallbrewuninstall-with-homebrew-on-macos"></a><a name="uninstall_brew"/>使用 Homebrew on macOS 卸载
-
-使用 `brew uninstall` 删除旧版 CLI。
-
-```bash
-brew uninstall azure-cli
-```
-
 ### <a name="uninstall-with-distributable"></a>使用分发版卸载
 
-如果是通过 [MSI](http://aka.ms/webpi-azure-cli) 或 [macOS 包](http://aka.ms/mac-azure-cli)安装的，请使用相同的工具删除安装。
+如果是通过 [Azure CLI 安装程序 (MSI)](http://aka.ms/webpi-azure-cli) 或 [macOS 包](http://aka.ms/mac-azure-cli)安装的，请使用相同的工具删除安装。
 
 ### <a name="uninstall-with-docker"></a>使用 Docker 卸载
 
@@ -214,11 +296,27 @@ brew uninstall azure-cli
 
 若要更新 Azure CLI，请使用安装时所用的相同方法。
 
+### <a name="update-with-homebrew"></a>使用 Homebrew 更新
+
+1. 如果以前手动进行了安装，请按照[使用 Homebrew 安装](#macOS)说明执行操作。
+
+2. 更新本地 Homebrew 存储库信息。
+
+   ```bash
+   brew update
+   ```
+
+3. 升级已安装的包。
+
+   ```bash
+   brew upgrade
+   ```
+
 ### <a name="update-with-msi"></a>使用 MSI 更新
 
-再次运行 [MSI](https://aka.ms/InstallAzureCliWindows)。
+再次运行 [Azure CLI 安装程序 (MSI)](https://aka.ms/InstallAzureCliWindows)。
 
-### <a name="update-with-apt-get"></a>使用 apt-get 更新
+### <a name="update-with-apt"></a>使用 apt 进行更新
 
 使用 `apt-get upgrade` 更新 CLI 包。
 
@@ -232,6 +330,24 @@ brew uninstall azure-cli
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
+
+### <a name="update-with-yum"></a>使用 yum 进行更新
+
+使用 `yum update` 命令更新 Azure CLI。
+
+```bash
+yum check-update
+sudo yum update azure-cli
+```
+
+### <a name="update-with-zypper"></a>使用 zypper 进行更新
+
+可以使用 `zypper update` 命令来更新包。
+
+```bash
+sudo zypper refresh
+sudo zypper update azure-cli
+```
 
 ### <a name="update-with-docker"></a>使用 Docker 更新
 
@@ -271,16 +387,66 @@ brew uninstall azure-cli
 
 我们会很遗憾看到你卸载 CLI。 应使用安装 CLI 时所用的相同方法进行卸载。
 
+### <a name="uninstall-with-homebrew"></a>使用 Homebrew 卸载
+
+卸载 `azure-cli` 包。
+
+   ```bash
+   brew uninstall azure-cli
+   ```
+
 ### <a name="uninstall-with-msi"></a>使用 MSI 卸载
 
 再次运行 [MSI](https://aka.ms/InstallAzureCliWindows) 并选择“卸载”。
 
-### <a name="uninstall-with-apt-get"></a>使用 apt-get 卸载
+### <a name="uninstall-with-apt"></a>使用 apt 进行卸载
 
 通过 `apt-get remove` 卸载：
 
   ```bash
   sudo apt-get remove -y azure-cli
+  ```
+
+### <a name="uninstall-with-yum"></a>使用 yum 进行卸载
+
+1. 从系统中删除包。
+
+   ```bash
+   sudo yum remove azure-cli
+   ```
+
+2. 如果不打算重新安装 CLI，请删除存储库信息。
+
+   ```bash
+   sudo rm /etc/yum.repos.d/azure-cli.repo
+   ```
+
+3. 如果已删除存储库信息，还需删除 Microsoft GPG 签名密钥。
+
+  ```bash
+  MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
+  rpm -e --allmatches gpg-pubkey-$MSFT_KEY
+  ```
+
+### <a name="uninstall-with-zypper"></a>使用 zypper 进行卸载
+
+1. 从系统中删除包。
+
+    ```bash
+    sudo zypper remove -y azure-cli
+    ```
+
+2. 如果不打算重新安装 CLI，请删除存储库信息。
+
+  ```bash
+  sudo rm /etc/zypp/repos.d/azure-cli.repo
+  ```
+
+3. 如果已删除存储库信息，还需删除 Microsoft GPG 签名密钥。
+
+  ```bash
+  MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
+  rpm -e --allmatches gpg-pubkey-$MSFT_KEY
   ```
 
 ### <a name="uninstall-with-docker"></a>使用 Docker 卸载
@@ -289,31 +455,31 @@ brew uninstall azure-cli
 
 1. 获取正在运行 azure-cli 映像的容器。
 
-  ```bash
-  docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
-  ```
+   ```bash
+   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   ```
 
-  ```output
-  CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-  34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
-  ```
+   ```output
+   CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
+   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   ```
 
 2. 删除所有包含 CLI 映像的容器。
 
-  ```bash
-  docker rm 34a868beb2ab
-  ```
+   ```bash
+   docker rm 34a868beb2ab
+   ```
 
 3. 删除本地安装的 CLI 映像。
 
-  ```bash
-  docker rmi azuresdk/azure-cli-python
-  ```
+   ```bash
+   docker rmi azuresdk/azure-cli-python
+   ```
 
 > [!NOTE]
 > 如果安装了特定版本的映像，需在映像名称的末尾添加 `:<version>`。
 
-### <a name="uninstall-manually"></a>手动卸载
+###<a name="a-nameuninstallmanuallyuninstall-manually"></a><a name="UninstallManually"/>手动卸载
 
 如果使用了 https://aka.ms/InstallAzureCli 上的脚本安装 CLI，可以通过这些步骤来卸载它。
 
@@ -325,6 +491,12 @@ brew uninstall azure-cli
    ```
 
 2. 从 `<install location>/.bash_profile` 删除行 `<install location>/lib/azure-cli/az.completion`。
+
+3. 如果 shell 使用命令缓存，请重新加载它。
+
+   ```bash
+   hash -r
+   ```
 
 > [!Note]
 > 默认安装位置是 `/Users/<username>`。
