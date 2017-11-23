@@ -12,18 +12,18 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 11153c13fb9868897b0bb21dac9d64072c3af16e
-ms.sourcegitcommit: 70c4d7a14591e5b761e261105cd2d376753f2a54
+ms.openlocfilehash: 3354d1c6518ea2d0ef0db227a13b86cb59d0575e
+ms.sourcegitcommit: 0149f195a0d9f0ea9b7ff5c6e00ad4242223a1a8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
 Azure CLI 2.0 是 Azure 的新命令行体验，用于管理 Azure 资源。
 可以通过 [Azure Cloud Shell](/azure/cloud-shell/overview) 在浏览器中使用它，也可以将其[安装](install-azure-cli.md)在 macOS、Linux 和 Windows 上，然后从命令行运行它。
 
-Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及生成可以针对 Azure Resource Manager 运行的自动化脚本。
+Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及生成可以针对 Azure 资源管理器运行的自动化脚本。
 本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
 
 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
@@ -328,7 +328,7 @@ MyWinVM    MyResourceGroup  westus2
 例如，执行以下命令可以查询任何资源组中包含字母“My”的任何 VM 资源：
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup,'MY')]" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')]" 
 ```
 
 ```Output
@@ -341,7 +341,7 @@ MYRESOURCEGROUP  Succeeded            MyWinVM    westus2     XXXXXXXX-XXXX-XXXX-
 然后，我们可以选择使用 JMESPath 查询的塑型功能来细化输出，以便同时输出不同的值。  例如，以下命令检索 VM 使用的 OS 磁盘类型，以确定 OS 是基于 Linux 还是基于 Windows：
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup,'MY')].{ VMName:name,OSType:storageProfile.osDisk.osType }" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }" 
 ```
 
 ```Output
