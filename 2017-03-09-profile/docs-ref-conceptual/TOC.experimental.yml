@@ -1,0 +1,84 @@
+metadata: {}
+items:
+- name: Azure CLI 2.0
+  href: overview.md
+  items:
+  - name: "安装"
+    href: install-azure-cli.md
+    items:
+    - name: "在 macOS 上安装"
+      href: install-azure-cli-macos.md
+    - name: "在 Windows 上安装"
+      href: install-azure-cli-windows.md
+    - name: "安装 Docker 映像"
+      href: install-azure-cli-docker.md
+    - name: "在 Linux 上安装"
+      items:
+      - name: "使用 apt 进行安装"
+        href: install-azure-cli-apt.md
+      - name: "使用 yum 进行安装"
+        href: install-azure-cli-yum.md
+      - name: "使用 zypper 进行安装"
+        href: install-azure-cli-zypper.md
+      - name: "手动安装"
+        href: install-azure-cli-linux.md
+  - name: "入门"
+    href: get-started-with-azure-cli.md
+  - name: Cloud Shell
+    href: /azure/cloud-shell/overview
+  - name: "登录"
+    href: authenticate-azure-cli.md
+    items:
+    - name: "创建服务主体"
+      href: create-an-azure-service-principal-azure-cli.md
+    - name: "使用托管服务标识"
+      items:
+      - name: "为 Azure VM 配置 MSI"
+        href: /azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      - name: "在 Azure VM 上使用 MSI 登录"
+        href: /azure/active-directory/msi-how-to-get-access-token-using-msi?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: "交互模式"
+    href: interactive-azure-cli.md
+  - name: "部署模板"
+    items:
+    - name: "使用部署模板"
+      href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: "导出部署模板"
+      href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: "从专用模板部署"
+      href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: "管理订阅"
+    href: manage-azure-subscriptions-azure-cli.md
+  - name: "使用多个云"
+    href: manage-clouds-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: "输出格式"
+    href: format-output-azure-cli.md
+  - name: "查询"
+    href: query-azure-cli.md
+  - name: "扩展"
+    href: azure-cli-extensions.md
+  - name: "发行说明"
+    href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  ms.openlocfilehash: 204efea6496de4a9ebc21ce5bc5e668e13fd6d59
+  ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 11/20/2017
+- name: "示例脚本"
+  items:
+  - name: Linux VM
+    href: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: Windows VM
+    href: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: "Web 应用"
+    href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: "函数"
+    href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: "SQL 数据库"
+    href: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: PostgreSQL
+    href: /azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: MySQL
+    href: /azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+  - name: Cosmos DB
+    href: /azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
