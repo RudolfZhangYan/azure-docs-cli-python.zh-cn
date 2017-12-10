@@ -12,31 +12,31 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: ea0c785e56427190973887426188db76e6888062
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: 7d9c503c4e66f07795d5fec99c206fe7d3afb6a7
+ms.sourcegitcommit: 5fc7d8ccf2304c5a12fb99a80f0b00a0ad2c34e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/01/2017
 ---
-# <a name="install-azure-cli-20"></a><span data-ttu-id="f6758-104">安装 Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="f6758-104">Install Azure CLI 2.0</span></span>
+# <a name="install-azure-cli-20"></a><span data-ttu-id="895a4-104">安装 Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="895a4-104">Install Azure CLI 2.0</span></span>
 
-<span data-ttu-id="f6758-105">现在就安装新版本的 Azure CLI！</span><span class="sxs-lookup"><span data-stu-id="f6758-105">Install the new version of the Azure CLI today!</span></span>
-<span data-ttu-id="f6758-106">我们已改进并更新了 Azure CLI，以提供用于管理 Azure 资源的卓越本机命令行体验。</span><span class="sxs-lookup"><span data-stu-id="f6758-106">We've improved and updated it to provide a great native command-line experience for managing Azure resources.</span></span>
-<span data-ttu-id="f6758-107">它可以在 macOS、Linux 和 Windows 上使用。</span><span class="sxs-lookup"><span data-stu-id="f6758-107">It can be used on macOS, Linux, and Windows.</span></span>
+<span data-ttu-id="895a4-105">现在就安装新版本的 Azure CLI！</span><span class="sxs-lookup"><span data-stu-id="895a4-105">Install the new version of the Azure CLI today!</span></span>
+<span data-ttu-id="895a4-106">我们已改进并更新了 Azure CLI，以提供用于管理 Azure 资源的卓越本机命令行体验。</span><span class="sxs-lookup"><span data-stu-id="895a4-106">We've improved and updated it to provide a great native command-line experience for managing Azure resources.</span></span>
+<span data-ttu-id="895a4-107">它可以在 macOS、Linux 和 Windows 上使用。</span><span class="sxs-lookup"><span data-stu-id="895a4-107">It can be used on macOS, Linux, and Windows.</span></span>
 
-<span data-ttu-id="f6758-108">有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。</span><span class="sxs-lookup"><span data-stu-id="f6758-108">For information about the latest release, see the [release notes](release-notes-azure-cli.md).</span></span>
+<span data-ttu-id="895a4-108">有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。</span><span class="sxs-lookup"><span data-stu-id="895a4-108">For information about the latest release, see the [release notes](release-notes-azure-cli.md).</span></span>
 
-* [<span data-ttu-id="f6758-109">在 Windows 上安装</span><span class="sxs-lookup"><span data-stu-id="f6758-109">Install on Windows</span></span>](install-azure-cli-windows.md)
-* [<span data-ttu-id="f6758-110">在 macOS 上安装</span><span class="sxs-lookup"><span data-stu-id="f6758-110">Install on macOS</span></span>](install-azure-cli-macos.md)
-* [<span data-ttu-id="f6758-111">安装 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="f6758-111">Install Docker image</span></span>](install-azure-cli-docker.md)
+* [<span data-ttu-id="895a4-109">在 Windows 上安装</span><span class="sxs-lookup"><span data-stu-id="895a4-109">Install on Windows</span></span>](install-azure-cli-windows.md)
+* [<span data-ttu-id="895a4-110">在 macOS 上安装</span><span class="sxs-lookup"><span data-stu-id="895a4-110">Install on macOS</span></span>](install-azure-cli-macos.md)
+* [<span data-ttu-id="895a4-111">安装 Docker 映像</span><span class="sxs-lookup"><span data-stu-id="895a4-111">Install Docker image</span></span>](install-azure-cli-docker.md)
 
-<span data-ttu-id="f6758-112">对于 Linux，可以使用多种不同的安装方法，具体取决于可用的包管理器。</span><span class="sxs-lookup"><span data-stu-id="f6758-112">For Linux, there are a number of different installation methods depending on your available package manager.</span></span> <span data-ttu-id="f6758-113">如果是在适用于 Linux 的 Windows 子系统 (WSL) 上运行某个发行版，则这些说明也适用。</span><span class="sxs-lookup"><span data-stu-id="f6758-113">These instructions also apply if you are running a distribution on Windows Subsystem for Linux (WSL).</span></span>
+<span data-ttu-id="895a4-112">对于 Linux，可以使用多种不同的安装方法，具体取决于可用的包管理器。</span><span class="sxs-lookup"><span data-stu-id="895a4-112">For Linux, there are a number of different installation methods depending on your available package manager.</span></span> <span data-ttu-id="895a4-113">如果是在适用于 Linux 的 Windows 子系统 (WSL) 上运行某个发行版，则这些说明也适用。</span><span class="sxs-lookup"><span data-stu-id="895a4-113">These instructions also apply if you are running a distribution on Windows Subsystem for Linux (WSL).</span></span>
 
-* [<span data-ttu-id="f6758-114">在 Debian 或 Ubuntu 上使用 apt 进行安装</span><span class="sxs-lookup"><span data-stu-id="f6758-114">Install with apt on Debian or Ubuntu</span></span>](install-azure-cli-apt.md)
-* [<span data-ttu-id="f6758-115">在 RHEL、Fedora 或 CentOS 上使用 yum 进行安装</span><span class="sxs-lookup"><span data-stu-id="f6758-115">Install with yum on RHEL, Fedora, or CentOS </span></span>](install-azure-cli-yum.md)
-* [<span data-ttu-id="f6758-116">在 openSUSE 或 SLE 上使用 zypper 进行安装</span><span class="sxs-lookup"><span data-stu-id="f6758-116">Install with zypper on openSUSE or SLE </span></span>](install-azure-cli-zypper.md)
-* [<span data-ttu-id="f6758-117">在 Linux 上手动安装</span><span class="sxs-lookup"><span data-stu-id="f6758-117">Install manually on Linux</span></span>](install-azure-cli-linux.md)
+* [<span data-ttu-id="895a4-114">在 Debian 或 Ubuntu 上使用 apt 进行安装</span><span class="sxs-lookup"><span data-stu-id="895a4-114">Install with apt on Debian or Ubuntu</span></span>](install-azure-cli-apt.md)
+* [<span data-ttu-id="895a4-115">在 RHEL、Fedora 或 CentOS 上使用 yum 进行安装</span><span class="sxs-lookup"><span data-stu-id="895a4-115">Install with yum on RHEL, Fedora, or CentOS </span></span>](install-azure-cli-yum.md)
+* [<span data-ttu-id="895a4-116">在 openSUSE 或 SLE 上使用 zypper 进行安装</span><span class="sxs-lookup"><span data-stu-id="895a4-116">Install with zypper on openSUSE or SLE </span></span>](install-azure-cli-zypper.md)
+* [<span data-ttu-id="895a4-117">在 Linux 上手动安装</span><span class="sxs-lookup"><span data-stu-id="895a4-117">Install manually on Linux</span></span>](install-azure-cli-linux.md)
 
 > [!NOTE]
-> <span data-ttu-id="f6758-118">如果需要早期版本的 Azure CLI，请参阅[如何安装 Azure CLI 1.0](/azure/cli-install-nodejs)。</span><span class="sxs-lookup"><span data-stu-id="f6758-118">If you need the previous version of the Azure CLI, here's how to [install Azure CLI 1.0](/azure/cli-install-nodejs).</span></span>
+> <span data-ttu-id="895a4-118">如果使用的是 Azure 服务管理 (ASM) 模型，请[安装 Azure CLI 1.0](/azure/cli-install-nodejs)。</span><span class="sxs-lookup"><span data-stu-id="895a4-118">If you are using the Azure Service Management (ASM) model, [install Azure CLI 1.0](/azure/cli-install-nodejs).</span></span>
 
