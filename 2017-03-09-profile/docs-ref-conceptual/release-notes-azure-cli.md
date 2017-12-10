@@ -12,13 +12,71 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: 761bd61474e7c72fb2daeb756828f00196b56c3a
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: e02b84891f4bf60cde12591b8e85987f4b3c9e79
+ms.sourcegitcommit: a3c8e15eafac1ddc2289110d513b39714a23353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="december-5-2017"></a>2017 年 12 月 5 日
+
+版本 2.0.22
+
+* 已删除 `az component` 命令。 请改用 `az extension`
+
+### <a name="core"></a>核心
+* 已将 `AZURE_US_GOV_CLOUD` AAD 颁发机构终结点从 login.microsoftonline.com 修改为 login.microsoftonline.us
+* 已修复持续重新发送遥测数据的问题
+
+### <a name="acs"></a>ACS
+
+* 已添加 `aks install-connector` 和 `aks remove-connector` 命令
+* 已改进 `acs create` 的错误报告
+* 已修复不带完全限定路径的 `aks get-credentials -f` 的用法
+
+### <a name="advisor"></a>顾问
+
+* 初始版本
+
+### <a name="appservice"></a>应用服务
+
+* 已修复使用 `webapp config ssl upload` 时的证书名称生成问题
+* 已修复 `webapp [list|show]` 和 `functionapp [list|show]` 以显示正确的应用
+* 已为 `WEBSITE_NODE_DEFAULT_VERSION` 添加了默认值
+
+### <a name="consumption"></a>消耗
+
+* 已添加对 API 版本 2017-11-30 的支持
+
+### <a name="container"></a>容器
+
+* 已修复默认端口回归
+
+### <a name="monitor"></a>监视
+
+* 已添加对指标命令的多维支持
+
+### <a name="resource"></a>资源
+
+* 为 `resource show` 添加了 `--include-response-body` 参数
+
+### <a name="role"></a>角色
+
+* 已将“经典”管理员的默认分配显示添加到 `role assignment list`
+* 已添加对 `ad sp reset-credentials` 的支持以便添加凭据而不是覆盖
+* 已改进 `ad sp create-for-rbac` 的错误报告
+
+### <a name="sql"></a>SQL
+
+* 已添加 `sql db list-usages` 和 `sql db show-usage` 命令
+* 已添加 `sql server conn-policy show` 和 `sql server conn-policy update` 命令
+
+### <a name="vm"></a>VM
+
+* 已对 `az vm list-skus` 添加区域信息
+
 
 ## <a name="november-14-2017"></a>2017 年 11 月 14 日
 
@@ -408,7 +466,7 @@ ms.lasthandoff: 11/20/2017
 
 * 启用了设置 Blob 层
 * 为 `storage account [create|update]` 添加了 `--bypass` 和 `--default-action` 参数用于支持服务隧道
-* 添加了用于在 `storage account network-rule` 中添加 VNET 规则和基于 IP 的规则的命令  
+* 添加了用于在 `storage account network-rule` 中添加 VNET 规则和基于 IP 的规则的命令
 * 启用了使用客户管理的密钥进行服务加密的功能
 * [重大更改] 已将 `az storage account create and az storage account update` 命令的选项 `--encryption` 重命名为 `--encryption-services`
 * 修复了 #4220：`az storage account update encryption` - 语法不匹配
@@ -416,8 +474,8 @@ ms.lasthandoff: 11/20/2017
 ### <a name="vm"></a>VM
 
 * 修复了使用 `--instance-id *` 时，针对 `vmss get-instance-view` 显示多余且错误的信息的问题
-* 在 `vmss create` 中添加了对 `--lb-sku` 的支持： 
-* 从 `[vm|vmss] create` 的管理员名称方块列表中删除了人员名称 
+* 在 `vmss create` 中添加了对 `--lb-sku` 的支持：
+* 从 `[vm|vmss] create` 的管理员名称方块列表中删除了人员名称
 * 修复了当无法从映像中提取计划信息时，`[vm|vmss] create` 引发错误的问题
 * 修复了创建包含内部 LB 的 vmms 规模集时发生崩溃的问题
 * 修复了 `--no-wait` 参数无法配合 `vm availability-set create` 工作的问题
@@ -505,43 +563,43 @@ ms.lasthandoff: 11/20/2017
 * 添加了计费和消耗模块
 
 ```
-azure-cli (2.0.12)  
+azure-cli (2.0.12)
 
-acr (2.0.9)  
-acs (2.0.11)  
-appservice (0.1.11)  
-batch (3.0.3)  
-billing (0.1.3)  
-cdn (0.0.6)  
-cloud (2.0.7)  
-cognitiveservices (0.1.6)  
-command-modules-nspkg (2.0.1)  
-component (2.0.6)  
-configure (2.0.10)  
-consumption (0.1.3)  
-container (0.1.7)  
-core (2.0.12)  
-cosmosdb (0.1.11)  
-dla (0.0.10)  
-dls (0.0.11)  
-feedback (2.0.6)  
-find (0.2.6)  
-interactive (0.3.7)  
-iot (0.1.10)  
-keyvault (2.0.8)  
-lab (0.0.9)  
-monitor (0.0.8)  
-network (2.0.11)  
-nspkg (3.0.1)  
-profile (2.0.9)  
-rdbms (0.0.5)  
-redis (0.2.7)  
-resource (2.0.11)  
-role (2.0.9)  
-sf (1.0.5)  
-sql (2.0.8)  
-storage (2.0.11)  
-vm (2.0.11) 
+acr (2.0.9)
+acs (2.0.11)
+appservice (0.1.11)
+batch (3.0.3)
+billing (0.1.3)
+cdn (0.0.6)
+cloud (2.0.7)
+cognitiveservices (0.1.6)
+command-modules-nspkg (2.0.1)
+component (2.0.6)
+configure (2.0.10)
+consumption (0.1.3)
+container (0.1.7)
+core (2.0.12)
+cosmosdb (0.1.11)
+dla (0.0.10)
+dls (0.0.11)
+feedback (2.0.6)
+find (0.2.6)
+interactive (0.3.7)
+iot (0.1.10)
+keyvault (2.0.8)
+lab (0.0.9)
+monitor (0.0.8)
+network (2.0.11)
+nspkg (3.0.1)
+profile (2.0.9)
+rdbms (0.0.5)
+redis (0.2.7)
+resource (2.0.11)
+role (2.0.9)
+sf (1.0.5)
+sql (2.0.8)
+storage (2.0.11)
+vm (2.0.11)
 ```
 
 ### <a name="core"></a>核心
@@ -754,8 +812,8 @@ vm (2.0.11)
 * 从 `storage blob list`、`storage container list` 和 `storage share list` 命令中删除了 `--marker` 选项 (#3745)
 * 启用了创建仅限 https 的存储帐户
 * 更新了存储指标、日志记录和 CORS 命令 (#3495)
-* 重新编写了 CORS add 命令的异常消息 (#3638) (#3362)  
-* 已在下载批处理命令试运行模式下将生成器转换为列表 (#3592) 
+* 重新编写了 CORS add 命令的异常消息 (#3638) (#3362)
+* 已在下载批处理命令试运行模式下将生成器转换为列表 (#3592)
 * 修复了 Blob 下载批处理试运行问题 (#3640) (#3592)
 
 ### <a name="vm"></a>VM
@@ -821,7 +879,7 @@ vm (2.0.6)
 
 ### <a name="core"></a>核心
 
-* 核心：捕获未注册提供程序引发的异常并自动注册   
+* 核心：捕获未注册提供程序引发的异常并自动注册
 * 性能：将 ADAL 令牌缓存保留在内存中，直至进程退出 ([#2603](https://github.com/Azure/azure-cli/issues/2603))
 * 修复从十六进制指纹 -o tsv 返回的字节 ([#3053](https://github.com/Azure/azure-cli/issues/3053))
 * 改进的 Key Vault 证书下载和 AAD SP 集成 ([#3003](https://github.com/Azure/azure-cli/issues/3003))
@@ -915,7 +973,7 @@ vm (2.0.6)
 * 修复使用 `--no-wait` 或 `--validate` 参数时 `vpn-connection create` 出现的 bug。
 * 添加对主动-主动 VNet 网关的支持
 * 从 `network vpn-connection list/show` 命令的输出中删除 null 值。
-* BC：修复 `vpn-connection create` 输出中的 bug 
+* BC：修复 `vpn-connection create` 输出中的 bug
 * Bug 修复：“vpn-connection create”的“--key-length”参数未正确分析。
 * 修复 `dns zone import` 中的 Bug：记录未正确导入。
 * Bug 修复：`traffic-manager endpoint update` 不起作用。
@@ -981,7 +1039,7 @@ vm (2.0.6)
 
 ```
 azure-cli (2.0.2)
- 
+
 acr (2.0.0)
 acs (2.0.2)
 appservice (0.1.2)
@@ -1019,26 +1077,26 @@ vm (2.0.2)
 * 添加了有关缺少模板参数的提示。 ([#2364](https://github.com/Azure/azure-cli/pull/2364))
 * 支持为资源组、默认 Web、 默认 VM 等常见参数设置默认值
 * 支持登录到特定的租户
- 
+
 ### <a name="acs"></a>ACS
 
 * [ACS] 添加了配置默认 ACS 群集的支持 ([#2554](https://github.com/Azure/azure-cli/pull/2554))
 * 添加了 SSH 密钥密码提示的支持。 ([#2044](https://github.com/Azure/azure-cli/pull/2044))
 * 添加了对 Windows 群集的支持。 ([#2211](https://github.com/Azure/azure-cli/pull/2211))
 * 从“所有者”角色切换到“参与者”角色。 ([#2321](https://github.com/Azure/azure-cli/pull/2321))
- 
+
 ### <a name="appservice"></a>应用服务
 
 * 应用服务：支持获取用于 DNS A 记录的外部 IP 地址 ([#2627](https://github.com/Azure/azure-cli/pull/2627))
 * 应用服务：支持绑定通配符证书 ([#2625](https://github.com/Azure/azure-cli/pull/2625))
 * 应用服务：支持列出发布配置文件 ([#2504](https://github.com/Azure/azure-cli/pull/2504))
 * 应用服务 - 配置后触发源代码管理同步 ([#2326](https://github.com/Azure/azure-cli/pull/2326))
- 
+
 ### <a name="datalake"></a>DataLake
 
 * Data Lake Analytics 模块的初始版本。
 * Data Lake Store 模块的初始版本。
- 
+
 ### <a name="docuemntdb"></a>DocuemntDB
 
 * DocumentDB：添加了列出连接字符串的支持 ([#2580](https://github.com/Azure/azure-cli/pull/2580))
@@ -1097,8 +1155,8 @@ role (2.0.0)
 sql (0.1.1b5)
 storage (2.0.0)
 vm (2.0.0)
- 
-Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32) 
+
+Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)]
 ```
 

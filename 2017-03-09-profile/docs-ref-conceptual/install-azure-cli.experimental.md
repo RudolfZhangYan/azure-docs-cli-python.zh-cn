@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: ea0c785e56427190973887426188db76e6888062
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: 7d9c503c4e66f07795d5fec99c206fe7d3afb6a7
+ms.sourcegitcommit: 5fc7d8ccf2304c5a12fb99a80f0b00a0ad2c34e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
@@ -38,5 +38,5 @@ ms.lasthandoff: 11/20/2017
 * [在 Linux 上手动安装](install-azure-cli-linux.md)
 
 > [!NOTE]
-> 如果需要早期版本的 Azure CLI，请参阅[如何安装 Azure CLI 1.0](/azure/cli-install-nodejs)。
+> 如果使用的是 Azure 服务管理 (ASM) 模型，请[安装 Azure CLI 1.0](/azure/cli-install-nodejs)。
 

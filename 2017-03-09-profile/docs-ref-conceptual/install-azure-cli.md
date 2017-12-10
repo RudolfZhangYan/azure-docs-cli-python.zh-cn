@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 22c92aae5b836599d2f29b9f03fbf88c0ca6c2b8
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: 36429bb23f392ff6210a9c99885df83f53768386
+ms.sourcegitcommit: 5fc7d8ccf2304c5a12fb99a80f0b00a0ad2c34e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/20/2017
 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
 > [!NOTE]
-> 如果需要早期版本的 Azure CLI，请参阅[如何安装 Azure CLI 1.0](/azure/cli-install-nodejs)。
+> 如果使用的是 Azure 服务管理 (ASM) 模型，请[安装 Azure CLI 1.0](/azure/cli-install-nodejs)。
 
 ## <a name="a-namemacosinstall-on-macos"></a><a name="macOS"/>在 macOS 上安装
 
