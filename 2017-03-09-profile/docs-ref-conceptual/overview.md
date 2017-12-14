@@ -12,18 +12,18 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 80ae9f6c-adb7-483c-bfb4-fbb958e075ba
-ms.openlocfilehash: 36a08835b9c4f6e71c5ddadbce8ba946c52a1e9b
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 92079f3fa17f69a560e937101aa9e6f09c3080eb
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
 Azure CLI 2.0 是 Azure 的新命令行体验，用于管理 Azure 资源。
 可以通过 [Azure Cloud Shell](/azure/cloud-shell/overview) 在浏览器中使用它，也可以将其[安装](install-azure-cli.md)在 macOS、Linux 和 Windows 上，然后从命令行运行它。
 
-Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及生成可以针对 Azure Resource Manager 运行的自动化脚本。 使用 Azure CLI 2.0 时，只需键入以下命令，即可在 Azure 中轻松创建 VM：
+Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及生成可以针对 Azure 资源管理器运行的自动化脚本。 使用 Azure CLI 2.0 时，只需键入以下命令，即可在 Azure 中轻松创建 VM：
 
 ```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
@@ -46,4 +46,4 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 
 > [!NOTE]
 > 如果正在使用旧版 CLI (Azure CLI)，可以继续使用它。
-> 如果同时使用这两个版本的 CLI，请记住，`azure` 是旧 CLI (Azure CLI)，`az` 是新 CLI (Azure CLI 2.0)。 
+> 如果同时使用这两个版本的 CLI，请记住，`azure` 是旧 CLI (Azure CLI)，`az` 是新 CLI (Azure CLI 2.0)。

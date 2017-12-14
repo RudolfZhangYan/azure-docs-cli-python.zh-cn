@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: fab89cb8-dac1-4e21-9d34-5eadd5213c05
-ms.openlocfilehash: a6ad5611f3e507b65e160122c87e22ec44546588
-ms.sourcegitcommit: 0149f195a0d9f0ea9b7ff5c6e00ad4242223a1a8
+ms.openlocfilehash: 9c2b693c356be78893d0893221d99a23beb5f38b
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -29,13 +29,13 @@ ms.lasthandoff: 11/18/2017
 
 ## <a name="what-is-a-service-principal"></a>什么是“服务主体”？
 
-Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将它视为具有特定角色的“用户标识”（登录名和密码，或者证书），它对资源的访问权限受到严格控制。 与普通的用户标识不同，它只需能够完成特定的任务。 如果只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。 
+Azure 服务主体是用户创建的应用、服务和自动化工具用来访问特定 Azure 资源的安全标识。 可将它视为具有特定角色的“用户标识”（登录名和密码，或者证书），它对资源的访问权限受到严格控制。 与普通的用户标识不同，它只需能够完成特定的任务。 如果只向它授予执行管理任务所需的最低权限级别，则可以提高安全性。
 
 Azure CLI 2.0 支持创建基于密码的身份验证凭据和证书凭据。 在本主题中，我们将介绍这两种类型的凭据。
 
 ## <a name="verify-your-own-permission-level"></a>验证自己的权限级别
 
-首先，在 Azure Active Directory 和 Azure 订阅中必须拥有足够的权限。 具体而言，必须能够在 Active Directory 中创建应用并向服务主体分配角色。 
+首先，在 Azure Active Directory 和 Azure 订阅中必须拥有足够的权限。 具体而言，必须能够在 Active Directory 中创建应用并向服务主体分配角色。
 
 检查帐户是否有足够权限的最简方法是使用门户。 请参阅[在门户中检查所需的权限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)。
 
@@ -81,8 +81,8 @@ az ad app list --display-name MyDemoWebApp
 使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) 和 `--password` 参数来创建使用密码的服务主体。 如果未提供角色或作用域，那么对于当前已订阅，服务主体将默认为**参与者**角色。 如果在不使用 `--password` 或 `--cert` 参数的情况下创建服务主体，则将使用密码身份验证，并且会生成一个密码。
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name {appId} --password "{strong password}" 
-``` 
+az ad sp create-for-rbac --name {appId} --password "{strong password}"
+```
 
 ```json
 {
@@ -94,7 +94,7 @@ az ad sp create-for-rbac --name {appId} --password "{strong password}"
 }
 ```
 
- > [!WARNING] 
+ > [!WARNING]
  > 请勿创建不安全的密码。  遵循 [Azure AD 密码规则和限制](/azure/active-directory/active-directory-passwords-policy)指导原则。
 
 ### <a name="create-a-service-principal-with-a-self-signed-certificate"></a>创建使用自签名证书的服务主体
@@ -145,7 +145,7 @@ az ad sp show --id a487e0c1-82af-47d9-9a0b-af184eb87646d
 
 ```azurecli-interactive
 az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password {password-or-path-to-cert} --tenant {tenant}
-``` 
+```
 
 成功登录后，会看到以下输出：
 
@@ -165,9 +165,9 @@ az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password
 ]
 ```
 
-使用 `id`、`password` 和 `tenant` 值作为凭据来运行应用。 
+使用 `id`、`password` 和 `tenant` 值作为凭据来运行应用。
 
-## <a name="managing-roles"></a>管理角色 
+## <a name="managing-roles"></a>管理角色
 
 > [!NOTE]
 > Azure 基于角色的访问控制 (RBAC) 是定义和管理用户及服务主体的角色时使用的模型。
@@ -210,10 +210,10 @@ az role assignment list --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d
 }
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > 如果帐户没有足够权限来分配角色，将看到一条错误消息。
 > 该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
-   
+
 ## <a name="change-the-credentials-of-a-security-principal"></a>更改安全主体的凭据
 
 良好的安全做法是定期审查权限并更新密码。 此外，随着应用的变化，可能还需要管理和修改安全凭据。

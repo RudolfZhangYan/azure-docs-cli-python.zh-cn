@@ -12,15 +12,15 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 65becd3a-9d69-4415-8a30-777d13a0e7aa
-ms.openlocfilehash: dd05868f7378673836f47e743ed4088f2efd3dca
-ms.sourcegitcommit: 5db22de971cf3983785cb209d92cbed1bbd69ecf
+ms.openlocfilehash: 0a8ec3541783ae19961f2acf1192c0ee061a465f
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
-使用 Azure CLI 可通过多种方式进行登录和身份验证。 最简单的初始方法是通过浏览器以交互方式登录，或者通过命令行登录。 建议的方法是使用服务主体，这样能够创建可用于处理资源的非交互式帐户。 通过授予服务主体所需的最低适当权限，可以确保自动化脚本更加安全。 
+使用 Azure CLI 可通过多种方式进行登录和身份验证。 最简单的初始方法是通过浏览器以交互方式登录，或者通过命令行登录。 建议的方法是使用服务主体，这样能够创建可用于处理资源的非交互式帐户。 通过授予服务主体所需的最低适当权限，可以确保自动化脚本更加安全。
 
 私有凭据信息均不存储在本地。 身份验证令牌由 Azure 生成并存储。 登录后，如果本地登录令牌未经使用，那么将它在 14 天内保持有效。 本地登录令牌失效时，你将需要重新进行身份验证。
 
@@ -58,6 +58,6 @@ az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
 可使用以下命令获取当前登录名的租户对象 ID：
 
 ```azurecli
-az account show --query 'tenanatId' -o tsv
+az account show --query 'tenantId' -o tsv
 ```
 

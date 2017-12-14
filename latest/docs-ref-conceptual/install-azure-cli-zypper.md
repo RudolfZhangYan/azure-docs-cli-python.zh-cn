@@ -12,20 +12,19 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: c01679ccb77880f1f628f4e48683d8ff030a568b
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: 6b9a97e73f45c8271f1e8f19d5a8cf5f9f748d07
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>使用 zypper 安装 Azure CLI 2.0
 
 如果运行的是附带 `zypper` 的版本（例如 OpenSUSE 或 SLE），则可在系统上安装适用于 Azure CLI 的包。
 
-> [!NOTE]
-> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
-## <a name="install"></a>安装 
+## <a name="install"></a>安装
 
 1. 安装 `curl`：
 

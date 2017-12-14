@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 3354d1c6518ea2d0ef0db227a13b86cb59d0575e
-ms.sourcegitcommit: 0149f195a0d9f0ea9b7ff5c6e00ad4242223a1a8
+ms.openlocfilehash: 689b8f4d77af5a6f398c0dd85e922baa398f767a
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -51,7 +51,7 @@ Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及�
 让我们在 Azure 的 *westus2* 区域创建一个名为“MyResourceGroup”的资源组。  为此，请键入以下命令：
 
 ```azurecli-interactive
-az group create -n MyResourceGroup -l westus2 
+az group create -n MyResourceGroup -l westus2
 ```
 
 创建资源组后，`az group create` 命令将输出新建的资源的多个属性：
@@ -141,7 +141,7 @@ my-login@MyLinuxVM:~$
 
 现在，让我们使用 `az vm create` 命令创建基于 Windows Server 2016 Datacenter 的 VM，并将其添加到用于 Linux VM 的同一个“MyResourceGroup”资源组。  与 Linux VM 示例一样，我们还要使用 `--data-disk-sizes-gb` 参数附加两个存储磁盘。
 
-Azure 要求避免使用很容易猜出的用户名/密码。 在可以使用哪些字符以及用户名和密码的最小长度方面，都有特定的规则。  
+Azure 要求避免使用很容易猜出的用户名/密码。 在可以使用哪些字符以及用户名和密码的最小长度方面，都有特定的规则。
 
 > [!NOTE]
 > 运行此命令时，系统会提示输入用户名和密码。
@@ -165,7 +165,7 @@ az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
 }
 ```
 
-现在，请使用远程桌面和 VM 的公共 IP 地址（在 `az vm create` 的输出中返回）登录到新建的 Windows Server VM。  
+现在，请使用远程桌面和 VM 的公共 IP 地址（在 `az vm create` 的输出中返回）登录到新建的 Windows Server VM。
 如果使用的是基于 Windows 的系统，可以在命令行中使用 `mstsc` 命令来执行此操作：
 
 ```azurecli-interactive
@@ -176,7 +176,7 @@ mstsc /v:xx.xxx.xx.xxx
 
 ## <a name="creating-other-resources-in-azure"></a>在 Azure 中创建其他资源
 
-前面已经逐步讲解了如何创建资源组、Linux VM 和 Windows Server VM。 还可以创建许多其他类型的 Azure 资源。  
+前面已经逐步讲解了如何创建资源组、Linux VM 和 Windows Server VM。 还可以创建许多其他类型的 Azure 资源。
 
 所有新资源是使用一致的 `az <resource type name> create` 命名模式创建的。  例如，若要创建稍后可与新建的 VM 相关联的 Azure 网络负载均衡器，可以使用以下 create 命令：
 
@@ -199,8 +199,8 @@ Azure 和 Azure CLI 的强大之处在于，我们不仅可以使用它们来获
 az appservice plan create -n MyAppServicePlan -g MyResourceGroup
 
 # Create Two Web Apps within the AppService (note: name param must be a unique DNS entry)
-az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan 
-az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan 
+az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan
+az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan
 ```
 
 了解 `az <resource type name> create` 模式的基础知识后，便可以轻松创建任何对象。 下面是一些常见的 Azure 资源类型，以及用于创建这些资源类型的相应 Azure CLI create 命令：
@@ -221,7 +221,7 @@ SQL Database Server         az sql server create
 Document DB                 az documentdb create
 ```
 
-请访问[参考文档](/cli/azure)，详细了解可传递给上述每个命令的其他特定于资源的参数，以及可创建的资源类型。 
+请访问[参考文档](/cli/azure)，详细了解可传递给上述每个命令的其他特定于资源的参数，以及可创建的资源类型。
 
 ## <a name="useful-tip-optimizing-create-operations-using---no-wait"></a>有用的提示：使用 --no-wait 优化创建操作
 
@@ -241,14 +241,14 @@ az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
 
 ## <a name="listing-resources-and-formatting-output"></a>列出资源和设置输出的格式
 
-可以使用 Azure CLI 中的 `list` 命令来查找和列出 Azure 中运行的资源。 
+可以使用 Azure CLI 中的 `list` 命令来查找和列出 Azure 中运行的资源。
 
 像使用 create 命令一样，可以使用 Azure CLI 2.0 以通用的 `az <resource type name> list` 命名模式（在所有资源类型之间保持一致）列出资源。  可以根据偏好的方式，使用各种输出格式和查询选项来筛选资源列表并为其排序。
 
-例如，`az vm list` 显示所有 VM 的列表。   
+例如，`az vm list` 显示所有 VM 的列表。
 
 ```azurecli-interactive
-az vm list 
+az vm list
 ```
 返回的值默认采用 JSON 格式（为了简洁起见，仅显示部分输出）。
 
@@ -276,7 +276,7 @@ az vm list
     },
           ...
           ...
-          ...   
+          ...
 ]
 ```
 
@@ -293,7 +293,7 @@ MyLinuxVM  MyResourceGroup  westus2
 MyWinVM    MyResourceGroup  westus2
 ```
 
-*tsv* 输出选项可以用于获取基于文本的、不带任何标头的制表符分隔格式。  如果想要将输出传递到 grep 等其他基于文本的工具，此格式很有用。 
+*tsv* 输出选项可以用于获取基于文本的、不带任何标头的制表符分隔格式。  如果想要将输出传递到 grep 等其他基于文本的工具，此格式很有用。
 
 ```azurecli-interactive
 az vm list --output tsv
@@ -307,7 +307,7 @@ None    None            /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/reso
 
 ## <a name="querying-resources-and-shaping-outputs"></a>查询资源以及为输出塑型
 
-通常，我们希望能够只查询符合特定条件的资源。  
+通常，我们希望能够只查询符合特定条件的资源。
 
 `list` 命令提供内置支持，可让用户按资源组名称轻松筛选资源。  例如，可向 `list` 命令传递 `--ResourceGroup` 或 `-g` 参数，以便只检索特定资源组中的这些资源：
 
@@ -328,7 +328,7 @@ MyWinVM    MyResourceGroup  westus2
 例如，执行以下命令可以查询任何资源组中包含字母“My”的任何 VM 资源：
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup, 'MY')]" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')]"
 ```
 
 ```Output
@@ -341,7 +341,7 @@ MYRESOURCEGROUP  Succeeded            MyWinVM    westus2     XXXXXXXX-XXXX-XXXX-
 然后，我们可以选择使用 JMESPath 查询的塑型功能来细化输出，以便同时输出不同的值。  例如，以下命令检索 VM 使用的 OS 磁盘类型，以确定 OS 是基于 Linux 还是基于 Windows：
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }"
 ```
 
 ```Output
