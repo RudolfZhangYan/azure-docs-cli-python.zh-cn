@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 36429bb23f392ff6210a9c99885df83f53768386
-ms.sourcegitcommit: 5fc7d8ccf2304c5a12fb99a80f0b00a0ad2c34e9
+ms.openlocfilehash: 5a667ad8720100b45ff714601225535ef442545c
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
@@ -70,12 +70,12 @@ ms.lasthandoff: 12/01/2017
    ```bash
    exec -l $SHELL
    ```
-   
+
 3. 在命令提示符下使用 `az` 命令运行 CLI。
 
 ## <a name="install-on-windows"></a>在 Windows 上安装
 
-### <a name="install-with-msi-for-the-windows-command-line"></a>使用适用于 Windows 命令行的 MSI 安装 
+### <a name="install-with-msi-for-the-windows-command-line"></a>使用适用于 Windows 命令行的 MSI 安装
 
 若要在 Windows 上安装 CLI 并在 Windows 命令行中使用它，请下载并运行 [Azure CLI 安装程序 (MSI)](https://aka.ms/InstallAzureCliWindows)。
 
@@ -102,15 +102,14 @@ ms.lasthandoff: 12/01/2017
 
 5.  在命令提示符下使用 `az` 命令运行 CLI。
 
-## <a name="install-with-apt-package-manager"></a>使用 apt 包管理器进行安装 
+## <a name="install-with-apt-package-manager"></a>使用 apt 包管理器进行安装
 
 对于使用 `apt` 包管理器的分发版（如 Ubuntu 或 Debian），可以通过 `apt-get` 安装 Azure CLI 2.0。
 
-> [!NOTE]
-> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
 1. 修改源列表：
- 
+
    - 32 位系统
 
      ```bash
@@ -139,8 +138,7 @@ ms.lasthandoff: 12/01/2017
 
 对于使用 `yum` 包管理器的分发版，如 Red Hat Enterprise Linux (RHEL)、Fedora 或 CentOS，可以通过 `yum` 安装 Azure CLI 2.0。
 
-> [!NOTE]
-> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
 1. 导入 Microsoft 存储库密钥：
 
@@ -167,8 +165,7 @@ ms.lasthandoff: 12/01/2017
 
 对于使用 `zypper` 包管理器的分发版（如 OpenSUSE 或 SLE），可以通过 `zypper` 安装 Azure CLI 2.0。
 
-> [!NOTE]
-> 必须有 Python 2.7.x 或 Python 3.x 才能使用 CLI。 如果分发版没有其中任何一个版本的包，请[安装 Python](https://www.python.org/downloads/)。
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
 1. 导入 Microsoft 存储库密钥：
 
@@ -230,7 +227,7 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
    SUSE OpenSUSE 13.2    | sudo zypper refresh && sudo zypper --non-interactive install curl gcc python python-xml libffi-devel python-devel openssl-devel
    ```
 
-如果上面未列出你的分发版，则需要安装 [Python 2.7 或更高版本](https://www.python.org/downloads/)、[libffi](https://sourceware.org/libffi/) 和 [OpenSSL](https://www.openssl.org/source/)。
+如果上面未列出你的分发版，则需要安装 [Python 2.7 或更高版本](https://www.python.org/downloads/)、[libffi](https://sourceware.org/libffi/) 和 [OpenSSL 1.0.2](https://www.openssl.org/source/)。
 
 2. 请使用 `curl` 安装 CLI。
 
