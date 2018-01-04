@@ -3,46 +3,56 @@ title: "使用 Azure CLI 2.0 管理 Azure 订阅"
 description: "在 Linux、Mac 或 Windows 上使用 Azure CLI 2.0 管理 Azure 订阅。"
 keywords: "Azure CLI 2.0, Linux, Mac, Windows, OS X, 订阅"
 author: kamaljit
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+ms.author: sttramer
+manager: routlaw
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
-ms.openlocfilehash: c3538077e05d61f3c40880bb8b804226eb99dc85
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
+ms.openlocfilehash: 0f453ad1bff621250c8aa3147b5f5e916e712e30
+ms.sourcegitcommit: 16426a08c0f2f62d0b9dca3df8132cece659acff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="e0069-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="e0069-104">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="17621-104">管理多个 Azure 订阅</span><span class="sxs-lookup"><span data-stu-id="17621-104">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="e0069-105">如果你是 Azure 的新手，也许只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="e0069-105">If you are brand new to Azure, you probably only have a single subscription.</span></span>
-<span data-ttu-id="e0069-106">但如果你使用 Azure 有一段时间，可能已创建了多个 Azure 订阅。</span><span class="sxs-lookup"><span data-stu-id="e0069-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span>
-<span data-ttu-id="e0069-107">如果是这样，可将 Azure CLI 2.0 配置为针对特定的订阅执行命令。</span><span class="sxs-lookup"><span data-stu-id="e0069-107">If so, you can configure Azure CLI 2.0 to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="17621-105">大多数 Azure 用户永远只有一个订阅。</span><span class="sxs-lookup"><span data-stu-id="17621-105">Most Azure users will only ever have a single subscription.</span></span> <span data-ttu-id="17621-106">但是，如果你在多家组织中工作，或者所在的组织已根据不同的组划分了对特定的资源的访问权限，则你在 Azure 中可能就有多个订阅。</span><span class="sxs-lookup"><span data-stu-id="17621-106">However, if you are part of multiple organizations or your organization has divided up access to certain resources across groupings, you may have multiple subscriptions within Azure.</span></span> <span data-ttu-id="17621-107">可以使用 CLI 轻松管理多个订阅，并通过选择订阅执行操作。</span><span class="sxs-lookup"><span data-stu-id="17621-107">Multiple subscriptions can be easily managed with the CLI, and operations can be performed by selecting a subscription.</span></span>
 
-1. <span data-ttu-id="e0069-108">获取帐户中所有订阅的列表。</span><span class="sxs-lookup"><span data-stu-id="e0069-108">Get a list of all subscriptions in your account.</span></span>
+## <a name="tenants-users-and-subscriptions"></a><span data-ttu-id="17621-108">租户、用户和订阅</span><span class="sxs-lookup"><span data-stu-id="17621-108">Tenants, users, and subscriptions</span></span>
 
-   ```azurecli
-   az account list --output table
-   ```
+<span data-ttu-id="17621-109">在一定程度上，我们可能会对 Azure 中租户、用户和订阅感到混淆，不理解它们的差别。</span><span class="sxs-lookup"><span data-stu-id="17621-109">You might have some confusion over the difference between tenants, users, and subscriptions within Azure.</span></span> <span data-ttu-id="17621-110">一般而言，租户是包含整个组织的 Azure Active Directory 实体。</span><span class="sxs-lookup"><span data-stu-id="17621-110">In general, a _tenant_ is the Azure Active Directory entity which encompasses a whole organization.</span></span> <span data-ttu-id="17621-111">此租户至少包含一个订阅和用户。</span><span class="sxs-lookup"><span data-stu-id="17621-111">This tenant has at least one _subscription_ and _user_.</span></span> <span data-ttu-id="17621-112">用户是只与一个租户（即所属的组织）关联的个人。</span><span class="sxs-lookup"><span data-stu-id="17621-112">A user is an individual, and is associated with only one tenant, the organization that they belong to.</span></span> <span data-ttu-id="17621-113">用户是登录到 Azure 以预配和使用资源的帐户。</span><span class="sxs-lookup"><span data-stu-id="17621-113">Users are those accounts which log in to Azure to provision and use resources.</span></span> <span data-ttu-id="17621-114">用户可能有权访问多个订阅，这些订阅是与 Microsoft 签署的有关使用云服务（包括 Azure）的协议。</span><span class="sxs-lookup"><span data-stu-id="17621-114">A user may have access to multiple _subscriptions_, which are the agreements with Microsoft to use cloud services, including Azure.</span></span> <span data-ttu-id="17621-115">每个资源与某个订阅关联。</span><span class="sxs-lookup"><span data-stu-id="17621-115">Every resource is associated with a subscription.</span></span>
 
-   ```Output
-   Name                                         CloudName    SubscriptionId                        State     IsDefault
-   -------------------------------------------  -----------  ------------------------------------  --------  -----------
-   My Production Subscription                   AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
-   My DevTest Subscription                      AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled   True
-   My Demos                                     AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
-   ```
+<span data-ttu-id="17621-116">若要详细了解租户、用户与订阅之间的差别，请参阅 [Azure 云术语字典](/azure/azure-glossary-cloud-terminology)。</span><span class="sxs-lookup"><span data-stu-id="17621-116">To learn more about the differences between tenants, users, and subscriptions, see the [Azure cloud terminology dictionary](/azure/azure-glossary-cloud-terminology).</span></span>
+<span data-ttu-id="17621-117">若要了解如何将新订阅添加到 Azure Active Directory 租户，请参阅[如何将 Azure 订阅添加到 Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory)。</span><span class="sxs-lookup"><span data-stu-id="17621-117">To learn how to add a new subscription to your Azure Active Directory tenant, see [How to add an Azure subscription to Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).</span></span>
 
-1. <span data-ttu-id="e0069-109">设置默认值。</span><span class="sxs-lookup"><span data-stu-id="e0069-109">Set the default.</span></span>
- 
-   ```azurecli
-   az account set --subscription "My Demos"
-   ```
+## <a name="working-with-multiple-subscriptions"></a><span data-ttu-id="17621-118">使用多个订阅</span><span class="sxs-lookup"><span data-stu-id="17621-118">Working with multiple subscriptions</span></span>
 
-<span data-ttu-id="e0069-110">可通过再次运行 `az account list --output table` cmdlet 来验证更改。</span><span class="sxs-lookup"><span data-stu-id="e0069-110">You can verify the change by running the `az account list --output table` command again.</span></span>
+<span data-ttu-id="17621-119">若要访问订阅中包含的资源，需要切换活动的订阅。</span><span class="sxs-lookup"><span data-stu-id="17621-119">To access the resources contained within a subscription, you need to switch your active subscription.</span></span> <span data-ttu-id="17621-120">针对订阅执行的所有操作将会参考订阅代表的服务协议（而不是个人帐户），通过 `az account` 命令完成。</span><span class="sxs-lookup"><span data-stu-id="17621-120">All work with subscriptions is done through the `az account` command, which refers to the service agreement that a subscription represents and not your individual account.</span></span>
 
-<span data-ttu-id="e0069-111">设置默认订阅后，所有后续 Azure CLI 命令将针对此订阅运行。</span><span class="sxs-lookup"><span data-stu-id="e0069-111">Once you set your default subscription, all subsequent Azure CLI commands run against this subscription.</span></span>
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
+<span data-ttu-id="17621-121">若要开始使用可用的订阅，请获取帐户中提供的订阅列表：</span><span class="sxs-lookup"><span data-stu-id="17621-121">To start working with your available subscriptions, get a list of those available in your account:</span></span>
+
+```azurecli-interactive
+az account list --output table
+```
+
+```Output
+Name                                         CloudName    SubscriptionId                        State     IsDefault
+-------------------------------------------  -----------  ------------------------------------  --------  -----------
+My Production Subscription                   AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
+My DevTest Subscription                      AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled   True
+My Demos                                     AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
+```
+
+<span data-ttu-id="17621-122">若要更改活动的订阅，可以使用 `az account set`：</span><span class="sxs-lookup"><span data-stu-id="17621-122">In order to change the active subscription, you can use `az account set`:</span></span>
+
+```azurecli-interactive
+az account set --subscription "My Demos"
+```
+
+<span data-ttu-id="17621-123">可以使用订阅 ID 或订阅名称来选择订阅。</span><span class="sxs-lookup"><span data-stu-id="17621-123">You can use either the subscription ID or the subscription name to select the subscription.</span></span>
