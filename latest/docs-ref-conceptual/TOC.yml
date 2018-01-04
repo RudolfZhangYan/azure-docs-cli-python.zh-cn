@@ -38,6 +38,8 @@
       href: query-azure-cli.md
     - name: 扩展
       href: azure-cli-extensions.md
+    - name: 配置设置
+      href: azure-cli-Configuration.md
     - name: 发行说明
       href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
 - name: 示例脚本

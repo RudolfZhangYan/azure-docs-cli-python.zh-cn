@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
-ms.openlocfilehash: 0eb07d2919f6e640e1d594db9e18f9ada4d9f59f
-ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
+ms.openlocfilehash: 6f4cfec45becc0c4940e9066af53396b41db779d
+ms.sourcegitcommit: 16426a08c0f2f62d0b9dca3df8132cece659acff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>使用 Azure CLI 2.0 管理多个云
 
-如果跨不同的区域工作或使用 [Azure Stack](https://docs.microsoft.com/en-us/azure/azure-stack/user/)，可能需要使用多个云。 Microsoft 提供符合区域法规和客户用途的云。 本文介绍如何获取有关帐户可用的云、更改当前云，以及注册或注销用于 Azure Stack 的新云的信息。
+如果跨不同的区域工作或使用 [Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/)，可能需要使用多个云。 Microsoft 提供符合区域法规和客户用途的云。 本文介绍如何获取有关帐户可用的云、更改当前云，以及注册或注销用于 Azure Stack 的新云的信息。
 
 ## <a name="listing-clouds"></a>列出云
 

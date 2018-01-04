@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
-ms.openlocfilehash: b4544d75aa279b5477f8497257d39182472fae71
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: 0f453ad1bff621250c8aa3147b5f5e916e712e30
+ms.sourcegitcommit: 16426a08c0f2f62d0b9dca3df8132cece659acff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>管理多个 Azure 订阅
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/20/2017
 在一定程度上，我们可能会对 Azure 中租户、用户和订阅感到混淆，不理解它们的差别。 一般而言，租户是包含整个组织的 Azure Active Directory 实体。 此租户至少包含一个订阅和用户。 用户是只与一个租户（即所属的组织）关联的个人。 用户是登录到 Azure 以预配和使用资源的帐户。 用户可能有权访问多个订阅，这些订阅是与 Microsoft 签署的有关使用云服务（包括 Azure）的协议。 每个资源与某个订阅关联。
 
 若要详细了解租户、用户与订阅之间的差别，请参阅 [Azure 云术语字典](/azure/azure-glossary-cloud-terminology)。
-若要了解如何将新订阅添加到 Azure Active Directory 租户，请参阅[如何将 Azure 订阅添加到 Azure Active Directory](/en-us/azure/active-directory/active-directory-how-subscriptions-associated-directory)。
+若要了解如何将新订阅添加到 Azure Active Directory 租户，请参阅[如何将 Azure 订阅添加到 Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory)。
 
 ## <a name="working-with-multiple-subscriptions"></a>使用多个订阅
 
