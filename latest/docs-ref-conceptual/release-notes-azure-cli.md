@@ -12,13 +12,37 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: e02b84891f4bf60cde12591b8e85987f4b3c9e79
-ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
+ms.openlocfilehash: ddb377a933c06cb435b059f285876579ed983d1b
+ms.sourcegitcommit: c57cda3a133e262c231a936cf0845f6cf74e9f0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="december-19-2017"></a>2017 年 12 月 19 日
+
+版本 2.0.23
+
+* 添加了使用用户分配的标识进行登录的支持
+
+### <a name="container"></a>容器
+
+* 纠正了容器日志参数的错误顺序
+
+### <a name="network"></a>网络
+
+* 为 `route-table [create|update]` 添加了 `--disable-bgp-route-propagation` 参数
+* 为 `public-ip [create|update]` 添加了 `--ip-tags` 参数
+
+### <a name="storage"></a>存储
+
+* 添加了对存储 V2 的支持
+
+### <a name="vm"></a>VM
+
+* [预览] 添加了对 VM 和 VMSS 的用户分配标识的支持
+
 
 ## <a name="december-5-2017"></a>2017 年 12 月 5 日
 
@@ -104,7 +128,7 @@ ms.lasthandoff: 12/09/2017
 * 添加了创建 Linux 函数应用的支持
 * 固定 `list-locations`
 
-### <a name="batch"></a>批处理
+### <a name="batch"></a>Batch
 
 * 修复了在 pool create 命令中结合 `--image` 标志使用资源 ID 时出现的 bug
 
@@ -237,7 +261,7 @@ ms.lasthandoff: 12/09/2017
 
 * 添加了新命令 `webapp update` 用于执行常规更新
 
-### <a name="batch"></a>批处理
+### <a name="batch"></a>Batch
 
 * 已更新为 Batch SDK 4.0.0
 * 更新了 VirtualMachineConfiguration 的 `--image`，用于支持除 publish:offer:sku:version 以外的 ARM 映像引用
@@ -505,7 +529,7 @@ ms.lasthandoff: 12/09/2017
 
 * 添加了更多预览区域
 
-### <a name="batch"></a>批处理
+### <a name="batch"></a>Batch
 
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
@@ -646,7 +670,7 @@ vm (2.0.11)
 * 添加了用于配置源代码管理的可靠性修复 (#3245)
 * 从 `webapp config update` 中删除了 Windows Web 应用不支持的 `--node-version` 参数。 需改用 `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`。
 
-### <a name="batch"></a>批处理
+### <a name="batch"></a>Batch
 
 * 已更新到 Batch SDK 3.0.0，支持池中的低优先级 VM
 * 已将 `pool create` 选项 `--target-dedicated` 重命名为 `--target-dedicated-nodes`
