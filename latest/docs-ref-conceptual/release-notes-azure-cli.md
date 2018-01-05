@@ -12,555 +12,579 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: e02b84891f4bf60cde12591b8e85987f4b3c9e79
-ms.sourcegitcommit: a3c8e15eafac1ddc2289110d513b39714a23353b
+ms.openlocfilehash: ddb377a933c06cb435b059f285876579ed983d1b
+ms.sourcegitcommit: c57cda3a133e262c231a936cf0845f6cf74e9f0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/20/2017
 ---
-# <a name="azure-cli-20-release-notes"></a><span data-ttu-id="9b251-104">Azure CLI 2.0 发行说明</span><span class="sxs-lookup"><span data-stu-id="9b251-104">Azure CLI 2.0 release notes</span></span>
+# <a name="azure-cli-20-release-notes"></a><span data-ttu-id="7b07f-104">Azure CLI 2.0 发行说明</span><span class="sxs-lookup"><span data-stu-id="7b07f-104">Azure CLI 2.0 release notes</span></span>
 
-## <a name="december-5-2017"></a><span data-ttu-id="9b251-105">2017 年 12 月 5 日</span><span class="sxs-lookup"><span data-stu-id="9b251-105">December 5, 2017</span></span>
+## <a name="december-19-2017"></a><span data-ttu-id="7b07f-105">2017 年 12 月 19 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-105">December 19, 2017</span></span>
 
-<span data-ttu-id="9b251-106">版本 2.0.22</span><span class="sxs-lookup"><span data-stu-id="9b251-106">Version 2.0.22</span></span>
+<span data-ttu-id="7b07f-106">版本 2.0.23</span><span class="sxs-lookup"><span data-stu-id="7b07f-106">Version 2.0.23</span></span>
 
-* <span data-ttu-id="9b251-107">已删除 `az component` 命令。</span><span class="sxs-lookup"><span data-stu-id="9b251-107">Removed `az component` commands.</span></span> <span data-ttu-id="9b251-108">请改用 `az extension`</span><span class="sxs-lookup"><span data-stu-id="9b251-108">Use `az extension` instead</span></span>
+* <span data-ttu-id="7b07f-107">添加了使用用户分配的标识进行登录的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-107">Added support for login with user assigned idenities</span></span>
 
-### <a name="core"></a><span data-ttu-id="9b251-109">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-109">Core</span></span>
-* <span data-ttu-id="9b251-110">已将 `AZURE_US_GOV_CLOUD` AAD 颁发机构终结点从 login.microsoftonline.com 修改为 login.microsoftonline.us</span><span class="sxs-lookup"><span data-stu-id="9b251-110">Modified the `AZURE_US_GOV_CLOUD` AAD authority endpoint from login.microsoftonline.com to login.microsoftonline.us</span></span>
-* <span data-ttu-id="9b251-111">已修复持续重新发送遥测数据的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-111">Fixed issue where telemetry would continuously resend</span></span>
+### <a name="container"></a><span data-ttu-id="7b07f-108">容器</span><span class="sxs-lookup"><span data-stu-id="7b07f-108">Container</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-112">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-112">ACS</span></span>
+* <span data-ttu-id="7b07f-109">纠正了容器日志参数的错误顺序</span><span class="sxs-lookup"><span data-stu-id="7b07f-109">Fixed incorrect order of parameters for container logs</span></span>
 
-* <span data-ttu-id="9b251-113">已添加 `aks install-connector` 和 `aks remove-connector` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-113">Added `aks install-connector` and `aks remove-connector` commands</span></span>
-* <span data-ttu-id="9b251-114">已改进 `acs create` 的错误报告</span><span class="sxs-lookup"><span data-stu-id="9b251-114">Improved error reporting for `acs create`</span></span>
-* <span data-ttu-id="9b251-115">已修复不带完全限定路径的 `aks get-credentials -f` 的用法</span><span class="sxs-lookup"><span data-stu-id="9b251-115">Fixed usage of `aks get-credentials -f` without fully-qualified path</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-110">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-110">Network</span></span>
 
-### <a name="advisor"></a><span data-ttu-id="9b251-116">顾问</span><span class="sxs-lookup"><span data-stu-id="9b251-116">Advisor</span></span>
+* <span data-ttu-id="7b07f-111">为 `route-table [create|update]` 添加了 `--disable-bgp-route-propagation` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-111">Added `--disable-bgp-route-propagation` argument to `route-table [create|update]`</span></span>
+* <span data-ttu-id="7b07f-112">为 `public-ip [create|update]` 添加了 `--ip-tags` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-112">Added `--ip-tags` argument to `public-ip [create|update]`</span></span>
 
-* <span data-ttu-id="9b251-117">初始版本</span><span class="sxs-lookup"><span data-stu-id="9b251-117">Initial release</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-113">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-113">Storage</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-118">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-118">Appservice</span></span>
+* <span data-ttu-id="7b07f-114">添加了对存储 V2 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-114">Added support for storage V2</span></span>
 
-* <span data-ttu-id="9b251-119">已修复使用 `webapp config ssl upload` 时的证书名称生成问题</span><span class="sxs-lookup"><span data-stu-id="9b251-119">Fixed cert name generation with `webapp config ssl upload`</span></span>
-* <span data-ttu-id="9b251-120">已修复 `webapp [list|show]` 和 `functionapp [list|show]` 以显示正确的应用</span><span class="sxs-lookup"><span data-stu-id="9b251-120">Fixed `webapp [list|show]` and `functionapp [list|show]` to display correct apps</span></span>
-* <span data-ttu-id="9b251-121">已为 `WEBSITE_NODE_DEFAULT_VERSION` 添加了默认值</span><span class="sxs-lookup"><span data-stu-id="9b251-121">Added default value for `WEBSITE_NODE_DEFAULT_VERSION`</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-115">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-115">VM</span></span>
 
-### <a name="consumption"></a><span data-ttu-id="9b251-122">消耗</span><span class="sxs-lookup"><span data-stu-id="9b251-122">Consumption</span></span>
+* <span data-ttu-id="7b07f-116">[预览] 添加了对 VM 和 VMSS 的用户分配标识的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-116">[PREVIEW] Added support for user-assigned identities for VMs and VMSSes</span></span>
 
-* <span data-ttu-id="9b251-123">已添加对 API 版本 2017-11-30 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-123">Aded support for API version 2017-11-30</span></span>
 
-### <a name="container"></a><span data-ttu-id="9b251-124">容器</span><span class="sxs-lookup"><span data-stu-id="9b251-124">Container</span></span>
+## <a name="december-5-2017"></a><span data-ttu-id="7b07f-117">2017 年 12 月 5 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-117">December 5, 2017</span></span>
 
-* <span data-ttu-id="9b251-125">已修复默认端口回归</span><span class="sxs-lookup"><span data-stu-id="9b251-125">Fixed default ports regression</span></span>
+<span data-ttu-id="7b07f-118">版本 2.0.22</span><span class="sxs-lookup"><span data-stu-id="7b07f-118">Version 2.0.22</span></span>
 
-### <a name="monitor"></a><span data-ttu-id="9b251-126">监视</span><span class="sxs-lookup"><span data-stu-id="9b251-126">Monitor</span></span>
+* <span data-ttu-id="7b07f-119">已删除 `az component` 命令。</span><span class="sxs-lookup"><span data-stu-id="7b07f-119">Removed `az component` commands.</span></span> <span data-ttu-id="7b07f-120">请改用 `az extension`</span><span class="sxs-lookup"><span data-stu-id="7b07f-120">Use `az extension` instead</span></span>
 
-* <span data-ttu-id="9b251-127">已添加对指标命令的多维支持</span><span class="sxs-lookup"><span data-stu-id="9b251-127">Added multi-dimension support to metrics command</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-121">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-121">Core</span></span>
+* <span data-ttu-id="7b07f-122">已将 `AZURE_US_GOV_CLOUD` AAD 颁发机构终结点从 login.microsoftonline.com 修改为 login.microsoftonline.us</span><span class="sxs-lookup"><span data-stu-id="7b07f-122">Modified the `AZURE_US_GOV_CLOUD` AAD authority endpoint from login.microsoftonline.com to login.microsoftonline.us</span></span>
+* <span data-ttu-id="7b07f-123">已修复持续重新发送遥测数据的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-123">Fixed issue where telemetry would continuously resend</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-128">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-128">Resource</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-124">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-124">ACS</span></span>
 
-* <span data-ttu-id="9b251-129">为 `resource show` 添加了 `--include-response-body` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-129">Added `--include-response-body` argument to `resource show`</span></span>
+* <span data-ttu-id="7b07f-125">已添加 `aks install-connector` 和 `aks remove-connector` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-125">Added `aks install-connector` and `aks remove-connector` commands</span></span>
+* <span data-ttu-id="7b07f-126">已改进 `acs create` 的错误报告</span><span class="sxs-lookup"><span data-stu-id="7b07f-126">Improved error reporting for `acs create`</span></span>
+* <span data-ttu-id="7b07f-127">已修复不带完全限定路径的 `aks get-credentials -f` 的用法</span><span class="sxs-lookup"><span data-stu-id="7b07f-127">Fixed usage of `aks get-credentials -f` without fully-qualified path</span></span>
 
-### <a name="role"></a><span data-ttu-id="9b251-130">角色</span><span class="sxs-lookup"><span data-stu-id="9b251-130">Role</span></span>
+### <a name="advisor"></a><span data-ttu-id="7b07f-128">顾问</span><span class="sxs-lookup"><span data-stu-id="7b07f-128">Advisor</span></span>
 
-* <span data-ttu-id="9b251-131">已将“经典”管理员的默认分配显示添加到 `role assignment list`</span><span class="sxs-lookup"><span data-stu-id="9b251-131">Added display of default assignments for "classic" administraors to `role assignment list`</span></span>
-* <span data-ttu-id="9b251-132">已添加对 `ad sp reset-credentials` 的支持以便添加凭据而不是覆盖</span><span class="sxs-lookup"><span data-stu-id="9b251-132">Added suport to `ad sp reset-credentials` for adding credentials instead of overwriting</span></span>
-* <span data-ttu-id="9b251-133">已改进 `ad sp create-for-rbac` 的错误报告</span><span class="sxs-lookup"><span data-stu-id="9b251-133">Improved error reporting for `ad sp create-for-rbac`</span></span>
+* <span data-ttu-id="7b07f-129">初始版本</span><span class="sxs-lookup"><span data-stu-id="7b07f-129">Initial release</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-134">SQL</span><span class="sxs-lookup"><span data-stu-id="9b251-134">SQL</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-130">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-130">Appservice</span></span>
 
-* <span data-ttu-id="9b251-135">已添加 `sql db list-usages` 和 `sql db show-usage` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-135">Added `sql db list-usages` and `sql db show-usage` commands</span></span>
-* <span data-ttu-id="9b251-136">已添加 `sql server conn-policy show` 和 `sql server conn-policy update` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-136">Added `sql server conn-policy show` and `sql server conn-policy update` commands</span></span>
+* <span data-ttu-id="7b07f-131">已修复使用 `webapp config ssl upload` 时的证书名称生成问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-131">Fixed cert name generation with `webapp config ssl upload`</span></span>
+* <span data-ttu-id="7b07f-132">已修复 `webapp [list|show]` 和 `functionapp [list|show]` 以显示正确的应用</span><span class="sxs-lookup"><span data-stu-id="7b07f-132">Fixed `webapp [list|show]` and `functionapp [list|show]` to display correct apps</span></span>
+* <span data-ttu-id="7b07f-133">已为 `WEBSITE_NODE_DEFAULT_VERSION` 添加了默认值</span><span class="sxs-lookup"><span data-stu-id="7b07f-133">Added default value for `WEBSITE_NODE_DEFAULT_VERSION`</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-137">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-137">VM</span></span>
+### <a name="consumption"></a><span data-ttu-id="7b07f-134">消耗</span><span class="sxs-lookup"><span data-stu-id="7b07f-134">Consumption</span></span>
 
-* <span data-ttu-id="9b251-138">已对 `az vm list-skus` 添加区域信息</span><span class="sxs-lookup"><span data-stu-id="9b251-138">Added zone information to `az vm list-skus`</span></span>
+* <span data-ttu-id="7b07f-135">已添加对 API 版本 2017-11-30 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-135">Aded support for API version 2017-11-30</span></span>
 
+### <a name="container"></a><span data-ttu-id="7b07f-136">容器</span><span class="sxs-lookup"><span data-stu-id="7b07f-136">Container</span></span>
 
-## <a name="november-14-2017"></a><span data-ttu-id="9b251-139">2017 年 11 月 14 日</span><span class="sxs-lookup"><span data-stu-id="9b251-139">November 14, 2017</span></span>
+* <span data-ttu-id="7b07f-137">已修复默认端口回归</span><span class="sxs-lookup"><span data-stu-id="7b07f-137">Fixed default ports regression</span></span>
 
-<span data-ttu-id="9b251-140">版本 2.0.21</span><span class="sxs-lookup"><span data-stu-id="9b251-140">Version 2.0.21</span></span>
+### <a name="monitor"></a><span data-ttu-id="7b07f-138">监视</span><span class="sxs-lookup"><span data-stu-id="7b07f-138">Monitor</span></span>
 
-### <a name="acr"></a><span data-ttu-id="9b251-141">ACR</span><span class="sxs-lookup"><span data-stu-id="9b251-141">ACR</span></span>
+* <span data-ttu-id="7b07f-139">已添加对指标命令的多维支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-139">Added multi-dimension support to metrics command</span></span>
 
-* <span data-ttu-id="9b251-142">添加了在复制区域中创建 Webhook 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-142">Added support for creating webhooks in replication regions</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-140">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-140">Resource</span></span>
 
+* <span data-ttu-id="7b07f-141">为 `resource show` 添加了 `--include-response-body` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-141">Added `--include-response-body` argument to `resource show`</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-143">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-143">ACS</span></span>
+### <a name="role"></a><span data-ttu-id="7b07f-142">角色</span><span class="sxs-lookup"><span data-stu-id="7b07f-142">Role</span></span>
 
-* <span data-ttu-id="9b251-144">已在 AKS 中将所有“代理”一词更改为“节点”</span><span class="sxs-lookup"><span data-stu-id="9b251-144">Changed all wording of "agent" to "node" in AKS</span></span>
-* <span data-ttu-id="9b251-145">弃用了 `acs create` 的 `--orchestrator-release` 选项</span><span class="sxs-lookup"><span data-stu-id="9b251-145">Deprecated `--orchestrator-release` option for `acs create`</span></span>
-* <span data-ttu-id="9b251-146">已将 AKS 的默认 VM 大小更改为 `Standard_D1_v2`</span><span class="sxs-lookup"><span data-stu-id="9b251-146">Changed default VM size for AKS to `Standard_D1_v2`</span></span>
-* <span data-ttu-id="9b251-147">在 Windows 上修复了 `az aks browse`</span><span class="sxs-lookup"><span data-stu-id="9b251-147">Fixed `az aks browse` on Windows</span></span>
-* <span data-ttu-id="9b251-148">在 Windows 上修复了 `az aks get-credentials`</span><span class="sxs-lookup"><span data-stu-id="9b251-148">Fixed `az aks get-credentials` on Windows</span></span>
+* <span data-ttu-id="7b07f-143">已将“经典”管理员的默认分配显示添加到 `role assignment list`</span><span class="sxs-lookup"><span data-stu-id="7b07f-143">Added display of default assignments for "classic" administraors to `role assignment list`</span></span>
+* <span data-ttu-id="7b07f-144">已添加对 `ad sp reset-credentials` 的支持以便添加凭据而不是覆盖</span><span class="sxs-lookup"><span data-stu-id="7b07f-144">Added suport to `ad sp reset-credentials` for adding credentials instead of overwriting</span></span>
+* <span data-ttu-id="7b07f-145">已改进 `ad sp create-for-rbac` 的错误报告</span><span class="sxs-lookup"><span data-stu-id="7b07f-145">Improved error reporting for `ad sp create-for-rbac`</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-149">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-149">Appservice</span></span>
+### <a name="sql"></a><span data-ttu-id="7b07f-146">SQL</span><span class="sxs-lookup"><span data-stu-id="7b07f-146">SQL</span></span>
 
-* <span data-ttu-id="9b251-150">添加了 Web 应用和函数应用的部署源 `config-zip`</span><span class="sxs-lookup"><span data-stu-id="9b251-150">Added deployment source `config-zip` for webapps and function apps</span></span>
-* <span data-ttu-id="9b251-151">为 `az webapp log config` 添加了 `--docker-container-logging` 选项</span><span class="sxs-lookup"><span data-stu-id="9b251-151">Added `--docker-container-logging` option to `az webapp log config`</span></span>
-* <span data-ttu-id="9b251-152">从 `az webapp log config` 的参数 `--web-server-logging` 中删除了 `storage` 选项</span><span class="sxs-lookup"><span data-stu-id="9b251-152">Removed the `storage` option from the parameter `--web-server-logging` of `az webapp log config`</span></span>
-* <span data-ttu-id="9b251-153">完善了 `deployment user set` 的错误消息</span><span class="sxs-lookup"><span data-stu-id="9b251-153">Improved error messages for `deployment user set`</span></span>
-* <span data-ttu-id="9b251-154">添加了创建 Linux 函数应用的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-154">Added support for creating Linux function apps</span></span>
-* <span data-ttu-id="9b251-155">固定 `list-locations`</span><span class="sxs-lookup"><span data-stu-id="9b251-155">Fixed `list-locations`</span></span>
+* <span data-ttu-id="7b07f-147">已添加 `sql db list-usages` 和 `sql db show-usage` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-147">Added `sql db list-usages` and `sql db show-usage` commands</span></span>
+* <span data-ttu-id="7b07f-148">已添加 `sql server conn-policy show` 和 `sql server conn-policy update` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-148">Added `sql server conn-policy show` and `sql server conn-policy update` commands</span></span>
 
-### <a name="batch"></a><span data-ttu-id="9b251-156">批处理</span><span class="sxs-lookup"><span data-stu-id="9b251-156">Batch</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-149">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-149">VM</span></span>
 
-* <span data-ttu-id="9b251-157">修复了在 pool create 命令中结合 `--image` 标志使用资源 ID 时出现的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-157">Fixed bug in pool create command when a resource ID was used with the `--image` flag</span></span>
+* <span data-ttu-id="7b07f-150">已对 `az vm list-skus` 添加区域信息</span><span class="sxs-lookup"><span data-stu-id="7b07f-150">Added zone information to `az vm list-skus`</span></span>
 
-### <a name="batchai"></a><span data-ttu-id="9b251-158">Batchai</span><span class="sxs-lookup"><span data-stu-id="9b251-158">Batchai</span></span>
 
-* <span data-ttu-id="9b251-159">在 `file-server create` 命令中提供了 `--vm-size` 的简短选项 `-s`（提供 VM 大小）</span><span class="sxs-lookup"><span data-stu-id="9b251-159">Added short option, `-s`, for `--vm-size` when providing VM size in `file-server create` command</span></span>
-* <span data-ttu-id="9b251-160">为 `cluster create` 参数添加了存储帐户名称和密钥自变量</span><span class="sxs-lookup"><span data-stu-id="9b251-160">Added storage account name and key arguments to `cluster create` parameters</span></span>
-* <span data-ttu-id="9b251-161">纠正了 `job list-files` 和 `job stream-file` 的文档</span><span class="sxs-lookup"><span data-stu-id="9b251-161">Fixed documentation for `job list-files` and `job stream-file`</span></span>
-* <span data-ttu-id="9b251-162">在 `job create` 命令中提供了 `--cluster-name` 的简短选项 `-r`（提供群集名称）</span><span class="sxs-lookup"><span data-stu-id="9b251-162">Added short option, `-r`, for `--cluster-name` when providing cluster name in `job create` command</span></span>
+## <a name="november-14-2017"></a><span data-ttu-id="7b07f-151">2017 年 11 月 14 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-151">November 14, 2017</span></span>
 
-### <a name="cloud"></a><span data-ttu-id="9b251-163">云</span><span class="sxs-lookup"><span data-stu-id="9b251-163">Cloud</span></span>
+<span data-ttu-id="7b07f-152">版本 2.0.21</span><span class="sxs-lookup"><span data-stu-id="7b07f-152">Version 2.0.21</span></span>
 
-* <span data-ttu-id="9b251-164">更改了 `cloud [register|update]`，以防止注册缺少所需终结点的云</span><span class="sxs-lookup"><span data-stu-id="9b251-164">Changed `cloud [register|update]` to prevent registering clouds that have missing required endpoints</span></span>
+### <a name="acr"></a><span data-ttu-id="7b07f-153">ACR</span><span class="sxs-lookup"><span data-stu-id="7b07f-153">ACR</span></span>
 
-### <a name="container"></a><span data-ttu-id="9b251-165">容器</span><span class="sxs-lookup"><span data-stu-id="9b251-165">Container</span></span>
+* <span data-ttu-id="7b07f-154">添加了在复制区域中创建 Webhook 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-154">Added support for creating webhooks in replication regions</span></span>
 
-* <span data-ttu-id="9b251-166">添加了打开多个端口的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-166">Added support to open multiple ports</span></span>
-* <span data-ttu-id="9b251-167">添加了容器组重启策略</span><span class="sxs-lookup"><span data-stu-id="9b251-167">Added container group restart policy</span></span>
-* <span data-ttu-id="9b251-168">添加了将 Azure 文件共享装载为卷的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-168">Added support to mount Azure File share as a volume</span></span>
-* <span data-ttu-id="9b251-169">更新了帮助器文档</span><span class="sxs-lookup"><span data-stu-id="9b251-169">Updated helper docs</span></span>
 
-### <a name="data-lake-analytics"></a><span data-ttu-id="9b251-170">数据湖分析</span><span class="sxs-lookup"><span data-stu-id="9b251-170">Data Lake Analytics</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-155">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-155">ACS</span></span>
 
-* <span data-ttu-id="9b251-171">更改了 `[job|account] list` 以返回更简洁的信息</span><span class="sxs-lookup"><span data-stu-id="9b251-171">Changed `[job|account] list` to return more concise information</span></span>
+* <span data-ttu-id="7b07f-156">已在 AKS 中将所有“代理”一词更改为“节点”</span><span class="sxs-lookup"><span data-stu-id="7b07f-156">Changed all wording of "agent" to "node" in AKS</span></span>
+* <span data-ttu-id="7b07f-157">弃用了 `acs create` 的 `--orchestrator-release` 选项</span><span class="sxs-lookup"><span data-stu-id="7b07f-157">Deprecated `--orchestrator-release` option for `acs create`</span></span>
+* <span data-ttu-id="7b07f-158">已将 AKS 的默认 VM 大小更改为 `Standard_D1_v2`</span><span class="sxs-lookup"><span data-stu-id="7b07f-158">Changed default VM size for AKS to `Standard_D1_v2`</span></span>
+* <span data-ttu-id="7b07f-159">在 Windows 上修复了 `az aks browse`</span><span class="sxs-lookup"><span data-stu-id="7b07f-159">Fixed `az aks browse` on Windows</span></span>
+* <span data-ttu-id="7b07f-160">在 Windows 上修复了 `az aks get-credentials`</span><span class="sxs-lookup"><span data-stu-id="7b07f-160">Fixed `az aks get-credentials` on Windows</span></span>
 
-### <a name="data-lake-store"></a><span data-ttu-id="9b251-172">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="9b251-172">Data Lake Store</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-161">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-161">Appservice</span></span>
 
-* <span data-ttu-id="9b251-173">更改了 `account list` 以返回更简洁的信息</span><span class="sxs-lookup"><span data-stu-id="9b251-173">Changed `account list` to return more concise information</span></span>
+* <span data-ttu-id="7b07f-162">添加了 Web 应用和函数应用的部署源 `config-zip`</span><span class="sxs-lookup"><span data-stu-id="7b07f-162">Added deployment source `config-zip` for webapps and function apps</span></span>
+* <span data-ttu-id="7b07f-163">为 `az webapp log config` 添加了 `--docker-container-logging` 选项</span><span class="sxs-lookup"><span data-stu-id="7b07f-163">Added `--docker-container-logging` option to `az webapp log config`</span></span>
+* <span data-ttu-id="7b07f-164">从 `az webapp log config` 的参数 `--web-server-logging` 中删除了 `storage` 选项</span><span class="sxs-lookup"><span data-stu-id="7b07f-164">Removed the `storage` option from the parameter `--web-server-logging` of `az webapp log config`</span></span>
+* <span data-ttu-id="7b07f-165">完善了 `deployment user set` 的错误消息</span><span class="sxs-lookup"><span data-stu-id="7b07f-165">Improved error messages for `deployment user set`</span></span>
+* <span data-ttu-id="7b07f-166">添加了创建 Linux 函数应用的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-166">Added support for creating Linux function apps</span></span>
+* <span data-ttu-id="7b07f-167">固定 `list-locations`</span><span class="sxs-lookup"><span data-stu-id="7b07f-167">Fixed `list-locations`</span></span>
 
-### <a name="extension"></a><span data-ttu-id="9b251-174">分机</span><span class="sxs-lookup"><span data-stu-id="9b251-174">Extension</span></span>
+### <a name="batch"></a><span data-ttu-id="7b07f-168">Batch</span><span class="sxs-lookup"><span data-stu-id="7b07f-168">Batch</span></span>
 
-* <span data-ttu-id="9b251-175">添加了 `extension list-available` 用于列出官方的 Microsoft 扩展</span><span class="sxs-lookup"><span data-stu-id="9b251-175">Added `extension list-available` to allow listing official Microsoft extensions</span></span>
-* <span data-ttu-id="9b251-176">为 `extension [add|update]` 添加了 `--name`，以便按名称安装扩展</span><span class="sxs-lookup"><span data-stu-id="9b251-176">Added `--name` to `extension [add|update]` to allow installing extensions by name</span></span>
+* <span data-ttu-id="7b07f-169">修复了在 pool create 命令中结合 `--image` 标志使用资源 ID 时出现的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-169">Fixed bug in pool create command when a resource ID was used with the `--image` flag</span></span>
 
-### <a name="iot"></a><span data-ttu-id="9b251-177">IoT</span><span class="sxs-lookup"><span data-stu-id="9b251-177">IoT</span></span>
+### <a name="batchai"></a><span data-ttu-id="7b07f-170">Batchai</span><span class="sxs-lookup"><span data-stu-id="7b07f-170">Batchai</span></span>
 
-* <span data-ttu-id="9b251-178">添加了对证书颁发机构 (CA) 和证书链的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-178">Added support for certificate authorities (CA) and certificate chains</span></span>
+* <span data-ttu-id="7b07f-171">在 `file-server create` 命令中提供了 `--vm-size` 的简短选项 `-s`（提供 VM 大小）</span><span class="sxs-lookup"><span data-stu-id="7b07f-171">Added short option, `-s`, for `--vm-size` when providing VM size in `file-server create` command</span></span>
+* <span data-ttu-id="7b07f-172">为 `cluster create` 参数添加了存储帐户名称和密钥自变量</span><span class="sxs-lookup"><span data-stu-id="7b07f-172">Added storage account name and key arguments to `cluster create` parameters</span></span>
+* <span data-ttu-id="7b07f-173">纠正了 `job list-files` 和 `job stream-file` 的文档</span><span class="sxs-lookup"><span data-stu-id="7b07f-173">Fixed documentation for `job list-files` and `job stream-file`</span></span>
+* <span data-ttu-id="7b07f-174">在 `job create` 命令中提供了 `--cluster-name` 的简短选项 `-r`（提供群集名称）</span><span class="sxs-lookup"><span data-stu-id="7b07f-174">Added short option, `-r`, for `--cluster-name` when providing cluster name in `job create` command</span></span>
 
-### <a name="monitor"></a><span data-ttu-id="9b251-179">监视</span><span class="sxs-lookup"><span data-stu-id="9b251-179">Monitor</span></span>
+### <a name="cloud"></a><span data-ttu-id="7b07f-175">云</span><span class="sxs-lookup"><span data-stu-id="7b07f-175">Cloud</span></span>
 
-* <span data-ttu-id="9b251-180">添加了 `activity-log alert` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-180">Added `activity-log alert` commands</span></span>
+* <span data-ttu-id="7b07f-176">更改了 `cloud [register|update]`，以防止注册缺少所需终结点的云</span><span class="sxs-lookup"><span data-stu-id="7b07f-176">Changed `cloud [register|update]` to prevent registering clouds that have missing required endpoints</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-181">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-181">Network</span></span>
+### <a name="container"></a><span data-ttu-id="7b07f-177">容器</span><span class="sxs-lookup"><span data-stu-id="7b07f-177">Container</span></span>
 
-* <span data-ttu-id="9b251-182">添加了对 CAA DNS 记录的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-182">Added support for CAA DNS records</span></span>
-* <span data-ttu-id="9b251-183">修复了无法使用 `traffic-manager profile update` 更新终结点的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-183">Fixed issue where endpoints could not be updated with `traffic-manager profile update`</span></span>
-* <span data-ttu-id="9b251-184">修复了在采用某种 VNET 创建方式时 `vnet update --dns-servers` 无法正常运行的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-184">Fixed issue where `vnet update --dns-servers` didn't work depending on how the VNET was created</span></span>
-* <span data-ttu-id="9b251-185">修复了 `dns zone import` 错误导入相对 DNS 名称的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-185">Fixed issue where relative DNS names were incorrectly imported by `dns zone import`</span></span>
+* <span data-ttu-id="7b07f-178">添加了打开多个端口的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-178">Added support to open multiple ports</span></span>
+* <span data-ttu-id="7b07f-179">添加了容器组重启策略</span><span class="sxs-lookup"><span data-stu-id="7b07f-179">Added container group restart policy</span></span>
+* <span data-ttu-id="7b07f-180">添加了将 Azure 文件共享装载为卷的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-180">Added support to mount Azure File share as a volume</span></span>
+* <span data-ttu-id="7b07f-181">更新了帮助器文档</span><span class="sxs-lookup"><span data-stu-id="7b07f-181">Updated helper docs</span></span>
 
-### <a name="reservations"></a><span data-ttu-id="9b251-186">保留</span><span class="sxs-lookup"><span data-stu-id="9b251-186">Reservations</span></span>
+### <a name="data-lake-analytics"></a><span data-ttu-id="7b07f-182">数据湖分析</span><span class="sxs-lookup"><span data-stu-id="7b07f-182">Data Lake Analytics</span></span>
 
-* <span data-ttu-id="9b251-187">初始预览版</span><span class="sxs-lookup"><span data-stu-id="9b251-187">Initial preview release</span></span>
+* <span data-ttu-id="7b07f-183">更改了 `[job|account] list` 以返回更简洁的信息</span><span class="sxs-lookup"><span data-stu-id="7b07f-183">Changed `[job|account] list` to return more concise information</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-188">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-188">Resource</span></span>
+### <a name="data-lake-store"></a><span data-ttu-id="7b07f-184">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="7b07f-184">Data Lake Store</span></span>
 
-* <span data-ttu-id="9b251-189">添加了在 `--resource` 参数中指定资源 ID 的支持，以及对资源级锁的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-189">Added support for resource IDs to `--resource` parameter and resource-level locks</span></span>
+* <span data-ttu-id="7b07f-185">更改了 `account list` 以返回更简洁的信息</span><span class="sxs-lookup"><span data-stu-id="7b07f-185">Changed `account list` to return more concise information</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-190">SQL</span><span class="sxs-lookup"><span data-stu-id="9b251-190">SQL</span></span>
+### <a name="extension"></a><span data-ttu-id="7b07f-186">分机</span><span class="sxs-lookup"><span data-stu-id="7b07f-186">Extension</span></span>
 
-* <span data-ttu-id="9b251-191">为 `sql server vnet-rule [create|update]` 添加了 `--ignore-missing-vnet-service-endpoint` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-191">Added `--ignore-missing-vnet-service-endpoint` parameter to `sql server vnet-rule [create|update]`</span></span>
+* <span data-ttu-id="7b07f-187">添加了 `extension list-available` 用于列出官方的 Microsoft 扩展</span><span class="sxs-lookup"><span data-stu-id="7b07f-187">Added `extension list-available` to allow listing official Microsoft extensions</span></span>
+* <span data-ttu-id="7b07f-188">为 `extension [add|update]` 添加了 `--name`，以便按名称安装扩展</span><span class="sxs-lookup"><span data-stu-id="7b07f-188">Added `--name` to `extension [add|update]` to allow installing extensions by name</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-192">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-192">Storage</span></span>
+### <a name="iot"></a><span data-ttu-id="7b07f-189">IoT</span><span class="sxs-lookup"><span data-stu-id="7b07f-189">IoT</span></span>
 
-* <span data-ttu-id="9b251-193">更改了 `storage account create` 以使用 SKU `Standard_RAGRS` 作为默认值</span><span class="sxs-lookup"><span data-stu-id="9b251-193">Changed `storage account create` to use SKU `Standard_RAGRS` as default</span></span>
-* <span data-ttu-id="9b251-194">修复了处理包含非 ASCII 字符的文件/Blob 名称时出现的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-194">Fixed bugs when dealing with file/blob names that include non-ascii chars</span></span>
-* <span data-ttu-id="9b251-195">修复了阻止在 `storage [blob|file] copy start-batch` 中使用 `--source-uri` 的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-195">Fixed bug that prevented using `--source-uri` with `storage [blob|file] copy start-batch`</span></span>
-* <span data-ttu-id="9b251-196">添加了在 `storage [blob|file] delete-batch` 中包含和删除多个对象的命令</span><span class="sxs-lookup"><span data-stu-id="9b251-196">Added commands to glob and delete multiple objects with `storage [blob|file] delete-batch`</span></span>
-* <span data-ttu-id="9b251-197">修复了使用 `storage metrics update` 启用指标时出现的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-197">Fixed issue when enabling metrics with `storage metrics update`</span></span>
-* <span data-ttu-id="9b251-198">修复了使用 `storage blob upload-batch` 时，如果文件超过 200GB 所出现的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-198">Fixed issue with files over 200GB when using `storage blob upload-batch`</span></span>
-* <span data-ttu-id="9b251-199">修复了 `storage account [create|update]` 忽略 `--bypass` 和 `--default-action` 的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-199">Fixed issue where `--bypass` and `--default-action` were ignored by `storage account [create|update]`</span></span>
+* <span data-ttu-id="7b07f-190">添加了对证书颁发机构 (CA) 和证书链的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-190">Added support for certificate authorities (CA) and certificate chains</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-200">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-200">VM</span></span>
+### <a name="monitor"></a><span data-ttu-id="7b07f-191">监视</span><span class="sxs-lookup"><span data-stu-id="7b07f-191">Monitor</span></span>
 
-* <span data-ttu-id="9b251-201">修复了 `vmss create` 阻止使用 `Basic` 大小层的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-201">Fixed a bug with `vmss create` that prevented using the `Basic` size tier</span></span>
-* <span data-ttu-id="9b251-202">针对包含计费信息的自定义映像，为 `[vm|vmss] create` 添加了 `--plan` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-202">Added `--plan` arguments to `[vm|vmss] create` for custom images with billing information</span></span>
-* <span data-ttu-id="9b251-203">添加了 `vm secret `[add|remove|list]\` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-203">Added `vm secret `[add|remove|list]\` commands</span></span>
-* <span data-ttu-id="9b251-204">已将 `vm format-secret` 重命名为 `vm secret format`</span><span class="sxs-lookup"><span data-stu-id="9b251-204">Renamed `vm format-secret` to `vm secret format`</span></span>
-* <span data-ttu-id="9b251-205">为 `vm encryption enable` 添加了 `--encrypt format` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-205">Added `--encrypt format` argument to `vm encryption enable`</span></span>
+* <span data-ttu-id="7b07f-192">添加了 `activity-log alert` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-192">Added `activity-log alert` commands</span></span>
 
-## <a name="october-24-2017"></a><span data-ttu-id="9b251-206">2017 年 10 月 24 日</span><span class="sxs-lookup"><span data-stu-id="9b251-206">October 24, 2017</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-193">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-193">Network</span></span>
 
-<span data-ttu-id="9b251-207">版本 2.0.20</span><span class="sxs-lookup"><span data-stu-id="9b251-207">Version 2.0.20</span></span>
+* <span data-ttu-id="7b07f-194">添加了对 CAA DNS 记录的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-194">Added support for CAA DNS records</span></span>
+* <span data-ttu-id="7b07f-195">修复了无法使用 `traffic-manager profile update` 更新终结点的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-195">Fixed issue where endpoints could not be updated with `traffic-manager profile update`</span></span>
+* <span data-ttu-id="7b07f-196">修复了在采用某种 VNET 创建方式时 `vnet update --dns-servers` 无法正常运行的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-196">Fixed issue where `vnet update --dns-servers` didn't work depending on how the VNET was created</span></span>
+* <span data-ttu-id="7b07f-197">修复了 `dns zone import` 错误导入相对 DNS 名称的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-197">Fixed issue where relative DNS names were incorrectly imported by `dns zone import`</span></span>
 
-### <a name="core"></a><span data-ttu-id="9b251-208">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-208">Core</span></span>
+### <a name="reservations"></a><span data-ttu-id="7b07f-198">保留</span><span class="sxs-lookup"><span data-stu-id="7b07f-198">Reservations</span></span>
 
-* <span data-ttu-id="9b251-209">已更新 `2017-03-09-profile` 以使用 `MGMT_STORAGE` API 版本 `2016-01-01`</span><span class="sxs-lookup"><span data-stu-id="9b251-209">Updated `2017-03-09-profile` to consume `MGMT_STORAGE` API version `2016-01-01`</span></span>
+* <span data-ttu-id="7b07f-199">初始预览版</span><span class="sxs-lookup"><span data-stu-id="7b07f-199">Initial preview release</span></span>
 
-### <a name="acr"></a><span data-ttu-id="9b251-210">ACR</span><span class="sxs-lookup"><span data-stu-id="9b251-210">ACR</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-200">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-200">Resource</span></span>
 
-* <span data-ttu-id="9b251-211">已更新资源管理以指向 `2017-10-01` API 版本</span><span class="sxs-lookup"><span data-stu-id="9b251-211">Updated resource management to point to `2017-10-01` API version</span></span>
-* <span data-ttu-id="9b251-212">已将“带来你自己的存储”SKU 更改为“经典”</span><span class="sxs-lookup"><span data-stu-id="9b251-212">Changed 'bring your own storage' SKU to Classic</span></span>
-* <span data-ttu-id="9b251-213">已将注册表 SKU 重命名为“基本”、“标准”和“高级”</span><span class="sxs-lookup"><span data-stu-id="9b251-213">Renamed registry SKUs to Basic, Standard, and Premium</span></span>
+* <span data-ttu-id="7b07f-201">添加了在 `--resource` 参数中指定资源 ID 的支持，以及对资源级锁的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-201">Added support for resource IDs to `--resource` parameter and resource-level locks</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-214">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-214">ACS</span></span>
+### <a name="sql"></a><span data-ttu-id="7b07f-202">SQL</span><span class="sxs-lookup"><span data-stu-id="7b07f-202">SQL</span></span>
 
-* <span data-ttu-id="9b251-215">[PREVIEW] 添加了 `az aks` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-215">[PREVIEW] Added `az aks` commands</span></span>
-* <span data-ttu-id="9b251-216">已修复 Kubernetes `get-credentials`</span><span class="sxs-lookup"><span data-stu-id="9b251-216">Fixed kubernetes `get-credentials`</span></span>
+* <span data-ttu-id="7b07f-203">为 `sql server vnet-rule [create|update]` 添加了 `--ignore-missing-vnet-service-endpoint` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-203">Added `--ignore-missing-vnet-service-endpoint` parameter to `sql server vnet-rule [create|update]`</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-217">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-217">Appservice</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-204">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-204">Storage</span></span>
 
-* <span data-ttu-id="9b251-218">已修复所下载 `webapp` 日志可能无效的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-218">Fixed issue where downloaded `webapp` logs may be invalid</span></span>
+* <span data-ttu-id="7b07f-205">更改了 `storage account create` 以使用 SKU `Standard_RAGRS` 作为默认值</span><span class="sxs-lookup"><span data-stu-id="7b07f-205">Changed `storage account create` to use SKU `Standard_RAGRS` as default</span></span>
+* <span data-ttu-id="7b07f-206">修复了处理包含非 ASCII 字符的文件/Blob 名称时出现的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-206">Fixed bugs when dealing with file/blob names that include non-ascii chars</span></span>
+* <span data-ttu-id="7b07f-207">修复了阻止在 `storage [blob|file] copy start-batch` 中使用 `--source-uri` 的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-207">Fixed bug that prevented using `--source-uri` with `storage [blob|file] copy start-batch`</span></span>
+* <span data-ttu-id="7b07f-208">添加了在 `storage [blob|file] delete-batch` 中包含和删除多个对象的命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-208">Added commands to glob and delete multiple objects with `storage [blob|file] delete-batch`</span></span>
+* <span data-ttu-id="7b07f-209">修复了使用 `storage metrics update` 启用指标时出现的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-209">Fixed issue when enabling metrics with `storage metrics update`</span></span>
+* <span data-ttu-id="7b07f-210">修复了使用 `storage blob upload-batch` 时，如果文件超过 200GB 所出现的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-210">Fixed issue with files over 200GB when using `storage blob upload-batch`</span></span>
+* <span data-ttu-id="7b07f-211">修复了 `storage account [create|update]` 忽略 `--bypass` 和 `--default-action` 的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-211">Fixed issue where `--bypass` and `--default-action` were ignored by `storage account [create|update]`</span></span>
 
-### <a name="component"></a><span data-ttu-id="9b251-219">组件</span><span class="sxs-lookup"><span data-stu-id="9b251-219">Component</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-212">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-212">VM</span></span>
 
-* <span data-ttu-id="9b251-220">为所有安装程序添加了更清晰的弃用消息并添加了确认提示</span><span class="sxs-lookup"><span data-stu-id="9b251-220">Added clearer deprecation message for all installers and confirmation prompt</span></span>
+* <span data-ttu-id="7b07f-213">修复了 `vmss create` 阻止使用 `Basic` 大小层的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-213">Fixed a bug with `vmss create` that prevented using the `Basic` size tier</span></span>
+* <span data-ttu-id="7b07f-214">针对包含计费信息的自定义映像，为 `[vm|vmss] create` 添加了 `--plan` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-214">Added `--plan` arguments to `[vm|vmss] create` for custom images with billing information</span></span>
+* <span data-ttu-id="7b07f-215">添加了 `vm secret `[add|remove|list]\` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-215">Added `vm secret `[add|remove|list]\` commands</span></span>
+* <span data-ttu-id="7b07f-216">已将 `vm format-secret` 重命名为 `vm secret format`</span><span class="sxs-lookup"><span data-stu-id="7b07f-216">Renamed `vm format-secret` to `vm secret format`</span></span>
+* <span data-ttu-id="7b07f-217">为 `vm encryption enable` 添加了 `--encrypt format` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-217">Added `--encrypt format` argument to `vm encryption enable`</span></span>
 
-### <a name="monitor"></a><span data-ttu-id="9b251-221">监视</span><span class="sxs-lookup"><span data-stu-id="9b251-221">Monitor</span></span>
+## <a name="october-24-2017"></a><span data-ttu-id="7b07f-218">2017 年 10 月 24 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-218">October 24, 2017</span></span>
 
-* <span data-ttu-id="9b251-222">添加了 `action-group` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-222">Added `action-group` commands</span></span>
+<span data-ttu-id="7b07f-219">版本 2.0.20</span><span class="sxs-lookup"><span data-stu-id="7b07f-219">Version 2.0.20</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-223">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-223">Resource</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-220">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-220">Core</span></span>
 
-* <span data-ttu-id="9b251-224">修复了 `group export` 中与 msrest 依赖项的最新版本不兼容的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-224">Fixed incompatibility with most recent version of msrest dependency in `group export`</span></span>
-* <span data-ttu-id="9b251-225">修复了 `policy assignment create` 以使用内置策略定义和策略集定义</span><span class="sxs-lookup"><span data-stu-id="9b251-225">Fixed `policy assignment create` to work with built in policy definitions and policy set definitions</span></span>
+* <span data-ttu-id="7b07f-221">已更新 `2017-03-09-profile` 以使用 `MGMT_STORAGE` API 版本 `2016-01-01`</span><span class="sxs-lookup"><span data-stu-id="7b07f-221">Updated `2017-03-09-profile` to consume `MGMT_STORAGE` API version `2016-01-01`</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-226">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-226">VM</span></span>
+### <a name="acr"></a><span data-ttu-id="7b07f-222">ACR</span><span class="sxs-lookup"><span data-stu-id="7b07f-222">ACR</span></span>
 
-* <span data-ttu-id="9b251-227">为 `vmss create` 添加了 `--accelerated-networking` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-227">Added `--accelerated-networking` argument to `vmss create`</span></span>
+* <span data-ttu-id="7b07f-223">已更新资源管理以指向 `2017-10-01` API 版本</span><span class="sxs-lookup"><span data-stu-id="7b07f-223">Updated resource management to point to `2017-10-01` API version</span></span>
+* <span data-ttu-id="7b07f-224">已将“带来你自己的存储”SKU 更改为“经典”</span><span class="sxs-lookup"><span data-stu-id="7b07f-224">Changed 'bring your own storage' SKU to Classic</span></span>
+* <span data-ttu-id="7b07f-225">已将注册表 SKU 重命名为“基本”、“标准”和“高级”</span><span class="sxs-lookup"><span data-stu-id="7b07f-225">Renamed registry SKUs to Basic, Standard, and Premium</span></span>
 
+### <a name="acs"></a><span data-ttu-id="7b07f-226">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-226">ACS</span></span>
 
-## <a name="october-9-2017"></a><span data-ttu-id="9b251-228">2017 年 10 月 9 日</span><span class="sxs-lookup"><span data-stu-id="9b251-228">October 9, 2017</span></span>
+* <span data-ttu-id="7b07f-227">[PREVIEW] 添加了 `az aks` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-227">[PREVIEW] Added `az aks` commands</span></span>
+* <span data-ttu-id="7b07f-228">已修复 Kubernetes `get-credentials`</span><span class="sxs-lookup"><span data-stu-id="7b07f-228">Fixed kubernetes `get-credentials`</span></span>
 
-<span data-ttu-id="9b251-229">版本 2.0.19</span><span class="sxs-lookup"><span data-stu-id="9b251-229">Version 2.0.19</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-229">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-229">Appservice</span></span>
 
-### <a name="core"></a><span data-ttu-id="9b251-230">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-230">Core</span></span>
+* <span data-ttu-id="7b07f-230">已修复所下载 `webapp` 日志可能无效的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-230">Fixed issue where downloaded `webapp` logs may be invalid</span></span>
 
-* <span data-ttu-id="9b251-231">在 Azure Stack 中添加了一个尾随斜杠用于处理 ADFS 机构 URL</span><span class="sxs-lookup"><span data-stu-id="9b251-231">Added handling of ADFS authority URLs with a trailing slash to Azure Stack</span></span>
+### <a name="component"></a><span data-ttu-id="7b07f-231">组件</span><span class="sxs-lookup"><span data-stu-id="7b07f-231">Component</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-232">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-232">Appservice</span></span>
+* <span data-ttu-id="7b07f-232">为所有安装程序添加了更清晰的弃用消息并添加了确认提示</span><span class="sxs-lookup"><span data-stu-id="7b07f-232">Added clearer deprecation message for all installers and confirmation prompt</span></span>
 
-* <span data-ttu-id="9b251-233">添加了新命令 `webapp update` 用于执行常规更新</span><span class="sxs-lookup"><span data-stu-id="9b251-233">Added generic update with new command `webapp update`</span></span>
+### <a name="monitor"></a><span data-ttu-id="7b07f-233">监视</span><span class="sxs-lookup"><span data-stu-id="7b07f-233">Monitor</span></span>
 
-### <a name="batch"></a><span data-ttu-id="9b251-234">批处理</span><span class="sxs-lookup"><span data-stu-id="9b251-234">Batch</span></span>
+* <span data-ttu-id="7b07f-234">添加了 `action-group` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-234">Added `action-group` commands</span></span>
 
-* <span data-ttu-id="9b251-235">已更新为 Batch SDK 4.0.0</span><span class="sxs-lookup"><span data-stu-id="9b251-235">Updated to Batch SDK 4.0.0</span></span>
-* <span data-ttu-id="9b251-236">更新了 VirtualMachineConfiguration 的 `--image`，用于支持除 publish:offer:sku:version 以外的 ARM 映像引用</span><span class="sxs-lookup"><span data-stu-id="9b251-236">Updated `--image` option of VirtualMachineConfiguration to support ARM image references in addition to publish:offer:sku:version</span></span>
-* <span data-ttu-id="9b251-237">添加了对 Batch 扩展命令新 CLI 扩展模型的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-237">Added support for the new CLI extension model for Batch Extensions commands</span></span>
-* <span data-ttu-id="9b251-238">从组件模型中删除了 Batch 支持</span><span class="sxs-lookup"><span data-stu-id="9b251-238">Removed Batch support from the component model</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-235">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-235">Resource</span></span>
 
-### <a name="batchai"></a><span data-ttu-id="9b251-239">Batchai</span><span class="sxs-lookup"><span data-stu-id="9b251-239">Batchai</span></span>
+* <span data-ttu-id="7b07f-236">修复了 `group export` 中与 msrest 依赖项的最新版本不兼容的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-236">Fixed incompatibility with most recent version of msrest dependency in `group export`</span></span>
+* <span data-ttu-id="7b07f-237">修复了 `policy assignment create` 以使用内置策略定义和策略集定义</span><span class="sxs-lookup"><span data-stu-id="7b07f-237">Fixed `policy assignment create` to work with built in policy definitions and policy set definitions</span></span>
 
-* <span data-ttu-id="9b251-240">Batch AI 模块初始版本</span><span class="sxs-lookup"><span data-stu-id="9b251-240">Initial release of Batch AI module</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-238">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-238">VM</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="9b251-241">KeyVault</span><span class="sxs-lookup"><span data-stu-id="9b251-241">Keyvault</span></span>
+* <span data-ttu-id="7b07f-239">为 `vmss create` 添加了 `--accelerated-networking` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-239">Added `--accelerated-networking` argument to `vmss create`</span></span>
 
-* <span data-ttu-id="9b251-242">修复了在 Azure Stack 中使用 ADFS 时发生的 Key Vault 身份验证问题。</span><span class="sxs-lookup"><span data-stu-id="9b251-242">Fixed Key Vault authentication issue when using ADFS on Azure Stack.</span></span> [<span data-ttu-id="9b251-243">(#4448)</span><span class="sxs-lookup"><span data-stu-id="9b251-243">(#4448)</span></span>](https://github.com/Azure/azure-cli/issues/4448)
 
-### <a name="network"></a><span data-ttu-id="9b251-244">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-244">Network</span></span>
+## <a name="october-9-2017"></a><span data-ttu-id="7b07f-240">2017 年 10 月 9 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-240">October 9, 2017</span></span>
 
-* <span data-ttu-id="9b251-245">已将 `application-gateway address-pool create` 的 `--server` 参数更改为可选，以允许空地址池</span><span class="sxs-lookup"><span data-stu-id="9b251-245">Changed `--server` argument of `application-gateway address-pool create` to be optional, allowing for empty address pools</span></span>
-* <span data-ttu-id="9b251-246">更新了 `traffic-manager` 以支持最新功能</span><span class="sxs-lookup"><span data-stu-id="9b251-246">Updated `traffic-manager` to support latest features</span></span>
+<span data-ttu-id="7b07f-241">版本 2.0.19</span><span class="sxs-lookup"><span data-stu-id="7b07f-241">Version 2.0.19</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-247">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-247">Resource</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-242">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-242">Core</span></span>
 
-* <span data-ttu-id="9b251-248">在 `group` 中添加了对资源组名称使用 `--resource-group/-g` 选项的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-248">Added support for `--resource-group/-g` options for resource group name to `group`</span></span>
-* <span data-ttu-id="9b251-249">为 `account lock` 添加了命令用于处理订阅级锁</span><span class="sxs-lookup"><span data-stu-id="9b251-249">Added commands for `account lock` to work with subscription-level locks</span></span>
-* <span data-ttu-id="9b251-250">为 `group lock` 添加了命令用于处理组级锁</span><span class="sxs-lookup"><span data-stu-id="9b251-250">Added commands for `group lock` to work with group-level locks</span></span>
-* <span data-ttu-id="9b251-251">为 `resource lock` 添加了命令用于处理资源级锁</span><span class="sxs-lookup"><span data-stu-id="9b251-251">Added commands for `resource lock` to work with resource-level locks</span></span>
+* <span data-ttu-id="7b07f-243">在 Azure Stack 中添加了一个尾随斜杠用于处理 ADFS 机构 URL</span><span class="sxs-lookup"><span data-stu-id="7b07f-243">Added handling of ADFS authority URLs with a trailing slash to Azure Stack</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-252">Sql</span><span class="sxs-lookup"><span data-stu-id="9b251-252">Sql</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-244">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-244">Appservice</span></span>
 
-* <span data-ttu-id="9b251-253">添加了 SQL 透明数据加密 (TDE) 和自带密钥 TDE 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-253">Added support for SQL Transparent Data Encryption (TDE) and TDE with Bring Your Own Key</span></span>
-* <span data-ttu-id="9b251-254">添加了 `db list-deleted` 命令和 `db restore --deleted-time` 参数，以便能够找到和还原已删除的数据库</span><span class="sxs-lookup"><span data-stu-id="9b251-254">Added `db list-deleted` command and `db restore --deleted-time` parameter, allowing the ability to find and restore deleted databases</span></span>
-* <span data-ttu-id="9b251-255">添加了 `db op list` 和 `db op cancel`，以便能够列出和取消正在对数据库执行的操作</span><span class="sxs-lookup"><span data-stu-id="9b251-255">Added `db op list` and `db op cancel`, allowing the ability to list and cancel in-progress operations on database</span></span>
+* <span data-ttu-id="7b07f-245">添加了新命令 `webapp update` 用于执行常规更新</span><span class="sxs-lookup"><span data-stu-id="7b07f-245">Added generic update with new command `webapp update`</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-256">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-256">Storage</span></span>
+### <a name="batch"></a><span data-ttu-id="7b07f-246">Batch</span><span class="sxs-lookup"><span data-stu-id="7b07f-246">Batch</span></span>
 
-* <span data-ttu-id="9b251-257">添加了对文件共享快照的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-257">Added support for file share snapshot</span></span>
+* <span data-ttu-id="7b07f-247">已更新为 Batch SDK 4.0.0</span><span class="sxs-lookup"><span data-stu-id="7b07f-247">Updated to Batch SDK 4.0.0</span></span>
+* <span data-ttu-id="7b07f-248">更新了 VirtualMachineConfiguration 的 `--image`，用于支持除 publish:offer:sku:version 以外的 ARM 映像引用</span><span class="sxs-lookup"><span data-stu-id="7b07f-248">Updated `--image` option of VirtualMachineConfiguration to support ARM image references in addition to publish:offer:sku:version</span></span>
+* <span data-ttu-id="7b07f-249">添加了对 Batch 扩展命令新 CLI 扩展模型的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-249">Added support for the new CLI extension model for Batch Extensions commands</span></span>
+* <span data-ttu-id="7b07f-250">从组件模型中删除了 Batch 支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-250">Removed Batch support from the component model</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-258">Vm</span><span class="sxs-lookup"><span data-stu-id="9b251-258">Vm</span></span>
+### <a name="batchai"></a><span data-ttu-id="7b07f-251">Batchai</span><span class="sxs-lookup"><span data-stu-id="7b07f-251">Batchai</span></span>
 
-* <span data-ttu-id="9b251-259">修复了 `vm show` 中的一个 bug：在缺少专用 IP 地址的情况下使用 `-d` 会导致崩溃</span><span class="sxs-lookup"><span data-stu-id="9b251-259">Fixed a bug in `vm show` where using `-d` caused a crash on missing private ip addresses</span></span>
-* <span data-ttu-id="9b251-260">[预览] 添加了滚动升级到 `vmss create` 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-260">[PREVIEW] Added support for rolling upgrade to `vmss create`</span></span>
-* <span data-ttu-id="9b251-261">添加了使用 `vm encryption enable` 更新加密设置的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-261">Added support for updating encryption settings with `vm encryption enable`</span></span>
-* <span data-ttu-id="9b251-262">为 `vm create` 添加了 `--os-disk-size-gb` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-262">Added `--os-disk-size-gb` parameter to `vm create`</span></span>
-* <span data-ttu-id="9b251-263">为 Windows 中的 `vmss create` 添加了 `--license-type` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-263">Added `--license-type` parameter for Windows to `vmss create`</span></span>
+* <span data-ttu-id="7b07f-252">Batch AI 模块初始版本</span><span class="sxs-lookup"><span data-stu-id="7b07f-252">Initial release of Batch AI module</span></span>
 
+### <a name="keyvault"></a><span data-ttu-id="7b07f-253">KeyVault</span><span class="sxs-lookup"><span data-stu-id="7b07f-253">Keyvault</span></span>
 
-## <a name="september-22-2017"></a><span data-ttu-id="9b251-264">2017 年 9 月 22 日</span><span class="sxs-lookup"><span data-stu-id="9b251-264">September 22, 2017</span></span>
+* <span data-ttu-id="7b07f-254">修复了在 Azure Stack 中使用 ADFS 时发生的 Key Vault 身份验证问题。</span><span class="sxs-lookup"><span data-stu-id="7b07f-254">Fixed Key Vault authentication issue when using ADFS on Azure Stack.</span></span> [<span data-ttu-id="7b07f-255">(#4448)</span><span class="sxs-lookup"><span data-stu-id="7b07f-255">(#4448)</span></span>](https://github.com/Azure/azure-cli/issues/4448)
 
-<span data-ttu-id="9b251-265">版本 2.0.18</span><span class="sxs-lookup"><span data-stu-id="9b251-265">Version 2.0.18</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-256">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-256">Network</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-266">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-266">Resource</span></span>
+* <span data-ttu-id="7b07f-257">已将 `application-gateway address-pool create` 的 `--server` 参数更改为可选，以允许空地址池</span><span class="sxs-lookup"><span data-stu-id="7b07f-257">Changed `--server` argument of `application-gateway address-pool create` to be optional, allowing for empty address pools</span></span>
+* <span data-ttu-id="7b07f-258">更新了 `traffic-manager` 以支持最新功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-258">Updated `traffic-manager` to support latest features</span></span>
 
-* <span data-ttu-id="9b251-267">添加了对显示内置策略定义的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-267">Added support for showing built-in policy definitions</span></span>
-* <span data-ttu-id="9b251-268">添加了用于创建策略定义的支持模式参数</span><span class="sxs-lookup"><span data-stu-id="9b251-268">Added support mode parameter for creating policy definitions</span></span>
-* <span data-ttu-id="9b251-269">为 `managedapp definition create` 添加了对 UI 定义和模板的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-269">Added support for UI definitions and templates to `managedapp definition create`</span></span>
-* <span data-ttu-id="9b251-270">[重大更改] 将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`</span><span class="sxs-lookup"><span data-stu-id="9b251-270">[BREAKING CHANGE] Changed `managedapp` resource type from `appliances` to `applications` and `applianceDefinitions` to `applicationDefinitions`</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-259">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-259">Resource</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-271">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-271">Network</span></span>
+* <span data-ttu-id="7b07f-260">在 `group` 中添加了对资源组名称使用 `--resource-group/-g` 选项的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-260">Added support for `--resource-group/-g` options for resource group name to `group`</span></span>
+* <span data-ttu-id="7b07f-261">为 `account lock` 添加了命令用于处理订阅级锁</span><span class="sxs-lookup"><span data-stu-id="7b07f-261">Added commands for `account lock` to work with subscription-level locks</span></span>
+* <span data-ttu-id="7b07f-262">为 `group lock` 添加了命令用于处理组级锁</span><span class="sxs-lookup"><span data-stu-id="7b07f-262">Added commands for `group lock` to work with group-level locks</span></span>
+* <span data-ttu-id="7b07f-263">为 `resource lock` 添加了命令用于处理资源级锁</span><span class="sxs-lookup"><span data-stu-id="7b07f-263">Added commands for `resource lock` to work with resource-level locks</span></span>
 
-* <span data-ttu-id="9b251-272">为 `network lb` 和 `network public-ip` 子命令添加了对可用性区域的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-272">Added support for availability zone to `network lb` and `network public-ip` subcommands</span></span>
-* <span data-ttu-id="9b251-273">为 `express-route` 添加了对 IPv6 Microsoft 对等互连的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-273">Added support for IPv6 Microsoft Peering to `express-route`</span></span>
-* <span data-ttu-id="9b251-274">添加了 `asg` 应用程序安全组命令</span><span class="sxs-lookup"><span data-stu-id="9b251-274">Added `asg` application security group commands</span></span>
-* <span data-ttu-id="9b251-275">为 `nic [create|ip-config create|ip-config update]` 添加了 `--application-security-groups` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-275">Added `--application-security-groups` argument to `nic [create|ip-config create|ip-config update]`</span></span>
-* <span data-ttu-id="9b251-276">为 `nsg rule [create|update]` 添加了 `--source-asgs` 和 `--destination-asgs` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-276">Added `--source-asgs` and `--destination-asgs` arguments to `nsg rule [create|update]`</span></span>
-* <span data-ttu-id="9b251-277">为 `vnet [create|update]` 添加了 `--ddos-protection` 和 `--vm-protection` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-277">Added `--ddos-protection` and `--vm-protection` arguments to `vnet [create|update]`</span></span>
-* <span data-ttu-id="9b251-278">添加了 `network [vnet-gateway|vpn-client|show-url]` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-278">Added `network [vnet-gateway|vpn-client|show-url]` commands</span></span>
+### <a name="sql"></a><span data-ttu-id="7b07f-264">Sql</span><span class="sxs-lookup"><span data-stu-id="7b07f-264">Sql</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-279">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-279">Storage</span></span>
+* <span data-ttu-id="7b07f-265">添加了 SQL 透明数据加密 (TDE) 和自带密钥 TDE 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-265">Added support for SQL Transparent Data Encryption (TDE) and TDE with Bring Your Own Key</span></span>
+* <span data-ttu-id="7b07f-266">添加了 `db list-deleted` 命令和 `db restore --deleted-time` 参数，以便能够找到和还原已删除的数据库</span><span class="sxs-lookup"><span data-stu-id="7b07f-266">Added `db list-deleted` command and `db restore --deleted-time` parameter, allowing the ability to find and restore deleted databases</span></span>
+* <span data-ttu-id="7b07f-267">添加了 `db op list` 和 `db op cancel`，以便能够列出和取消正在对数据库执行的操作</span><span class="sxs-lookup"><span data-stu-id="7b07f-267">Added `db op list` and `db op cancel`, allowing the ability to list and cancel in-progress operations on database</span></span>
 
-* <span data-ttu-id="9b251-280">已修复了 `storage account network-rule` 命令在更新 SDK 后可能会失败的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-280">Fixed issue where `storage account network-rule` commands may fail after updating the SDK</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-268">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-268">Storage</span></span>
 
-### <a name="eventgrid"></a><span data-ttu-id="9b251-281">Eventgrid</span><span class="sxs-lookup"><span data-stu-id="9b251-281">Eventgrid</span></span>
+* <span data-ttu-id="7b07f-269">添加了对文件共享快照的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-269">Added support for file share snapshot</span></span>
 
-* <span data-ttu-id="9b251-282">更新了 Azure 事件网格 Python SDK 以使用较新的 API 版本“2017-09-15-preview”</span><span class="sxs-lookup"><span data-stu-id="9b251-282">Updated Azure Event Grid Python SDK to use newer API version "2017-09-15-preview"</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-270">Vm</span><span class="sxs-lookup"><span data-stu-id="7b07f-270">Vm</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-283">SQL</span><span class="sxs-lookup"><span data-stu-id="9b251-283">SQL</span></span>
+* <span data-ttu-id="7b07f-271">修复了 `vm show` 中的一个 bug：在缺少专用 IP 地址的情况下使用 `-d` 会导致崩溃</span><span class="sxs-lookup"><span data-stu-id="7b07f-271">Fixed a bug in `vm show` where using `-d` caused a crash on missing private ip addresses</span></span>
+* <span data-ttu-id="7b07f-272">[预览] 添加了滚动升级到 `vmss create` 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-272">[PREVIEW] Added support for rolling upgrade to `vmss create`</span></span>
+* <span data-ttu-id="7b07f-273">添加了使用 `vm encryption enable` 更新加密设置的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-273">Added support for updating encryption settings with `vm encryption enable`</span></span>
+* <span data-ttu-id="7b07f-274">为 `vm create` 添加了 `--os-disk-size-gb` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-274">Added `--os-disk-size-gb` parameter to `vm create`</span></span>
+* <span data-ttu-id="7b07f-275">为 Windows 中的 `vmss create` 添加了 `--license-type` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-275">Added `--license-type` parameter for Windows to `vmss create`</span></span>
 
-* <span data-ttu-id="9b251-284">将 `sql server list` 的参数 `--resource-group` 更改为可选。</span><span class="sxs-lookup"><span data-stu-id="9b251-284">Changed `sql server list` argument `--resource-group` to be optional.</span></span> <span data-ttu-id="9b251-285">如果未指定，将返回订阅中的所有 SQL 服务器</span><span class="sxs-lookup"><span data-stu-id="9b251-285">If not specified, all sql servers in the subscription will be returned</span></span>
-* <span data-ttu-id="9b251-286">为 `db [create|copy|restore|update|replica create|create|update]` 和 `dw [create|update]` 添加了 `--no-wait` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-286">Added `--no-wait` param to `db [create|copy|restore|update|replica create|create|update]` and `dw [create|update]`</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="9b251-287">KeyVault</span><span class="sxs-lookup"><span data-stu-id="9b251-287">Keyvault</span></span>
+## <a name="september-22-2017"></a><span data-ttu-id="7b07f-276">2017 年 9 月 22 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-276">September 22, 2017</span></span>
 
-* <span data-ttu-id="9b251-288">添加了对从代理后执行 Keyvault 命令的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-288">Added support for Keyvault commands from behind a proxy</span></span>
+<span data-ttu-id="7b07f-277">版本 2.0.18</span><span class="sxs-lookup"><span data-stu-id="7b07f-277">Version 2.0.18</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-289">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-289">VM</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-278">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-278">Resource</span></span>
 
-* <span data-ttu-id="9b251-290">为 `[vm|vmss|disk] create` 添加了对可用性区域的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-290">Added for support to availability zone to `[vm|vmss|disk] create`</span></span>
-* <span data-ttu-id="9b251-291">已修复了将 `--app-gateway ID` 与 `vmss create` 一起使用会导致故障的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-291">Fixed issue where using`--app-gateway ID` with `vmss create` would cause a failure</span></span>
-* <span data-ttu-id="9b251-292">为 `vm create` 添加了 `--asgs` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-292">Added `--asgs` argument to `vm create`</span></span>
-* <span data-ttu-id="9b251-293">添加了对使用 `vm run-command` 在 VM 上运行命令的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-293">Added support for running commands on VMs with `vm run-command`</span></span>
-* <span data-ttu-id="9b251-294">[预览] 添加了对使用 `vmss encryption` 进行 VMSS 磁盘加密的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-294">[PREVIEW] Added support for VMSS disk encryption with `vmss encryption`</span></span>
-* <span data-ttu-id="9b251-295">添加了对使用 `vm perform-maintenance` 在 VM 上执行维护的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-295">Added support for performing maintenance on VMs with `vm perform-maintenance`</span></span>
+* <span data-ttu-id="7b07f-279">添加了对显示内置策略定义的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-279">Added support for showing built-in policy definitions</span></span>
+* <span data-ttu-id="7b07f-280">添加了用于创建策略定义的支持模式参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-280">Added support mode parameter for creating policy definitions</span></span>
+* <span data-ttu-id="7b07f-281">为 `managedapp definition create` 添加了对 UI 定义和模板的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-281">Added support for UI definitions and templates to `managedapp definition create`</span></span>
+* <span data-ttu-id="7b07f-282">[重大更改] 将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`</span><span class="sxs-lookup"><span data-stu-id="7b07f-282">[BREAKING CHANGE] Changed `managedapp` resource type from `appliances` to `applications` and `applianceDefinitions` to `applicationDefinitions`</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-296">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-296">ACS</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-283">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-283">Network</span></span>
 
-* <span data-ttu-id="9b251-297">[预览] 为适用于 ACS 预览区域的 `acs create` 添加了 `--orchestrator-release` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-297">[PREVIEW] Added `--orchestrator-release` argument to `acs create` for ACS preview regions</span></span>
+* <span data-ttu-id="7b07f-284">为 `network lb` 和 `network public-ip` 子命令添加了对可用性区域的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-284">Added support for availability zone to `network lb` and `network public-ip` subcommands</span></span>
+* <span data-ttu-id="7b07f-285">为 `express-route` 添加了对 IPv6 Microsoft 对等互连的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-285">Added support for IPv6 Microsoft Peering to `express-route`</span></span>
+* <span data-ttu-id="7b07f-286">添加了 `asg` 应用程序安全组命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-286">Added `asg` application security group commands</span></span>
+* <span data-ttu-id="7b07f-287">为 `nic [create|ip-config create|ip-config update]` 添加了 `--application-security-groups` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-287">Added `--application-security-groups` argument to `nic [create|ip-config create|ip-config update]`</span></span>
+* <span data-ttu-id="7b07f-288">为 `nsg rule [create|update]` 添加了 `--source-asgs` 和 `--destination-asgs` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-288">Added `--source-asgs` and `--destination-asgs` arguments to `nsg rule [create|update]`</span></span>
+* <span data-ttu-id="7b07f-289">为 `vnet [create|update]` 添加了 `--ddos-protection` 和 `--vm-protection` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-289">Added `--ddos-protection` and `--vm-protection` arguments to `vnet [create|update]`</span></span>
+* <span data-ttu-id="7b07f-290">添加了 `network [vnet-gateway|vpn-client|show-url]` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-290">Added `network [vnet-gateway|vpn-client|show-url]` commands</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-298">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-298">Appservice</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-291">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-291">Storage</span></span>
 
-* <span data-ttu-id="9b251-299">添加了使用 `webapp auth [update|show]` 更新和显示身份验证设置的功能</span><span class="sxs-lookup"><span data-stu-id="9b251-299">Added ability to update and show authentication settings with `webapp auth [update|show]`</span></span>
+* <span data-ttu-id="7b07f-292">已修复了 `storage account network-rule` 命令在更新 SDK 后可能会失败的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-292">Fixed issue where `storage account network-rule` commands may fail after updating the SDK</span></span>
 
-### <a name="backup"></a><span data-ttu-id="9b251-300">备份</span><span class="sxs-lookup"><span data-stu-id="9b251-300">Backup</span></span>
+### <a name="eventgrid"></a><span data-ttu-id="7b07f-293">Eventgrid</span><span class="sxs-lookup"><span data-stu-id="7b07f-293">Eventgrid</span></span>
 
-* <span data-ttu-id="9b251-301">预览版</span><span class="sxs-lookup"><span data-stu-id="9b251-301">Preview release</span></span>
+* <span data-ttu-id="7b07f-294">更新了 Azure 事件网格 Python SDK 以使用较新的 API 版本“2017-09-15-preview”</span><span class="sxs-lookup"><span data-stu-id="7b07f-294">Updated Azure Event Grid Python SDK to use newer API version "2017-09-15-preview"</span></span>
 
+### <a name="sql"></a><span data-ttu-id="7b07f-295">SQL</span><span class="sxs-lookup"><span data-stu-id="7b07f-295">SQL</span></span>
 
-## <a name="september-11-2017"></a><span data-ttu-id="9b251-302">2017 年 9 月 11 日</span><span class="sxs-lookup"><span data-stu-id="9b251-302">September 11, 2017</span></span>
+* <span data-ttu-id="7b07f-296">将 `sql server list` 的参数 `--resource-group` 更改为可选。</span><span class="sxs-lookup"><span data-stu-id="7b07f-296">Changed `sql server list` argument `--resource-group` to be optional.</span></span> <span data-ttu-id="7b07f-297">如果未指定，将返回订阅中的所有 SQL 服务器</span><span class="sxs-lookup"><span data-stu-id="7b07f-297">If not specified, all sql servers in the subscription will be returned</span></span>
+* <span data-ttu-id="7b07f-298">为 `db [create|copy|restore|update|replica create|create|update]` 和 `dw [create|update]` 添加了 `--no-wait` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-298">Added `--no-wait` param to `db [create|copy|restore|update|replica create|create|update]` and `dw [create|update]`</span></span>
 
-<span data-ttu-id="9b251-303">版本 2.0.17</span><span class="sxs-lookup"><span data-stu-id="9b251-303">Version 2.0.17</span></span>
+### <a name="keyvault"></a><span data-ttu-id="7b07f-299">KeyVault</span><span class="sxs-lookup"><span data-stu-id="7b07f-299">Keyvault</span></span>
 
-### <a name="core"></a><span data-ttu-id="9b251-304">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-304">Core</span></span>
+* <span data-ttu-id="7b07f-300">添加了对从代理后执行 Keyvault 命令的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-300">Added support for Keyvault commands from behind a proxy</span></span>
 
-* <span data-ttu-id="9b251-305">启用了命令模块在遥测中设置其自己的相关 ID</span><span class="sxs-lookup"><span data-stu-id="9b251-305">Enabled command module to set its own correlation ID in telemetry</span></span>
-* <span data-ttu-id="9b251-306">修复了在遥测设置为诊断模式时的 JSON 转储问题</span><span class="sxs-lookup"><span data-stu-id="9b251-306">Fixed JSON dump issue when telemetry is set to diagnostics mode</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-301">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-301">VM</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-307">Acs</span><span class="sxs-lookup"><span data-stu-id="9b251-307">Acs</span></span>
+* <span data-ttu-id="7b07f-302">为 `[vm|vmss|disk] create` 添加了对可用性区域的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-302">Added for support to availability zone to `[vm|vmss|disk] create`</span></span>
+* <span data-ttu-id="7b07f-303">已修复了将 `--app-gateway ID` 与 `vmss create` 一起使用会导致故障的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-303">Fixed issue where using`--app-gateway ID` with `vmss create` would cause a failure</span></span>
+* <span data-ttu-id="7b07f-304">为 `vm create` 添加了 `--asgs` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-304">Added `--asgs` argument to `vm create`</span></span>
+* <span data-ttu-id="7b07f-305">添加了对使用 `vm run-command` 在 VM 上运行命令的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-305">Added support for running commands on VMs with `vm run-command`</span></span>
+* <span data-ttu-id="7b07f-306">[预览] 添加了对使用 `vmss encryption` 进行 VMSS 磁盘加密的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-306">[PREVIEW] Added support for VMSS disk encryption with `vmss encryption`</span></span>
+* <span data-ttu-id="7b07f-307">添加了对使用 `vm perform-maintenance` 在 VM 上执行维护的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-307">Added support for performing maintenance on VMs with `vm perform-maintenance`</span></span>
 
-* <span data-ttu-id="9b251-308">添加了 `acs list-locations` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-308">Added `acs list-locations` command</span></span>
-* <span data-ttu-id="9b251-309">使 `ssh-key-file` 附带预期的默认值</span><span class="sxs-lookup"><span data-stu-id="9b251-309">Made `ssh-key-file` come with expected default value</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-308">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-308">ACS</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-310">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-310">Appservice</span></span>
+* <span data-ttu-id="7b07f-309">[预览] 为适用于 ACS 预览区域的 `acs create` 添加了 `--orchestrator-release` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-309">[PREVIEW] Added `--orchestrator-release` argument to `acs create` for ACS preview regions</span></span>
 
-* <span data-ttu-id="9b251-311">添加了在未包含活动服务计划的资源组中创建 Web 应用的功能</span><span class="sxs-lookup"><span data-stu-id="9b251-311">Added ability to create a webapp in a resource group other than the active service plan's</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-310">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-310">Appservice</span></span>
 
-### <a name="cdn"></a><span data-ttu-id="9b251-312">CDN</span><span class="sxs-lookup"><span data-stu-id="9b251-312">CDN</span></span>
+* <span data-ttu-id="7b07f-311">添加了使用 `webapp auth [update|show]` 更新和显示身份验证设置的功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-311">Added ability to update and show authentication settings with `webapp auth [update|show]`</span></span>
 
-* <span data-ttu-id="9b251-313">修复了 `cdn custom-domain create` 的“CustomDomain 不可迭代” bug。</span><span class="sxs-lookup"><span data-stu-id="9b251-313">Fixed 'CustomDomain is not interable' bug for `cdn custom-domain create`.</span></span>
+### <a name="backup"></a><span data-ttu-id="7b07f-312">备份</span><span class="sxs-lookup"><span data-stu-id="7b07f-312">Backup</span></span>
 
-### <a name="extension"></a><span data-ttu-id="9b251-314">分机</span><span class="sxs-lookup"><span data-stu-id="9b251-314">Extension</span></span>
+* <span data-ttu-id="7b07f-313">预览版</span><span class="sxs-lookup"><span data-stu-id="7b07f-313">Preview release</span></span>
 
-* <span data-ttu-id="9b251-315">初始版本。</span><span class="sxs-lookup"><span data-stu-id="9b251-315">Initial Release.</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="9b251-316">KeyVault</span><span class="sxs-lookup"><span data-stu-id="9b251-316">Keyvault</span></span>
+## <a name="september-11-2017"></a><span data-ttu-id="7b07f-314">2017 年 9 月 11 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-314">September 11, 2017</span></span>
 
-* <span data-ttu-id="9b251-317">修复了 `keyvault set-policy` 的权限区分大小写的问题。</span><span class="sxs-lookup"><span data-stu-id="9b251-317">Fixed issue where permissions were case sensitive for `keyvault set-policy`.</span></span>
+<span data-ttu-id="7b07f-315">版本 2.0.17</span><span class="sxs-lookup"><span data-stu-id="7b07f-315">Version 2.0.17</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-318">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-318">Network</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-316">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-316">Core</span></span>
 
-* <span data-ttu-id="9b251-319">已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`</span><span class="sxs-lookup"><span data-stu-id="9b251-319">Renamed `vnet list-private-access-services` to `vnet list-endpoint-services`</span></span>
-* <span data-ttu-id="9b251-320">已为 `vnet subnet create/update` 将 `--private-access-services` 参数重命名为 `--service-endpoints`</span><span class="sxs-lookup"><span data-stu-id="9b251-320">Renamed `--private-access-services` argument to `--service-endpoints` for `vnet subnet create/update`</span></span>
-* <span data-ttu-id="9b251-321">在 `nsg rule create/update` 中添加了对多个 IP 范围和端口范围的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-321">Added support for multiple IP ranges and port ranges to `nsg rule create/update`</span></span>
-* <span data-ttu-id="9b251-322">在 `lb create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-322">Added support for SKU to `lb create`</span></span>
-* <span data-ttu-id="9b251-323">在 `public-ip create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-323">Added support for SKU to `public-ip create`</span></span>
+* <span data-ttu-id="7b07f-317">启用了命令模块在遥测中设置其自己的相关 ID</span><span class="sxs-lookup"><span data-stu-id="7b07f-317">Enabled command module to set its own correlation ID in telemetry</span></span>
+* <span data-ttu-id="7b07f-318">修复了在遥测设置为诊断模式时的 JSON 转储问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-318">Fixed JSON dump issue when telemetry is set to diagnostics mode</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-324">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-324">Resource</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-319">Acs</span><span class="sxs-lookup"><span data-stu-id="7b07f-319">Acs</span></span>
 
-* <span data-ttu-id="9b251-325">允许在 `policy definition create` 和 `policy definition update` 中传入资源策略参数定义</span><span class="sxs-lookup"><span data-stu-id="9b251-325">Allow passing in resource policy parameter definitions in `policy definition create`, and `policy definition update`</span></span>
-* <span data-ttu-id="9b251-326">允许为 `policy assignment create` 传入参数值</span><span class="sxs-lookup"><span data-stu-id="9b251-326">Allow passing in parameter values for `policy assignment create`</span></span>
-* <span data-ttu-id="9b251-327">允许为所有参数传入 JSON 或文件</span><span class="sxs-lookup"><span data-stu-id="9b251-327">Allow for passing JSON or file for all params</span></span>
-* <span data-ttu-id="9b251-328">更新了 API 版本</span><span class="sxs-lookup"><span data-stu-id="9b251-328">Incremented API version</span></span>
+* <span data-ttu-id="7b07f-320">添加了 `acs list-locations` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-320">Added `acs list-locations` command</span></span>
+* <span data-ttu-id="7b07f-321">使 `ssh-key-file` 附带预期的默认值</span><span class="sxs-lookup"><span data-stu-id="7b07f-321">Made `ssh-key-file` come with expected default value</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-329">SQL</span><span class="sxs-lookup"><span data-stu-id="9b251-329">SQL</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-322">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-322">Appservice</span></span>
 
-* <span data-ttu-id="9b251-330">添加了 `sql server vnet-rule` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-330">Added `sql server vnet-rule` commands</span></span>
+* <span data-ttu-id="7b07f-323">添加了在未包含活动服务计划的资源组中创建 Web 应用的功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-323">Added ability to create a webapp in a resource group other than the active service plan's</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-331">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-331">VM</span></span>
+### <a name="cdn"></a><span data-ttu-id="7b07f-324">CDN</span><span class="sxs-lookup"><span data-stu-id="7b07f-324">CDN</span></span>
 
-* <span data-ttu-id="9b251-332">已修复：除非提供 `--scope`，否则不分配访问权限</span><span class="sxs-lookup"><span data-stu-id="9b251-332">Fixed: Don't assign access unless `--scope` is provided</span></span>
-* <span data-ttu-id="9b251-333">已修复：使用与门户相同的扩展命名</span><span class="sxs-lookup"><span data-stu-id="9b251-333">Fixed: Use the same extension naming as portal does</span></span>
-* <span data-ttu-id="9b251-334">已从 `[vm|vmss] create` 输出中删除了 `subscription`</span><span class="sxs-lookup"><span data-stu-id="9b251-334">Removed `subscription` from the `[vm|vmss] create` output</span></span>
-* <span data-ttu-id="9b251-335">已修复：`[vm|vmss] create` SKU 无法应用于带映像的数据磁盘</span><span class="sxs-lookup"><span data-stu-id="9b251-335">Fixed: `[vm|vmss] create` storage SKU is not applied on data disks with an image</span></span>
-* <span data-ttu-id="9b251-336">已修复：`vm format-secret --secrets` 不接受新行分隔的 ID</span><span class="sxs-lookup"><span data-stu-id="9b251-336">Fixed: `vm format-secret --secrets` would not accept newline separated IDs</span></span>
+* <span data-ttu-id="7b07f-325">修复了 `cdn custom-domain create` 的“CustomDomain 不可迭代” bug。</span><span class="sxs-lookup"><span data-stu-id="7b07f-325">Fixed 'CustomDomain is not interable' bug for `cdn custom-domain create`.</span></span>
 
-## <a name="august-31-2017"></a><span data-ttu-id="9b251-337">2017 年 8 月31 日</span><span class="sxs-lookup"><span data-stu-id="9b251-337">August 31, 2017</span></span>
+### <a name="extension"></a><span data-ttu-id="7b07f-326">分机</span><span class="sxs-lookup"><span data-stu-id="7b07f-326">Extension</span></span>
 
-<span data-ttu-id="9b251-338">版本 2.0.16</span><span class="sxs-lookup"><span data-stu-id="9b251-338">Version 2.0.16</span></span>
+* <span data-ttu-id="7b07f-327">初始版本。</span><span class="sxs-lookup"><span data-stu-id="7b07f-327">Initial Release.</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="9b251-339">KeyVault</span><span class="sxs-lookup"><span data-stu-id="9b251-339">Keyvault</span></span>
+### <a name="keyvault"></a><span data-ttu-id="7b07f-328">KeyVault</span><span class="sxs-lookup"><span data-stu-id="7b07f-328">Keyvault</span></span>
 
-* <span data-ttu-id="9b251-340">修复了在尝试使用 `secret download` 自动解析机密编码时的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-340">Fixed bug when trying to automatically resolve secret encoding with `secret download`</span></span>
+* <span data-ttu-id="7b07f-329">修复了 `keyvault set-policy` 的权限区分大小写的问题。</span><span class="sxs-lookup"><span data-stu-id="7b07f-329">Fixed issue where permissions were case sensitive for `keyvault set-policy`.</span></span>
 
-### <a name="sf"></a><span data-ttu-id="9b251-341">Sf</span><span class="sxs-lookup"><span data-stu-id="9b251-341">Sf</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-330">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-330">Network</span></span>
 
-* <span data-ttu-id="9b251-342">弃用所有支持 Service Fabric CLI (sfctl) 的命令</span><span class="sxs-lookup"><span data-stu-id="9b251-342">Deprecating all commands in favor of Service Fabric CLI (sfctl)</span></span>
+* <span data-ttu-id="7b07f-331">已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`</span><span class="sxs-lookup"><span data-stu-id="7b07f-331">Renamed `vnet list-private-access-services` to `vnet list-endpoint-services`</span></span>
+* <span data-ttu-id="7b07f-332">已为 `vnet subnet create/update` 将 `--private-access-services` 参数重命名为 `--service-endpoints`</span><span class="sxs-lookup"><span data-stu-id="7b07f-332">Renamed `--private-access-services` argument to `--service-endpoints` for `vnet subnet create/update`</span></span>
+* <span data-ttu-id="7b07f-333">在 `nsg rule create/update` 中添加了对多个 IP 范围和端口范围的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-333">Added support for multiple IP ranges and port ranges to `nsg rule create/update`</span></span>
+* <span data-ttu-id="7b07f-334">在 `lb create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-334">Added support for SKU to `lb create`</span></span>
+* <span data-ttu-id="7b07f-335">在 `public-ip create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-335">Added support for SKU to `public-ip create`</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-343">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-343">Storage</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-336">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-336">Resource</span></span>
 
-* <span data-ttu-id="9b251-344">修复了无法在不支持 NetworkACLs 功能的区域中创建存储帐户的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-344">Fixed issue where storage accounts could not be created in regions that don't support the NetworkACLs feature</span></span>
-* <span data-ttu-id="9b251-345">在 Blob 和文件上载过程中确定内容类型和内容编码（如果既未指定内容类型，也未指定内容编码）</span><span class="sxs-lookup"><span data-stu-id="9b251-345">Determine content type and content encoding during blob and file upload if neither content type and content encoding are specified</span></span>
+* <span data-ttu-id="7b07f-337">允许在 `policy definition create` 和 `policy definition update` 中传入资源策略参数定义</span><span class="sxs-lookup"><span data-stu-id="7b07f-337">Allow passing in resource policy parameter definitions in `policy definition create`, and `policy definition update`</span></span>
+* <span data-ttu-id="7b07f-338">允许为 `policy assignment create` 传入参数值</span><span class="sxs-lookup"><span data-stu-id="7b07f-338">Allow passing in parameter values for `policy assignment create`</span></span>
+* <span data-ttu-id="7b07f-339">允许为所有参数传入 JSON 或文件</span><span class="sxs-lookup"><span data-stu-id="7b07f-339">Allow for passing JSON or file for all params</span></span>
+* <span data-ttu-id="7b07f-340">更新了 API 版本</span><span class="sxs-lookup"><span data-stu-id="7b07f-340">Incremented API version</span></span>
 
-## <a name="august-28-2017"></a><span data-ttu-id="9b251-346">2017 年 8 月 28 日</span><span class="sxs-lookup"><span data-stu-id="9b251-346">August 28, 2017</span></span>
+### <a name="sql"></a><span data-ttu-id="7b07f-341">SQL</span><span class="sxs-lookup"><span data-stu-id="7b07f-341">SQL</span></span>
 
-<span data-ttu-id="9b251-347">版本 2.0.15</span><span class="sxs-lookup"><span data-stu-id="9b251-347">Version 2.0.15</span></span>
+* <span data-ttu-id="7b07f-342">添加了 `sql server vnet-rule` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-342">Added `sql server vnet-rule` commands</span></span>
 
-### <a name="cli"></a><span data-ttu-id="9b251-348">CLI</span><span class="sxs-lookup"><span data-stu-id="9b251-348">CLI</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-343">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-343">VM</span></span>
 
-* <span data-ttu-id="9b251-349">在 `--version` 中添加了法律说明。</span><span class="sxs-lookup"><span data-stu-id="9b251-349">Added legal note to `--version`.</span></span>
+* <span data-ttu-id="7b07f-344">已修复：除非提供 `--scope`，否则不分配访问权限</span><span class="sxs-lookup"><span data-stu-id="7b07f-344">Fixed: Don't assign access unless `--scope` is provided</span></span>
+* <span data-ttu-id="7b07f-345">已修复：使用与门户相同的扩展命名</span><span class="sxs-lookup"><span data-stu-id="7b07f-345">Fixed: Use the same extension naming as portal does</span></span>
+* <span data-ttu-id="7b07f-346">已从 `[vm|vmss] create` 输出中删除了 `subscription`</span><span class="sxs-lookup"><span data-stu-id="7b07f-346">Removed `subscription` from the `[vm|vmss] create` output</span></span>
+* <span data-ttu-id="7b07f-347">已修复：`[vm|vmss] create` SKU 无法应用于带映像的数据磁盘</span><span class="sxs-lookup"><span data-stu-id="7b07f-347">Fixed: `[vm|vmss] create` storage SKU is not applied on data disks with an image</span></span>
+* <span data-ttu-id="7b07f-348">已修复：`vm format-secret --secrets` 不接受新行分隔的 ID</span><span class="sxs-lookup"><span data-stu-id="7b07f-348">Fixed: `vm format-secret --secrets` would not accept newline separated IDs</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-350">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-350">ACS</span></span>
+## <a name="august-31-2017"></a><span data-ttu-id="7b07f-349">2017 年 8 月31 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-349">August 31, 2017</span></span>
 
-* <span data-ttu-id="9b251-351">更正了预览区域。</span><span class="sxs-lookup"><span data-stu-id="9b251-351">Corrected preview regions.</span></span>
-* <span data-ttu-id="9b251-352">正确设置了默认 `dns_name_prefix` 的格式。</span><span class="sxs-lookup"><span data-stu-id="9b251-352">Formatted default `dns_name_prefix` properly.</span></span>
-* <span data-ttu-id="9b251-353">优化了 acs 命令输出。</span><span class="sxs-lookup"><span data-stu-id="9b251-353">Optimized acs command output.</span></span>
+<span data-ttu-id="7b07f-350">版本 2.0.16</span><span class="sxs-lookup"><span data-stu-id="7b07f-350">Version 2.0.16</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-354">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-354">Appservice</span></span>
+### <a name="keyvault"></a><span data-ttu-id="7b07f-351">KeyVault</span><span class="sxs-lookup"><span data-stu-id="7b07f-351">Keyvault</span></span>
 
-* <span data-ttu-id="9b251-355">[重大更改] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致问题</span><span class="sxs-lookup"><span data-stu-id="9b251-355">[BREAKING CHANGE] Fixed inconsistencies in the output of `az webapp config appsettings [delete|set]`</span></span>
-* <span data-ttu-id="9b251-356">为 `az webapp config container set --docker-custom-image-name` 的 `-i` 添加了新别名</span><span class="sxs-lookup"><span data-stu-id="9b251-356">Added a new alias of `-i` for `az webapp config container set --docker-custom-image-name`</span></span>
-* <span data-ttu-id="9b251-357">公开了 `az webapp log show`</span><span class="sxs-lookup"><span data-stu-id="9b251-357">Exposed `az webapp log show`</span></span>
-* <span data-ttu-id="9b251-358">公开了 `az webapp delete` 中的新参数，用于保留应用服务计划、指标或 dns 注册</span><span class="sxs-lookup"><span data-stu-id="9b251-358">Exposed new arguments from `az webapp delete` to retain app service plan, metrics or dns registration</span></span>
-* <span data-ttu-id="9b251-359">已修复：正确检测槽位设置</span><span class="sxs-lookup"><span data-stu-id="9b251-359">Fixed: Detect slot settings correctly</span></span>
+* <span data-ttu-id="7b07f-352">修复了在尝试使用 `secret download` 自动解析机密编码时的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-352">Fixed bug when trying to automatically resolve secret encoding with `secret download`</span></span>
 
-### <a name="iot"></a><span data-ttu-id="9b251-360">IoT</span><span class="sxs-lookup"><span data-stu-id="9b251-360">IoT</span></span>
+### <a name="sf"></a><span data-ttu-id="7b07f-353">Sf</span><span class="sxs-lookup"><span data-stu-id="7b07f-353">Sf</span></span>
 
-* <span data-ttu-id="9b251-361">修复了 #3934：策略创建操作不再清除现有的策略</span><span class="sxs-lookup"><span data-stu-id="9b251-361">Fixed #3934: Policy creation no longer clears existing policies</span></span>
+* <span data-ttu-id="7b07f-354">弃用所有支持 Service Fabric CLI (sfctl) 的命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-354">Deprecating all commands in favor of Service Fabric CLI (sfctl)</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-362">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-362">Network</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-355">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-355">Storage</span></span>
 
-* <span data-ttu-id="9b251-363">[重大更改] 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`</span><span class="sxs-lookup"><span data-stu-id="9b251-363">[BREAKING CHANGE] Renamed `vnet list-private-access-services` to `vnet list-endpoint-services`</span></span>
-* <span data-ttu-id="9b251-364">[重大更改] 已将 `vnet subnet [create|update]` 的选项 `--private-access-services` 重命名为 `--service-endpoints`</span><span class="sxs-lookup"><span data-stu-id="9b251-364">[BREAKING CHANGE] Renamed option `--private-access-services` to `--service-endpoints` for `vnet subnet [create|update]`</span></span>
-* <span data-ttu-id="9b251-365">在 `nsg rule [create|update]` 中添加了对多个 IP 和端口范围的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-365">Added support for multiple IP and port ranges to `nsg rule [create|update]`</span></span>
-* <span data-ttu-id="9b251-366">在 `lb create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-366">Added support for SKU to `lb create`</span></span>
-* <span data-ttu-id="9b251-367">在 `public-ip create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-367">Added support for SKU to `public-ip create`</span></span>
+* <span data-ttu-id="7b07f-356">修复了无法在不支持 NetworkACLs 功能的区域中创建存储帐户的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-356">Fixed issue where storage accounts could not be created in regions that don't support the NetworkACLs feature</span></span>
+* <span data-ttu-id="7b07f-357">在 Blob 和文件上载过程中确定内容类型和内容编码（如果既未指定内容类型，也未指定内容编码）</span><span class="sxs-lookup"><span data-stu-id="7b07f-357">Determine content type and content encoding during blob and file upload if neither content type and content encoding are specified</span></span>
 
-### <a name="profile"></a><span data-ttu-id="9b251-368">配置文件</span><span class="sxs-lookup"><span data-stu-id="9b251-368">Profile</span></span>
+## <a name="august-28-2017"></a><span data-ttu-id="7b07f-358">2017 年 8 月 28 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-358">August 28, 2017</span></span>
 
-* <span data-ttu-id="9b251-369">公开了 `--msi` 和 `--msi-port`，以便使用虚拟机的标识登录</span><span class="sxs-lookup"><span data-stu-id="9b251-369">Exposed `--msi` and `--msi-port` to login using a virtual machine's identity</span></span>
+<span data-ttu-id="7b07f-359">版本 2.0.15</span><span class="sxs-lookup"><span data-stu-id="7b07f-359">Version 2.0.15</span></span>
 
-### <a name="service-fabric"></a><span data-ttu-id="9b251-370">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="9b251-370">Service Fabric</span></span>
+### <a name="cli"></a><span data-ttu-id="7b07f-360">CLI</span><span class="sxs-lookup"><span data-stu-id="7b07f-360">CLI</span></span>
 
-* <span data-ttu-id="9b251-371">预览版</span><span class="sxs-lookup"><span data-stu-id="9b251-371">Preview release</span></span>
-* <span data-ttu-id="9b251-372">简化了命令的注册表用户/密码规则</span><span class="sxs-lookup"><span data-stu-id="9b251-372">Simplified registry user/password rules for command</span></span>
-* <span data-ttu-id="9b251-373">修复了即使在参数中传入了密码，也提示用户输入密码的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-373">Fixed password prompt for user even after passing in the param</span></span>
-* <span data-ttu-id="9b251-374">添加了对空 `registry_cred` 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-374">Added support for empty `registry_cred`</span></span>
+* <span data-ttu-id="7b07f-361">在 `--version` 中添加了法律说明。</span><span class="sxs-lookup"><span data-stu-id="7b07f-361">Added legal note to `--version`.</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-375">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-375">Storage</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-362">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-362">ACS</span></span>
 
-* <span data-ttu-id="9b251-376">启用了设置 Blob 层</span><span class="sxs-lookup"><span data-stu-id="9b251-376">Enabled setting blob tier</span></span>
-* <span data-ttu-id="9b251-377">为 `storage account [create|update]` 添加了 `--bypass` 和 `--default-action` 参数用于支持服务隧道</span><span class="sxs-lookup"><span data-stu-id="9b251-377">Added `--bypass` and `--default-action` arguments to `storage account [create|update]` to support service tunneling</span></span>
-* <span data-ttu-id="9b251-378">添加了用于在 `storage account network-rule` 中添加 VNET 规则和基于 IP 的规则的命令</span><span class="sxs-lookup"><span data-stu-id="9b251-378">Added commands to add VNET rules and IP based rules to `storage account network-rule`</span></span>
-* <span data-ttu-id="9b251-379">启用了使用客户管理的密钥进行服务加密的功能</span><span class="sxs-lookup"><span data-stu-id="9b251-379">Enabled service encryption by customer managed key</span></span>
-* <span data-ttu-id="9b251-380">[重大更改] 已将 `az storage account create and az storage account update` 命令的选项 `--encryption` 重命名为 `--encryption-services`</span><span class="sxs-lookup"><span data-stu-id="9b251-380">[BREAKING CHANGE] Renamed `--encryption` option to `--encryption-services` for `az storage account create and az storage account update` command</span></span>
-* <span data-ttu-id="9b251-381">修复了 #4220：`az storage account update encryption` - 语法不匹配</span><span class="sxs-lookup"><span data-stu-id="9b251-381">Fixed #4220: `az storage account update encryption` - syntax mismatch</span></span>
+* <span data-ttu-id="7b07f-363">更正了预览区域。</span><span class="sxs-lookup"><span data-stu-id="7b07f-363">Corrected preview regions.</span></span>
+* <span data-ttu-id="7b07f-364">正确设置了默认 `dns_name_prefix` 的格式。</span><span class="sxs-lookup"><span data-stu-id="7b07f-364">Formatted default `dns_name_prefix` properly.</span></span>
+* <span data-ttu-id="7b07f-365">优化了 acs 命令输出。</span><span class="sxs-lookup"><span data-stu-id="7b07f-365">Optimized acs command output.</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-382">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-382">VM</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-366">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-366">Appservice</span></span>
 
-* <span data-ttu-id="9b251-383">修复了使用 `--instance-id *` 时，针对 `vmss get-instance-view` 显示多余且错误的信息的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-383">Fixed issue where extra, erroneous information was displayed for `vmss get-instance-view` when using `--instance-id *`</span></span>
-* <span data-ttu-id="9b251-384">在 `vmss create` 中添加了对 `--lb-sku` 的支持：</span><span class="sxs-lookup"><span data-stu-id="9b251-384">Added support for `--lb-sku` to `vmss create`:</span></span>
-* <span data-ttu-id="9b251-385">从 `[vm|vmss] create` 的管理员名称方块列表中删除了人员名称</span><span class="sxs-lookup"><span data-stu-id="9b251-385">Removed human names from the admin name blacklist for `[vm|vmss] create`</span></span>
-* <span data-ttu-id="9b251-386">修复了当无法从映像中提取计划信息时，`[vm|vmss] create` 引发错误的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-386">Fixed issue where `[vm|vmss] create` would throw an error if unable to extract plan information from an image</span></span>
-* <span data-ttu-id="9b251-387">修复了创建包含内部 LB 的 vmms 规模集时发生崩溃的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-387">Fixed a crash when creating a vmms scaleset with an internal LB</span></span>
-* <span data-ttu-id="9b251-388">修复了 `--no-wait` 参数无法配合 `vm availability-set create` 工作的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-388">Fixed issue where `--no-wait` argument did not work wth `vm availability-set create`</span></span>
+* <span data-ttu-id="7b07f-367">[重大更改] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-367">[BREAKING CHANGE] Fixed inconsistencies in the output of `az webapp config appsettings [delete|set]`</span></span>
+* <span data-ttu-id="7b07f-368">为 `az webapp config container set --docker-custom-image-name` 的 `-i` 添加了新别名</span><span class="sxs-lookup"><span data-stu-id="7b07f-368">Added a new alias of `-i` for `az webapp config container set --docker-custom-image-name`</span></span>
+* <span data-ttu-id="7b07f-369">公开了 `az webapp log show`</span><span class="sxs-lookup"><span data-stu-id="7b07f-369">Exposed `az webapp log show`</span></span>
+* <span data-ttu-id="7b07f-370">公开了 `az webapp delete` 中的新参数，用于保留应用服务计划、指标或 dns 注册</span><span class="sxs-lookup"><span data-stu-id="7b07f-370">Exposed new arguments from `az webapp delete` to retain app service plan, metrics or dns registration</span></span>
+* <span data-ttu-id="7b07f-371">已修复：正确检测槽位设置</span><span class="sxs-lookup"><span data-stu-id="7b07f-371">Fixed: Detect slot settings correctly</span></span>
 
+### <a name="iot"></a><span data-ttu-id="7b07f-372">IoT</span><span class="sxs-lookup"><span data-stu-id="7b07f-372">IoT</span></span>
 
-## <a name="august-15-2017"></a><span data-ttu-id="9b251-389">2017 年 8 月 15 日</span><span class="sxs-lookup"><span data-stu-id="9b251-389">August 15, 2017</span></span>
+* <span data-ttu-id="7b07f-373">修复了 #3934：策略创建操作不再清除现有的策略</span><span class="sxs-lookup"><span data-stu-id="7b07f-373">Fixed #3934: Policy creation no longer clears existing policies</span></span>
 
-<span data-ttu-id="9b251-390">版本 2.0.14</span><span class="sxs-lookup"><span data-stu-id="9b251-390">Version 2.0.14</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-374">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-374">Network</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-391">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-391">ACS</span></span>
+* <span data-ttu-id="7b07f-375">[重大更改] 已将 `vnet list-private-access-services` 重命名为 `vnet list-endpoint-services`</span><span class="sxs-lookup"><span data-stu-id="7b07f-375">[BREAKING CHANGE] Renamed `vnet list-private-access-services` to `vnet list-endpoint-services`</span></span>
+* <span data-ttu-id="7b07f-376">[重大更改] 已将 `vnet subnet [create|update]` 的选项 `--private-access-services` 重命名为 `--service-endpoints`</span><span class="sxs-lookup"><span data-stu-id="7b07f-376">[BREAKING CHANGE] Renamed option `--private-access-services` to `--service-endpoints` for `vnet subnet [create|update]`</span></span>
+* <span data-ttu-id="7b07f-377">在 `nsg rule [create|update]` 中添加了对多个 IP 和端口范围的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-377">Added support for multiple IP and port ranges to `nsg rule [create|update]`</span></span>
+* <span data-ttu-id="7b07f-378">在 `lb create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-378">Added support for SKU to `lb create`</span></span>
+* <span data-ttu-id="7b07f-379">在 `public-ip create` 中添加了对 SKU 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-379">Added support for SKU to `public-ip create`</span></span>
 
-* <span data-ttu-id="9b251-392">更正了 kubernetes 的 sshMaster0 端口号</span><span class="sxs-lookup"><span data-stu-id="9b251-392">Corrected sshMaster0 port number for kubernetes</span></span>
+### <a name="profile"></a><span data-ttu-id="7b07f-380">配置文件</span><span class="sxs-lookup"><span data-stu-id="7b07f-380">Profile</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-393">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-393">Appservice</span></span>
+* <span data-ttu-id="7b07f-381">公开了 `--msi` 和 `--msi-port`，以便使用虚拟机的标识登录</span><span class="sxs-lookup"><span data-stu-id="7b07f-381">Exposed `--msi` and `--msi-port` to login using a virtual machine's identity</span></span>
 
-* <span data-ttu-id="9b251-394">修复了创建基于新 Git 的 Linux Web 应用时发生异常的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-394">Fixed an exception when creatng a new git based Linux webapp</span></span>
+### <a name="service-fabric"></a><span data-ttu-id="7b07f-382">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="7b07f-382">Service Fabric</span></span>
 
-### <a name="event-grid"></a><span data-ttu-id="9b251-395">事件网格</span><span class="sxs-lookup"><span data-stu-id="9b251-395">Event Grid</span></span>
+* <span data-ttu-id="7b07f-383">预览版</span><span class="sxs-lookup"><span data-stu-id="7b07f-383">Preview release</span></span>
+* <span data-ttu-id="7b07f-384">简化了命令的注册表用户/密码规则</span><span class="sxs-lookup"><span data-stu-id="7b07f-384">Simplified registry user/password rules for command</span></span>
+* <span data-ttu-id="7b07f-385">修复了即使在参数中传入了密码，也提示用户输入密码的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-385">Fixed password prompt for user even after passing in the param</span></span>
+* <span data-ttu-id="7b07f-386">添加了对空 `registry_cred` 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-386">Added support for empty `registry_cred`</span></span>
 
-* <span data-ttu-id="9b251-396">添加了 SDK 依赖项</span><span class="sxs-lookup"><span data-stu-id="9b251-396">Added SDK dependencies</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-387">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-387">Storage</span></span>
 
-## <a name="august-11-2017"></a><span data-ttu-id="9b251-397">2017 年 8 月 11 日</span><span class="sxs-lookup"><span data-stu-id="9b251-397">August 11, 2017</span></span>
+* <span data-ttu-id="7b07f-388">启用了设置 Blob 层</span><span class="sxs-lookup"><span data-stu-id="7b07f-388">Enabled setting blob tier</span></span>
+* <span data-ttu-id="7b07f-389">为 `storage account [create|update]` 添加了 `--bypass` 和 `--default-action` 参数用于支持服务隧道</span><span class="sxs-lookup"><span data-stu-id="7b07f-389">Added `--bypass` and `--default-action` arguments to `storage account [create|update]` to support service tunneling</span></span>
+* <span data-ttu-id="7b07f-390">添加了用于在 `storage account network-rule` 中添加 VNET 规则和基于 IP 的规则的命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-390">Added commands to add VNET rules and IP based rules to `storage account network-rule`</span></span>
+* <span data-ttu-id="7b07f-391">启用了使用客户管理的密钥进行服务加密的功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-391">Enabled service encryption by customer managed key</span></span>
+* <span data-ttu-id="7b07f-392">[重大更改] 已将 `az storage account create and az storage account update` 命令的选项 `--encryption` 重命名为 `--encryption-services`</span><span class="sxs-lookup"><span data-stu-id="7b07f-392">[BREAKING CHANGE] Renamed `--encryption` option to `--encryption-services` for `az storage account create and az storage account update` command</span></span>
+* <span data-ttu-id="7b07f-393">修复了 #4220：`az storage account update encryption` - 语法不匹配</span><span class="sxs-lookup"><span data-stu-id="7b07f-393">Fixed #4220: `az storage account update encryption` - syntax mismatch</span></span>
 
-<span data-ttu-id="9b251-398">版本 2.0.13</span><span class="sxs-lookup"><span data-stu-id="9b251-398">Version 2.0.13</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-394">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-394">VM</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-399">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-399">ACS</span></span>
+* <span data-ttu-id="7b07f-395">修复了使用 `--instance-id *` 时，针对 `vmss get-instance-view` 显示多余且错误的信息的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-395">Fixed issue where extra, erroneous information was displayed for `vmss get-instance-view` when using `--instance-id *`</span></span>
+* <span data-ttu-id="7b07f-396">在 `vmss create` 中添加了对 `--lb-sku` 的支持：</span><span class="sxs-lookup"><span data-stu-id="7b07f-396">Added support for `--lb-sku` to `vmss create`:</span></span>
+* <span data-ttu-id="7b07f-397">从 `[vm|vmss] create` 的管理员名称方块列表中删除了人员名称</span><span class="sxs-lookup"><span data-stu-id="7b07f-397">Removed human names from the admin name blacklist for `[vm|vmss] create`</span></span>
+* <span data-ttu-id="7b07f-398">修复了当无法从映像中提取计划信息时，`[vm|vmss] create` 引发错误的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-398">Fixed issue where `[vm|vmss] create` would throw an error if unable to extract plan information from an image</span></span>
+* <span data-ttu-id="7b07f-399">修复了创建包含内部 LB 的 vmms 规模集时发生崩溃的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-399">Fixed a crash when creating a vmms scaleset with an internal LB</span></span>
+* <span data-ttu-id="7b07f-400">修复了 `--no-wait` 参数无法配合 `vm availability-set create` 工作的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-400">Fixed issue where `--no-wait` argument did not work wth `vm availability-set create`</span></span>
 
-* <span data-ttu-id="9b251-400">添加了更多预览区域</span><span class="sxs-lookup"><span data-stu-id="9b251-400">Added more preview regions</span></span>
 
-### <a name="batch"></a><span data-ttu-id="9b251-401">批处理</span><span class="sxs-lookup"><span data-stu-id="9b251-401">Batch</span></span>
+## <a name="august-15-2017"></a><span data-ttu-id="7b07f-401">2017 年 8 月 15 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-401">August 15, 2017</span></span>
 
-* <span data-ttu-id="9b251-402">已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0</span><span class="sxs-lookup"><span data-stu-id="9b251-402">Updated to Batch SDK 3.1.0 and Batch Management SDK 4.1.0</span></span>
-* <span data-ttu-id="9b251-403">添加了新命令用于显示作业的任务计数</span><span class="sxs-lookup"><span data-stu-id="9b251-403">Added a new command show the task counts of a job</span></span>
-* <span data-ttu-id="9b251-404">修复了处理资源文件 SAS URL 时的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-404">Fixed bug in resource file SAS URL processing</span></span>
-* <span data-ttu-id="9b251-405">Batch 帐户终结点现在支持可选的“https://” 前缀</span><span class="sxs-lookup"><span data-stu-id="9b251-405">Batch account endpoint now supports optional 'https://' prefix</span></span>
-* <span data-ttu-id="9b251-406">支持将包含 100 多个任务的列表添加到作业</span><span class="sxs-lookup"><span data-stu-id="9b251-406">Support for adding lists of more than 100 tasks to a job</span></span>
-* <span data-ttu-id="9b251-407">添加了加载扩展命令模块的调试日志记录</span><span class="sxs-lookup"><span data-stu-id="9b251-407">Added debug logging for loading Extensions command module</span></span>
+<span data-ttu-id="7b07f-402">版本 2.0.14</span><span class="sxs-lookup"><span data-stu-id="7b07f-402">Version 2.0.14</span></span>
 
-### <a name="component"></a><span data-ttu-id="9b251-408">组件</span><span class="sxs-lookup"><span data-stu-id="9b251-408">Component</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-403">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-403">ACS</span></span>
 
-* <span data-ttu-id="9b251-409">为“az component”命令添加了弃用警告</span><span class="sxs-lookup"><span data-stu-id="9b251-409">Added deprecation warning to 'az component' commands</span></span>
+* <span data-ttu-id="7b07f-404">更正了 kubernetes 的 sshMaster0 端口号</span><span class="sxs-lookup"><span data-stu-id="7b07f-404">Corrected sshMaster0 port number for kubernetes</span></span>
 
-### <a name="container"></a><span data-ttu-id="9b251-410">容器</span><span class="sxs-lookup"><span data-stu-id="9b251-410">Container</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-405">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-405">Appservice</span></span>
 
-* <span data-ttu-id="9b251-411">`create`：修复了某个环境变量中不允许等于号的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-411">`create`: Fixed issue where equals sign was not allowed inside an environment variable</span></span>
+* <span data-ttu-id="7b07f-406">修复了创建基于新 Git 的 Linux Web 应用时发生异常的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-406">Fixed an exception when creatng a new git based Linux webapp</span></span>
 
+### <a name="event-grid"></a><span data-ttu-id="7b07f-407">事件网格</span><span class="sxs-lookup"><span data-stu-id="7b07f-407">Event Grid</span></span>
 
-### <a name="data-lake-store"></a><span data-ttu-id="9b251-412">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="9b251-412">Data Lake Store</span></span>
+* <span data-ttu-id="7b07f-408">添加了 SDK 依赖项</span><span class="sxs-lookup"><span data-stu-id="7b07f-408">Added SDK dependencies</span></span>
 
-* <span data-ttu-id="9b251-413">启用了进度控件</span><span class="sxs-lookup"><span data-stu-id="9b251-413">Enabled progress control</span></span>
+## <a name="august-11-2017"></a><span data-ttu-id="7b07f-409">2017 年 8 月 11 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-409">August 11, 2017</span></span>
 
-### <a name="event-grid"></a><span data-ttu-id="9b251-414">事件网格</span><span class="sxs-lookup"><span data-stu-id="9b251-414">Event Grid</span></span>
+<span data-ttu-id="7b07f-410">版本 2.0.13</span><span class="sxs-lookup"><span data-stu-id="7b07f-410">Version 2.0.13</span></span>
 
-* <span data-ttu-id="9b251-415">初始版本</span><span class="sxs-lookup"><span data-stu-id="9b251-415">Initial release</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-411">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-411">ACS</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-416">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-416">Network</span></span>
+* <span data-ttu-id="7b07f-412">添加了更多预览区域</span><span class="sxs-lookup"><span data-stu-id="7b07f-412">Added more preview regions</span></span>
 
-* <span data-ttu-id="9b251-417">`lb`：修复了某些子资源名称在省略时无法正确解析的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-417">`lb`: Fixed issue where the certain child resource names did not resolve correctly when omitted</span></span>
-* <span data-ttu-id="9b251-418">`application-gateway {subresource} delete`：修复了不遵循 `--no-wait` 的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-418">`application-gateway {subresource} delete`: Fixed issue where `--no-wait` was not honored</span></span>
-* <span data-ttu-id="9b251-419">`application-gateway http-settings update`：修复了无法关闭 `--connection-draining-timeout` 的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-419">`application-gateway http-settings update`: Fixed issue where `--connection-draining-timeout` could not be turned off</span></span>
-* <span data-ttu-id="9b251-420">修复了 `az network vpn-connection ipsec-policy add` 包含意外关键字参数 `sa_data_size_kilobyes` 的错误</span><span class="sxs-lookup"><span data-stu-id="9b251-420">Fixed error unexpected keyword argument `sa_data_size_kilobyes` with `az network vpn-connection ipsec-policy add`</span></span>
+### <a name="batch"></a><span data-ttu-id="7b07f-413">Batch</span><span class="sxs-lookup"><span data-stu-id="7b07f-413">Batch</span></span>
 
-### <a name="profile"></a><span data-ttu-id="9b251-421">配置文件</span><span class="sxs-lookup"><span data-stu-id="9b251-421">Profile</span></span>
+* <span data-ttu-id="7b07f-414">已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0</span><span class="sxs-lookup"><span data-stu-id="7b07f-414">Updated to Batch SDK 3.1.0 and Batch Management SDK 4.1.0</span></span>
+* <span data-ttu-id="7b07f-415">添加了新命令用于显示作业的任务计数</span><span class="sxs-lookup"><span data-stu-id="7b07f-415">Added a new command show the task counts of a job</span></span>
+* <span data-ttu-id="7b07f-416">修复了处理资源文件 SAS URL 时的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-416">Fixed bug in resource file SAS URL processing</span></span>
+* <span data-ttu-id="7b07f-417">Batch 帐户终结点现在支持可选的“https://” 前缀</span><span class="sxs-lookup"><span data-stu-id="7b07f-417">Batch account endpoint now supports optional 'https://' prefix</span></span>
+* <span data-ttu-id="7b07f-418">支持将包含 100 多个任务的列表添加到作业</span><span class="sxs-lookup"><span data-stu-id="7b07f-418">Support for adding lists of more than 100 tasks to a job</span></span>
+* <span data-ttu-id="7b07f-419">添加了加载扩展命令模块的调试日志记录</span><span class="sxs-lookup"><span data-stu-id="7b07f-419">Added debug logging for loading Extensions command module</span></span>
 
-* <span data-ttu-id="9b251-422">`account list`：添加了 `--refresh` 用于从服务器同步最新订阅</span><span class="sxs-lookup"><span data-stu-id="9b251-422">`account list`: Added `--refresh` to sync up the latest subscriptions from server</span></span>
+### <a name="component"></a><span data-ttu-id="7b07f-420">组件</span><span class="sxs-lookup"><span data-stu-id="7b07f-420">Component</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-423">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-423">Storage</span></span>
+* <span data-ttu-id="7b07f-421">为“az component”命令添加了弃用警告</span><span class="sxs-lookup"><span data-stu-id="7b07f-421">Added deprecation warning to 'az component' commands</span></span>
 
-* <span data-ttu-id="9b251-424">启用了使用系统分配的标识更新存储帐户的功能</span><span class="sxs-lookup"><span data-stu-id="9b251-424">Enable update storage account with system assigned identity</span></span>
+### <a name="container"></a><span data-ttu-id="7b07f-422">容器</span><span class="sxs-lookup"><span data-stu-id="7b07f-422">Container</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-425">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-425">VM</span></span>
+* <span data-ttu-id="7b07f-423">`create`：修复了某个环境变量中不允许等于号的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-423">`create`: Fixed issue where equals sign was not allowed inside an environment variable</span></span>
 
-* <span data-ttu-id="9b251-426">`availability-set`：公开了转换时的容错域计数</span><span class="sxs-lookup"><span data-stu-id="9b251-426">`availability-set`: Exposed fault domain count on convert</span></span>
-* <span data-ttu-id="9b251-427">公开了 `list-skus` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-427">Exposed `list-skus` command</span></span>
-* <span data-ttu-id="9b251-428">支持在不创建角色分配的情况下分配标识</span><span class="sxs-lookup"><span data-stu-id="9b251-428">Support to assign identity w/o creating role assignments</span></span>
-* <span data-ttu-id="9b251-429">附加数据磁盘时应用存储 SKU</span><span class="sxs-lookup"><span data-stu-id="9b251-429">Apply storage sku on attaching data disks</span></span>
-* <span data-ttu-id="9b251-430">删除了使用托管磁盘时的默认 OS 磁盘名称和存储 SKU</span><span class="sxs-lookup"><span data-stu-id="9b251-430">Removed default os-disk name and storage SKU when using managed disks</span></span>
 
+### <a name="data-lake-store"></a><span data-ttu-id="7b07f-424">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="7b07f-424">Data Lake Store</span></span>
 
-## <a name="july-28-2017"></a><span data-ttu-id="9b251-431">2017 年 7 月 28 日</span><span class="sxs-lookup"><span data-stu-id="9b251-431">July 28, 2017</span></span>
+* <span data-ttu-id="7b07f-425">启用了进度控件</span><span class="sxs-lookup"><span data-stu-id="7b07f-425">Enabled progress control</span></span>
 
-<span data-ttu-id="9b251-432">版本 2.0.12</span><span class="sxs-lookup"><span data-stu-id="9b251-432">Version 2.0.12</span></span>
+### <a name="event-grid"></a><span data-ttu-id="7b07f-426">事件网格</span><span class="sxs-lookup"><span data-stu-id="7b07f-426">Event Grid</span></span>
 
-* <span data-ttu-id="9b251-433">添加了容器命令</span><span class="sxs-lookup"><span data-stu-id="9b251-433">Added container commands</span></span>
-* <span data-ttu-id="9b251-434">添加了计费和消耗模块</span><span class="sxs-lookup"><span data-stu-id="9b251-434">Added billing and consumption modules</span></span>
+* <span data-ttu-id="7b07f-427">初始版本</span><span class="sxs-lookup"><span data-stu-id="7b07f-427">Initial release</span></span>
+
+### <a name="network"></a><span data-ttu-id="7b07f-428">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-428">Network</span></span>
+
+* <span data-ttu-id="7b07f-429">`lb`：修复了某些子资源名称在省略时无法正确解析的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-429">`lb`: Fixed issue where the certain child resource names did not resolve correctly when omitted</span></span>
+* <span data-ttu-id="7b07f-430">`application-gateway {subresource} delete`：修复了不遵循 `--no-wait` 的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-430">`application-gateway {subresource} delete`: Fixed issue where `--no-wait` was not honored</span></span>
+* <span data-ttu-id="7b07f-431">`application-gateway http-settings update`：修复了无法关闭 `--connection-draining-timeout` 的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-431">`application-gateway http-settings update`: Fixed issue where `--connection-draining-timeout` could not be turned off</span></span>
+* <span data-ttu-id="7b07f-432">修复了 `az network vpn-connection ipsec-policy add` 包含意外关键字参数 `sa_data_size_kilobyes` 的错误</span><span class="sxs-lookup"><span data-stu-id="7b07f-432">Fixed error unexpected keyword argument `sa_data_size_kilobyes` with `az network vpn-connection ipsec-policy add`</span></span>
+
+### <a name="profile"></a><span data-ttu-id="7b07f-433">配置文件</span><span class="sxs-lookup"><span data-stu-id="7b07f-433">Profile</span></span>
+
+* <span data-ttu-id="7b07f-434">`account list`：添加了 `--refresh` 用于从服务器同步最新订阅</span><span class="sxs-lookup"><span data-stu-id="7b07f-434">`account list`: Added `--refresh` to sync up the latest subscriptions from server</span></span>
+
+### <a name="storage"></a><span data-ttu-id="7b07f-435">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-435">Storage</span></span>
+
+* <span data-ttu-id="7b07f-436">启用了使用系统分配的标识更新存储帐户的功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-436">Enable update storage account with system assigned identity</span></span>
+
+### <a name="vm"></a><span data-ttu-id="7b07f-437">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-437">VM</span></span>
+
+* <span data-ttu-id="7b07f-438">`availability-set`：公开了转换时的容错域计数</span><span class="sxs-lookup"><span data-stu-id="7b07f-438">`availability-set`: Exposed fault domain count on convert</span></span>
+* <span data-ttu-id="7b07f-439">公开了 `list-skus` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-439">Exposed `list-skus` command</span></span>
+* <span data-ttu-id="7b07f-440">支持在不创建角色分配的情况下分配标识</span><span class="sxs-lookup"><span data-stu-id="7b07f-440">Support to assign identity w/o creating role assignments</span></span>
+* <span data-ttu-id="7b07f-441">附加数据磁盘时应用存储 SKU</span><span class="sxs-lookup"><span data-stu-id="7b07f-441">Apply storage sku on attaching data disks</span></span>
+* <span data-ttu-id="7b07f-442">删除了使用托管磁盘时的默认 OS 磁盘名称和存储 SKU</span><span class="sxs-lookup"><span data-stu-id="7b07f-442">Removed default os-disk name and storage SKU when using managed disks</span></span>
+
+
+## <a name="july-28-2017"></a><span data-ttu-id="7b07f-443">2017 年 7 月 28 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-443">July 28, 2017</span></span>
+
+<span data-ttu-id="7b07f-444">版本 2.0.12</span><span class="sxs-lookup"><span data-stu-id="7b07f-444">Version 2.0.12</span></span>
+
+* <span data-ttu-id="7b07f-445">添加了容器命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-445">Added container commands</span></span>
+* <span data-ttu-id="7b07f-446">添加了计费和消耗模块</span><span class="sxs-lookup"><span data-stu-id="7b07f-446">Added billing and consumption modules</span></span>
 
 ```
 azure-cli (2.0.12)
@@ -602,243 +626,243 @@ storage (2.0.11)
 vm (2.0.11)
 ```
 
-### <a name="core"></a><span data-ttu-id="9b251-435">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-435">Core</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-447">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-447">Core</span></span>
 
-* <span data-ttu-id="9b251-436">输出包含证书的服务主体的 SDK 身份验证信息</span><span class="sxs-lookup"><span data-stu-id="9b251-436">Output sdk auth info for service principals with certificates</span></span>
-* <span data-ttu-id="9b251-437">修复了部署进度异常</span><span class="sxs-lookup"><span data-stu-id="9b251-437">Fixed deployment progress exceptions</span></span>
-* <span data-ttu-id="9b251-438">使用当前云中的 arm 终结点创建订阅客户端</span><span class="sxs-lookup"><span data-stu-id="9b251-438">Use arm endpoint from the current cloud to create subscription client</span></span>
-* <span data-ttu-id="9b251-439">改进了 clouds.config 文件的并发处理 (#3636)</span><span class="sxs-lookup"><span data-stu-id="9b251-439">Improved concurrent handling of clouds.config file (#3636)</span></span>
-* <span data-ttu-id="9b251-440">刷新每个命令执行进程的客户端请求 ID</span><span class="sxs-lookup"><span data-stu-id="9b251-440">Refresh client request id for each command execution</span></span>
-* <span data-ttu-id="9b251-441">使用适当的 SDK 配置文件创建订阅客户端 (#3635)</span><span class="sxs-lookup"><span data-stu-id="9b251-441">Create subscription clients with right SDK profile (#3635)</span></span>
-* <span data-ttu-id="9b251-442">模板部署的进度报告 (#3510)</span><span class="sxs-lookup"><span data-stu-id="9b251-442">Progress Reporting for template deployments (#3510)</span></span>
-* <span data-ttu-id="9b251-443">添加了通过 jmespath 查询选择表输出字段的支持 (#3581)</span><span class="sxs-lookup"><span data-stu-id="9b251-443">Added support for picking table output fields through jmespath query  (#3581)</span></span>
-* <span data-ttu-id="9b251-444">改进了分析参数的静默和包含手势的追加历史记录 (#3434)</span><span class="sxs-lookup"><span data-stu-id="9b251-444">Improved the muting of parse args and append history with gestures (#3434)</span></span>
-* <span data-ttu-id="9b251-445">使用适当的 SDK 配置文件创建订阅客户端</span><span class="sxs-lookup"><span data-stu-id="9b251-445">Create subscription clients with right SDK profile</span></span>
-* <span data-ttu-id="9b251-446">将所有现有记录文件移到最新的文件夹</span><span class="sxs-lookup"><span data-stu-id="9b251-446">Move all existing recording files to latest folder</span></span>
-* <span data-ttu-id="9b251-447">修复了 VM/VMSS 创建操作的幂等性 (#3586)</span><span class="sxs-lookup"><span data-stu-id="9b251-447">Fixed idempotency for VM/VMSS create (#3586)</span></span>
-* <span data-ttu-id="9b251-448">命令路径不再区分大小写</span><span class="sxs-lookup"><span data-stu-id="9b251-448">Command paths are no longer case sensitive</span></span>
-* <span data-ttu-id="9b251-449">某些布尔类型的参数不再区分大小写</span><span class="sxs-lookup"><span data-stu-id="9b251-449">Certain boolean-type parameters are no longer case sensitive</span></span>
-* <span data-ttu-id="9b251-450">支持登录到 Azure Stack 等本地服务器上的 ADFS</span><span class="sxs-lookup"><span data-stu-id="9b251-450">Support login to ADFS on prem server like Azure Stack</span></span>
-* <span data-ttu-id="9b251-451">修复了并发写入 clouds.config 的问题 (#3255)</span><span class="sxs-lookup"><span data-stu-id="9b251-451">Fixed concurrent writes to clouds.config (#3255)</span></span>
+* <span data-ttu-id="7b07f-448">输出包含证书的服务主体的 SDK 身份验证信息</span><span class="sxs-lookup"><span data-stu-id="7b07f-448">Output sdk auth info for service principals with certificates</span></span>
+* <span data-ttu-id="7b07f-449">修复了部署进度异常</span><span class="sxs-lookup"><span data-stu-id="7b07f-449">Fixed deployment progress exceptions</span></span>
+* <span data-ttu-id="7b07f-450">使用当前云中的 arm 终结点创建订阅客户端</span><span class="sxs-lookup"><span data-stu-id="7b07f-450">Use arm endpoint from the current cloud to create subscription client</span></span>
+* <span data-ttu-id="7b07f-451">改进了 clouds.config 文件的并发处理 (#3636)</span><span class="sxs-lookup"><span data-stu-id="7b07f-451">Improved concurrent handling of clouds.config file (#3636)</span></span>
+* <span data-ttu-id="7b07f-452">刷新每个命令执行进程的客户端请求 ID</span><span class="sxs-lookup"><span data-stu-id="7b07f-452">Refresh client request id for each command execution</span></span>
+* <span data-ttu-id="7b07f-453">使用适当的 SDK 配置文件创建订阅客户端 (#3635)</span><span class="sxs-lookup"><span data-stu-id="7b07f-453">Create subscription clients with right SDK profile (#3635)</span></span>
+* <span data-ttu-id="7b07f-454">模板部署的进度报告 (#3510)</span><span class="sxs-lookup"><span data-stu-id="7b07f-454">Progress Reporting for template deployments (#3510)</span></span>
+* <span data-ttu-id="7b07f-455">添加了通过 jmespath 查询选择表输出字段的支持 (#3581)</span><span class="sxs-lookup"><span data-stu-id="7b07f-455">Added support for picking table output fields through jmespath query  (#3581)</span></span>
+* <span data-ttu-id="7b07f-456">改进了分析参数的静默和包含手势的追加历史记录 (#3434)</span><span class="sxs-lookup"><span data-stu-id="7b07f-456">Improved the muting of parse args and append history with gestures (#3434)</span></span>
+* <span data-ttu-id="7b07f-457">使用适当的 SDK 配置文件创建订阅客户端</span><span class="sxs-lookup"><span data-stu-id="7b07f-457">Create subscription clients with right SDK profile</span></span>
+* <span data-ttu-id="7b07f-458">将所有现有记录文件移到最新的文件夹</span><span class="sxs-lookup"><span data-stu-id="7b07f-458">Move all existing recording files to latest folder</span></span>
+* <span data-ttu-id="7b07f-459">修复了 VM/VMSS 创建操作的幂等性 (#3586)</span><span class="sxs-lookup"><span data-stu-id="7b07f-459">Fixed idempotency for VM/VMSS create (#3586)</span></span>
+* <span data-ttu-id="7b07f-460">命令路径不再区分大小写</span><span class="sxs-lookup"><span data-stu-id="7b07f-460">Command paths are no longer case sensitive</span></span>
+* <span data-ttu-id="7b07f-461">某些布尔类型的参数不再区分大小写</span><span class="sxs-lookup"><span data-stu-id="7b07f-461">Certain boolean-type parameters are no longer case sensitive</span></span>
+* <span data-ttu-id="7b07f-462">支持登录到 Azure Stack 等本地服务器上的 ADFS</span><span class="sxs-lookup"><span data-stu-id="7b07f-462">Support login to ADFS on prem server like Azure Stack</span></span>
+* <span data-ttu-id="7b07f-463">修复了并发写入 clouds.config 的问题 (#3255)</span><span class="sxs-lookup"><span data-stu-id="7b07f-463">Fixed concurrent writes to clouds.config (#3255)</span></span>
 
-### <a name="acr"></a><span data-ttu-id="9b251-452">ACR</span><span class="sxs-lookup"><span data-stu-id="9b251-452">ACR</span></span>
+### <a name="acr"></a><span data-ttu-id="7b07f-464">ACR</span><span class="sxs-lookup"><span data-stu-id="7b07f-464">ACR</span></span>
 
-* <span data-ttu-id="9b251-453">针对托管注册表添加了 `show-usage` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-453">Added `show-usage` command for managed registries</span></span>
-* <span data-ttu-id="9b251-454">支持托管注册表的 SKU 更新</span><span class="sxs-lookup"><span data-stu-id="9b251-454">Support SKU update for managed registries</span></span>
-* <span data-ttu-id="9b251-455">添加了包含托管 SKU 的托管注册表</span><span class="sxs-lookup"><span data-stu-id="9b251-455">Added managed registries with managed SKU</span></span>
-* <span data-ttu-id="9b251-456">通过 ACR Webhook 命令模块添加了托管注册表的 Webhook</span><span class="sxs-lookup"><span data-stu-id="9b251-456">Added webhooks for managed registries with acr webhook command module</span></span>
-* <span data-ttu-id="9b251-457">添加了使用 acr login 命令进行 AAD 身份验证的功能</span><span class="sxs-lookup"><span data-stu-id="9b251-457">Added AAD authentication with acr login command</span></span>
-* <span data-ttu-id="9b251-458">添加了 Docker 存储库、清单和标记的 delete 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-458">Added delete command for docker repositories, manifests, and tags</span></span>
+* <span data-ttu-id="7b07f-465">针对托管注册表添加了 `show-usage` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-465">Added `show-usage` command for managed registries</span></span>
+* <span data-ttu-id="7b07f-466">支持托管注册表的 SKU 更新</span><span class="sxs-lookup"><span data-stu-id="7b07f-466">Support SKU update for managed registries</span></span>
+* <span data-ttu-id="7b07f-467">添加了包含托管 SKU 的托管注册表</span><span class="sxs-lookup"><span data-stu-id="7b07f-467">Added managed registries with managed SKU</span></span>
+* <span data-ttu-id="7b07f-468">通过 ACR Webhook 命令模块添加了托管注册表的 Webhook</span><span class="sxs-lookup"><span data-stu-id="7b07f-468">Added webhooks for managed registries with acr webhook command module</span></span>
+* <span data-ttu-id="7b07f-469">添加了使用 acr login 命令进行 AAD 身份验证的功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-469">Added AAD authentication with acr login command</span></span>
+* <span data-ttu-id="7b07f-470">添加了 Docker 存储库、清单和标记的 delete 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-470">Added delete command for docker repositories, manifests, and tags</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-459">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-459">ACS</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-471">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-471">ACS</span></span>
 
-* <span data-ttu-id="9b251-460">API 版本 2017-07-01 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-460">Support for API version 2017-07-01</span></span>
+* <span data-ttu-id="7b07f-472">API 版本 2017-07-01 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-472">Support for API version 2017-07-01</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-461">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-461">Appservice</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-473">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-473">Appservice</span></span>
 
-* <span data-ttu-id="9b251-462">修复了列出 Linux Web 应用时不返回任何内容的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-462">Fixed bug where listing Linux webapp would return nothing</span></span>
-* <span data-ttu-id="9b251-463">支持从 ACR 检索凭据</span><span class="sxs-lookup"><span data-stu-id="9b251-463">Support to retrieve creds from acr</span></span>
-* <span data-ttu-id="9b251-464">删除 `appservice web` 下的所有命令</span><span class="sxs-lookup"><span data-stu-id="9b251-464">Remove all commands under `appservice web`</span></span>
-* <span data-ttu-id="9b251-465">将命令输出中的 Docker 注册表密码掩码 (#3656)</span><span class="sxs-lookup"><span data-stu-id="9b251-465">Mask docker registry passwords from command output (#3656)</span></span>
-* <span data-ttu-id="9b251-466">确保在 macOS 上使用默认浏览器且不出错 (#3623)</span><span class="sxs-lookup"><span data-stu-id="9b251-466">Ensure default browser is used on macOS without errors (#3623)</span></span>
-* <span data-ttu-id="9b251-467">改进了 `webapp log tail` 和 `webapp log download` 的帮助 (#3624)</span><span class="sxs-lookup"><span data-stu-id="9b251-467">Improve the help of `webapp log tail` and `webapp log download` (#3624)</span></span>
-* <span data-ttu-id="9b251-468">公开了 `traffic-routing` 命令用于配置静态路由 (#3566)</span><span class="sxs-lookup"><span data-stu-id="9b251-468">Exposed `traffic-routing` command to configure static routing (#3566)</span></span>
-* <span data-ttu-id="9b251-469">添加了用于配置源代码管理的可靠性修复 (#3245)</span><span class="sxs-lookup"><span data-stu-id="9b251-469">Added reliability fixes in configuring source control (#3245)</span></span>
-* <span data-ttu-id="9b251-470">从 `webapp config update` 中删除了 Windows Web 应用不支持的 `--node-version` 参数。</span><span class="sxs-lookup"><span data-stu-id="9b251-470">Removed unsupported `--node-version` argument from `webapp config update` for Windows webapps.</span></span> <span data-ttu-id="9b251-471">需改用 `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`。</span><span class="sxs-lookup"><span data-stu-id="9b251-471">Instead use `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`</span></span>
+* <span data-ttu-id="7b07f-474">修复了列出 Linux Web 应用时不返回任何内容的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-474">Fixed bug where listing Linux webapp would return nothing</span></span>
+* <span data-ttu-id="7b07f-475">支持从 ACR 检索凭据</span><span class="sxs-lookup"><span data-stu-id="7b07f-475">Support to retrieve creds from acr</span></span>
+* <span data-ttu-id="7b07f-476">删除 `appservice web` 下的所有命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-476">Remove all commands under `appservice web`</span></span>
+* <span data-ttu-id="7b07f-477">将命令输出中的 Docker 注册表密码掩码 (#3656)</span><span class="sxs-lookup"><span data-stu-id="7b07f-477">Mask docker registry passwords from command output (#3656)</span></span>
+* <span data-ttu-id="7b07f-478">确保在 macOS 上使用默认浏览器且不出错 (#3623)</span><span class="sxs-lookup"><span data-stu-id="7b07f-478">Ensure default browser is used on macOS without errors (#3623)</span></span>
+* <span data-ttu-id="7b07f-479">改进了 `webapp log tail` 和 `webapp log download` 的帮助 (#3624)</span><span class="sxs-lookup"><span data-stu-id="7b07f-479">Improve the help of `webapp log tail` and `webapp log download` (#3624)</span></span>
+* <span data-ttu-id="7b07f-480">公开了 `traffic-routing` 命令用于配置静态路由 (#3566)</span><span class="sxs-lookup"><span data-stu-id="7b07f-480">Exposed `traffic-routing` command to configure static routing (#3566)</span></span>
+* <span data-ttu-id="7b07f-481">添加了用于配置源代码管理的可靠性修复 (#3245)</span><span class="sxs-lookup"><span data-stu-id="7b07f-481">Added reliability fixes in configuring source control (#3245)</span></span>
+* <span data-ttu-id="7b07f-482">从 `webapp config update` 中删除了 Windows Web 应用不支持的 `--node-version` 参数。</span><span class="sxs-lookup"><span data-stu-id="7b07f-482">Removed unsupported `--node-version` argument from `webapp config update` for Windows webapps.</span></span> <span data-ttu-id="7b07f-483">需改用 `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`。</span><span class="sxs-lookup"><span data-stu-id="7b07f-483">Instead use `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`</span></span>
 
-### <a name="batch"></a><span data-ttu-id="9b251-472">批处理</span><span class="sxs-lookup"><span data-stu-id="9b251-472">Batch</span></span>
+### <a name="batch"></a><span data-ttu-id="7b07f-484">Batch</span><span class="sxs-lookup"><span data-stu-id="7b07f-484">Batch</span></span>
 
-* <span data-ttu-id="9b251-473">已更新到 Batch SDK 3.0.0，支持池中的低优先级 VM</span><span class="sxs-lookup"><span data-stu-id="9b251-473">Updated to Batch SDK 3.0.0 with support for low-priority VMs in pools</span></span>
-* <span data-ttu-id="9b251-474">已将 `pool create` 选项 `--target-dedicated` 重命名为 `--target-dedicated-nodes`</span><span class="sxs-lookup"><span data-stu-id="9b251-474">Renamed `pool create` option `--target-dedicated` to `--target-dedicated-nodes`</span></span>
-* <span data-ttu-id="9b251-475">添加了 `pool create` 选项 `--target-low-priority-nodes` 和 `--application-licenses`</span><span class="sxs-lookup"><span data-stu-id="9b251-475">Added `pool create` options `--target-low-priority-nodes` and `--application-licenses`</span></span>
+* <span data-ttu-id="7b07f-485">已更新到 Batch SDK 3.0.0，支持池中的低优先级 VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-485">Updated to Batch SDK 3.0.0 with support for low-priority VMs in pools</span></span>
+* <span data-ttu-id="7b07f-486">已将 `pool create` 选项 `--target-dedicated` 重命名为 `--target-dedicated-nodes`</span><span class="sxs-lookup"><span data-stu-id="7b07f-486">Renamed `pool create` option `--target-dedicated` to `--target-dedicated-nodes`</span></span>
+* <span data-ttu-id="7b07f-487">添加了 `pool create` 选项 `--target-low-priority-nodes` 和 `--application-licenses`</span><span class="sxs-lookup"><span data-stu-id="7b07f-487">Added `pool create` options `--target-low-priority-nodes` and `--application-licenses`</span></span>
 
-### <a name="cdn"></a><span data-ttu-id="9b251-476">CDN</span><span class="sxs-lookup"><span data-stu-id="9b251-476">CDN</span></span>
+### <a name="cdn"></a><span data-ttu-id="7b07f-488">CDN</span><span class="sxs-lookup"><span data-stu-id="7b07f-488">CDN</span></span>
 
-* <span data-ttu-id="9b251-477">当 `--profile-name` 指定的配置文件不存在时，针对 `cdn endpoint list` 提供更完善的错误消息。</span><span class="sxs-lookup"><span data-stu-id="9b251-477">Provided a better error message for `cdn endpoint list` when the profile specified by `--profile-name` does not exist.</span></span>
+* <span data-ttu-id="7b07f-489">当 `--profile-name` 指定的配置文件不存在时，针对 `cdn endpoint list` 提供更完善的错误消息。</span><span class="sxs-lookup"><span data-stu-id="7b07f-489">Provided a better error message for `cdn endpoint list` when the profile specified by `--profile-name` does not exist.</span></span>
 
-### <a name="cloud"></a><span data-ttu-id="9b251-478">云</span><span class="sxs-lookup"><span data-stu-id="9b251-478">Cloud</span></span>
+### <a name="cloud"></a><span data-ttu-id="7b07f-490">云</span><span class="sxs-lookup"><span data-stu-id="7b07f-490">Cloud</span></span>
 
-* <span data-ttu-id="9b251-479">已将云元数据终结点的 API 版本更改为 YYYY-MM-DD 格式</span><span class="sxs-lookup"><span data-stu-id="9b251-479">Changed API version of cloud metadata endpoint to YYYY-MM-DD format</span></span>
-* <span data-ttu-id="9b251-480">不需要库终结点</span><span class="sxs-lookup"><span data-stu-id="9b251-480">Gallery endpoint isn't required</span></span>
-* <span data-ttu-id="9b251-481">支持只将云注册到 ARM 资源管理器终结点</span><span class="sxs-lookup"><span data-stu-id="9b251-481">Support for registering cloud just with ARM resource manager endpoint</span></span>
-* <span data-ttu-id="9b251-482">提供 `cloud set` 的选项用于在选择当前云时选择配置文件</span><span class="sxs-lookup"><span data-stu-id="9b251-482">Provided an option for `cloud set` to choose the profile while selecting current cloud</span></span>
-* <span data-ttu-id="9b251-483">公开了 `endpoint_vm_image_alias_doc`</span><span class="sxs-lookup"><span data-stu-id="9b251-483">Exposed `endpoint_vm_image_alias_doc`</span></span>
+* <span data-ttu-id="7b07f-491">已将云元数据终结点的 API 版本更改为 YYYY-MM-DD 格式</span><span class="sxs-lookup"><span data-stu-id="7b07f-491">Changed API version of cloud metadata endpoint to YYYY-MM-DD format</span></span>
+* <span data-ttu-id="7b07f-492">不需要库终结点</span><span class="sxs-lookup"><span data-stu-id="7b07f-492">Gallery endpoint isn't required</span></span>
+* <span data-ttu-id="7b07f-493">支持只将云注册到 ARM 资源管理器终结点</span><span class="sxs-lookup"><span data-stu-id="7b07f-493">Support for registering cloud just with ARM resource manager endpoint</span></span>
+* <span data-ttu-id="7b07f-494">提供 `cloud set` 的选项用于在选择当前云时选择配置文件</span><span class="sxs-lookup"><span data-stu-id="7b07f-494">Provided an option for `cloud set` to choose the profile while selecting current cloud</span></span>
+* <span data-ttu-id="7b07f-495">公开了 `endpoint_vm_image_alias_doc`</span><span class="sxs-lookup"><span data-stu-id="7b07f-495">Exposed `endpoint_vm_image_alias_doc`</span></span>
 
-### <a name="cosmosdb"></a><span data-ttu-id="9b251-484">CosmosDB</span><span class="sxs-lookup"><span data-stu-id="9b251-484">CosmosDB</span></span>
+### <a name="cosmosdb"></a><span data-ttu-id="7b07f-496">CosmosDB</span><span class="sxs-lookup"><span data-stu-id="7b07f-496">CosmosDB</span></span>
 
-* <span data-ttu-id="9b251-485">修复了允许使用自定义分区键创建集合的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-485">Fixed allowing creation of collection with custom partition key</span></span>
-* <span data-ttu-id="9b251-486">添加了对集合默认 TTL 的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-486">Added support for collection default TTL.</span></span>
+* <span data-ttu-id="7b07f-497">修复了允许使用自定义分区键创建集合的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-497">Fixed allowing creation of collection with custom partition key</span></span>
+* <span data-ttu-id="7b07f-498">添加了对集合默认 TTL 的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-498">Added support for collection default TTL.</span></span>
 
-### <a name="data-lake-analytics"></a><span data-ttu-id="9b251-487">数据湖分析</span><span class="sxs-lookup"><span data-stu-id="9b251-487">Data Lake Analytics</span></span>
+### <a name="data-lake-analytics"></a><span data-ttu-id="7b07f-499">数据湖分析</span><span class="sxs-lookup"><span data-stu-id="7b07f-499">Data Lake Analytics</span></span>
 
-* <span data-ttu-id="9b251-488">在 `dla account compute-policy` 标题下添加了用于计算策略管理的命令</span><span class="sxs-lookup"><span data-stu-id="9b251-488">Added commands for compute policy management under the `dla account compute-policy` heading</span></span>
-* <span data-ttu-id="9b251-489">添加了 `dla job pipeline show`</span><span class="sxs-lookup"><span data-stu-id="9b251-489">Added `dla job pipeline show`</span></span>
-* <span data-ttu-id="9b251-490">添加了 `dla job recurrence list`</span><span class="sxs-lookup"><span data-stu-id="9b251-490">Added `dla job recurrence list`</span></span>
+* <span data-ttu-id="7b07f-500">在 `dla account compute-policy` 标题下添加了用于计算策略管理的命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-500">Added commands for compute policy management under the `dla account compute-policy` heading</span></span>
+* <span data-ttu-id="7b07f-501">添加了 `dla job pipeline show`</span><span class="sxs-lookup"><span data-stu-id="7b07f-501">Added `dla job pipeline show`</span></span>
+* <span data-ttu-id="7b07f-502">添加了 `dla job recurrence list`</span><span class="sxs-lookup"><span data-stu-id="7b07f-502">Added `dla job recurrence list`</span></span>
 
-### <a name="data-lake-store"></a><span data-ttu-id="9b251-491">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="9b251-491">Data Lake Store</span></span>
+### <a name="data-lake-store"></a><span data-ttu-id="7b07f-503">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="7b07f-503">Data Lake Store</span></span>
 
-* <span data-ttu-id="9b251-492">在 `dls account update` 中添加了用户管理的 Key Vault 密钥轮换的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-492">Added support for user managed key vault key rotation in `dls account update`</span></span>
-* <span data-ttu-id="9b251-493">更新了底层 Data Lake Store 文件系统 SDK 版本，解决了一个性能问题</span><span class="sxs-lookup"><span data-stu-id="9b251-493">Updated underlying Data Lake Store filesystem SDK version, addressing a performance issue</span></span>
-* <span data-ttu-id="9b251-494">添加了命令 `dls enable-key-vault`。</span><span class="sxs-lookup"><span data-stu-id="9b251-494">Added command `dls enable-key-vault`.</span></span> <span data-ttu-id="9b251-495">此命令尝试使用用户提供的 Key Vault 加密 Data Lake Store 帐户中的数据</span><span class="sxs-lookup"><span data-stu-id="9b251-495">This command attempts to enable a user provided Key Vault for use encrypting the data ina Data Lake Store account</span></span>
+* <span data-ttu-id="7b07f-504">在 `dls account update` 中添加了用户管理的 Key Vault 密钥轮换的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-504">Added support for user managed key vault key rotation in `dls account update`</span></span>
+* <span data-ttu-id="7b07f-505">更新了底层 Data Lake Store 文件系统 SDK 版本，解决了一个性能问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-505">Updated underlying Data Lake Store filesystem SDK version, addressing a performance issue</span></span>
+* <span data-ttu-id="7b07f-506">添加了命令 `dls enable-key-vault`。</span><span class="sxs-lookup"><span data-stu-id="7b07f-506">Added command `dls enable-key-vault`.</span></span> <span data-ttu-id="7b07f-507">此命令尝试使用用户提供的 Key Vault 加密 Data Lake Store 帐户中的数据</span><span class="sxs-lookup"><span data-stu-id="7b07f-507">This command attempts to enable a user provided Key Vault for use encrypting the data ina Data Lake Store account</span></span>
 
-### <a name="interactive"></a><span data-ttu-id="9b251-496">交互</span><span class="sxs-lookup"><span data-stu-id="9b251-496">Interactive</span></span>
+### <a name="interactive"></a><span data-ttu-id="7b07f-508">交互</span><span class="sxs-lookup"><span data-stu-id="7b07f-508">Interactive</span></span>
 
-* <span data-ttu-id="9b251-497">使用缓存的命令改进启动时间</span><span class="sxs-lookup"><span data-stu-id="9b251-497">Improved the start up time by using cached commands</span></span>
-* <span data-ttu-id="9b251-498">增大了测试覆盖率</span><span class="sxs-lookup"><span data-stu-id="9b251-498">Increased test coverage</span></span>
-* <span data-ttu-id="9b251-499">增强了“?”手势，使之也可注入到下一条命令</span><span class="sxs-lookup"><span data-stu-id="9b251-499">Enhanced the '?' gesture to also inject into the next command</span></span>
-* <span data-ttu-id="9b251-500">修复了配置文件 2017-03-09-profile-preview 的交互错误 (#3587)</span><span class="sxs-lookup"><span data-stu-id="9b251-500">Fixed interactive errors with the profile 2017-03-09-profile-preview (#3587)</span></span>
-* <span data-ttu-id="9b251-501">允许使用 `--version` 作为交互模式的参数 (#3645)</span><span class="sxs-lookup"><span data-stu-id="9b251-501">Allowed `--version` as a parameter for interactive mode (#3645)</span></span>
-* <span data-ttu-id="9b251-502">阻止交互模式在验证填写内容中引发错误 (#3570)</span><span class="sxs-lookup"><span data-stu-id="9b251-502">Stop interactive mode throwing errors from validation completions (#3570)</span></span>
-* <span data-ttu-id="9b251-503">模板部署的进度报告 (#3510)</span><span class="sxs-lookup"><span data-stu-id="9b251-503">Progress reporting for template deployments (#3510)</span></span>
-* <span data-ttu-id="9b251-504">添加了 `--progress` 标志</span><span class="sxs-lookup"><span data-stu-id="9b251-504">Added `--progress` flag</span></span>
-* <span data-ttu-id="9b251-505">从填写内容中删除了 `--debug` 和 `--verbose`</span><span class="sxs-lookup"><span data-stu-id="9b251-505">Removed `--debug` and `--verbose` from completions</span></span>
-* <span data-ttu-id="9b251-506">从填写内容中删除了 `interactive` (#3324)</span><span class="sxs-lookup"><span data-stu-id="9b251-506">Removed `interactive` from completions (#3324)</span></span>
+* <span data-ttu-id="7b07f-509">使用缓存的命令改进启动时间</span><span class="sxs-lookup"><span data-stu-id="7b07f-509">Improved the start up time by using cached commands</span></span>
+* <span data-ttu-id="7b07f-510">增大了测试覆盖率</span><span class="sxs-lookup"><span data-stu-id="7b07f-510">Increased test coverage</span></span>
+* <span data-ttu-id="7b07f-511">增强了“?”手势，使之也可注入到下一条命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-511">Enhanced the '?' gesture to also inject into the next command</span></span>
+* <span data-ttu-id="7b07f-512">修复了配置文件 2017-03-09-profile-preview 的交互错误 (#3587)</span><span class="sxs-lookup"><span data-stu-id="7b07f-512">Fixed interactive errors with the profile 2017-03-09-profile-preview (#3587)</span></span>
+* <span data-ttu-id="7b07f-513">允许使用 `--version` 作为交互模式的参数 (#3645)</span><span class="sxs-lookup"><span data-stu-id="7b07f-513">Allowed `--version` as a parameter for interactive mode (#3645)</span></span>
+* <span data-ttu-id="7b07f-514">阻止交互模式在验证填写内容中引发错误 (#3570)</span><span class="sxs-lookup"><span data-stu-id="7b07f-514">Stop interactive mode throwing errors from validation completions (#3570)</span></span>
+* <span data-ttu-id="7b07f-515">模板部署的进度报告 (#3510)</span><span class="sxs-lookup"><span data-stu-id="7b07f-515">Progress reporting for template deployments (#3510)</span></span>
+* <span data-ttu-id="7b07f-516">添加了 `--progress` 标志</span><span class="sxs-lookup"><span data-stu-id="7b07f-516">Added `--progress` flag</span></span>
+* <span data-ttu-id="7b07f-517">从填写内容中删除了 `--debug` 和 `--verbose`</span><span class="sxs-lookup"><span data-stu-id="7b07f-517">Removed `--debug` and `--verbose` from completions</span></span>
+* <span data-ttu-id="7b07f-518">从填写内容中删除了 `interactive` (#3324)</span><span class="sxs-lookup"><span data-stu-id="7b07f-518">Removed `interactive` from completions (#3324)</span></span>
 
-### <a name="iot"></a><span data-ttu-id="9b251-507">IoT</span><span class="sxs-lookup"><span data-stu-id="9b251-507">IoT</span></span>
+### <a name="iot"></a><span data-ttu-id="7b07f-519">IoT</span><span class="sxs-lookup"><span data-stu-id="7b07f-519">IoT</span></span>
 
-* <span data-ttu-id="9b251-508">修复了策略创建操作不再清除现有策略的问题。</span><span class="sxs-lookup"><span data-stu-id="9b251-508">Fixed policy creation no longer clears existing policies.</span></span> <span data-ttu-id="9b251-509">(#3934)</span><span class="sxs-lookup"><span data-stu-id="9b251-509">(#3934)</span></span>
+* <span data-ttu-id="7b07f-520">修复了策略创建操作不再清除现有策略的问题。</span><span class="sxs-lookup"><span data-stu-id="7b07f-520">Fixed policy creation no longer clears existing policies.</span></span> <span data-ttu-id="7b07f-521">(#3934)</span><span class="sxs-lookup"><span data-stu-id="7b07f-521">(#3934)</span></span>
 
-### <a name="key-vault"></a><span data-ttu-id="9b251-510">密钥保管库</span><span class="sxs-lookup"><span data-stu-id="9b251-510">Key vault</span></span>
+### <a name="key-vault"></a><span data-ttu-id="7b07f-522">密钥保管库</span><span class="sxs-lookup"><span data-stu-id="7b07f-522">Key vault</span></span>
 
-* <span data-ttu-id="9b251-511">添加了 Key Vault 恢复功能的命令：</span><span class="sxs-lookup"><span data-stu-id="9b251-511">Added commands for key vault recovery features:</span></span>
-  * <span data-ttu-id="9b251-512">`keyvault` 子命令 `purge`、`recover`、`keyvault list-deleted`</span><span class="sxs-lookup"><span data-stu-id="9b251-512">`keyvault` subcommands `purge`, `recover`, `keyvault list-deleted`</span></span>
-  * <span data-ttu-id="9b251-513">`keyvault secret` 子命令 `backup`、`restore`、`purge`、`recover`、`list-deleted`</span><span class="sxs-lookup"><span data-stu-id="9b251-513">`keyvault secret` subcommands `backup`, `restore`, `purge`, `recover`, `list-deleted`</span></span>
-  * <span data-ttu-id="9b251-514">`keyvault certificate` 子命令 `purge`、`recover`、`list-deleted`</span><span class="sxs-lookup"><span data-stu-id="9b251-514">`keyvault certificate` subcommands `purge`, `recover`, `list-deleted`</span></span>
-  * <span data-ttu-id="9b251-515">`keyvault key` 子命令 `purge`、`recover`、`list-deleted`</span><span class="sxs-lookup"><span data-stu-id="9b251-515">`keyvault key` subcommands `purge`, `recover`, `list-deleted`</span></span>
-* <span data-ttu-id="9b251-516">添加了服务主体的 Key Vault 集成 (#3133)</span><span class="sxs-lookup"><span data-stu-id="9b251-516">Added service principal key vault integration (#3133)</span></span>
-* <span data-ttu-id="9b251-517">已将 Key Vault 数据平面更新到 0.3.2。</span><span class="sxs-lookup"><span data-stu-id="9b251-517">Updated key vault dataplane to 0.3.2.</span></span> <span data-ttu-id="9b251-518">(#3307)</span><span class="sxs-lookup"><span data-stu-id="9b251-518">(#3307)</span></span>
+* <span data-ttu-id="7b07f-523">添加了 Key Vault 恢复功能的命令：</span><span class="sxs-lookup"><span data-stu-id="7b07f-523">Added commands for key vault recovery features:</span></span>
+  * <span data-ttu-id="7b07f-524">`keyvault` 子命令 `purge`、`recover`、`keyvault list-deleted`</span><span class="sxs-lookup"><span data-stu-id="7b07f-524">`keyvault` subcommands `purge`, `recover`, `keyvault list-deleted`</span></span>
+  * <span data-ttu-id="7b07f-525">`keyvault secret` 子命令 `backup`、`restore`、`purge`、`recover`、`list-deleted`</span><span class="sxs-lookup"><span data-stu-id="7b07f-525">`keyvault secret` subcommands `backup`, `restore`, `purge`, `recover`, `list-deleted`</span></span>
+  * <span data-ttu-id="7b07f-526">`keyvault certificate` 子命令 `purge`、`recover`、`list-deleted`</span><span class="sxs-lookup"><span data-stu-id="7b07f-526">`keyvault certificate` subcommands `purge`, `recover`, `list-deleted`</span></span>
+  * <span data-ttu-id="7b07f-527">`keyvault key` 子命令 `purge`、`recover`、`list-deleted`</span><span class="sxs-lookup"><span data-stu-id="7b07f-527">`keyvault key` subcommands `purge`, `recover`, `list-deleted`</span></span>
+* <span data-ttu-id="7b07f-528">添加了服务主体的 Key Vault 集成 (#3133)</span><span class="sxs-lookup"><span data-stu-id="7b07f-528">Added service principal key vault integration (#3133)</span></span>
+* <span data-ttu-id="7b07f-529">已将 Key Vault 数据平面更新到 0.3.2。</span><span class="sxs-lookup"><span data-stu-id="7b07f-529">Updated key vault dataplane to 0.3.2.</span></span> <span data-ttu-id="7b07f-530">(#3307)</span><span class="sxs-lookup"><span data-stu-id="7b07f-530">(#3307)</span></span>
 
-### <a name="lab"></a><span data-ttu-id="9b251-519">实验室</span><span class="sxs-lookup"><span data-stu-id="9b251-519">Lab</span></span>
+### <a name="lab"></a><span data-ttu-id="7b07f-531">实验室</span><span class="sxs-lookup"><span data-stu-id="7b07f-531">Lab</span></span>
 
-* <span data-ttu-id="9b251-520">添加了通过 `az lab vm claim` 在实验室中声明任何 VM 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-520">Added support for claiming any vm in the lab through `az lab vm claim`</span></span>
-* <span data-ttu-id="9b251-521">为 `az lab vm list` 和 `az lab vm show` 添加了表输出格式化程序</span><span class="sxs-lookup"><span data-stu-id="9b251-521">Added table output formatter for `az lab vm list` and `az lab vm show`</span></span>
+* <span data-ttu-id="7b07f-532">添加了通过 `az lab vm claim` 在实验室中声明任何 VM 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-532">Added support for claiming any vm in the lab through `az lab vm claim`</span></span>
+* <span data-ttu-id="7b07f-533">为 `az lab vm list` 和 `az lab vm show` 添加了表输出格式化程序</span><span class="sxs-lookup"><span data-stu-id="7b07f-533">Added table output formatter for `az lab vm list` and `az lab vm show`</span></span>
 
-### <a name="monitor"></a><span data-ttu-id="9b251-522">监视</span><span class="sxs-lookup"><span data-stu-id="9b251-522">Monitor</span></span>
+### <a name="monitor"></a><span data-ttu-id="7b07f-534">监视</span><span class="sxs-lookup"><span data-stu-id="7b07f-534">Monitor</span></span>
 
-* <span data-ttu-id="9b251-523">修复了与 `monitor autoscale-settings get-parameters-template` 命令结合使用的模板文件 (#3349)</span><span class="sxs-lookup"><span data-stu-id="9b251-523">Fix for template file with `monitor autoscale-settings get-parameters-template` command (#3349)</span></span>
-* <span data-ttu-id="9b251-524">已将 `monitor alert-rule-incidents list` 重命名为 `monitor alert list-incidents`</span><span class="sxs-lookup"><span data-stu-id="9b251-524">Renamed `monitor alert-rule-incidents list` to `monitor alert list-incidents`</span></span>
-* <span data-ttu-id="9b251-525">已将 `monitor alert-rule-incidents show` 重命名为 `monitor alert show-incident`</span><span class="sxs-lookup"><span data-stu-id="9b251-525">Renamed `monitor alert-rule-incidents show` to `monitor alert show-incident`</span></span>
-* <span data-ttu-id="9b251-526">已将 `monitor metric-defintions list` 重命名为 `monitor metrics list-definitions`</span><span class="sxs-lookup"><span data-stu-id="9b251-526">Renamed `monitor metric-defintions list` to `monitor metrics list-definitions`</span></span>
-* <span data-ttu-id="9b251-527">已将 `monitor alert-rules` 重命名为 `monitor alert`</span><span class="sxs-lookup"><span data-stu-id="9b251-527">Renamed `monitor alert-rules` to `monitor alert`</span></span>
-* <span data-ttu-id="9b251-528">更改了 `monitor alert create`：</span><span class="sxs-lookup"><span data-stu-id="9b251-528">Changed `monitor alert create`:</span></span>
-  * <span data-ttu-id="9b251-529">`condition` 和 `action` 子命令不再接受 JSON</span><span class="sxs-lookup"><span data-stu-id="9b251-529">`condition` and `action` subcommands no longer accept JSON</span></span>
-  * <span data-ttu-id="9b251-530">添加了大量的参数来简化规则创建过程</span><span class="sxs-lookup"><span data-stu-id="9b251-530">Add numerous parameters to simplify the rule creation process</span></span>
-  * <span data-ttu-id="9b251-531">`location` 不再是必需的</span><span class="sxs-lookup"><span data-stu-id="9b251-531">`location` no longer required</span></span>
-  * <span data-ttu-id="9b251-532">添加了目标的名称和 ID 支持</span><span class="sxs-lookup"><span data-stu-id="9b251-532">Add name and ID support for target</span></span>
-  * <span data-ttu-id="9b251-533">删除了 `--alert-rule-resource-name`</span><span class="sxs-lookup"><span data-stu-id="9b251-533">Remove `--alert-rule-resource-name`</span></span>
-  * <span data-ttu-id="9b251-534">`is-enabled` 重命名为 `enabled`，不再是必需的</span><span class="sxs-lookup"><span data-stu-id="9b251-534">Rename `is-enabled` to `enabled`, no longer required</span></span>
-  * <span data-ttu-id="9b251-535">`description` 默认值现在基于提供的条件</span><span class="sxs-lookup"><span data-stu-id="9b251-535">`description` defaults now based on the supplied condition</span></span>
-  *  <span data-ttu-id="9b251-536">添加了示例用于帮助澄清新格式</span><span class="sxs-lookup"><span data-stu-id="9b251-536">Add examples to help clarifiy the new format</span></span>
-* <span data-ttu-id="9b251-537">支持在 `monitor metric` 命令中使用名称或 ID</span><span class="sxs-lookup"><span data-stu-id="9b251-537">Support names or IDs for `monitor metric` commands</span></span>
-* <span data-ttu-id="9b251-538">为 `monitor alert rule update` 添加了方便的参数和示例</span><span class="sxs-lookup"><span data-stu-id="9b251-538">Added convenience arguments and examples to `monitor alert rule update`</span></span>
+* <span data-ttu-id="7b07f-535">修复了与 `monitor autoscale-settings get-parameters-template` 命令结合使用的模板文件 (#3349)</span><span class="sxs-lookup"><span data-stu-id="7b07f-535">Fix for template file with `monitor autoscale-settings get-parameters-template` command (#3349)</span></span>
+* <span data-ttu-id="7b07f-536">已将 `monitor alert-rule-incidents list` 重命名为 `monitor alert list-incidents`</span><span class="sxs-lookup"><span data-stu-id="7b07f-536">Renamed `monitor alert-rule-incidents list` to `monitor alert list-incidents`</span></span>
+* <span data-ttu-id="7b07f-537">已将 `monitor alert-rule-incidents show` 重命名为 `monitor alert show-incident`</span><span class="sxs-lookup"><span data-stu-id="7b07f-537">Renamed `monitor alert-rule-incidents show` to `monitor alert show-incident`</span></span>
+* <span data-ttu-id="7b07f-538">已将 `monitor metric-defintions list` 重命名为 `monitor metrics list-definitions`</span><span class="sxs-lookup"><span data-stu-id="7b07f-538">Renamed `monitor metric-defintions list` to `monitor metrics list-definitions`</span></span>
+* <span data-ttu-id="7b07f-539">已将 `monitor alert-rules` 重命名为 `monitor alert`</span><span class="sxs-lookup"><span data-stu-id="7b07f-539">Renamed `monitor alert-rules` to `monitor alert`</span></span>
+* <span data-ttu-id="7b07f-540">更改了 `monitor alert create`：</span><span class="sxs-lookup"><span data-stu-id="7b07f-540">Changed `monitor alert create`:</span></span>
+  * <span data-ttu-id="7b07f-541">`condition` 和 `action` 子命令不再接受 JSON</span><span class="sxs-lookup"><span data-stu-id="7b07f-541">`condition` and `action` subcommands no longer accept JSON</span></span>
+  * <span data-ttu-id="7b07f-542">添加了大量的参数来简化规则创建过程</span><span class="sxs-lookup"><span data-stu-id="7b07f-542">Add numerous parameters to simplify the rule creation process</span></span>
+  * <span data-ttu-id="7b07f-543">`location` 不再是必需的</span><span class="sxs-lookup"><span data-stu-id="7b07f-543">`location` no longer required</span></span>
+  * <span data-ttu-id="7b07f-544">添加了目标的名称和 ID 支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-544">Add name and ID support for target</span></span>
+  * <span data-ttu-id="7b07f-545">删除了 `--alert-rule-resource-name`</span><span class="sxs-lookup"><span data-stu-id="7b07f-545">Remove `--alert-rule-resource-name`</span></span>
+  * <span data-ttu-id="7b07f-546">`is-enabled` 重命名为 `enabled`，不再是必需的</span><span class="sxs-lookup"><span data-stu-id="7b07f-546">Rename `is-enabled` to `enabled`, no longer required</span></span>
+  * <span data-ttu-id="7b07f-547">`description` 默认值现在基于提供的条件</span><span class="sxs-lookup"><span data-stu-id="7b07f-547">`description` defaults now based on the supplied condition</span></span>
+  *  <span data-ttu-id="7b07f-548">添加了示例用于帮助澄清新格式</span><span class="sxs-lookup"><span data-stu-id="7b07f-548">Add examples to help clarifiy the new format</span></span>
+* <span data-ttu-id="7b07f-549">支持在 `monitor metric` 命令中使用名称或 ID</span><span class="sxs-lookup"><span data-stu-id="7b07f-549">Support names or IDs for `monitor metric` commands</span></span>
+* <span data-ttu-id="7b07f-550">为 `monitor alert rule update` 添加了方便的参数和示例</span><span class="sxs-lookup"><span data-stu-id="7b07f-550">Added convenience arguments and examples to `monitor alert rule update`</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-539">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-539">Network</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-551">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-551">Network</span></span>
 
-* <span data-ttu-id="9b251-540">添加了 `list-private-access-services` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-540">Added `list-private-access-services` command</span></span>
-* <span data-ttu-id="9b251-541">为 `vnet subnet create` 和 `vnet subnet update` 添加了 `--private-access-services` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-541">Added `--private-access-services` argument to `vnet subnet create` and `vnet subnet update`</span></span>
-* <span data-ttu-id="9b251-542">修复了 `application-gateway redirect-config create` 失败的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-542">Fixed issue where `application-gateway redirect-config create` would fail</span></span>
-* <span data-ttu-id="9b251-543">修复了无法结合 `--no-wait` 使用 `application-gateway redirect-config update` 的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-543">Fixed issue where `application-gateway redirect-config update` with `--no-wait` would not work</span></span>
-* <span data-ttu-id="9b251-544">修复了结合 `application-gateway address-pool create` 和 `application-gateway address-pool update` 使用 `--servers` 参数时的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-544">Fixed bug when using `--servers` argument with `application-gateway address-pool create` and `application-gateway address-pool update`</span></span>
-* <span data-ttu-id="9b251-545">添加了 `application-gateway redirect-config` 命令</span><span class="sxs-lookup"><span data-stu-id="9b251-545">Added `application-gateway redirect-config` commands</span></span>
-* <span data-ttu-id="9b251-546">添加了 `application-gateway ssl-policy` 的命令：`list-options`、`predefined list`、`predefined show`</span><span class="sxs-lookup"><span data-stu-id="9b251-546">Added commands to `application-gateway ssl-policy`: `list-options`, `predefined list`, `predefined show`</span></span>
-* <span data-ttu-id="9b251-547">添加了 `application-gateway ssl-policy set` 的参数：`--name`、`--cipher-suites`、`--min-protocol-version`</span><span class="sxs-lookup"><span data-stu-id="9b251-547">Added arguments to `application-gateway ssl-policy set`: `--name`, `--cipher-suites`, `--min-protocol-version`</span></span>
-* <span data-ttu-id="9b251-548">添加了 `application-gateway http-settings create` 和 `application-gateway http-settings update` 的参数：`--host-name-from-backend-pool`、`--affinity-cookie-name`、`--enable-probe`、`--path`</span><span class="sxs-lookup"><span data-stu-id="9b251-548">Added arguments to `application-gateway http-settings create` and `application-gateway http-settings update`: `--host-name-from-backend-pool`, `--affinity-cookie-name`, `--enable-probe`, `--path`</span></span>
-* <span data-ttu-id="9b251-549">添加了 `application-gateway url-path-map create` 和 `application-gateway url-path-map update` 的参数：`--default-redirect-config`、`--redirect-config`</span><span class="sxs-lookup"><span data-stu-id="9b251-549">Added arguments to `application-gateway url-path-map create` and `application-gateway url-path-map update`: `--default-redirect-config`, `--redirect-config`</span></span>
-* <span data-ttu-id="9b251-550">为 `application-gateway url-path-map rule create` 添加了 `--redirect-config` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-550">Added argument `--redirect-config` to `application-gateway url-path-map rule create`</span></span>
-* <span data-ttu-id="9b251-551">在 `application-gateway url-path-map rule delete` 中添加了对 `--no-wait` 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-551">Added support for `--no-wait` to `application-gateway url-path-map rule delete`</span></span>
-* <span data-ttu-id="9b251-552">添加了 `application-gateway probe create` 和 `application-gateway probe update` 的参数：`--host-name-from-http-settings`、`--min-servers`、`--match-body`、`--match-status-codes`</span><span class="sxs-lookup"><span data-stu-id="9b251-552">Added arguments to `application-gateway probe create` and `application-gateway probe update`: `--host-name-from-http-settings`, `--min-servers`, `--match-body`, `--match-status-codes`</span></span>
-* <span data-ttu-id="9b251-553">为 `application-gateway rule create` 和 `application-gateway rule update` 添加了 `--redirect-config` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-553">Added argument `--redirect-config` to `application-gateway rule create` and `application-gateway rule update`</span></span>
-* <span data-ttu-id="9b251-554">在 `nic create` 和 `nic update` 中添加了对 `--accelerated-networking` 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-554">Added support for `--accelerated-networking` to `nic create` and `nic update`</span></span>
-* <span data-ttu-id="9b251-555">从 `nic create` 中删除了 `--internal-dns-name-suffix` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-555">Removed `--internal-dns-name-suffix` argument from `nic create`</span></span>
-* <span data-ttu-id="9b251-556">在 `nic update` 和 `nic create` 中添加了对 `--dns-servers` 的支持：添加了对 --dns-servers 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-556">Added support for `--dns-servers` to `nic update` and `nic create`: Add support for --dns-servers</span></span>
-* <span data-ttu-id="9b251-557">修复了 `local-gateway create` 忽略 `--local-address-prefixes` 的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-557">Fixed bug where `local-gateway create` ignored `--local-address-prefixes`</span></span>
-* <span data-ttu-id="9b251-558">在 `vnet update` 中添加了对 `--dns-servers` 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-558">Added support for `--dns-servers` to `vnet update`</span></span>
-* <span data-ttu-id="9b251-559">修复了使用 `express-route peering create` 创建不包含路由筛选的对等互连时的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-559">Fixed bug when creating a peering without route filtering with `express-route peering create`</span></span>
-* <span data-ttu-id="9b251-560">修复了无法结合 `--provider` 和 `--bandwidth` 参数使用 `express-route update` 的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-560">Fixed bug where `--provider` and `--bandwidth` arguments did not work with `express-route update`</span></span>
-* <span data-ttu-id="9b251-561">修复了 `network watcher show-topology` 默认逻辑的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-561">Fixed bug with `network watcher show-topology` defaulting logic</span></span>
-* <span data-ttu-id="9b251-562">改进了 `network list-usages` 的输出格式</span><span class="sxs-lookup"><span data-stu-id="9b251-562">Improved output formatting for `network list-usages`</span></span>
-* <span data-ttu-id="9b251-563">如果只存在一个，则对 `application-gateway http-listener create` 使用默认前端 IP</span><span class="sxs-lookup"><span data-stu-id="9b251-563">Use default frontend IP for `application-gateway http-listener create` if only one exists</span></span>
-* <span data-ttu-id="9b251-564">如果只存在一个，则对 `application-gateway rule create` 使用默认地址池、HTTP 设置和 HTTP 侦听器</span><span class="sxs-lookup"><span data-stu-id="9b251-564">Use default address pool, HTTP settings, and HTTP listener for `application-gateway rule create` if only one exists</span></span>
-* <span data-ttu-id="9b251-565">如果只存在一个，则对 `lb rule create` 使用默认前端 IP 和后端池</span><span class="sxs-lookup"><span data-stu-id="9b251-565">Use default frontend IP and backend pool for `lb rule create` if only one exists</span></span>
-* <span data-ttu-id="9b251-566">如果只存在一个，则对 `lb inbound-nat-rule create` 使用默认前端 IP</span><span class="sxs-lookup"><span data-stu-id="9b251-566">Use default frontend IP for `lb inbound-nat-rule create` if only one exists</span></span>
+* <span data-ttu-id="7b07f-552">添加了 `list-private-access-services` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-552">Added `list-private-access-services` command</span></span>
+* <span data-ttu-id="7b07f-553">为 `vnet subnet create` 和 `vnet subnet update` 添加了 `--private-access-services` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-553">Added `--private-access-services` argument to `vnet subnet create` and `vnet subnet update`</span></span>
+* <span data-ttu-id="7b07f-554">修复了 `application-gateway redirect-config create` 失败的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-554">Fixed issue where `application-gateway redirect-config create` would fail</span></span>
+* <span data-ttu-id="7b07f-555">修复了无法结合 `--no-wait` 使用 `application-gateway redirect-config update` 的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-555">Fixed issue where `application-gateway redirect-config update` with `--no-wait` would not work</span></span>
+* <span data-ttu-id="7b07f-556">修复了结合 `application-gateway address-pool create` 和 `application-gateway address-pool update` 使用 `--servers` 参数时的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-556">Fixed bug when using `--servers` argument with `application-gateway address-pool create` and `application-gateway address-pool update`</span></span>
+* <span data-ttu-id="7b07f-557">添加了 `application-gateway redirect-config` 命令</span><span class="sxs-lookup"><span data-stu-id="7b07f-557">Added `application-gateway redirect-config` commands</span></span>
+* <span data-ttu-id="7b07f-558">添加了 `application-gateway ssl-policy` 的命令：`list-options`、`predefined list`、`predefined show`</span><span class="sxs-lookup"><span data-stu-id="7b07f-558">Added commands to `application-gateway ssl-policy`: `list-options`, `predefined list`, `predefined show`</span></span>
+* <span data-ttu-id="7b07f-559">添加了 `application-gateway ssl-policy set` 的参数：`--name`、`--cipher-suites`、`--min-protocol-version`</span><span class="sxs-lookup"><span data-stu-id="7b07f-559">Added arguments to `application-gateway ssl-policy set`: `--name`, `--cipher-suites`, `--min-protocol-version`</span></span>
+* <span data-ttu-id="7b07f-560">添加了 `application-gateway http-settings create` 和 `application-gateway http-settings update` 的参数：`--host-name-from-backend-pool`、`--affinity-cookie-name`、`--enable-probe`、`--path`</span><span class="sxs-lookup"><span data-stu-id="7b07f-560">Added arguments to `application-gateway http-settings create` and `application-gateway http-settings update`: `--host-name-from-backend-pool`, `--affinity-cookie-name`, `--enable-probe`, `--path`</span></span>
+* <span data-ttu-id="7b07f-561">添加了 `application-gateway url-path-map create` 和 `application-gateway url-path-map update` 的参数：`--default-redirect-config`、`--redirect-config`</span><span class="sxs-lookup"><span data-stu-id="7b07f-561">Added arguments to `application-gateway url-path-map create` and `application-gateway url-path-map update`: `--default-redirect-config`, `--redirect-config`</span></span>
+* <span data-ttu-id="7b07f-562">为 `application-gateway url-path-map rule create` 添加了 `--redirect-config` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-562">Added argument `--redirect-config` to `application-gateway url-path-map rule create`</span></span>
+* <span data-ttu-id="7b07f-563">在 `application-gateway url-path-map rule delete` 中添加了对 `--no-wait` 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-563">Added support for `--no-wait` to `application-gateway url-path-map rule delete`</span></span>
+* <span data-ttu-id="7b07f-564">添加了 `application-gateway probe create` 和 `application-gateway probe update` 的参数：`--host-name-from-http-settings`、`--min-servers`、`--match-body`、`--match-status-codes`</span><span class="sxs-lookup"><span data-stu-id="7b07f-564">Added arguments to `application-gateway probe create` and `application-gateway probe update`: `--host-name-from-http-settings`, `--min-servers`, `--match-body`, `--match-status-codes`</span></span>
+* <span data-ttu-id="7b07f-565">为 `application-gateway rule create` 和 `application-gateway rule update` 添加了 `--redirect-config` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-565">Added argument `--redirect-config` to `application-gateway rule create` and `application-gateway rule update`</span></span>
+* <span data-ttu-id="7b07f-566">在 `nic create` 和 `nic update` 中添加了对 `--accelerated-networking` 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-566">Added support for `--accelerated-networking` to `nic create` and `nic update`</span></span>
+* <span data-ttu-id="7b07f-567">从 `nic create` 中删除了 `--internal-dns-name-suffix` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-567">Removed `--internal-dns-name-suffix` argument from `nic create`</span></span>
+* <span data-ttu-id="7b07f-568">在 `nic update` 和 `nic create` 中添加了对 `--dns-servers` 的支持：添加了对 --dns-servers 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-568">Added support for `--dns-servers` to `nic update` and `nic create`: Add support for --dns-servers</span></span>
+* <span data-ttu-id="7b07f-569">修复了 `local-gateway create` 忽略 `--local-address-prefixes` 的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-569">Fixed bug where `local-gateway create` ignored `--local-address-prefixes`</span></span>
+* <span data-ttu-id="7b07f-570">在 `vnet update` 中添加了对 `--dns-servers` 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-570">Added support for `--dns-servers` to `vnet update`</span></span>
+* <span data-ttu-id="7b07f-571">修复了使用 `express-route peering create` 创建不包含路由筛选的对等互连时的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-571">Fixed bug when creating a peering without route filtering with `express-route peering create`</span></span>
+* <span data-ttu-id="7b07f-572">修复了无法结合 `--provider` 和 `--bandwidth` 参数使用 `express-route update` 的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-572">Fixed bug where `--provider` and `--bandwidth` arguments did not work with `express-route update`</span></span>
+* <span data-ttu-id="7b07f-573">修复了 `network watcher show-topology` 默认逻辑的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-573">Fixed bug with `network watcher show-topology` defaulting logic</span></span>
+* <span data-ttu-id="7b07f-574">改进了 `network list-usages` 的输出格式</span><span class="sxs-lookup"><span data-stu-id="7b07f-574">Improved output formatting for `network list-usages`</span></span>
+* <span data-ttu-id="7b07f-575">如果只存在一个，则对 `application-gateway http-listener create` 使用默认前端 IP</span><span class="sxs-lookup"><span data-stu-id="7b07f-575">Use default frontend IP for `application-gateway http-listener create` if only one exists</span></span>
+* <span data-ttu-id="7b07f-576">如果只存在一个，则对 `application-gateway rule create` 使用默认地址池、HTTP 设置和 HTTP 侦听器</span><span class="sxs-lookup"><span data-stu-id="7b07f-576">Use default address pool, HTTP settings, and HTTP listener for `application-gateway rule create` if only one exists</span></span>
+* <span data-ttu-id="7b07f-577">如果只存在一个，则对 `lb rule create` 使用默认前端 IP 和后端池</span><span class="sxs-lookup"><span data-stu-id="7b07f-577">Use default frontend IP and backend pool for `lb rule create` if only one exists</span></span>
+* <span data-ttu-id="7b07f-578">如果只存在一个，则对 `lb inbound-nat-rule create` 使用默认前端 IP</span><span class="sxs-lookup"><span data-stu-id="7b07f-578">Use default frontend IP for `lb inbound-nat-rule create` if only one exists</span></span>
 
-### <a name="profile"></a><span data-ttu-id="9b251-567">配置文件</span><span class="sxs-lookup"><span data-stu-id="9b251-567">Profile</span></span>
+### <a name="profile"></a><span data-ttu-id="7b07f-579">配置文件</span><span class="sxs-lookup"><span data-stu-id="7b07f-579">Profile</span></span>
 
-* <span data-ttu-id="9b251-568">支持使用托管标识在 VM 内部登录</span><span class="sxs-lookup"><span data-stu-id="9b251-568">Support login inside a VM with a managed identity</span></span>
-* <span data-ttu-id="9b251-569">支持采用 SDK 身份验证文件格式的 `account show` 输出</span><span class="sxs-lookup"><span data-stu-id="9b251-569">Support output for `account show` in SDK auth file format</span></span>
-* <span data-ttu-id="9b251-570">使用 '--expanded-view' 时显示弃用警告</span><span class="sxs-lookup"><span data-stu-id="9b251-570">Show deprecation warnings when using '--expanded-view'</span></span>
-* <span data-ttu-id="9b251-571">添加了 `get-access-token` 命令来提供原始 AAD 令牌</span><span class="sxs-lookup"><span data-stu-id="9b251-571">Added `get-access-token` command to provide raw AAD token</span></span>
-* <span data-ttu-id="9b251-572">支持使用不包含关联订阅的用户帐户登录</span><span class="sxs-lookup"><span data-stu-id="9b251-572">Support login with a user account with no associated subscriptions</span></span>
+* <span data-ttu-id="7b07f-580">支持使用托管标识在 VM 内部登录</span><span class="sxs-lookup"><span data-stu-id="7b07f-580">Support login inside a VM with a managed identity</span></span>
+* <span data-ttu-id="7b07f-581">支持采用 SDK 身份验证文件格式的 `account show` 输出</span><span class="sxs-lookup"><span data-stu-id="7b07f-581">Support output for `account show` in SDK auth file format</span></span>
+* <span data-ttu-id="7b07f-582">使用 '--expanded-view' 时显示弃用警告</span><span class="sxs-lookup"><span data-stu-id="7b07f-582">Show deprecation warnings when using '--expanded-view'</span></span>
+* <span data-ttu-id="7b07f-583">添加了 `get-access-token` 命令来提供原始 AAD 令牌</span><span class="sxs-lookup"><span data-stu-id="7b07f-583">Added `get-access-token` command to provide raw AAD token</span></span>
+* <span data-ttu-id="7b07f-584">支持使用不包含关联订阅的用户帐户登录</span><span class="sxs-lookup"><span data-stu-id="7b07f-584">Support login with a user account with no associated subscriptions</span></span>
 
-### <a name="rdbms"></a><span data-ttu-id="9b251-573">RDBMS</span><span class="sxs-lookup"><span data-stu-id="9b251-573">RDBMS</span></span>
+### <a name="rdbms"></a><span data-ttu-id="7b07f-585">RDBMS</span><span class="sxs-lookup"><span data-stu-id="7b07f-585">RDBMS</span></span>
 
-* <span data-ttu-id="9b251-574">支持跨订阅列出服务器 (#3417)</span><span class="sxs-lookup"><span data-stu-id="9b251-574">Support listing servers across a subscription (#3417)</span></span>
-* <span data-ttu-id="9b251-575">修复了由于缺少 `% server_type` 而不处理 `%s` 的问题 (#3393)</span><span class="sxs-lookup"><span data-stu-id="9b251-575">Fixed `%s` not processed becasue of missing `% server_type` (#3393)</span></span>
-* <span data-ttu-id="9b251-576">修复了文档源映射并添加了 CI 任务用于验证 (#3361)</span><span class="sxs-lookup"><span data-stu-id="9b251-576">Fixed doc source map and added CI task to verify (#3361)</span></span>
-* <span data-ttu-id="9b251-577">修复了 MySQL 和 PostgreSQL 帮助 (#3369)</span><span class="sxs-lookup"><span data-stu-id="9b251-577">Fixed MySQL and PostgreSQL help (#3369)</span></span>
+* <span data-ttu-id="7b07f-586">支持跨订阅列出服务器 (#3417)</span><span class="sxs-lookup"><span data-stu-id="7b07f-586">Support listing servers across a subscription (#3417)</span></span>
+* <span data-ttu-id="7b07f-587">修复了由于缺少 `% server_type` 而不处理 `%s` 的问题 (#3393)</span><span class="sxs-lookup"><span data-stu-id="7b07f-587">Fixed `%s` not processed becasue of missing `% server_type` (#3393)</span></span>
+* <span data-ttu-id="7b07f-588">修复了文档源映射并添加了 CI 任务用于验证 (#3361)</span><span class="sxs-lookup"><span data-stu-id="7b07f-588">Fixed doc source map and added CI task to verify (#3361)</span></span>
+* <span data-ttu-id="7b07f-589">修复了 MySQL 和 PostgreSQL 帮助 (#3369)</span><span class="sxs-lookup"><span data-stu-id="7b07f-589">Fixed MySQL and PostgreSQL help (#3369)</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-578">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-578">Resource</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-590">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-590">Resource</span></span>
 
-* <span data-ttu-id="9b251-579">改进了有关 `group deployment create` 缺少参数的提示</span><span class="sxs-lookup"><span data-stu-id="9b251-579">Improved prompts for missing parameters for `group deployment create`</span></span>
-* <span data-ttu-id="9b251-580">改进了 `--parameters KEY=VALUE` 语法分析</span><span class="sxs-lookup"><span data-stu-id="9b251-580">Improved parsing of `--parameters KEY=VALUE` syntax</span></span>
-* <span data-ttu-id="9b251-581">修复了不再能够使用 `@<file>` 语法识别 `group deployment create` 参数文件的问题</span><span class="sxs-lookup"><span data-stu-id="9b251-581">Fixed issues where `group deployment create` parameter files were no longer recognized using `@<file>` syntax</span></span>
-* <span data-ttu-id="9b251-582">支持 `resource` 和 `managedapp` 命令的 `--ids` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-582">Support `--ids` argument for `resource` and `managedapp` commands</span></span>
-* <span data-ttu-id="9b251-583">修复了一些分析和错误消息 (#3584)</span><span class="sxs-lookup"><span data-stu-id="9b251-583">Fixed up some parsing and error messages (#3584)</span></span>
-* <span data-ttu-id="9b251-584">修复了 `lock` 命令的 `--resource-type` 分析，接受 `<resource-namespace>` 和 `<resource-type>`</span><span class="sxs-lookup"><span data-stu-id="9b251-584">Fixed `--resource-type` parsing for the `lock` command to accept `<resource-namespace>` and `<resource-type>`</span></span>
-* <span data-ttu-id="9b251-585">添加了模板链接模板的参数检查 (#3629)</span><span class="sxs-lookup"><span data-stu-id="9b251-585">Added parameter checking for template link templates (#3629)</span></span>
-* <span data-ttu-id="9b251-586">添加了使用 `KEY=VALUE` 语法指定部署参数的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-586">Added support for specifying deployment parameters using `KEY=VALUE` syntax</span></span>
+* <span data-ttu-id="7b07f-591">改进了有关 `group deployment create` 缺少参数的提示</span><span class="sxs-lookup"><span data-stu-id="7b07f-591">Improved prompts for missing parameters for `group deployment create`</span></span>
+* <span data-ttu-id="7b07f-592">改进了 `--parameters KEY=VALUE` 语法分析</span><span class="sxs-lookup"><span data-stu-id="7b07f-592">Improved parsing of `--parameters KEY=VALUE` syntax</span></span>
+* <span data-ttu-id="7b07f-593">修复了不再能够使用 `@<file>` 语法识别 `group deployment create` 参数文件的问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-593">Fixed issues where `group deployment create` parameter files were no longer recognized using `@<file>` syntax</span></span>
+* <span data-ttu-id="7b07f-594">支持 `resource` 和 `managedapp` 命令的 `--ids` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-594">Support `--ids` argument for `resource` and `managedapp` commands</span></span>
+* <span data-ttu-id="7b07f-595">修复了一些分析和错误消息 (#3584)</span><span class="sxs-lookup"><span data-stu-id="7b07f-595">Fixed up some parsing and error messages (#3584)</span></span>
+* <span data-ttu-id="7b07f-596">修复了 `lock` 命令的 `--resource-type` 分析，接受 `<resource-namespace>` 和 `<resource-type>`</span><span class="sxs-lookup"><span data-stu-id="7b07f-596">Fixed `--resource-type` parsing for the `lock` command to accept `<resource-namespace>` and `<resource-type>`</span></span>
+* <span data-ttu-id="7b07f-597">添加了模板链接模板的参数检查 (#3629)</span><span class="sxs-lookup"><span data-stu-id="7b07f-597">Added parameter checking for template link templates (#3629)</span></span>
+* <span data-ttu-id="7b07f-598">添加了使用 `KEY=VALUE` 语法指定部署参数的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-598">Added support for specifying deployment parameters using `KEY=VALUE` syntax</span></span>
 
-### <a name="role"></a><span data-ttu-id="9b251-587">角色</span><span class="sxs-lookup"><span data-stu-id="9b251-587">Role</span></span>
+### <a name="role"></a><span data-ttu-id="7b07f-599">角色</span><span class="sxs-lookup"><span data-stu-id="7b07f-599">Role</span></span>
 
-* <span data-ttu-id="9b251-588">支持采用 SDK 身份验证文件格式的 `create-for-rbac` 输出</span><span class="sxs-lookup"><span data-stu-id="9b251-588">Support output in SDK auth file format for `create-for-rbac`</span></span>
-* <span data-ttu-id="9b251-589">删除服务主体时清理角色分配和相关的 AAD 应用程序 (#3610)</span><span class="sxs-lookup"><span data-stu-id="9b251-589">Cleaned up role assignments and related AAD application when deleting a service principal (#3610)</span></span>
-* <span data-ttu-id="9b251-590">在 `app create` 参数 `--start-date` 和 `--end-date` 说明中包含时间格式</span><span class="sxs-lookup"><span data-stu-id="9b251-590">Include time format in `app create` args `--start-date` and `--end-date` descriptions</span></span>
-* <span data-ttu-id="9b251-591">使用 `--expanded-view` 时显示弃用警告</span><span class="sxs-lookup"><span data-stu-id="9b251-591">Show deprecation warnings when using `--expanded-view`</span></span>
-* <span data-ttu-id="9b251-592">在 `create-for-rbac` 和 `reset-credentials` 命令中添加了 Key Vault 集成</span><span class="sxs-lookup"><span data-stu-id="9b251-592">Added key vault integration to the `create-for-rbac` and `reset-credentials` commands</span></span>
+* <span data-ttu-id="7b07f-600">支持采用 SDK 身份验证文件格式的 `create-for-rbac` 输出</span><span class="sxs-lookup"><span data-stu-id="7b07f-600">Support output in SDK auth file format for `create-for-rbac`</span></span>
+* <span data-ttu-id="7b07f-601">删除服务主体时清理角色分配和相关的 AAD 应用程序 (#3610)</span><span class="sxs-lookup"><span data-stu-id="7b07f-601">Cleaned up role assignments and related AAD application when deleting a service principal (#3610)</span></span>
+* <span data-ttu-id="7b07f-602">在 `app create` 参数 `--start-date` 和 `--end-date` 说明中包含时间格式</span><span class="sxs-lookup"><span data-stu-id="7b07f-602">Include time format in `app create` args `--start-date` and `--end-date` descriptions</span></span>
+* <span data-ttu-id="7b07f-603">使用 `--expanded-view` 时显示弃用警告</span><span class="sxs-lookup"><span data-stu-id="7b07f-603">Show deprecation warnings when using `--expanded-view`</span></span>
+* <span data-ttu-id="7b07f-604">在 `create-for-rbac` 和 `reset-credentials` 命令中添加了 Key Vault 集成</span><span class="sxs-lookup"><span data-stu-id="7b07f-604">Added key vault integration to the `create-for-rbac` and `reset-credentials` commands</span></span>
 
-### <a name="service-fabric"></a><span data-ttu-id="9b251-593">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="9b251-593">Service Fabric</span></span>
-* <span data-ttu-id="9b251-594">修复了上传时截断应用程序中的大型文件的问题 (#3666)</span><span class="sxs-lookup"><span data-stu-id="9b251-594">Fixed an issue with large files in applications being truncated on upload (#3666)</span></span>
-* <span data-ttu-id="9b251-595">添加了 Service Fabric 命令的测试 (#3424)</span><span class="sxs-lookup"><span data-stu-id="9b251-595">Added tests for Service Fabric commands (#3424)</span></span>
-* <span data-ttu-id="9b251-596">添加了大量的 Service Fabric 命令 (#3234)</span><span class="sxs-lookup"><span data-stu-id="9b251-596">Fixed numerous Service Fabric commands (#3234)</span></span>
+### <a name="service-fabric"></a><span data-ttu-id="7b07f-605">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="7b07f-605">Service Fabric</span></span>
+* <span data-ttu-id="7b07f-606">修复了上传时截断应用程序中的大型文件的问题 (#3666)</span><span class="sxs-lookup"><span data-stu-id="7b07f-606">Fixed an issue with large files in applications being truncated on upload (#3666)</span></span>
+* <span data-ttu-id="7b07f-607">添加了 Service Fabric 命令的测试 (#3424)</span><span class="sxs-lookup"><span data-stu-id="7b07f-607">Added tests for Service Fabric commands (#3424)</span></span>
+* <span data-ttu-id="7b07f-608">添加了大量的 Service Fabric 命令 (#3234)</span><span class="sxs-lookup"><span data-stu-id="7b07f-608">Fixed numerous Service Fabric commands (#3234)</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-597">SQL</span><span class="sxs-lookup"><span data-stu-id="9b251-597">SQL</span></span>
+### <a name="sql"></a><span data-ttu-id="7b07f-609">SQL</span><span class="sxs-lookup"><span data-stu-id="7b07f-609">SQL</span></span>
 
-* <span data-ttu-id="9b251-598">删除了无效的 `sql server create` `--identity` 参数</span><span class="sxs-lookup"><span data-stu-id="9b251-598">Removed broken `sql server create` `--identity` parameter</span></span>
-* <span data-ttu-id="9b251-599">从 `sql server create` 和 `sql server update` 命令输出中删除了密码值</span><span class="sxs-lookup"><span data-stu-id="9b251-599">Removed password values from `sql server create` and `sql server update` command output</span></span>
-* <span data-ttu-id="9b251-600">添加了命令 `sql db list-editions` 和 `sql elastic-pool list-editions`</span><span class="sxs-lookup"><span data-stu-id="9b251-600">Added commands `sql db list-editions` and `sql elastic-pool list-editions`</span></span>
+* <span data-ttu-id="7b07f-610">删除了无效的 `sql server create` `--identity` 参数</span><span class="sxs-lookup"><span data-stu-id="7b07f-610">Removed broken `sql server create` `--identity` parameter</span></span>
+* <span data-ttu-id="7b07f-611">从 `sql server create` 和 `sql server update` 命令输出中删除了密码值</span><span class="sxs-lookup"><span data-stu-id="7b07f-611">Removed password values from `sql server create` and `sql server update` command output</span></span>
+* <span data-ttu-id="7b07f-612">添加了命令 `sql db list-editions` 和 `sql elastic-pool list-editions`</span><span class="sxs-lookup"><span data-stu-id="7b07f-612">Added commands `sql db list-editions` and `sql elastic-pool list-editions`</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-601">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-601">Storage</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-613">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-613">Storage</span></span>
 
-* <span data-ttu-id="9b251-602">从 `storage blob list`、`storage container list` 和 `storage share list` 命令中删除了 `--marker` 选项 (#3745)</span><span class="sxs-lookup"><span data-stu-id="9b251-602">Removed `--marker` option from `storage blob list`, `storage container list`, and `storage share list` commands (#3745)</span></span>
-* <span data-ttu-id="9b251-603">启用了创建仅限 https 的存储帐户</span><span class="sxs-lookup"><span data-stu-id="9b251-603">Enabled creating an https-only storage account</span></span>
-* <span data-ttu-id="9b251-604">更新了存储指标、日志记录和 CORS 命令 (#3495)</span><span class="sxs-lookup"><span data-stu-id="9b251-604">Updated storage metrics, logging and cors commands (#3495)</span></span>
-* <span data-ttu-id="9b251-605">重新编写了 CORS add 命令的异常消息 (#3638) (#3362)</span><span class="sxs-lookup"><span data-stu-id="9b251-605">Rephrased exception message from CORS add (#3638) (#3362)</span></span>
-* <span data-ttu-id="9b251-606">已在下载批处理命令试运行模式下将生成器转换为列表 (#3592)</span><span class="sxs-lookup"><span data-stu-id="9b251-606">Converted generator to a list in download batch command dry run mode (#3592)</span></span>
-* <span data-ttu-id="9b251-607">修复了 Blob 下载批处理试运行问题 (#3640) (#3592)</span><span class="sxs-lookup"><span data-stu-id="9b251-607">Fixed blob download batch dryrun issue (#3640) (#3592)</span></span>
+* <span data-ttu-id="7b07f-614">从 `storage blob list`、`storage container list` 和 `storage share list` 命令中删除了 `--marker` 选项 (#3745)</span><span class="sxs-lookup"><span data-stu-id="7b07f-614">Removed `--marker` option from `storage blob list`, `storage container list`, and `storage share list` commands (#3745)</span></span>
+* <span data-ttu-id="7b07f-615">启用了创建仅限 https 的存储帐户</span><span class="sxs-lookup"><span data-stu-id="7b07f-615">Enabled creating an https-only storage account</span></span>
+* <span data-ttu-id="7b07f-616">更新了存储指标、日志记录和 CORS 命令 (#3495)</span><span class="sxs-lookup"><span data-stu-id="7b07f-616">Updated storage metrics, logging and cors commands (#3495)</span></span>
+* <span data-ttu-id="7b07f-617">重新编写了 CORS add 命令的异常消息 (#3638) (#3362)</span><span class="sxs-lookup"><span data-stu-id="7b07f-617">Rephrased exception message from CORS add (#3638) (#3362)</span></span>
+* <span data-ttu-id="7b07f-618">已在下载批处理命令试运行模式下将生成器转换为列表 (#3592)</span><span class="sxs-lookup"><span data-stu-id="7b07f-618">Converted generator to a list in download batch command dry run mode (#3592)</span></span>
+* <span data-ttu-id="7b07f-619">修复了 Blob 下载批处理试运行问题 (#3640) (#3592)</span><span class="sxs-lookup"><span data-stu-id="7b07f-619">Fixed blob download batch dryrun issue (#3640) (#3592)</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-608">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-608">VM</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-620">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-620">VM</span></span>
 
-* <span data-ttu-id="9b251-609">支持配置 NSG</span><span class="sxs-lookup"><span data-stu-id="9b251-609">Support configuring nsg</span></span>
-* <span data-ttu-id="9b251-610">修复了无法正确配置 DNS 服务器的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-610">Fixed a bug where the DNS server would not be configured correctly</span></span>
-* <span data-ttu-id="9b251-611">支持托管服务标识</span><span class="sxs-lookup"><span data-stu-id="9b251-611">Support managed service identities</span></span>
-* <span data-ttu-id="9b251-612">修复了包含现有负载均衡器的 `cmss create` 需要 `--backend-pool-name` 的问题。</span><span class="sxs-lookup"><span data-stu-id="9b251-612">Fixed issue where `cmss create` with an existing load balancer required `--backend-pool-name`.</span></span>
-* <span data-ttu-id="9b251-613">要求使用 `vm image create` LUN 创建的数据磁盘以 0 开头</span><span class="sxs-lookup"><span data-stu-id="9b251-613">Make datadisks created with `vm image create` lun start with 0</span></span>
+* <span data-ttu-id="7b07f-621">支持配置 NSG</span><span class="sxs-lookup"><span data-stu-id="7b07f-621">Support configuring nsg</span></span>
+* <span data-ttu-id="7b07f-622">修复了无法正确配置 DNS 服务器的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-622">Fixed a bug where the DNS server would not be configured correctly</span></span>
+* <span data-ttu-id="7b07f-623">支持托管服务标识</span><span class="sxs-lookup"><span data-stu-id="7b07f-623">Support managed service identities</span></span>
+* <span data-ttu-id="7b07f-624">修复了包含现有负载均衡器的 `cmss create` 需要 `--backend-pool-name` 的问题。</span><span class="sxs-lookup"><span data-stu-id="7b07f-624">Fixed issue where `cmss create` with an existing load balancer required `--backend-pool-name`.</span></span>
+* <span data-ttu-id="7b07f-625">要求使用 `vm image create` LUN 创建的数据磁盘以 0 开头</span><span class="sxs-lookup"><span data-stu-id="7b07f-625">Make datadisks created with `vm image create` lun start with 0</span></span>
 
 
-## <a name="may-10-2017"></a><span data-ttu-id="9b251-614">2017 年 5 月 10 日</span><span class="sxs-lookup"><span data-stu-id="9b251-614">May 10, 2017</span></span>
+## <a name="may-10-2017"></a><span data-ttu-id="7b07f-626">2017 年 5 月 10 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-626">May 10, 2017</span></span>
 
-<span data-ttu-id="9b251-615">版本 2.0.6</span><span class="sxs-lookup"><span data-stu-id="9b251-615">Version 2.0.6</span></span>
+<span data-ttu-id="7b07f-627">版本 2.0.6</span><span class="sxs-lookup"><span data-stu-id="7b07f-627">Version 2.0.6</span></span>
 
-* <span data-ttu-id="9b251-616">Documentdb 已重命名为 Cosmosdb</span><span class="sxs-lookup"><span data-stu-id="9b251-616">documentdb renamed to cosmosdb</span></span>
-* <span data-ttu-id="9b251-617">添加 rdbms (mysql, postgres)</span><span class="sxs-lookup"><span data-stu-id="9b251-617">Add rdbms (mysql, postgres)</span></span>
-* <span data-ttu-id="9b251-618">包括 Data Lake Analytics 和 Data Lake Store 模块。</span><span class="sxs-lookup"><span data-stu-id="9b251-618">Include Data Lake Analytics and Data Lake Store modules.</span></span>
-* <span data-ttu-id="9b251-619">包括认知服务模块。</span><span class="sxs-lookup"><span data-stu-id="9b251-619">Include Cognitive Services module.</span></span>
-* <span data-ttu-id="9b251-620">包括 Service Fabric 模块。</span><span class="sxs-lookup"><span data-stu-id="9b251-620">Include Service Fabric module.</span></span>
-* <span data-ttu-id="9b251-621">包括交互式模块（重命名 az-shell）。</span><span class="sxs-lookup"><span data-stu-id="9b251-621">Include Interactive module (rename of az-shell).</span></span>
-* <span data-ttu-id="9b251-622">添加对 CDN 命令的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-622">Add support for CDN commands.</span></span>
-* <span data-ttu-id="9b251-623">删除容器模块。</span><span class="sxs-lookup"><span data-stu-id="9b251-623">Remove Container module.</span></span>
-* <span data-ttu-id="9b251-624">添加“az -v”作为“az --version”的快捷方式 ([#2926](https://github.com/Azure/azure-cli/issues/2926))</span><span class="sxs-lookup"><span data-stu-id="9b251-624">Add 'az -v' as shortcut for 'az --version' ([#2926](https://github.com/Azure/azure-cli/issues/2926))</span></span>
-* <span data-ttu-id="9b251-625">提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span><span class="sxs-lookup"><span data-stu-id="9b251-625">Improve performance of package load and command execution ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span></span>
+* <span data-ttu-id="7b07f-628">Documentdb 已重命名为 Cosmosdb</span><span class="sxs-lookup"><span data-stu-id="7b07f-628">documentdb renamed to cosmosdb</span></span>
+* <span data-ttu-id="7b07f-629">添加 rdbms (mysql, postgres)</span><span class="sxs-lookup"><span data-stu-id="7b07f-629">Add rdbms (mysql, postgres)</span></span>
+* <span data-ttu-id="7b07f-630">包括 Data Lake Analytics 和 Data Lake Store 模块。</span><span class="sxs-lookup"><span data-stu-id="7b07f-630">Include Data Lake Analytics and Data Lake Store modules.</span></span>
+* <span data-ttu-id="7b07f-631">包括认知服务模块。</span><span class="sxs-lookup"><span data-stu-id="7b07f-631">Include Cognitive Services module.</span></span>
+* <span data-ttu-id="7b07f-632">包括 Service Fabric 模块。</span><span class="sxs-lookup"><span data-stu-id="7b07f-632">Include Service Fabric module.</span></span>
+* <span data-ttu-id="7b07f-633">包括交互式模块（重命名 az-shell）。</span><span class="sxs-lookup"><span data-stu-id="7b07f-633">Include Interactive module (rename of az-shell).</span></span>
+* <span data-ttu-id="7b07f-634">添加对 CDN 命令的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-634">Add support for CDN commands.</span></span>
+* <span data-ttu-id="7b07f-635">删除容器模块。</span><span class="sxs-lookup"><span data-stu-id="7b07f-635">Remove Container module.</span></span>
+* <span data-ttu-id="7b07f-636">添加“az -v”作为“az --version”的快捷方式 ([#2926](https://github.com/Azure/azure-cli/issues/2926))</span><span class="sxs-lookup"><span data-stu-id="7b07f-636">Add 'az -v' as shortcut for 'az --version' ([#2926](https://github.com/Azure/azure-cli/issues/2926))</span></span>
+* <span data-ttu-id="7b07f-637">提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span><span class="sxs-lookup"><span data-stu-id="7b07f-637">Improve performance of package load and command execution ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span></span>
 
 ```
 azure-cli (2.0.6)
@@ -877,165 +901,165 @@ storage (2.0.6)
 vm (2.0.6)
 ```
 
-### <a name="core"></a><span data-ttu-id="9b251-626">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-626">Core</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-638">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-638">Core</span></span>
 
-* <span data-ttu-id="9b251-627">核心：捕获未注册提供程序引发的异常并自动注册</span><span class="sxs-lookup"><span data-stu-id="9b251-627">core: capture exceptions caused by unregistered provider and auto-register it</span></span>
-* <span data-ttu-id="9b251-628">性能：将 ADAL 令牌缓存保留在内存中，直至进程退出 ([#2603](https://github.com/Azure/azure-cli/issues/2603))</span><span class="sxs-lookup"><span data-stu-id="9b251-628">perf: persist adal token cache in memory till process exits ([#2603](https://github.com/Azure/azure-cli/issues/2603))</span></span>
-* <span data-ttu-id="9b251-629">修复从十六进制指纹 -o tsv 返回的字节 ([#3053](https://github.com/Azure/azure-cli/issues/3053))</span><span class="sxs-lookup"><span data-stu-id="9b251-629">Fix bytes returned from hex fingerprint -o tsv ([#3053](https://github.com/Azure/azure-cli/issues/3053))</span></span>
-* <span data-ttu-id="9b251-630">改进的 Key Vault 证书下载和 AAD SP 集成 ([#3003](https://github.com/Azure/azure-cli/issues/3003))</span><span class="sxs-lookup"><span data-stu-id="9b251-630">Enhanced Key Vault Certificate Download and AAD SP Integration ([#3003](https://github.com/Azure/azure-cli/issues/3003))</span></span>
-* <span data-ttu-id="9b251-631">将 Python 位置添加到“az —version”([#2986](https://github.com/Azure/azure-cli/issues/2986))</span><span class="sxs-lookup"><span data-stu-id="9b251-631">Add Python location to ‘az —version’ ([#2986](https://github.com/Azure/azure-cli/issues/2986))</span></span>
-* <span data-ttu-id="9b251-632">登录：无订阅时支持登录 ([#2929](https://github.com/Azure/azure-cli/issues/2929))</span><span class="sxs-lookup"><span data-stu-id="9b251-632">login: support login when there are no subscriptions ([#2929](https://github.com/Azure/azure-cli/issues/2929))</span></span>
-* <span data-ttu-id="9b251-633">核心：修复重复使用服务主体登录时出现的故障 ([#2800](https://github.com/Azure/azure-cli/issues/2800))</span><span class="sxs-lookup"><span data-stu-id="9b251-633">core: fix a failure when login using a service principal twice ([#2800](https://github.com/Azure/azure-cli/issues/2800))</span></span>
-* <span data-ttu-id="9b251-634">核心：允许通过 env var 配置 accessTokens.json 的文件路径 ([#2605](https://github.com/Azure/azure-cli/issues/2605))</span><span class="sxs-lookup"><span data-stu-id="9b251-634">core: Allow file path of accessTokens.json to be configurable through an env var ([#2605](https://github.com/Azure/azure-cli/issues/2605))</span></span>
-* <span data-ttu-id="9b251-635">核心：允许配置的默认值应用于可选参数 ([#2703](https://github.com/Azure/azure-cli/issues/2703))</span><span class="sxs-lookup"><span data-stu-id="9b251-635">core: Allow configured defaults to apply on optional args ([#2703](https://github.com/Azure/azure-cli/issues/2703))</span></span>
-* <span data-ttu-id="9b251-636">核心：提高了性能</span><span class="sxs-lookup"><span data-stu-id="9b251-636">core: Improved performance</span></span>
-* <span data-ttu-id="9b251-637">核心：自定义 CA 证书 - 支持设置 REQUESTS_CA_BUNDLE 环境变量</span><span class="sxs-lookup"><span data-stu-id="9b251-637">core: Custom CA Certs - Support setting REQUESTS_CA_BUNDLE environment variable</span></span>
-* <span data-ttu-id="9b251-638">核心：云配置 - 如果未设置“management”终结点，则使用“resource manager”终结点</span><span class="sxs-lookup"><span data-stu-id="9b251-638">core: Cloud configuration - use 'resource manager' endpoint if 'management' endpoint not set</span></span>
+* <span data-ttu-id="7b07f-639">核心：捕获未注册提供程序引发的异常并自动注册</span><span class="sxs-lookup"><span data-stu-id="7b07f-639">core: capture exceptions caused by unregistered provider and auto-register it</span></span>
+* <span data-ttu-id="7b07f-640">性能：将 ADAL 令牌缓存保留在内存中，直至进程退出 ([#2603](https://github.com/Azure/azure-cli/issues/2603))</span><span class="sxs-lookup"><span data-stu-id="7b07f-640">perf: persist adal token cache in memory till process exits ([#2603](https://github.com/Azure/azure-cli/issues/2603))</span></span>
+* <span data-ttu-id="7b07f-641">修复从十六进制指纹 -o tsv 返回的字节 ([#3053](https://github.com/Azure/azure-cli/issues/3053))</span><span class="sxs-lookup"><span data-stu-id="7b07f-641">Fix bytes returned from hex fingerprint -o tsv ([#3053](https://github.com/Azure/azure-cli/issues/3053))</span></span>
+* <span data-ttu-id="7b07f-642">改进的 Key Vault 证书下载和 AAD SP 集成 ([#3003](https://github.com/Azure/azure-cli/issues/3003))</span><span class="sxs-lookup"><span data-stu-id="7b07f-642">Enhanced Key Vault Certificate Download and AAD SP Integration ([#3003](https://github.com/Azure/azure-cli/issues/3003))</span></span>
+* <span data-ttu-id="7b07f-643">将 Python 位置添加到“az —version”([#2986](https://github.com/Azure/azure-cli/issues/2986))</span><span class="sxs-lookup"><span data-stu-id="7b07f-643">Add Python location to ‘az —version’ ([#2986](https://github.com/Azure/azure-cli/issues/2986))</span></span>
+* <span data-ttu-id="7b07f-644">登录：无订阅时支持登录 ([#2929](https://github.com/Azure/azure-cli/issues/2929))</span><span class="sxs-lookup"><span data-stu-id="7b07f-644">login: support login when there are no subscriptions ([#2929](https://github.com/Azure/azure-cli/issues/2929))</span></span>
+* <span data-ttu-id="7b07f-645">核心：修复重复使用服务主体登录时出现的故障 ([#2800](https://github.com/Azure/azure-cli/issues/2800))</span><span class="sxs-lookup"><span data-stu-id="7b07f-645">core: fix a failure when login using a service principal twice ([#2800](https://github.com/Azure/azure-cli/issues/2800))</span></span>
+* <span data-ttu-id="7b07f-646">核心：允许通过 env var 配置 accessTokens.json 的文件路径 ([#2605](https://github.com/Azure/azure-cli/issues/2605))</span><span class="sxs-lookup"><span data-stu-id="7b07f-646">core: Allow file path of accessTokens.json to be configurable through an env var ([#2605](https://github.com/Azure/azure-cli/issues/2605))</span></span>
+* <span data-ttu-id="7b07f-647">核心：允许配置的默认值应用于可选参数 ([#2703](https://github.com/Azure/azure-cli/issues/2703))</span><span class="sxs-lookup"><span data-stu-id="7b07f-647">core: Allow configured defaults to apply on optional args ([#2703](https://github.com/Azure/azure-cli/issues/2703))</span></span>
+* <span data-ttu-id="7b07f-648">核心：提高了性能</span><span class="sxs-lookup"><span data-stu-id="7b07f-648">core: Improved performance</span></span>
+* <span data-ttu-id="7b07f-649">核心：自定义 CA 证书 - 支持设置 REQUESTS_CA_BUNDLE 环境变量</span><span class="sxs-lookup"><span data-stu-id="7b07f-649">core: Custom CA Certs - Support setting REQUESTS_CA_BUNDLE environment variable</span></span>
+* <span data-ttu-id="7b07f-650">核心：云配置 - 如果未设置“management”终结点，则使用“resource manager”终结点</span><span class="sxs-lookup"><span data-stu-id="7b07f-650">core: Cloud configuration - use 'resource manager' endpoint if 'management' endpoint not set</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-639">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-639">ACS</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-651">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-651">ACS</span></span>
 
-* <span data-ttu-id="9b251-640">将主计数和代理计数修复为整数而不是字符串</span><span class="sxs-lookup"><span data-stu-id="9b251-640">fix the master and agent count to be integer instead of string</span></span>
-* <span data-ttu-id="9b251-641">公开“az acs create --no-wait”和“az acs wait”用于异步创建</span><span class="sxs-lookup"><span data-stu-id="9b251-641">expose 'az acs create --no-wait' and 'az acs wait' for async creation</span></span>
-* <span data-ttu-id="9b251-642">公开“az acs create --validate”用于试运行验证</span><span class="sxs-lookup"><span data-stu-id="9b251-642">expose 'az acs create --validate' for dry-run validations</span></span>
-* <span data-ttu-id="9b251-643">在 PUT 调用 scale 命令前删除 Windows 配置文件 ([#2755](https://github.com/Azure/azure-cli/issues/2755))</span><span class="sxs-lookup"><span data-stu-id="9b251-643">remove windows profile before PUT call for scale command ([#2755](https://github.com/Azure/azure-cli/issues/2755))</span></span>
+* <span data-ttu-id="7b07f-652">将主计数和代理计数修复为整数而不是字符串</span><span class="sxs-lookup"><span data-stu-id="7b07f-652">fix the master and agent count to be integer instead of string</span></span>
+* <span data-ttu-id="7b07f-653">公开“az acs create --no-wait”和“az acs wait”用于异步创建</span><span class="sxs-lookup"><span data-stu-id="7b07f-653">expose 'az acs create --no-wait' and 'az acs wait' for async creation</span></span>
+* <span data-ttu-id="7b07f-654">公开“az acs create --validate”用于试运行验证</span><span class="sxs-lookup"><span data-stu-id="7b07f-654">expose 'az acs create --validate' for dry-run validations</span></span>
+* <span data-ttu-id="7b07f-655">在 PUT 调用 scale 命令前删除 Windows 配置文件 ([#2755](https://github.com/Azure/azure-cli/issues/2755))</span><span class="sxs-lookup"><span data-stu-id="7b07f-655">remove windows profile before PUT call for scale command ([#2755](https://github.com/Azure/azure-cli/issues/2755))</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-644">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-644">AppService</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-656">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-656">AppService</span></span>
 
-* <span data-ttu-id="9b251-645">Function App：添加完整的 Function App 支持，包括 create、show、list、delete、hostname、ssl 等</span><span class="sxs-lookup"><span data-stu-id="9b251-645">functionapp: add full functionapp supports, including create, show, list, delete, hostname, ssl, etc</span></span>
-* <span data-ttu-id="9b251-646">将 Team Services (vsts) 作为持续交付选项添加到“appservice web source-control config”</span><span class="sxs-lookup"><span data-stu-id="9b251-646">Adding Team Services (vsts) as a continuous delivery option to "appservice web source-control config"</span></span>
-* <span data-ttu-id="9b251-647">创建“az webapp”以替换“az appservice web”（为了向后兼容，“az appservice web”将保留 2 个版本）</span><span class="sxs-lookup"><span data-stu-id="9b251-647">Create "az webapp" to replace "az appservice web" (for backward compat, "az appservice web" will stay for 2 releases)</span></span>
-* <span data-ttu-id="9b251-648">公开参数以针对 webapp create 配置部署和“运行时堆栈”</span><span class="sxs-lookup"><span data-stu-id="9b251-648">Expose arguments to configure deployment and "runtime stacks" on webapp create</span></span>
-* <span data-ttu-id="9b251-649">公开“webapp list-runtimes”</span><span class="sxs-lookup"><span data-stu-id="9b251-649">Expose "webapp list-runtimes"</span></span>
-* <span data-ttu-id="9b251-650">支持配置连接字符串 ([#2647](https://github.com/Azure/azure-cli/issues/2647))</span><span class="sxs-lookup"><span data-stu-id="9b251-650">support configure connection strings ([#2647](https://github.com/Azure/azure-cli/issues/2647))</span></span>
-* <span data-ttu-id="9b251-651">支持与预览版交换槽</span><span class="sxs-lookup"><span data-stu-id="9b251-651">support slot swap with preview</span></span>
-* <span data-ttu-id="9b251-652">修改 appservice 命令的错误 ([#2948](https://github.com/Azure/azure-cli/issues/2948))</span><span class="sxs-lookup"><span data-stu-id="9b251-652">Polish errors from appservice commands ([#2948](https://github.com/Azure/azure-cli/issues/2948))</span></span>
-* <span data-ttu-id="9b251-653">将应用服务计划的资源组用于证书操作 ([#2750](https://github.com/Azure/azure-cli/issues/2750))</span><span class="sxs-lookup"><span data-stu-id="9b251-653">Use the app service plan's resource group for cert operations ([#2750](https://github.com/Azure/azure-cli/issues/2750))</span></span>
+* <span data-ttu-id="7b07f-657">Function App：添加完整的 Function App 支持，包括 create、show、list、delete、hostname、ssl 等</span><span class="sxs-lookup"><span data-stu-id="7b07f-657">functionapp: add full functionapp supports, including create, show, list, delete, hostname, ssl, etc</span></span>
+* <span data-ttu-id="7b07f-658">将 Team Services (vsts) 作为持续交付选项添加到“appservice web source-control config”</span><span class="sxs-lookup"><span data-stu-id="7b07f-658">Adding Team Services (vsts) as a continuous delivery option to "appservice web source-control config"</span></span>
+* <span data-ttu-id="7b07f-659">创建“az webapp”以替换“az appservice web”（为了向后兼容，“az appservice web”将保留 2 个版本）</span><span class="sxs-lookup"><span data-stu-id="7b07f-659">Create "az webapp" to replace "az appservice web" (for backward compat, "az appservice web" will stay for 2 releases)</span></span>
+* <span data-ttu-id="7b07f-660">公开参数以针对 webapp create 配置部署和“运行时堆栈”</span><span class="sxs-lookup"><span data-stu-id="7b07f-660">Expose arguments to configure deployment and "runtime stacks" on webapp create</span></span>
+* <span data-ttu-id="7b07f-661">公开“webapp list-runtimes”</span><span class="sxs-lookup"><span data-stu-id="7b07f-661">Expose "webapp list-runtimes"</span></span>
+* <span data-ttu-id="7b07f-662">支持配置连接字符串 ([#2647](https://github.com/Azure/azure-cli/issues/2647))</span><span class="sxs-lookup"><span data-stu-id="7b07f-662">support configure connection strings ([#2647](https://github.com/Azure/azure-cli/issues/2647))</span></span>
+* <span data-ttu-id="7b07f-663">支持与预览版交换槽</span><span class="sxs-lookup"><span data-stu-id="7b07f-663">support slot swap with preview</span></span>
+* <span data-ttu-id="7b07f-664">修改 appservice 命令的错误 ([#2948](https://github.com/Azure/azure-cli/issues/2948))</span><span class="sxs-lookup"><span data-stu-id="7b07f-664">Polish errors from appservice commands ([#2948](https://github.com/Azure/azure-cli/issues/2948))</span></span>
+* <span data-ttu-id="7b07f-665">将应用服务计划的资源组用于证书操作 ([#2750](https://github.com/Azure/azure-cli/issues/2750))</span><span class="sxs-lookup"><span data-stu-id="7b07f-665">Use the app service plan's resource group for cert operations ([#2750](https://github.com/Azure/azure-cli/issues/2750))</span></span>
 
-### <a name="cosmosdb"></a><span data-ttu-id="9b251-654">CosmosDB</span><span class="sxs-lookup"><span data-stu-id="9b251-654">CosmosDB</span></span>
+### <a name="cosmosdb"></a><span data-ttu-id="7b07f-666">CosmosDB</span><span class="sxs-lookup"><span data-stu-id="7b07f-666">CosmosDB</span></span>
 
-* <span data-ttu-id="9b251-655">将 DocumentDB 模块重命名为 CosmosDB。</span><span class="sxs-lookup"><span data-stu-id="9b251-655">Rename documentdb module to cosmosdb.</span></span>
-* <span data-ttu-id="9b251-656">增加对 DocumentDB 数据平面 API 的支持：数据库和集合管理</span><span class="sxs-lookup"><span data-stu-id="9b251-656">Added support for documentdb data-plane APIs: database and collection management</span></span>
-* <span data-ttu-id="9b251-657">增加对数据库帐户启用自动故障转移的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-657">Added support for enabling automatic failover on database accounts</span></span>
-* <span data-ttu-id="9b251-658">增加对新一致性策略 ConsistentPrefix 的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-658">Added support for new consistency policy ConsistentPrefix</span></span>
+* <span data-ttu-id="7b07f-667">将 DocumentDB 模块重命名为 CosmosDB。</span><span class="sxs-lookup"><span data-stu-id="7b07f-667">Rename documentdb module to cosmosdb.</span></span>
+* <span data-ttu-id="7b07f-668">增加对 DocumentDB 数据平面 API 的支持：数据库和集合管理</span><span class="sxs-lookup"><span data-stu-id="7b07f-668">Added support for documentdb data-plane APIs: database and collection management</span></span>
+* <span data-ttu-id="7b07f-669">增加对数据库帐户启用自动故障转移的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-669">Added support for enabling automatic failover on database accounts</span></span>
+* <span data-ttu-id="7b07f-670">增加对新一致性策略 ConsistentPrefix 的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-670">Added support for new consistency policy ConsistentPrefix</span></span>
 
-### <a name="data-lake-analytics"></a><span data-ttu-id="9b251-659">数据湖分析</span><span class="sxs-lookup"><span data-stu-id="9b251-659">Data Lake Analytics</span></span>
+### <a name="data-lake-analytics"></a><span data-ttu-id="7b07f-671">数据湖分析</span><span class="sxs-lookup"><span data-stu-id="7b07f-671">Data Lake Analytics</span></span>
 
-* <span data-ttu-id="9b251-660">Bug 修复：在筛选作业结果和状态列表时会引发错误。</span><span class="sxs-lookup"><span data-stu-id="9b251-660">Fix a bug where filtering on result and state for job lists would throw an error.</span></span>
-* <span data-ttu-id="9b251-661">增加对新目录项类型的支持：包。</span><span class="sxs-lookup"><span data-stu-id="9b251-661">Add support for new catalog item type: package.</span></span> <span data-ttu-id="9b251-662">访问方法：`az dla catalog package`</span><span class="sxs-lookup"><span data-stu-id="9b251-662">accessed through: `az dla catalog package`</span></span>
-* <span data-ttu-id="9b251-663">可从数据库内列出下列目录项（无需架构规范）：</span><span class="sxs-lookup"><span data-stu-id="9b251-663">Made it possible to list the following catalog items from within a database (no schema specification required):</span></span>
+* <span data-ttu-id="7b07f-672">Bug 修复：在筛选作业结果和状态列表时会引发错误。</span><span class="sxs-lookup"><span data-stu-id="7b07f-672">Fix a bug where filtering on result and state for job lists would throw an error.</span></span>
+* <span data-ttu-id="7b07f-673">增加对新目录项类型的支持：包。</span><span class="sxs-lookup"><span data-stu-id="7b07f-673">Add support for new catalog item type: package.</span></span> <span data-ttu-id="7b07f-674">访问方法：`az dla catalog package`</span><span class="sxs-lookup"><span data-stu-id="7b07f-674">accessed through: `az dla catalog package`</span></span>
+* <span data-ttu-id="7b07f-675">可从数据库内列出下列目录项（无需架构规范）：</span><span class="sxs-lookup"><span data-stu-id="7b07f-675">Made it possible to list the following catalog items from within a database (no schema specification required):</span></span>
 
-  * <span data-ttu-id="9b251-664">表</span><span class="sxs-lookup"><span data-stu-id="9b251-664">Table</span></span>
-  * <span data-ttu-id="9b251-665">表值函数</span><span class="sxs-lookup"><span data-stu-id="9b251-665">Table valued function</span></span>
-  * <span data-ttu-id="9b251-666">查看</span><span class="sxs-lookup"><span data-stu-id="9b251-666">View</span></span>
-  * <span data-ttu-id="9b251-667">表统计信息。</span><span class="sxs-lookup"><span data-stu-id="9b251-667">Table Statistics.</span></span> <span data-ttu-id="9b251-668">也可以使用架构列出，但无需指定表名。</span><span class="sxs-lookup"><span data-stu-id="9b251-668">This can also be listed with a schema, but without specifying a table name.</span></span>
+  * <span data-ttu-id="7b07f-676">表</span><span class="sxs-lookup"><span data-stu-id="7b07f-676">Table</span></span>
+  * <span data-ttu-id="7b07f-677">表值函数</span><span class="sxs-lookup"><span data-stu-id="7b07f-677">Table valued function</span></span>
+  * <span data-ttu-id="7b07f-678">查看</span><span class="sxs-lookup"><span data-stu-id="7b07f-678">View</span></span>
+  * <span data-ttu-id="7b07f-679">表统计信息。</span><span class="sxs-lookup"><span data-stu-id="7b07f-679">Table Statistics.</span></span> <span data-ttu-id="7b07f-680">也可以使用架构列出，但无需指定表名。</span><span class="sxs-lookup"><span data-stu-id="7b07f-680">This can also be listed with a schema, but without specifying a table name.</span></span>
 
-### <a name="data-lake-store"></a><span data-ttu-id="9b251-669">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="9b251-669">Data Lake Store</span></span>
+### <a name="data-lake-store"></a><span data-ttu-id="7b07f-681">Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="7b07f-681">Data Lake Store</span></span>
 
-* <span data-ttu-id="9b251-670">更新基础文件系统 SDK 版本，可更好地支持处理服务器端限制方案。</span><span class="sxs-lookup"><span data-stu-id="9b251-670">Update the version of the underlying filesystem SDK, which gives better support for handling server side throttling scenarios.</span></span>
-* <span data-ttu-id="9b251-671">提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span><span class="sxs-lookup"><span data-stu-id="9b251-671">Improve performance of package load and command execution ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span></span>
-* <span data-ttu-id="9b251-672">访问显示帮助丢失。</span><span class="sxs-lookup"><span data-stu-id="9b251-672">missed help for access show.</span></span> <span data-ttu-id="9b251-673">正在添加。</span><span class="sxs-lookup"><span data-stu-id="9b251-673">adding it.</span></span> <span data-ttu-id="9b251-674">([#2743](https://github.com/Azure/azure-cli/issues/2743))</span><span class="sxs-lookup"><span data-stu-id="9b251-674">([#2743](https://github.com/Azure/azure-cli/issues/2743))</span></span>
+* <span data-ttu-id="7b07f-682">更新基础文件系统 SDK 版本，可更好地支持处理服务器端限制方案。</span><span class="sxs-lookup"><span data-stu-id="7b07f-682">Update the version of the underlying filesystem SDK, which gives better support for handling server side throttling scenarios.</span></span>
+* <span data-ttu-id="7b07f-683">提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span><span class="sxs-lookup"><span data-stu-id="7b07f-683">Improve performance of package load and command execution ([#2819](https://github.com/Azure/azure-cli/issues/2819))</span></span>
+* <span data-ttu-id="7b07f-684">访问显示帮助丢失。</span><span class="sxs-lookup"><span data-stu-id="7b07f-684">missed help for access show.</span></span> <span data-ttu-id="7b07f-685">正在添加。</span><span class="sxs-lookup"><span data-stu-id="7b07f-685">adding it.</span></span> <span data-ttu-id="7b07f-686">([#2743](https://github.com/Azure/azure-cli/issues/2743))</span><span class="sxs-lookup"><span data-stu-id="7b07f-686">([#2743](https://github.com/Azure/azure-cli/issues/2743))</span></span>
 
-### <a name="find"></a><span data-ttu-id="9b251-675">查找</span><span class="sxs-lookup"><span data-stu-id="9b251-675">Find</span></span>
+### <a name="find"></a><span data-ttu-id="7b07f-687">查找</span><span class="sxs-lookup"><span data-stu-id="7b07f-687">Find</span></span>
 
-* <span data-ttu-id="9b251-676">改进搜索结果，允许搜索索引的版本控制</span><span class="sxs-lookup"><span data-stu-id="9b251-676">improve search results and allow for versioning of the search index</span></span>
+* <span data-ttu-id="7b07f-688">改进搜索结果，允许搜索索引的版本控制</span><span class="sxs-lookup"><span data-stu-id="7b07f-688">improve search results and allow for versioning of the search index</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="9b251-677">KeyVault</span><span class="sxs-lookup"><span data-stu-id="9b251-677">KeyVault</span></span>
+### <a name="keyvault"></a><span data-ttu-id="7b07f-689">KeyVault</span><span class="sxs-lookup"><span data-stu-id="7b07f-689">KeyVault</span></span>
 
-* <span data-ttu-id="9b251-678">BC：`az keyvault certificate download` 将 -e 从字符串或二进制更改为 PEM 或 DER，从而更好地表示选项</span><span class="sxs-lookup"><span data-stu-id="9b251-678">BC:`az keyvault certificate download` change -e from string or binary to PEM or DER to better represent the options</span></span>
-* <span data-ttu-id="9b251-679">BC：从 `keyvault certificate create` 删除 --expires 和 --not-before，因为此服务不支持这些参数。</span><span class="sxs-lookup"><span data-stu-id="9b251-679">BC: Remove --expires and --not-before from `keyvault certificate create` as these parameters are not supported by the service.</span></span>
-* <span data-ttu-id="9b251-680">将 --validity 参数添加到 `keyvault certificate create`，有选择地替代 --policy 中的值</span><span class="sxs-lookup"><span data-stu-id="9b251-680">Adds the --validity parameter to `keyvault certificate create` to selectively override the value in --policy</span></span>
-* <span data-ttu-id="9b251-681">解决 `keyvault certificate get-default-policy` 中的问题：“expires”和“not_before”已公开，但“validity_in_months”未公开。</span><span class="sxs-lookup"><span data-stu-id="9b251-681">Fixes issue in `keyvault certificate get-default-policy` where 'expires' and 'not_before' were exposed but 'validity_in_months' was not.</span></span>
-* <span data-ttu-id="9b251-682">KeyVault 解决了 pem 和 pfx 的导入问题 ([#2754](https://github.com/Azure/azure-cli/issues/2754))</span><span class="sxs-lookup"><span data-stu-id="9b251-682">keyvault fix for import of pem and pfx ([#2754](https://github.com/Azure/azure-cli/issues/2754))</span></span>
+* <span data-ttu-id="7b07f-690">BC：`az keyvault certificate download` 将 -e 从字符串或二进制更改为 PEM 或 DER，从而更好地表示选项</span><span class="sxs-lookup"><span data-stu-id="7b07f-690">BC:`az keyvault certificate download` change -e from string or binary to PEM or DER to better represent the options</span></span>
+* <span data-ttu-id="7b07f-691">BC：从 `keyvault certificate create` 删除 --expires 和 --not-before，因为此服务不支持这些参数。</span><span class="sxs-lookup"><span data-stu-id="7b07f-691">BC: Remove --expires and --not-before from `keyvault certificate create` as these parameters are not supported by the service.</span></span>
+* <span data-ttu-id="7b07f-692">将 --validity 参数添加到 `keyvault certificate create`，有选择地替代 --policy 中的值</span><span class="sxs-lookup"><span data-stu-id="7b07f-692">Adds the --validity parameter to `keyvault certificate create` to selectively override the value in --policy</span></span>
+* <span data-ttu-id="7b07f-693">解决 `keyvault certificate get-default-policy` 中的问题：“expires”和“not_before”已公开，但“validity_in_months”未公开。</span><span class="sxs-lookup"><span data-stu-id="7b07f-693">Fixes issue in `keyvault certificate get-default-policy` where 'expires' and 'not_before' were exposed but 'validity_in_months' was not.</span></span>
+* <span data-ttu-id="7b07f-694">KeyVault 解决了 pem 和 pfx 的导入问题 ([#2754](https://github.com/Azure/azure-cli/issues/2754))</span><span class="sxs-lookup"><span data-stu-id="7b07f-694">keyvault fix for import of pem and pfx ([#2754](https://github.com/Azure/azure-cli/issues/2754))</span></span>
 
-### <a name="lab"></a><span data-ttu-id="9b251-683">实验室</span><span class="sxs-lookup"><span data-stu-id="9b251-683">Lab</span></span>
+### <a name="lab"></a><span data-ttu-id="7b07f-695">实验室</span><span class="sxs-lookup"><span data-stu-id="7b07f-695">Lab</span></span>
 
-* <span data-ttu-id="9b251-684">针对实验室环境添加 create、show、delete 和 list 命令。</span><span class="sxs-lookup"><span data-stu-id="9b251-684">Adding create, show, delete & list commands for environment in the lab.</span></span>
-* <span data-ttu-id="9b251-685">添加 show 和 list 命令，查看实验室中的 ARM 模板。</span><span class="sxs-lookup"><span data-stu-id="9b251-685">Adding show & list commands to view ARM templates in the lab.</span></span>
-* <span data-ttu-id="9b251-686">在 `az lab vm list` 中添加 --environment 标志，按实验室环境筛选 VM。</span><span class="sxs-lookup"><span data-stu-id="9b251-686">Adding --environment flag in `az lab vm list` to filter VMs by environment in the lab.</span></span>
-* <span data-ttu-id="9b251-687">添加 convenience 命令 `az lab formula export-artifacts`，导出实验室公式中的项目基架。</span><span class="sxs-lookup"><span data-stu-id="9b251-687">Add convenience command `az lab formula export-artifacts` to export artifact scaffold within a Lab's formula.</span></span>
-* <span data-ttu-id="9b251-688">添加命令，管理实验室中的机密。</span><span class="sxs-lookup"><span data-stu-id="9b251-688">Add commands to manage secrets within a Lab.</span></span>
+* <span data-ttu-id="7b07f-696">针对实验室环境添加 create、show、delete 和 list 命令。</span><span class="sxs-lookup"><span data-stu-id="7b07f-696">Adding create, show, delete & list commands for environment in the lab.</span></span>
+* <span data-ttu-id="7b07f-697">添加 show 和 list 命令，查看实验室中的 ARM 模板。</span><span class="sxs-lookup"><span data-stu-id="7b07f-697">Adding show & list commands to view ARM templates in the lab.</span></span>
+* <span data-ttu-id="7b07f-698">在 `az lab vm list` 中添加 --environment 标志，按实验室环境筛选 VM。</span><span class="sxs-lookup"><span data-stu-id="7b07f-698">Adding --environment flag in `az lab vm list` to filter VMs by environment in the lab.</span></span>
+* <span data-ttu-id="7b07f-699">添加 convenience 命令 `az lab formula export-artifacts`，导出实验室公式中的项目基架。</span><span class="sxs-lookup"><span data-stu-id="7b07f-699">Add convenience command `az lab formula export-artifacts` to export artifact scaffold within a Lab's formula.</span></span>
+* <span data-ttu-id="7b07f-700">添加命令，管理实验室中的机密。</span><span class="sxs-lookup"><span data-stu-id="7b07f-700">Add commands to manage secrets within a Lab.</span></span>
 
-### <a name="monitor"></a><span data-ttu-id="9b251-689">监视</span><span class="sxs-lookup"><span data-stu-id="9b251-689">Monitor</span></span>
+### <a name="monitor"></a><span data-ttu-id="7b07f-701">监视</span><span class="sxs-lookup"><span data-stu-id="7b07f-701">Monitor</span></span>
 
-* <span data-ttu-id="9b251-690">Bug 修复：为 `az alert-rules create` 的 `--actions` 建模，以使用 JSON 字符串 ([#3009](https://github.com/Azure/azure-cli/issues/3009))</span><span class="sxs-lookup"><span data-stu-id="9b251-690">Bug Fix: Modeling `--actions` of `az alert-rules create` to consume JSON string ([#3009](https://github.com/Azure/azure-cli/issues/3009))</span></span>
-* <span data-ttu-id="9b251-691">Bug 修复 - diagnostic settings create 不接受来自 show 命令的日志/指标 ([#2913](https://github.com/Azure/azure-cli/issues/2913))</span><span class="sxs-lookup"><span data-stu-id="9b251-691">Bug fix - diagnostic settings create does not accept logs/metrics from show commands ([#2913](https://github.com/Azure/azure-cli/issues/2913))</span></span>
+* <span data-ttu-id="7b07f-702">Bug 修复：为 `az alert-rules create` 的 `--actions` 建模，以使用 JSON 字符串 ([#3009](https://github.com/Azure/azure-cli/issues/3009))</span><span class="sxs-lookup"><span data-stu-id="7b07f-702">Bug Fix: Modeling `--actions` of `az alert-rules create` to consume JSON string ([#3009](https://github.com/Azure/azure-cli/issues/3009))</span></span>
+* <span data-ttu-id="7b07f-703">Bug 修复 - diagnostic settings create 不接受来自 show 命令的日志/指标 ([#2913](https://github.com/Azure/azure-cli/issues/2913))</span><span class="sxs-lookup"><span data-stu-id="7b07f-703">Bug fix - diagnostic settings create does not accept logs/metrics from show commands ([#2913](https://github.com/Azure/azure-cli/issues/2913))</span></span>
 
-### <a name="network"></a><span data-ttu-id="9b251-692">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-692">Network</span></span>
+### <a name="network"></a><span data-ttu-id="7b07f-704">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-704">Network</span></span>
 
-* <span data-ttu-id="9b251-693">添加 `network watcher test-connectivity` 命令。</span><span class="sxs-lookup"><span data-stu-id="9b251-693">Add `network watcher test-connectivity` command.</span></span>
-* <span data-ttu-id="9b251-694">添加对 `network watcher packet-capture create` 的 `--filters` 参数的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-694">Add support for `--filters` parameter for `network watcher packet-capture create`.</span></span>
-* <span data-ttu-id="9b251-695">添加对应用程序网关连接排出的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-695">Add support for Application Gateway connection draining.</span></span>
-* <span data-ttu-id="9b251-696">添加对应用程序网关 WAF 规则集配置的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-696">Add support for Application Gateway WAF rule set configuration.</span></span>
-* <span data-ttu-id="9b251-697">添加对 ExpressRoute 路由筛选器和规则的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-697">Add support for ExpressRoute route filters and rules.</span></span>
-* <span data-ttu-id="9b251-698">添加对 TrafficManager 地理路由的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-698">Add support for TrafficManager geographic routing.</span></span>
-* <span data-ttu-id="9b251-699">添加对基于 VPN 连接策略的流量选择器的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-699">Add support for VPN connection policy-based traffic selectors.</span></span>
-* <span data-ttu-id="9b251-700">添加对 VPN 连接 IPSec 策略的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-700">Add support for VPN connection IPSec policies.</span></span>
-* <span data-ttu-id="9b251-701">修复使用 `--no-wait` 或 `--validate` 参数时 `vpn-connection create` 出现的 bug。</span><span class="sxs-lookup"><span data-stu-id="9b251-701">Fix bug with `vpn-connection create` when using the `--no-wait` or `--validate` parameters.</span></span>
-* <span data-ttu-id="9b251-702">添加对主动-主动 VNet 网关的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-702">Add support for active-active VNet gateways</span></span>
-* <span data-ttu-id="9b251-703">从 `network vpn-connection list/show` 命令的输出中删除 null 值。</span><span class="sxs-lookup"><span data-stu-id="9b251-703">Remove nulls values from output of `network vpn-connection list/show` commands.</span></span>
-* <span data-ttu-id="9b251-704">BC：修复 `vpn-connection create` 输出中的 bug</span><span class="sxs-lookup"><span data-stu-id="9b251-704">BC: Fix bug in the output of `vpn-connection create`</span></span>
-* <span data-ttu-id="9b251-705">Bug 修复：“vpn-connection create”的“--key-length”参数未正确分析。</span><span class="sxs-lookup"><span data-stu-id="9b251-705">Fix bug where '--key-length' argument of 'vpn-connection create' was not parsed correctly.</span></span>
-* <span data-ttu-id="9b251-706">修复 `dns zone import` 中的 Bug：记录未正确导入。</span><span class="sxs-lookup"><span data-stu-id="9b251-706">Fix bug in `dns zone import` where records were not imported correctly.</span></span>
-* <span data-ttu-id="9b251-707">Bug 修复：`traffic-manager endpoint update` 不起作用。</span><span class="sxs-lookup"><span data-stu-id="9b251-707">Fix bug where `traffic-manager endpoint update` did not work.</span></span>
-* <span data-ttu-id="9b251-708">添加“network watcher”预览命令。</span><span class="sxs-lookup"><span data-stu-id="9b251-708">Add 'network watcher' preview commands.</span></span>
+* <span data-ttu-id="7b07f-705">添加 `network watcher test-connectivity` 命令。</span><span class="sxs-lookup"><span data-stu-id="7b07f-705">Add `network watcher test-connectivity` command.</span></span>
+* <span data-ttu-id="7b07f-706">添加对 `network watcher packet-capture create` 的 `--filters` 参数的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-706">Add support for `--filters` parameter for `network watcher packet-capture create`.</span></span>
+* <span data-ttu-id="7b07f-707">添加对应用程序网关连接排出的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-707">Add support for Application Gateway connection draining.</span></span>
+* <span data-ttu-id="7b07f-708">添加对应用程序网关 WAF 规则集配置的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-708">Add support for Application Gateway WAF rule set configuration.</span></span>
+* <span data-ttu-id="7b07f-709">添加对 ExpressRoute 路由筛选器和规则的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-709">Add support for ExpressRoute route filters and rules.</span></span>
+* <span data-ttu-id="7b07f-710">添加对 TrafficManager 地理路由的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-710">Add support for TrafficManager geographic routing.</span></span>
+* <span data-ttu-id="7b07f-711">添加对基于 VPN 连接策略的流量选择器的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-711">Add support for VPN connection policy-based traffic selectors.</span></span>
+* <span data-ttu-id="7b07f-712">添加对 VPN 连接 IPSec 策略的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-712">Add support for VPN connection IPSec policies.</span></span>
+* <span data-ttu-id="7b07f-713">修复使用 `--no-wait` 或 `--validate` 参数时 `vpn-connection create` 出现的 bug。</span><span class="sxs-lookup"><span data-stu-id="7b07f-713">Fix bug with `vpn-connection create` when using the `--no-wait` or `--validate` parameters.</span></span>
+* <span data-ttu-id="7b07f-714">添加对主动-主动 VNet 网关的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-714">Add support for active-active VNet gateways</span></span>
+* <span data-ttu-id="7b07f-715">从 `network vpn-connection list/show` 命令的输出中删除 null 值。</span><span class="sxs-lookup"><span data-stu-id="7b07f-715">Remove nulls values from output of `network vpn-connection list/show` commands.</span></span>
+* <span data-ttu-id="7b07f-716">BC：修复 `vpn-connection create` 输出中的 bug</span><span class="sxs-lookup"><span data-stu-id="7b07f-716">BC: Fix bug in the output of `vpn-connection create`</span></span>
+* <span data-ttu-id="7b07f-717">Bug 修复：“vpn-connection create”的“--key-length”参数未正确分析。</span><span class="sxs-lookup"><span data-stu-id="7b07f-717">Fix bug where '--key-length' argument of 'vpn-connection create' was not parsed correctly.</span></span>
+* <span data-ttu-id="7b07f-718">修复 `dns zone import` 中的 Bug：记录未正确导入。</span><span class="sxs-lookup"><span data-stu-id="7b07f-718">Fix bug in `dns zone import` where records were not imported correctly.</span></span>
+* <span data-ttu-id="7b07f-719">Bug 修复：`traffic-manager endpoint update` 不起作用。</span><span class="sxs-lookup"><span data-stu-id="7b07f-719">Fix bug where `traffic-manager endpoint update` did not work.</span></span>
+* <span data-ttu-id="7b07f-720">添加“network watcher”预览命令。</span><span class="sxs-lookup"><span data-stu-id="7b07f-720">Add 'network watcher' preview commands.</span></span>
 
-### <a name="profile"></a><span data-ttu-id="9b251-709">配置文件</span><span class="sxs-lookup"><span data-stu-id="9b251-709">Profile</span></span>
+### <a name="profile"></a><span data-ttu-id="7b07f-721">配置文件</span><span class="sxs-lookup"><span data-stu-id="7b07f-721">Profile</span></span>
 
-* <span data-ttu-id="9b251-710">支持在未找到订阅时登录 ([#2560](https://github.com/Azure/azure-cli/issues/2560))</span><span class="sxs-lookup"><span data-stu-id="9b251-710">Support login when there are no subscriptions found ([#2560](https://github.com/Azure/azure-cli/issues/2560))</span></span>
-* <span data-ttu-id="9b251-711">支持在 az account set --subscription 中使用短参数名 ([#2980](https://github.com/Azure/azure-cli/issues/2980))</span><span class="sxs-lookup"><span data-stu-id="9b251-711">Support short param name in az account set --subscription ([#2980](https://github.com/Azure/azure-cli/issues/2980))</span></span>
+* <span data-ttu-id="7b07f-722">支持在未找到订阅时登录 ([#2560](https://github.com/Azure/azure-cli/issues/2560))</span><span class="sxs-lookup"><span data-stu-id="7b07f-722">Support login when there are no subscriptions found ([#2560](https://github.com/Azure/azure-cli/issues/2560))</span></span>
+* <span data-ttu-id="7b07f-723">支持在 az account set --subscription 中使用短参数名 ([#2980](https://github.com/Azure/azure-cli/issues/2980))</span><span class="sxs-lookup"><span data-stu-id="7b07f-723">Support short param name in az account set --subscription ([#2980](https://github.com/Azure/azure-cli/issues/2980))</span></span>
 
-### <a name="redis"></a><span data-ttu-id="9b251-712">Redis</span><span class="sxs-lookup"><span data-stu-id="9b251-712">Redis</span></span>
+### <a name="redis"></a><span data-ttu-id="7b07f-724">Redis</span><span class="sxs-lookup"><span data-stu-id="7b07f-724">Redis</span></span>
 
-* <span data-ttu-id="9b251-713">添加 update 命令，也增加了对 redis 缓存进行缩放的功能</span><span class="sxs-lookup"><span data-stu-id="9b251-713">Adding update command which also adds the ability to scale for redis cache</span></span>
-* <span data-ttu-id="9b251-714">弃用“update-settings”命令。</span><span class="sxs-lookup"><span data-stu-id="9b251-714">Deprecates the 'update-settings' command.</span></span>
+* <span data-ttu-id="7b07f-725">添加 update 命令，也增加了对 redis 缓存进行缩放的功能</span><span class="sxs-lookup"><span data-stu-id="7b07f-725">Adding update command which also adds the ability to scale for redis cache</span></span>
+* <span data-ttu-id="7b07f-726">弃用“update-settings”命令。</span><span class="sxs-lookup"><span data-stu-id="7b07f-726">Deprecates the 'update-settings' command.</span></span>
 
-### <a name="resource"></a><span data-ttu-id="9b251-715">资源</span><span class="sxs-lookup"><span data-stu-id="9b251-715">Resource</span></span>
+### <a name="resource"></a><span data-ttu-id="7b07f-727">资源</span><span class="sxs-lookup"><span data-stu-id="7b07f-727">Resource</span></span>
 
-* <span data-ttu-id="9b251-716">添加 managedapp 和 managedapp 定义命令 ([#2985](https://github.com/Azure/azure-cli/issues/2985))</span><span class="sxs-lookup"><span data-stu-id="9b251-716">Add managedapp and managedapp definition commands ([#2985](https://github.com/Azure/azure-cli/issues/2985))</span></span>
-* <span data-ttu-id="9b251-717">支持“provider operation”命令([#2908](https://github.com/Azure/azure-cli/issues/2908))</span><span class="sxs-lookup"><span data-stu-id="9b251-717">Support 'provider operation' commands ([#2908](https://github.com/Azure/azure-cli/issues/2908))</span></span>
-* <span data-ttu-id="9b251-718">支持 generic resource create ([#2606](https://github.com/Azure/azure-cli/issues/2606))</span><span class="sxs-lookup"><span data-stu-id="9b251-718">Support generic resource create ([#2606](https://github.com/Azure/azure-cli/issues/2606))</span></span>
-* <span data-ttu-id="9b251-719">修复资源分析和 API 版本查找。</span><span class="sxs-lookup"><span data-stu-id="9b251-719">Fix resource parsing and api version lookup.</span></span> <span data-ttu-id="9b251-720">([#2781](https://github.com/Azure/azure-cli/issues/2781))</span><span class="sxs-lookup"><span data-stu-id="9b251-720">([#2781](https://github.com/Azure/azure-cli/issues/2781))</span></span>
-* <span data-ttu-id="9b251-721">为 az lock update 添加文档。</span><span class="sxs-lookup"><span data-stu-id="9b251-721">Add docs for az lock update.</span></span> <span data-ttu-id="9b251-722">([#2702](https://github.com/Azure/azure-cli/issues/2702))</span><span class="sxs-lookup"><span data-stu-id="9b251-722">([#2702](https://github.com/Azure/azure-cli/issues/2702))</span></span>
-* <span data-ttu-id="9b251-723">尝试为不存在的组列出资源时出错。</span><span class="sxs-lookup"><span data-stu-id="9b251-723">Error out if you try to list resources for a group that doesn't exist.</span></span> <span data-ttu-id="9b251-724">([#2769](https://github.com/Azure/azure-cli/issues/2769))</span><span class="sxs-lookup"><span data-stu-id="9b251-724">([#2769](https://github.com/Azure/azure-cli/issues/2769))</span></span>
-* <span data-ttu-id="9b251-725">[计算] 修复 VMSS 和 VM 可用性集更新的相关问题。</span><span class="sxs-lookup"><span data-stu-id="9b251-725">[Compute] Fix issues with VMSS and VM availability set update.</span></span> <span data-ttu-id="9b251-726">([#2773](https://github.com/Azure/azure-cli/issues/2773))</span><span class="sxs-lookup"><span data-stu-id="9b251-726">([#2773](https://github.com/Azure/azure-cli/issues/2773))</span></span>
-* <span data-ttu-id="9b251-727">parent-resource-path 为 None 时修复 lock create 和 delete ([#2742](https://github.com/Azure/azure-cli/issues/2742))</span><span class="sxs-lookup"><span data-stu-id="9b251-727">Fix lock create and delete if parent-resource-path is None ([#2742](https://github.com/Azure/azure-cli/issues/2742))</span></span>
+* <span data-ttu-id="7b07f-728">添加 managedapp 和 managedapp 定义命令 ([#2985](https://github.com/Azure/azure-cli/issues/2985))</span><span class="sxs-lookup"><span data-stu-id="7b07f-728">Add managedapp and managedapp definition commands ([#2985](https://github.com/Azure/azure-cli/issues/2985))</span></span>
+* <span data-ttu-id="7b07f-729">支持“provider operation”命令([#2908](https://github.com/Azure/azure-cli/issues/2908))</span><span class="sxs-lookup"><span data-stu-id="7b07f-729">Support 'provider operation' commands ([#2908](https://github.com/Azure/azure-cli/issues/2908))</span></span>
+* <span data-ttu-id="7b07f-730">支持 generic resource create ([#2606](https://github.com/Azure/azure-cli/issues/2606))</span><span class="sxs-lookup"><span data-stu-id="7b07f-730">Support generic resource create ([#2606](https://github.com/Azure/azure-cli/issues/2606))</span></span>
+* <span data-ttu-id="7b07f-731">修复资源分析和 API 版本查找。</span><span class="sxs-lookup"><span data-stu-id="7b07f-731">Fix resource parsing and api version lookup.</span></span> <span data-ttu-id="7b07f-732">([#2781](https://github.com/Azure/azure-cli/issues/2781))</span><span class="sxs-lookup"><span data-stu-id="7b07f-732">([#2781](https://github.com/Azure/azure-cli/issues/2781))</span></span>
+* <span data-ttu-id="7b07f-733">为 az lock update 添加文档。</span><span class="sxs-lookup"><span data-stu-id="7b07f-733">Add docs for az lock update.</span></span> <span data-ttu-id="7b07f-734">([#2702](https://github.com/Azure/azure-cli/issues/2702))</span><span class="sxs-lookup"><span data-stu-id="7b07f-734">([#2702](https://github.com/Azure/azure-cli/issues/2702))</span></span>
+* <span data-ttu-id="7b07f-735">尝试为不存在的组列出资源时出错。</span><span class="sxs-lookup"><span data-stu-id="7b07f-735">Error out if you try to list resources for a group that doesn't exist.</span></span> <span data-ttu-id="7b07f-736">([#2769](https://github.com/Azure/azure-cli/issues/2769))</span><span class="sxs-lookup"><span data-stu-id="7b07f-736">([#2769](https://github.com/Azure/azure-cli/issues/2769))</span></span>
+* <span data-ttu-id="7b07f-737">[计算] 修复 VMSS 和 VM 可用性集更新的相关问题。</span><span class="sxs-lookup"><span data-stu-id="7b07f-737">[Compute] Fix issues with VMSS and VM availability set update.</span></span> <span data-ttu-id="7b07f-738">([#2773](https://github.com/Azure/azure-cli/issues/2773))</span><span class="sxs-lookup"><span data-stu-id="7b07f-738">([#2773](https://github.com/Azure/azure-cli/issues/2773))</span></span>
+* <span data-ttu-id="7b07f-739">parent-resource-path 为 None 时修复 lock create 和 delete ([#2742](https://github.com/Azure/azure-cli/issues/2742))</span><span class="sxs-lookup"><span data-stu-id="7b07f-739">Fix lock create and delete if parent-resource-path is None ([#2742](https://github.com/Azure/azure-cli/issues/2742))</span></span>
 
-### <a name="role"></a><span data-ttu-id="9b251-728">角色</span><span class="sxs-lookup"><span data-stu-id="9b251-728">Role</span></span>
+### <a name="role"></a><span data-ttu-id="7b07f-740">角色</span><span class="sxs-lookup"><span data-stu-id="7b07f-740">Role</span></span>
 
-* <span data-ttu-id="9b251-729">create-for-rbac：确保 SP 的结束日期不超过证书的到期日期 ([#2989](https://github.com/Azure/azure-cli/issues/2989))</span><span class="sxs-lookup"><span data-stu-id="9b251-729">create-for-rbac: ensure SP's end date will not exceed certificate's expiration date ([#2989](https://github.com/Azure/azure-cli/issues/2989))</span></span>
-* <span data-ttu-id="9b251-730">RBAC：添加对“ad group”的完整支持 ([#2016](https://github.com/Azure/azure-cli/issues/2016))</span><span class="sxs-lookup"><span data-stu-id="9b251-730">RBAC: add full support for 'ad group' ([#2016](https://github.com/Azure/azure-cli/issues/2016))</span></span>
-* <span data-ttu-id="9b251-731">role：解决角色定义更新的相关问题 ([#2745](https://github.com/Azure/azure-cli/issues/2745))</span><span class="sxs-lookup"><span data-stu-id="9b251-731">role: fix issues on role definition update ([#2745](https://github.com/Azure/azure-cli/issues/2745))</span></span>
-* <span data-ttu-id="9b251-732">create-for-rbac：确保已选取用户提供的密码</span><span class="sxs-lookup"><span data-stu-id="9b251-732">create-for-rbac: ensure user provided password is picked up</span></span>
+* <span data-ttu-id="7b07f-741">create-for-rbac：确保 SP 的结束日期不超过证书的到期日期 ([#2989](https://github.com/Azure/azure-cli/issues/2989))</span><span class="sxs-lookup"><span data-stu-id="7b07f-741">create-for-rbac: ensure SP's end date will not exceed certificate's expiration date ([#2989](https://github.com/Azure/azure-cli/issues/2989))</span></span>
+* <span data-ttu-id="7b07f-742">RBAC：添加对“ad group”的完整支持 ([#2016](https://github.com/Azure/azure-cli/issues/2016))</span><span class="sxs-lookup"><span data-stu-id="7b07f-742">RBAC: add full support for 'ad group' ([#2016](https://github.com/Azure/azure-cli/issues/2016))</span></span>
+* <span data-ttu-id="7b07f-743">role：解决角色定义更新的相关问题 ([#2745](https://github.com/Azure/azure-cli/issues/2745))</span><span class="sxs-lookup"><span data-stu-id="7b07f-743">role: fix issues on role definition update ([#2745](https://github.com/Azure/azure-cli/issues/2745))</span></span>
+* <span data-ttu-id="7b07f-744">create-for-rbac：确保已选取用户提供的密码</span><span class="sxs-lookup"><span data-stu-id="7b07f-744">create-for-rbac: ensure user provided password is picked up</span></span>
 
-### <a name="sql"></a><span data-ttu-id="9b251-733">SQL</span><span class="sxs-lookup"><span data-stu-id="9b251-733">SQL</span></span>
+### <a name="sql"></a><span data-ttu-id="7b07f-745">SQL</span><span class="sxs-lookup"><span data-stu-id="7b07f-745">SQL</span></span>
 
-* <span data-ttu-id="9b251-734">添加了 az sql server list-usages 和 az sql db list-usages 命令。</span><span class="sxs-lookup"><span data-stu-id="9b251-734">Added az sql server list-usages and az sql db list-usages commands.</span></span>
-* <span data-ttu-id="9b251-735">SQL - 能够直接连接到资源提供程序 ([#2832](https://github.com/Azure/azure-cli/issues/2832))</span><span class="sxs-lookup"><span data-stu-id="9b251-735">SQL - ability to connect directly to resource provider ([#2832](https://github.com/Azure/azure-cli/issues/2832))</span></span>
+* <span data-ttu-id="7b07f-746">添加了 az sql server list-usages 和 az sql db list-usages 命令。</span><span class="sxs-lookup"><span data-stu-id="7b07f-746">Added az sql server list-usages and az sql db list-usages commands.</span></span>
+* <span data-ttu-id="7b07f-747">SQL - 能够直接连接到资源提供程序 ([#2832](https://github.com/Azure/azure-cli/issues/2832))</span><span class="sxs-lookup"><span data-stu-id="7b07f-747">SQL - ability to connect directly to resource provider ([#2832](https://github.com/Azure/azure-cli/issues/2832))</span></span>
 
-### <a name="storage"></a><span data-ttu-id="9b251-736">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-736">Storage</span></span>
+### <a name="storage"></a><span data-ttu-id="7b07f-748">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-748">Storage</span></span>
 
-* <span data-ttu-id="9b251-737">位置默认为 `storage account create` 的资源组位置。</span><span class="sxs-lookup"><span data-stu-id="9b251-737">Default location to resource group location for `storage account create`.</span></span>
-* <span data-ttu-id="9b251-738">添加对增量 blob 复制的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-738">Add support for incremental blob copy</span></span>
-* <span data-ttu-id="9b251-739">添加对大型块 blob 上传的支持</span><span class="sxs-lookup"><span data-stu-id="9b251-739">Add support for large block blob upload</span></span>
-* <span data-ttu-id="9b251-740">如果要上传的文件大于 200GB，则将块大小更改为 100MB</span><span class="sxs-lookup"><span data-stu-id="9b251-740">Change block size to 100MB when file to upload is larger than 200GB</span></span>
+* <span data-ttu-id="7b07f-749">位置默认为 `storage account create` 的资源组位置。</span><span class="sxs-lookup"><span data-stu-id="7b07f-749">Default location to resource group location for `storage account create`.</span></span>
+* <span data-ttu-id="7b07f-750">添加对增量 blob 复制的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-750">Add support for incremental blob copy</span></span>
+* <span data-ttu-id="7b07f-751">添加对大型块 blob 上传的支持</span><span class="sxs-lookup"><span data-stu-id="7b07f-751">Add support for large block blob upload</span></span>
+* <span data-ttu-id="7b07f-752">如果要上传的文件大于 200GB，则将块大小更改为 100MB</span><span class="sxs-lookup"><span data-stu-id="7b07f-752">Change block size to 100MB when file to upload is larger than 200GB</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-741">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-741">VM</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-753">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-753">VM</span></span>
 
-* <span data-ttu-id="9b251-742">avail-set：将 UD 和 FD 域计数设为可选</span><span class="sxs-lookup"><span data-stu-id="9b251-742">avail-set: make UD&FD domain counts optional</span></span>
+* <span data-ttu-id="7b07f-754">avail-set：将 UD 和 FD 域计数设为可选</span><span class="sxs-lookup"><span data-stu-id="7b07f-754">avail-set: make UD&FD domain counts optional</span></span>
 
-  <span data-ttu-id="9b251-743">注意：最高等级云中的 VM 命令。请避免与托管磁盘相关的功能，包括以下项：</span><span class="sxs-lookup"><span data-stu-id="9b251-743">note: VM commands in sovereign clouds Please avoid managed disk related features, including the following:</span></span>
-  1. <span data-ttu-id="9b251-744">az disk/snapshot/image</span><span class="sxs-lookup"><span data-stu-id="9b251-744">az disk/snapshot/image</span></span>
-  2. <span data-ttu-id="9b251-745">az vm/vmss disk</span><span class="sxs-lookup"><span data-stu-id="9b251-745">az vm/vmss disk</span></span>
-  3. <span data-ttu-id="9b251-746">在“az vm/vmss create”内，使用“—use-unmanaged-disk”避免托管磁盘 其他命令应有效</span><span class="sxs-lookup"><span data-stu-id="9b251-746">Inside "az vm/vmss create", use "—use-unmanaged-disk" to avoid managed disk Other commands should work</span></span>
-* <span data-ttu-id="9b251-747">vm/vmss：改进生成 SSH 密钥对时的警告文本</span><span class="sxs-lookup"><span data-stu-id="9b251-747">vm/vmss: improve the warning text when generates ssh key pairs</span></span>
-* <span data-ttu-id="9b251-748">vm/vmss：支持通过需要计划信息的市场映像创建 ([#1209](https://github.com/Azure/azure-cli/issues/1209))</span><span class="sxs-lookup"><span data-stu-id="9b251-748">vm/vmss: support create from a market place image which requires plan info ([#1209](https://github.com/Azure/azure-cli/issues/1209))</span></span>
+  <span data-ttu-id="7b07f-755">注意：最高等级云中的 VM 命令。请避免与托管磁盘相关的功能，包括以下项：</span><span class="sxs-lookup"><span data-stu-id="7b07f-755">note: VM commands in sovereign clouds Please avoid managed disk related features, including the following:</span></span>
+  1. <span data-ttu-id="7b07f-756">az disk/snapshot/image</span><span class="sxs-lookup"><span data-stu-id="7b07f-756">az disk/snapshot/image</span></span>
+  2. <span data-ttu-id="7b07f-757">az vm/vmss disk</span><span class="sxs-lookup"><span data-stu-id="7b07f-757">az vm/vmss disk</span></span>
+  3. <span data-ttu-id="7b07f-758">在“az vm/vmss create”内，使用“—use-unmanaged-disk”避免托管磁盘 其他命令应有效</span><span class="sxs-lookup"><span data-stu-id="7b07f-758">Inside "az vm/vmss create", use "—use-unmanaged-disk" to avoid managed disk Other commands should work</span></span>
+* <span data-ttu-id="7b07f-759">vm/vmss：改进生成 SSH 密钥对时的警告文本</span><span class="sxs-lookup"><span data-stu-id="7b07f-759">vm/vmss: improve the warning text when generates ssh key pairs</span></span>
+* <span data-ttu-id="7b07f-760">vm/vmss：支持通过需要计划信息的市场映像创建 ([#1209](https://github.com/Azure/azure-cli/issues/1209))</span><span class="sxs-lookup"><span data-stu-id="7b07f-760">vm/vmss: support create from a market place image which requires plan info ([#1209](https://github.com/Azure/azure-cli/issues/1209))</span></span>
 
 
-## <a name="april-3-2017"></a><span data-ttu-id="9b251-749">2017 年 4 月 3 日</span><span class="sxs-lookup"><span data-stu-id="9b251-749">April 3, 2017</span></span>
+## <a name="april-3-2017"></a><span data-ttu-id="7b07f-761">2017 年 4 月 3 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-761">April 3, 2017</span></span>
 
-<span data-ttu-id="9b251-750">版本 2.0.2</span><span class="sxs-lookup"><span data-stu-id="9b251-750">Version 2.0.2</span></span>
+<span data-ttu-id="7b07f-762">版本 2.0.2</span><span class="sxs-lookup"><span data-stu-id="7b07f-762">Version 2.0.2</span></span>
 
-<span data-ttu-id="9b251-751">此版本中已发布 ACR、批处理、KeyVault 和 SQL 组件。</span><span class="sxs-lookup"><span data-stu-id="9b251-751">We released the ACR, Batch, KeyVault, and SQL components in this release.</span></span>
+<span data-ttu-id="7b07f-763">此版本中已发布 ACR、批处理、KeyVault 和 SQL 组件。</span><span class="sxs-lookup"><span data-stu-id="7b07f-763">We released the ACR, Batch, KeyVault, and SQL components in this release.</span></span>
 
 ```
 azure-cli (2.0.2)
@@ -1067,69 +1091,69 @@ storage (2.0.2)
 vm (2.0.2)
 ```
 
-### <a name="core"></a><span data-ttu-id="9b251-752">核心</span><span class="sxs-lookup"><span data-stu-id="9b251-752">Core</span></span>
+### <a name="core"></a><span data-ttu-id="7b07f-764">核心</span><span class="sxs-lookup"><span data-stu-id="7b07f-764">Core</span></span>
 
-* <span data-ttu-id="9b251-753">在默认列表中添加了 acr、实验室、监视和查找模块。</span><span class="sxs-lookup"><span data-stu-id="9b251-753">Add acr, lab, monitor, and find modules to default list.</span></span>
-* <span data-ttu-id="9b251-754">登录：跳过错误的租户 ([#2634](https://github.com/Azure/azure-cli/pull/2634))</span><span class="sxs-lookup"><span data-stu-id="9b251-754">Login: skip erroneous tenant ([#2634](https://github.com/Azure/azure-cli/pull/2634))</span></span>
-* <span data-ttu-id="9b251-755">登录：将默认订阅设置为处于“已启用”状态的订阅 ([#2575](https://github.com/Azure/azure-cli/pull/2575))</span><span class="sxs-lookup"><span data-stu-id="9b251-755">login: set default subscription to one with the state of "Enabled" ([#2575](https://github.com/Azure/azure-cli/pull/2575))</span></span>
-* <span data-ttu-id="9b251-756">添加了 wait 命令，并添加了对其他命令的 --no-wait 支持 ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span><span class="sxs-lookup"><span data-stu-id="9b251-756">Add wait commands and --no-wait support to more commands ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span></span>
-* <span data-ttu-id="9b251-757">核心：支持结合证书使用服务主体登录 ([#2457](https://github.com/Azure/azure-cli/pull/2457))</span><span class="sxs-lookup"><span data-stu-id="9b251-757">core: support login using service principal with a cert ([#2457](https://github.com/Azure/azure-cli/pull/2457))</span></span>
-* <span data-ttu-id="9b251-758">添加了有关缺少模板参数的提示。</span><span class="sxs-lookup"><span data-stu-id="9b251-758">Add prompting for missing template parameters.</span></span> <span data-ttu-id="9b251-759">([#2364](https://github.com/Azure/azure-cli/pull/2364))</span><span class="sxs-lookup"><span data-stu-id="9b251-759">([#2364](https://github.com/Azure/azure-cli/pull/2364))</span></span>
-* <span data-ttu-id="9b251-760">支持为资源组、默认 Web、 默认 VM 等常见参数设置默认值</span><span class="sxs-lookup"><span data-stu-id="9b251-760">Support setting default values for common arguments like default resource group, default web, default vm</span></span>
-* <span data-ttu-id="9b251-761">支持登录到特定的租户</span><span class="sxs-lookup"><span data-stu-id="9b251-761">Support login to specific tenant</span></span>
+* <span data-ttu-id="7b07f-765">在默认列表中添加了 acr、实验室、监视和查找模块。</span><span class="sxs-lookup"><span data-stu-id="7b07f-765">Add acr, lab, monitor, and find modules to default list.</span></span>
+* <span data-ttu-id="7b07f-766">登录：跳过错误的租户 ([#2634](https://github.com/Azure/azure-cli/pull/2634))</span><span class="sxs-lookup"><span data-stu-id="7b07f-766">Login: skip erroneous tenant ([#2634](https://github.com/Azure/azure-cli/pull/2634))</span></span>
+* <span data-ttu-id="7b07f-767">登录：将默认订阅设置为处于“已启用”状态的订阅 ([#2575](https://github.com/Azure/azure-cli/pull/2575))</span><span class="sxs-lookup"><span data-stu-id="7b07f-767">login: set default subscription to one with the state of "Enabled" ([#2575](https://github.com/Azure/azure-cli/pull/2575))</span></span>
+* <span data-ttu-id="7b07f-768">添加了 wait 命令，并添加了对其他命令的 --no-wait 支持 ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span><span class="sxs-lookup"><span data-stu-id="7b07f-768">Add wait commands and --no-wait support to more commands ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span></span>
+* <span data-ttu-id="7b07f-769">核心：支持结合证书使用服务主体登录 ([#2457](https://github.com/Azure/azure-cli/pull/2457))</span><span class="sxs-lookup"><span data-stu-id="7b07f-769">core: support login using service principal with a cert ([#2457](https://github.com/Azure/azure-cli/pull/2457))</span></span>
+* <span data-ttu-id="7b07f-770">添加了有关缺少模板参数的提示。</span><span class="sxs-lookup"><span data-stu-id="7b07f-770">Add prompting for missing template parameters.</span></span> <span data-ttu-id="7b07f-771">([#2364](https://github.com/Azure/azure-cli/pull/2364))</span><span class="sxs-lookup"><span data-stu-id="7b07f-771">([#2364](https://github.com/Azure/azure-cli/pull/2364))</span></span>
+* <span data-ttu-id="7b07f-772">支持为资源组、默认 Web、 默认 VM 等常见参数设置默认值</span><span class="sxs-lookup"><span data-stu-id="7b07f-772">Support setting default values for common arguments like default resource group, default web, default vm</span></span>
+* <span data-ttu-id="7b07f-773">支持登录到特定的租户</span><span class="sxs-lookup"><span data-stu-id="7b07f-773">Support login to specific tenant</span></span>
 
-### <a name="acs"></a><span data-ttu-id="9b251-762">ACS</span><span class="sxs-lookup"><span data-stu-id="9b251-762">ACS</span></span>
+### <a name="acs"></a><span data-ttu-id="7b07f-774">ACS</span><span class="sxs-lookup"><span data-stu-id="7b07f-774">ACS</span></span>
 
-* <span data-ttu-id="9b251-763">[ACS] 添加了配置默认 ACS 群集的支持 ([#2554](https://github.com/Azure/azure-cli/pull/2554))</span><span class="sxs-lookup"><span data-stu-id="9b251-763">[ACS] Adding support for configuring a default ACS cluster ([#2554](https://github.com/Azure/azure-cli/pull/2554))</span></span>
-* <span data-ttu-id="9b251-764">添加了 SSH 密钥密码提示的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-764">Add support for ssh key password prompting.</span></span> <span data-ttu-id="9b251-765">([#2044](https://github.com/Azure/azure-cli/pull/2044))</span><span class="sxs-lookup"><span data-stu-id="9b251-765">([#2044](https://github.com/Azure/azure-cli/pull/2044))</span></span>
-* <span data-ttu-id="9b251-766">添加了对 Windows 群集的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-766">Add support for windows clusters.</span></span> <span data-ttu-id="9b251-767">([#2211](https://github.com/Azure/azure-cli/pull/2211))</span><span class="sxs-lookup"><span data-stu-id="9b251-767">([#2211](https://github.com/Azure/azure-cli/pull/2211))</span></span>
-* <span data-ttu-id="9b251-768">从“所有者”角色切换到“参与者”角色。</span><span class="sxs-lookup"><span data-stu-id="9b251-768">Switch from Owner to Contributor role.</span></span> <span data-ttu-id="9b251-769">([#2321](https://github.com/Azure/azure-cli/pull/2321))</span><span class="sxs-lookup"><span data-stu-id="9b251-769">([#2321](https://github.com/Azure/azure-cli/pull/2321))</span></span>
+* <span data-ttu-id="7b07f-775">[ACS] 添加了配置默认 ACS 群集的支持 ([#2554](https://github.com/Azure/azure-cli/pull/2554))</span><span class="sxs-lookup"><span data-stu-id="7b07f-775">[ACS] Adding support for configuring a default ACS cluster ([#2554](https://github.com/Azure/azure-cli/pull/2554))</span></span>
+* <span data-ttu-id="7b07f-776">添加了 SSH 密钥密码提示的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-776">Add support for ssh key password prompting.</span></span> <span data-ttu-id="7b07f-777">([#2044](https://github.com/Azure/azure-cli/pull/2044))</span><span class="sxs-lookup"><span data-stu-id="7b07f-777">([#2044](https://github.com/Azure/azure-cli/pull/2044))</span></span>
+* <span data-ttu-id="7b07f-778">添加了对 Windows 群集的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-778">Add support for windows clusters.</span></span> <span data-ttu-id="7b07f-779">([#2211](https://github.com/Azure/azure-cli/pull/2211))</span><span class="sxs-lookup"><span data-stu-id="7b07f-779">([#2211](https://github.com/Azure/azure-cli/pull/2211))</span></span>
+* <span data-ttu-id="7b07f-780">从“所有者”角色切换到“参与者”角色。</span><span class="sxs-lookup"><span data-stu-id="7b07f-780">Switch from Owner to Contributor role.</span></span> <span data-ttu-id="7b07f-781">([#2321](https://github.com/Azure/azure-cli/pull/2321))</span><span class="sxs-lookup"><span data-stu-id="7b07f-781">([#2321](https://github.com/Azure/azure-cli/pull/2321))</span></span>
 
-### <a name="appservice"></a><span data-ttu-id="9b251-770">应用服务</span><span class="sxs-lookup"><span data-stu-id="9b251-770">AppService</span></span>
+### <a name="appservice"></a><span data-ttu-id="7b07f-782">应用服务</span><span class="sxs-lookup"><span data-stu-id="7b07f-782">AppService</span></span>
 
-* <span data-ttu-id="9b251-771">应用服务：支持获取用于 DNS A 记录的外部 IP 地址 ([#2627](https://github.com/Azure/azure-cli/pull/2627))</span><span class="sxs-lookup"><span data-stu-id="9b251-771">appservice: support to get external ip address used for DNS A records ([#2627](https://github.com/Azure/azure-cli/pull/2627))</span></span>
-* <span data-ttu-id="9b251-772">应用服务：支持绑定通配符证书 ([#2625](https://github.com/Azure/azure-cli/pull/2625))</span><span class="sxs-lookup"><span data-stu-id="9b251-772">appservice: support binding wildcard certificates ([#2625](https://github.com/Azure/azure-cli/pull/2625))</span></span>
-* <span data-ttu-id="9b251-773">应用服务：支持列出发布配置文件 ([#2504](https://github.com/Azure/azure-cli/pull/2504))</span><span class="sxs-lookup"><span data-stu-id="9b251-773">appservice: support list publishing profiles ([#2504](https://github.com/Azure/azure-cli/pull/2504))</span></span>
-* <span data-ttu-id="9b251-774">应用服务 - 配置后触发源代码管理同步 ([#2326](https://github.com/Azure/azure-cli/pull/2326))</span><span class="sxs-lookup"><span data-stu-id="9b251-774">AppService - Trigger source control sync after config ([#2326](https://github.com/Azure/azure-cli/pull/2326))</span></span>
+* <span data-ttu-id="7b07f-783">应用服务：支持获取用于 DNS A 记录的外部 IP 地址 ([#2627](https://github.com/Azure/azure-cli/pull/2627))</span><span class="sxs-lookup"><span data-stu-id="7b07f-783">appservice: support to get external ip address used for DNS A records ([#2627](https://github.com/Azure/azure-cli/pull/2627))</span></span>
+* <span data-ttu-id="7b07f-784">应用服务：支持绑定通配符证书 ([#2625](https://github.com/Azure/azure-cli/pull/2625))</span><span class="sxs-lookup"><span data-stu-id="7b07f-784">appservice: support binding wildcard certificates ([#2625](https://github.com/Azure/azure-cli/pull/2625))</span></span>
+* <span data-ttu-id="7b07f-785">应用服务：支持列出发布配置文件 ([#2504](https://github.com/Azure/azure-cli/pull/2504))</span><span class="sxs-lookup"><span data-stu-id="7b07f-785">appservice: support list publishing profiles ([#2504](https://github.com/Azure/azure-cli/pull/2504))</span></span>
+* <span data-ttu-id="7b07f-786">应用服务 - 配置后触发源代码管理同步 ([#2326](https://github.com/Azure/azure-cli/pull/2326))</span><span class="sxs-lookup"><span data-stu-id="7b07f-786">AppService - Trigger source control sync after config ([#2326](https://github.com/Azure/azure-cli/pull/2326))</span></span>
 
-### <a name="datalake"></a><span data-ttu-id="9b251-775">DataLake</span><span class="sxs-lookup"><span data-stu-id="9b251-775">DataLake</span></span>
+### <a name="datalake"></a><span data-ttu-id="7b07f-787">DataLake</span><span class="sxs-lookup"><span data-stu-id="7b07f-787">DataLake</span></span>
 
-* <span data-ttu-id="9b251-776">Data Lake Analytics 模块的初始版本。</span><span class="sxs-lookup"><span data-stu-id="9b251-776">Initial release of Data Lake Analytics module.</span></span>
-* <span data-ttu-id="9b251-777">Data Lake Store 模块的初始版本。</span><span class="sxs-lookup"><span data-stu-id="9b251-777">Initial release of Data Lake Store module.</span></span>
+* <span data-ttu-id="7b07f-788">Data Lake Analytics 模块的初始版本。</span><span class="sxs-lookup"><span data-stu-id="7b07f-788">Initial release of Data Lake Analytics module.</span></span>
+* <span data-ttu-id="7b07f-789">Data Lake Store 模块的初始版本。</span><span class="sxs-lookup"><span data-stu-id="7b07f-789">Initial release of Data Lake Store module.</span></span>
 
-### <a name="docuemntdb"></a><span data-ttu-id="9b251-778">DocuemntDB</span><span class="sxs-lookup"><span data-stu-id="9b251-778">DocuemntDB</span></span>
+### <a name="docuemntdb"></a><span data-ttu-id="7b07f-790">DocuemntDB</span><span class="sxs-lookup"><span data-stu-id="7b07f-790">DocuemntDB</span></span>
 
-* <span data-ttu-id="9b251-779">DocumentDB：添加了列出连接字符串的支持 ([#2580](https://github.com/Azure/azure-cli/pull/2580))</span><span class="sxs-lookup"><span data-stu-id="9b251-779">DocumentDB: Adding support for listing connection strings ([#2580](https://github.com/Azure/azure-cli/pull/2580))</span></span>
+* <span data-ttu-id="7b07f-791">DocumentDB：添加了列出连接字符串的支持 ([#2580](https://github.com/Azure/azure-cli/pull/2580))</span><span class="sxs-lookup"><span data-stu-id="7b07f-791">DocumentDB: Adding support for listing connection strings ([#2580](https://github.com/Azure/azure-cli/pull/2580))</span></span>
 
-### <a name="vm"></a><span data-ttu-id="9b251-780">VM</span><span class="sxs-lookup"><span data-stu-id="9b251-780">VM</span></span>
+### <a name="vm"></a><span data-ttu-id="7b07f-792">VM</span><span class="sxs-lookup"><span data-stu-id="7b07f-792">VM</span></span>
 
-* <span data-ttu-id="9b251-781">[计算] 添加了用于创建虚拟机规模集的应用网关支持 ([#2570](https://github.com/Azure/azure-cli/pull/2570))</span><span class="sxs-lookup"><span data-stu-id="9b251-781">[Compute] Add AppGateway support to virtual machine scale set create ([#2570](https://github.com/Azure/azure-cli/pull/2570))</span></span>
-* <span data-ttu-id="9b251-782">[VM/VMSS] 改进了磁盘缓存支持 ([#2522](https://github.com/Azure/azure-cli/pull/2522))</span><span class="sxs-lookup"><span data-stu-id="9b251-782">[VM/VMSS] Improved disk caching support ([#2522](https://github.com/Azure/azure-cli/pull/2522))</span></span>
-* <span data-ttu-id="9b251-783">VM/VMSS：合并了门户使用的凭据验证逻辑 ([#2537](https://github.com/Azure/azure-cli/pull/2537))</span><span class="sxs-lookup"><span data-stu-id="9b251-783">VM/VMSS: incorporate credentials validation logic used by portal ([#2537](https://github.com/Azure/azure-cli/pull/2537))</span></span>
-* <span data-ttu-id="9b251-784">添加了 wait 命令和 --no-wait 支持 ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span><span class="sxs-lookup"><span data-stu-id="9b251-784">Add wait commands and --no-wait support ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span></span>
-* <span data-ttu-id="9b251-785">虚拟机规模集：支持使用 * 列出不同 VM 上的实例视图 ([#2467](https://github.com/Azure/azure-cli/pull/2467))</span><span class="sxs-lookup"><span data-stu-id="9b251-785">Virtual machine scale set: support * to list instance view across vms ([#2467](https://github.com/Azure/azure-cli/pull/2467))</span></span>
-* <span data-ttu-id="9b251-786">添加了适用于 VM 和虚拟机规模集的 --secrets ([#2212}(https://github.com/Azure/azure-cli/pull/2212))</span><span class="sxs-lookup"><span data-stu-id="9b251-786">Add --secrets for VM and virtual machine scale set ([#2212}(https://github.com/Azure/azure-cli/pull/2212))</span></span>
-* <span data-ttu-id="9b251-787">允许使用专用 VHD 创建 VM ([#2256](https://github.com/Azure/azure-cli/pull/2256))</span><span class="sxs-lookup"><span data-stu-id="9b251-787">Allow VM creation with specialized VHD ([#2256](https://github.com/Azure/azure-cli/pull/2256))</span></span>
+* <span data-ttu-id="7b07f-793">[计算] 添加了用于创建虚拟机规模集的应用网关支持 ([#2570](https://github.com/Azure/azure-cli/pull/2570))</span><span class="sxs-lookup"><span data-stu-id="7b07f-793">[Compute] Add AppGateway support to virtual machine scale set create ([#2570](https://github.com/Azure/azure-cli/pull/2570))</span></span>
+* <span data-ttu-id="7b07f-794">[VM/VMSS] 改进了磁盘缓存支持 ([#2522](https://github.com/Azure/azure-cli/pull/2522))</span><span class="sxs-lookup"><span data-stu-id="7b07f-794">[VM/VMSS] Improved disk caching support ([#2522](https://github.com/Azure/azure-cli/pull/2522))</span></span>
+* <span data-ttu-id="7b07f-795">VM/VMSS：合并了门户使用的凭据验证逻辑 ([#2537](https://github.com/Azure/azure-cli/pull/2537))</span><span class="sxs-lookup"><span data-stu-id="7b07f-795">VM/VMSS: incorporate credentials validation logic used by portal ([#2537](https://github.com/Azure/azure-cli/pull/2537))</span></span>
+* <span data-ttu-id="7b07f-796">添加了 wait 命令和 --no-wait 支持 ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span><span class="sxs-lookup"><span data-stu-id="7b07f-796">Add wait commands and --no-wait support ([#2524](https://github.com/Azure/azure-cli/pull/2524))</span></span>
+* <span data-ttu-id="7b07f-797">虚拟机规模集：支持使用 * 列出不同 VM 上的实例视图 ([#2467](https://github.com/Azure/azure-cli/pull/2467))</span><span class="sxs-lookup"><span data-stu-id="7b07f-797">Virtual machine scale set: support * to list instance view across vms ([#2467](https://github.com/Azure/azure-cli/pull/2467))</span></span>
+* <span data-ttu-id="7b07f-798">添加了适用于 VM 和虚拟机规模集的 --secrets ([#2212}(https://github.com/Azure/azure-cli/pull/2212))</span><span class="sxs-lookup"><span data-stu-id="7b07f-798">Add --secrets for VM and virtual machine scale set ([#2212}(https://github.com/Azure/azure-cli/pull/2212))</span></span>
+* <span data-ttu-id="7b07f-799">允许使用专用 VHD 创建 VM ([#2256](https://github.com/Azure/azure-cli/pull/2256))</span><span class="sxs-lookup"><span data-stu-id="7b07f-799">Allow VM creation with specialized VHD ([#2256](https://github.com/Azure/azure-cli/pull/2256))</span></span>
 
-## <a name="february-27-2017"></a><span data-ttu-id="9b251-788">2017 年 2 月 27 日</span><span class="sxs-lookup"><span data-stu-id="9b251-788">February 27, 2017</span></span>
+## <a name="february-27-2017"></a><span data-ttu-id="7b07f-800">2017 年 2 月 27 日</span><span class="sxs-lookup"><span data-stu-id="7b07f-800">February 27, 2017</span></span>
 
-<span data-ttu-id="9b251-789">版本 2.0.0</span><span class="sxs-lookup"><span data-stu-id="9b251-789">Version 2.0.0</span></span>
+<span data-ttu-id="7b07f-801">版本 2.0.0</span><span class="sxs-lookup"><span data-stu-id="7b07f-801">Version 2.0.0</span></span>
 
-<span data-ttu-id="9b251-790">此版 Azure CLI 2.0 是第一个“正式版”。</span><span class="sxs-lookup"><span data-stu-id="9b251-790">This release of Azure CLI 2.0 is the first "Generally Available" release.</span></span>
-<span data-ttu-id="9b251-791">正式版适用于以下命令模块：</span><span class="sxs-lookup"><span data-stu-id="9b251-791">General availability applies to these command modules:</span></span>
-- <span data-ttu-id="9b251-792">容器服务 (ACS)</span><span class="sxs-lookup"><span data-stu-id="9b251-792">Container Service (acs)</span></span>
-- <span data-ttu-id="9b251-793">计算（包括 Resource Manager、VM、虚拟机规模集、托管磁盘）</span><span class="sxs-lookup"><span data-stu-id="9b251-793">Compute (including Resource Manager, VM, virtual machine scale sets, Managed Disks)</span></span>
-- <span data-ttu-id="9b251-794">网络</span><span class="sxs-lookup"><span data-stu-id="9b251-794">Networking</span></span>
-- <span data-ttu-id="9b251-795">存储</span><span class="sxs-lookup"><span data-stu-id="9b251-795">Storage</span></span>
+<span data-ttu-id="7b07f-802">此版 Azure CLI 2.0 是第一个“正式版”。</span><span class="sxs-lookup"><span data-stu-id="7b07f-802">This release of Azure CLI 2.0 is the first "Generally Available" release.</span></span>
+<span data-ttu-id="7b07f-803">正式版适用于以下命令模块：</span><span class="sxs-lookup"><span data-stu-id="7b07f-803">General availability applies to these command modules:</span></span>
+- <span data-ttu-id="7b07f-804">容器服务 (ACS)</span><span class="sxs-lookup"><span data-stu-id="7b07f-804">Container Service (acs)</span></span>
+- <span data-ttu-id="7b07f-805">计算（包括 Resource Manager、VM、虚拟机规模集、托管磁盘）</span><span class="sxs-lookup"><span data-stu-id="7b07f-805">Compute (including Resource Manager, VM, virtual machine scale sets, Managed Disks)</span></span>
+- <span data-ttu-id="7b07f-806">网络</span><span class="sxs-lookup"><span data-stu-id="7b07f-806">Networking</span></span>
+- <span data-ttu-id="7b07f-807">存储</span><span class="sxs-lookup"><span data-stu-id="7b07f-807">Storage</span></span>
 
-<span data-ttu-id="9b251-796">这些命令模块可在生产环境中使用，并受标准 Microsoft SLA 的支持。</span><span class="sxs-lookup"><span data-stu-id="9b251-796">These command modules can be used in production and are supported by standard Microsoft SLA.</span></span>
-<span data-ttu-id="9b251-797">可以直接向 Microsoft 支持部门或者通过 [github 问题列表](https://github.com/azure/azure-cli/issues/)提出问题。</span><span class="sxs-lookup"><span data-stu-id="9b251-797">You can open issues directly with Microsoft support or on our [github issues list](https://github.com/azure/azure-cli/issues/).</span></span>
-<span data-ttu-id="9b251-798">可以[在 StackOverflow 上使用 azure-cli 标记](http://stackoverflow.com/questions/tagged/azure-cli)或者通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队来提出问题。可以通过命令行使用 `az feedback` 命令提供反馈。</span><span class="sxs-lookup"><span data-stu-id="9b251-798">You can ask questions on [StackOverflow using the azure-cli tag](http://stackoverflow.com/questions/tagged/azure-cli), or contact the product team at [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com). You can provide feedback from the command line with the `az feedback` command.</span></span>
+<span data-ttu-id="7b07f-808">这些命令模块可在生产环境中使用，并受标准 Microsoft SLA 的支持。</span><span class="sxs-lookup"><span data-stu-id="7b07f-808">These command modules can be used in production and are supported by standard Microsoft SLA.</span></span>
+<span data-ttu-id="7b07f-809">可以直接向 Microsoft 支持部门或者通过 [github 问题列表](https://github.com/azure/azure-cli/issues/)提出问题。</span><span class="sxs-lookup"><span data-stu-id="7b07f-809">You can open issues directly with Microsoft support or on our [github issues list](https://github.com/azure/azure-cli/issues/).</span></span>
+<span data-ttu-id="7b07f-810">可以[在 StackOverflow 上使用 azure-cli 标记](http://stackoverflow.com/questions/tagged/azure-cli)或者通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队来提出问题。可以通过命令行使用 `az feedback` 命令提供反馈。</span><span class="sxs-lookup"><span data-stu-id="7b07f-810">You can ask questions on [StackOverflow using the azure-cli tag](http://stackoverflow.com/questions/tagged/azure-cli), or contact the product team at [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com). You can provide feedback from the command line with the `az feedback` command.</span></span>
 
-<span data-ttu-id="9b251-799">这些模块中的命令非常稳定，其语法在此 Azure CLI 版本的后续发行版中预期不会变化。</span><span class="sxs-lookup"><span data-stu-id="9b251-799">The commands in these modules are stable and the syntax is not expected to change in upcoming releases of this version of Azure CLI.</span></span>
+<span data-ttu-id="7b07f-811">这些模块中的命令非常稳定，其语法在此 Azure CLI 版本的后续发行版中预期不会变化。</span><span class="sxs-lookup"><span data-stu-id="7b07f-811">The commands in these modules are stable and the syntax is not expected to change in upcoming releases of this version of Azure CLI.</span></span>
 
-<span data-ttu-id="9b251-800">若要检查 CLI 版本，请使用 `az --version`。</span><span class="sxs-lookup"><span data-stu-id="9b251-800">To verify the version of the CLI, use `az --version`.</span></span>
-<span data-ttu-id="9b251-801">输出中将列出 CLI 本身的版本（在此发行版中为 2.0.0）、各个命令模块的版本，以及所用 Python 和 GCC 的版本。</span><span class="sxs-lookup"><span data-stu-id="9b251-801">The output lists the version of the CLI itself (2.0.0 in this release), the individual command modules, and the versions of Python and GCC that you're using.</span></span>
+<span data-ttu-id="7b07f-812">若要检查 CLI 版本，请使用 `az --version`。</span><span class="sxs-lookup"><span data-stu-id="7b07f-812">To verify the version of the CLI, use `az --version`.</span></span>
+<span data-ttu-id="7b07f-813">输出中将列出 CLI 本身的版本（在此发行版中为 2.0.0）、各个命令模块的版本，以及所用 Python 和 GCC 的版本。</span><span class="sxs-lookup"><span data-stu-id="7b07f-813">The output lists the version of the CLI itself (2.0.0 in this release), the individual command modules, and the versions of Python and GCC that you're using.</span></span>
 
 ```
 azure-cli (2.0.0)
@@ -1161,14 +1185,14 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 ```
 
 > [!Note]
-> <span data-ttu-id="9b251-802">某些命令模块带有“bn”或“rcn”后缀。</span><span class="sxs-lookup"><span data-stu-id="9b251-802">Some of the command modules have a "b*n*" or "rc*n*" postfix.</span></span>
-> <span data-ttu-id="9b251-803">这些命令模块仍以预览版提供，将来会发布正式版。</span><span class="sxs-lookup"><span data-stu-id="9b251-803">These command modules are still in preview and will become generally available in the future.</span></span>
+> <span data-ttu-id="7b07f-814">某些命令模块带有“bn”或“rcn”后缀。</span><span class="sxs-lookup"><span data-stu-id="7b07f-814">Some of the command modules have a "b*n*" or "rc*n*" postfix.</span></span>
+> <span data-ttu-id="7b07f-815">这些命令模块仍以预览版提供，将来会发布正式版。</span><span class="sxs-lookup"><span data-stu-id="7b07f-815">These command modules are still in preview and will become generally available in the future.</span></span>
 
-<span data-ttu-id="9b251-804">此外，我们还提供 CLI 夜间预览版。</span><span class="sxs-lookup"><span data-stu-id="9b251-804">We also have nightly preview builds of the CLI.</span></span>
-<span data-ttu-id="9b251-805">有关信息，请参阅有关[获取夜间预览版](https://github.com/Azure/azure-cli#nightly-builds)的说明，以及有关[开发人员设置与贡献代码](https://github.com/Azure/azure-cli#developer-setup)的说明。</span><span class="sxs-lookup"><span data-stu-id="9b251-805">For information, see these instructions on [getting the nightly builds](https://github.com/Azure/azure-cli#nightly-builds), and these instructions on [developer setup and contributing code](https://github.com/Azure/azure-cli#developer-setup).</span></span>
+<span data-ttu-id="7b07f-816">此外，我们还提供 CLI 夜间预览版。</span><span class="sxs-lookup"><span data-stu-id="7b07f-816">We also have nightly preview builds of the CLI.</span></span>
+<span data-ttu-id="7b07f-817">有关信息，请参阅有关[获取夜间预览版](https://github.com/Azure/azure-cli#nightly-builds)的说明，以及有关[开发人员设置与贡献代码](https://github.com/Azure/azure-cli#developer-setup)的说明。</span><span class="sxs-lookup"><span data-stu-id="7b07f-817">For information, see these instructions on [getting the nightly builds](https://github.com/Azure/azure-cli#nightly-builds), and these instructions on [developer setup and contributing code](https://github.com/Azure/azure-cli#developer-setup).</span></span>
 
-<span data-ttu-id="9b251-806">可通过以下方式报告夜间预览版的问题：</span><span class="sxs-lookup"><span data-stu-id="9b251-806">You can report issues with nightly preview builds in the following ways:</span></span>
-- <span data-ttu-id="9b251-807">在 [github 问题列表](https://github.com/azure/azure-cli/issues/)中报告问题</span><span class="sxs-lookup"><span data-stu-id="9b251-807">Report issues in our [github issues list](https://github.com/azure/azure-cli/issues/)</span></span>
-- <span data-ttu-id="9b251-808">通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队。</span><span class="sxs-lookup"><span data-stu-id="9b251-808">Contact the product team at [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com).</span></span>
-- <span data-ttu-id="9b251-809">请通过命令行使用 `az feedback` 命令提供反馈。</span><span class="sxs-lookup"><span data-stu-id="9b251-809">Provide feedback from the command line with the `az feedback` command.</span></span>
+<span data-ttu-id="7b07f-818">可通过以下方式报告夜间预览版的问题：</span><span class="sxs-lookup"><span data-stu-id="7b07f-818">You can report issues with nightly preview builds in the following ways:</span></span>
+- <span data-ttu-id="7b07f-819">在 [github 问题列表](https://github.com/azure/azure-cli/issues/)中报告问题</span><span class="sxs-lookup"><span data-stu-id="7b07f-819">Report issues in our [github issues list](https://github.com/azure/azure-cli/issues/)</span></span>
+- <span data-ttu-id="7b07f-820">通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队。</span><span class="sxs-lookup"><span data-stu-id="7b07f-820">Contact the product team at [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com).</span></span>
+- <span data-ttu-id="7b07f-821">请通过命令行使用 `az feedback` 命令提供反馈。</span><span class="sxs-lookup"><span data-stu-id="7b07f-821">Provide feedback from the command line with the `az feedback` command.</span></span>
 
