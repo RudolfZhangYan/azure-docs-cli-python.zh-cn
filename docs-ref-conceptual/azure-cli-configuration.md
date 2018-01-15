@@ -12,10 +12,10 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.openlocfilehash: 71d9f57846cb83591ca5e3d338735b3c525987af
-ms.sourcegitcommit: c5186abe145716c75b21cf139c450f66fcc28e0e
+ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Azure CLI 2.0 配置
 
@@ -34,7 +34,7 @@ CLI 使用的配置值按以下优先顺序计算，列表中位于较高顺序�
 
 下面是可以使用的键列表。
 
-| 名称 | 说明 |
+| 名称​​ | 说明 |
 |------|-------------|
 | group | 所有命令使用的默认资源组。 |
 | location | 所有命令使用的默认位置。 |
@@ -79,7 +79,7 @@ log_dir=/var/log/azure
 
 具有可用默认值的任何值不一定要在命令行参数中出现，即使该值是必需的。
 
-| 部分 | 名称      | Type | 说明|
+| 部分 | 名称​​      | Type | 说明|
 |---------|-----------|------|------------|
 | __core__ | output | 字符串 | 默认输出格式。 可以是 `json`、`jsonc`、`tsv` 或 `table`。 |
 | | disable\_confirm\_prompt | 布尔值 | 启用/禁用确认提示。 |

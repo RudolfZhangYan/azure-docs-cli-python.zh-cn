@@ -12,10 +12,10 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.openlocfilehash: a76e58c4430a184d133cca0ef0623f325aeb2f27
-ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
+ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>将扩展与 Azure CLI 2.0 配合使用
 
@@ -87,8 +87,8 @@ rm -rf $AZURE_EXTENSION_DIR/<extension-name>
 
 ### <a name="can-extensions-depend-upon-each-other"></a>扩展是否可以彼此依赖？
 
-不能。 扩展必须是不依赖于其他扩展的单个包。 这是因为 CLI 不能保证何时加载扩展，因此不能保证依赖关系使人满意。 安装扩展将仅安装该扩展，并且它应继续工作，即使你删除其他扩展也是如此。
+不会。 扩展必须是不依赖于其他扩展的单个包。 这是因为 CLI 不能保证何时加载扩展，因此不能保证依赖关系使人满意。 安装扩展将仅安装该扩展，并且它应继续工作，即使你删除其他扩展也是如此。
 
 ### <a name="are-extensions-updated-along-with-the-cli"></a>扩展是否随 CLI 一起更新？
 
-不能。 扩展必须单独更新，如[更新扩展](#updating-extensions)部分所述。
+不会。 扩展必须单独更新，如[更新扩展](#updating-extensions)部分所述。

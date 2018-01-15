@@ -13,16 +13,16 @@ ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: cf1405cae70762146f63bc6629edc0dd1d949fff
-ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
+ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI 2.0
 
 如果发行版中没有提供 Azure CLI 包，则始终可以通过运行安装脚本来手动安装 CLI。 如果提供了包，建议始终使用包来进行安装。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 若要安装 CLI，需确保系统中存在下述软件：
 
