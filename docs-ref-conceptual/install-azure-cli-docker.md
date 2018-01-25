@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 76ecf2c9cd0e6e694a31ac160112d1348863f118
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: 7a12da712cd2aad5bb5fb56e27267a8e05df34a6
+ms.sourcegitcommit: c95a0cde5819cfe8a4f6b058a52f09a8f87c9696
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="install-azure-cli-20-with-docker"></a>使用 Docker 安装 Azure CLI 2.0
 
@@ -27,10 +27,10 @@ ms.lasthandoff: 01/06/2018
 请使用 `docker run` 安装 CLI。
 
    ```bash
-   docker run -it azuresdk/azure-cli-python:<version>
+   docker run -it microsoft/azure-cli:<version>
    ```
 
-请参阅我们的 [Docker 标记](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/)来了解可用版本。
+请参阅我们的 [Docker 标记](https://hub.docker.com/r/microsoft/azure-cli/tags/)来了解可用版本。
 
 CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 
@@ -38,7 +38,7 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 > 如果要从用户环境选取 SSH 密钥，可以使用 `-v ${HOME}:/root` 将 $HOME 装载为 `/root`。
 
 > ```bash
-> docker run -it -v ${HOME}:/root azuresdk/azure-cli-python:<version>
+> docker run -it -v ${HOME}:/root microsoft/azure-cli:<version>
 > ```
 
 ### <a name="update-with-docker"></a>使用 Docker 更新
@@ -48,18 +48,18 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 1. 使用 `docker pull` 更新本地映像。
 
    ```bash
-   docker pull azuresdk/azure-cli-python
+   docker pull microsoft/azure-cli
    ```
 
 2. 获取当前正在使用 CLI 映像的容器。
 
    ```bash
-   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   docker container ls -a --filter 'ancestor=microsoft/azure-cli'
    ```
 
    ```output
    CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   34a868beb2ab        microsoft/azure-cli:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
    ```
 
   > [!NOTE]
@@ -70,7 +70,7 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
    ```bash
    docker stop inspiring_benz
    docker rm inspiring_benz
-   docker run azuresdk/azure-cli-python
+   docker run microsoft/azure-cli
    ```
 
 ### <a name="uninstall-with-docker"></a>使用 Docker 卸载
@@ -82,12 +82,12 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 1. 获取运行 azure-cli 映像的容器。
 
    ```bash
-   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   docker container ls -a --filter 'ancestor=microsoft/azure-cli'
    ```
 
    ```output
    CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   34a868beb2ab        microsoft/azure-cli:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
    ```
   > [!NOTE]
   > 如果安装了特定版本的映像，需在映像名称的末尾添加 `:<version>`。
@@ -101,6 +101,6 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。
 3. 删除本地安装的 CLI 映像。
 
    ```bash
-   docker rmi azuresdk/azure-cli-python
+   docker rmi microsoft/azure-cli
    ```
 
