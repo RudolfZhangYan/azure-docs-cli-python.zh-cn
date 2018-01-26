@@ -12,15 +12,15 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 74bdb727-481d-45f7-a44e-15d18dc55483
-ms.openlocfilehash: d1440cc1e99ccddb18d23306cc0fcdb4b8babf14
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 3e99c2533031dc063a50996f26712d4df92f65c9
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Azure CLI 2.0 命令的输出格式
 
-Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。  使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一。 
+Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。  使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一。
 
 --output | 说明
 ---------|-------------------------------
@@ -65,10 +65,10 @@ az vm list --output json
     },
           ...
           ...
-          ...   
+          ...
 ]
 ```
- 
+
 ## <a name="using-the-table-option"></a>使用 table 选项
 
 使用 table 选项可以提供易于阅读的输出集，但请注意，与前面的.json 示例不同，使用简单 `--output table` 时，嵌套的对象不会包含在输出中。  在同一示例中使用“table”输出格式会组织有序的最常见属性值列表。
@@ -132,7 +132,7 @@ KBDemo020
 
 ## <a name="setting-the-default-output-format"></a>设置默认的输出格式
 
-可以使用 `az configure` 命令设置环境或者建立首选项，例如，输出格式的默认设置。 对于一般用途，最方便的默认输出格式为“table”格式 - 系统提示选择输出格式时请选择 **3**。 
+可以使用 `az configure` 命令设置环境或者建立首选项，例如，输出格式的默认设置。 对于一般用途，最方便的默认输出格式为“table”格式 - 系统提示选择输出格式时请选择 **3**。
 
 ```
 What default output format would you like?
@@ -140,5 +140,5 @@ What default output format would you like?
  [2] jsonc - Colored JSON formatted output that most closely matches API responses
  [3] table - Human-readable output format
  [4] tsv - Tab and Newline delimited, great for GREP, AWK, etc.
-Please enter a choice [3]: 
+Please enter a choice [3]:
 ```
