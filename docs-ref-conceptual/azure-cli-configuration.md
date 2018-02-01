@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 71d9f57846cb83591ca5e3d338735b3c525987af
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: d60ede5b971ee2489482fb5a72bde9bf5389d37c
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Azure CLI 2.0 配置
 
@@ -30,11 +30,11 @@ CLI 使用的配置值按以下优先顺序计算，列表中位于较高顺序�
 ## <a name="cli-configuration-with-az-configure"></a>使用 az configure 进行 CLI 配置
 
 使用 [az configure](/cli/azure/?view=azure-cli-latest#az_configure) 命令设置 CLI 的默认值。
-此命令采用一个参数 `--defaults`，即 `key=value` 对的空格分隔列表。 CLI 使用提供的值来取代所需的参数。 
+此命令采用一个参数 `--defaults`，即 `key=value` 对的空格分隔列表。 CLI 使用提供的值来取代所需的参数。
 
 下面是可以使用的键列表。
 
-| 名称​​ | 说明 |
+| 名称 | 说明 |
 |------|-------------|
 | group | 所有命令使用的默认资源组。 |
 | location | 所有命令使用的默认位置。 |
@@ -52,7 +52,7 @@ az configure --defaults "location=westus2 group=MyResourceGroup"
 
 ## <a name="cli-configuration-file"></a>CLI 配置文件
 
-CLI 配置文件包含用于管理 CLI 行为的其他设置。 配置文件本身位于 `$AZURE_CONFIG_DIR/config`。 `AZURE_CONFIG_DIR` 的默认值为 `$HOME/.azure/config`（在 Linux 与 macOS 上）和 `%USERPROFILE%\.azure\config`（在 Windows 上）。 
+CLI 配置文件包含用于管理 CLI 行为的其他设置。 配置文件本身位于 `$AZURE_CONFIG_DIR/config`。 `AZURE_CONFIG_DIR` 的默认值为 `$HOME/.azure/config`（在 Linux 与 macOS 上）和 `%USERPROFILE%\.azure\config`（在 Windows 上）。
 
 配置文件是以 INI 文件格式编写的。 这些文件包含以 `[section-name]` 标头开头的节，后接 `key=value` 条目的列表。 节名称区分大小写，而键名称则不区分大小写。
 注释是以 `#` 或 `;` 开头的任何行。 不允许内联注释。 布尔值不区分大小写，由以下值表示。
@@ -79,7 +79,7 @@ log_dir=/var/log/azure
 
 具有可用默认值的任何值不一定要在命令行参数中出现，即使该值是必需的。
 
-| 部分 | 名称​​      | Type | 说明|
+| 部分 | 名称      | Type | 说明|
 |---------|-----------|------|------------|
 | __core__ | output | 字符串 | 默认输出格式。 可以是 `json`、`jsonc`、`tsv` 或 `table`。 |
 | | disable\_confirm\_prompt | 布尔值 | 启用/禁用确认提示。 |
