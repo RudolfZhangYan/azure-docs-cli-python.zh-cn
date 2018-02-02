@@ -1,26 +1,25 @@
 ---
-title: "使用 yum 安装 Azure CLI 2.0"
+title: "使用 yum 在 Linux 上安装 Azure CLI 2.0"
 description: "如何使用 yum 安装 Azure CLI 2.0"
 keywords: "Azure CLI, 安装 Azure CLI, azure yum, azure rhel, azure fedora, azure centos"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 11/01/2017
+ms.date: 01/29/18
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: f0d5effcd8315094b30050a35119e41eddf89961
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: 9d11c3cf5d9e7ba58c3e2edd830e0d12669f5b91
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-azure-cli-20-with-yum"></a>使用 yum 安装 Azure CLI 2.0
 
-如果运行的是附带 `yum` 的版本（例如 RHEL、Fedora 或 CentOS），则可在系统上安装适用于 Azure CLI 的包。
+如果运行附带 `yum` 的发行版（例如 RHEL、Fedora 或 CentOS），则可以安装适用于 Azure CLI 的包。 此包已在 RHEL 7、Fedora 19 和更高版本以及 CentOS 7 中测试。
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
@@ -58,7 +57,7 @@ sudo yum update azure-cli
 
 ## <a name="uninstall"></a>卸载
 
-如果你决定卸载 Azure CLI，我们会很遗憾。 在卸载之前，请执行 `az feedback` 命令，说明选择卸载的原因以及希望我们如何改进 CLI 体验。 我们希望尽力确保 Azure CLI 没有 Bug，为用户提供美好的体验。 也可[提交 GitHub 问题](https://github.com/Azure/azure-cli/issues)。
+[!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
 1. 从系统中删除包。
 

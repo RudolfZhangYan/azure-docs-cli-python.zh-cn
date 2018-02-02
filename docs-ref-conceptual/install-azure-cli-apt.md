@@ -1,26 +1,25 @@
 ---
-title: "使用 apt 安装 Azure CLI 2.0"
+title: "使用 apt 在 Linux 上安装 Azure CLI 2.0"
 description: "如何使用 apt 包管理器安装 Azure CLI 2.0"
 keywords: "Azure CLI, 安装 Azure CLI, azure apt, azure debian, azure ubuntu"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 11/01/2017
+ms.date: 01/29/18
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 65e8e78275b0f40a2298934fe8bc9368bbf796a7
-ms.sourcegitcommit: 59f0b667f2202bae8914e6fc8dc5c9dc79fef91c
+ms.openlocfilehash: fdd9f0061d5d38ed5a349b11eb0f5f27786bc1ab
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
-如果运行的是附带 `apt` 的版本（例如 Ubuntu 或 Debian），则可在系统上安装适用于 Azure CLI 的包。
+如果运行附带 `apt` 的发行版（例如 Ubuntu 或 Debian），则可以安装适用于 Azure CLI 的包。 此包已在 Ubuntu Wheezy 和 Ubuntu Xenial 中测试。
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
@@ -54,9 +53,11 @@ ms.lasthandoff: 01/25/2018
 
 ## <a name="troubleshooting"></a>故障排除
 
+下面是使用 `apt` 安装时出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
+
 ### <a name="apt-key-fails-with-no-dirmngr"></a>apt-key 失败，出现“没有 dirmngr”
 
-运行 `apt-key` 命令时，可能会看到类似于以下错误的输出。
+运行 `apt-key` 命令时，可能会看到类似于以下错误的输出：
 
 ```output
 gpg: failed to start the dirmngr '/usr/bin/dirmngr': No such file or directory
@@ -64,7 +65,7 @@ gpg: connecting dirmngr at '/tmp/apt-key-gpghome.kt5zo27tp1/S.dirmngr' failed: N
 gpg: keyserver receive failed: No dirmngr
 ```
 
-这是因为缺少 `apt-key` 所需的组件。 可以通过安装 `dirmngr` 包解决此问题。
+错误的原因是缺少 `apt-key` 所需的组件。 可以通过安装 `dirmngr` 包解决此错误。
 
 ```bash
 sudo apt-get install dirmngr
@@ -79,15 +80,15 @@ sudo apt-get install dirmngr
    ```
 
 > [!NOTE]
-> 这会升级系统上所有未发生依赖关系更改的已安装包。
+> 此命令将会升级系统上所有未发生依赖关系更改的已安装包。
 > 若只要升级 CLI，请使用 `apt-get install`。
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
 
-### <a name="uninstall"></a>卸载
+## <a name="uninstall"></a>卸载
 
-如果你决定卸载 Azure CLI，我们会很遗憾。 在卸载之前，请执行 `az feedback` 命令，说明选择卸载的原因以及希望我们如何改进 CLI 体验。 我们希望尽力确保 Azure CLI 没有 Bug，为用户提供美好的体验。 也可[提交 GitHub 问题](https://github.com/Azure/azure-cli/issues)。
+[!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
 1. 使用 `apt-get remove` 进行卸载。
 

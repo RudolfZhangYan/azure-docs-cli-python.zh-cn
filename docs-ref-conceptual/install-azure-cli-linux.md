@@ -5,24 +5,26 @@ keywords: "Azure CLI, 安装 Azure CLI, azure linux, azure 安装 linux"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 11/01/2017
+ms.date: 01/29/18
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: cf1405cae70762146f63bc6629edc0dd1d949fff
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: d8c88d111c50a3cbb6b643a14dcd2a9773699657
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI 2.0
 
-如果发行版中没有提供 Azure CLI 包，则始终可以通过运行安装脚本来手动安装 CLI。 如果提供了包，建议始终使用包来进行安装。
+如果发行版中没有提供 Azure CLI 包，始终可以通过运行安装脚本来手动安装 CLI。
 
-## <a name="prerequisites"></a>系统必备
+> [!NOTE]
+> 我们强烈建议使用 CLI 的包管理器。 使用包管理器可确保始终获得最新更新，并保证 CLI 组件的稳定性。 在手动安装之前，请检查发行版是否有对应的包。
+
+## <a name="prerequisites"></a>先决条件
 
 若要安装 CLI，需确保系统中存在下述软件：
 
@@ -30,18 +32,19 @@ ms.lasthandoff: 01/06/2018
 * [libffi](https://sourceware.org/libffi/)
 * [OpenSSL 1.0.2](https://www.openssl.org/source/)
 
-## <a name="install-or-update-manually"></a>手动进行安装或更新
+## <a name="install-or-update"></a>安装或更新 
 
-不管是安装还是更新 CLI，都需要执行完整的安装操作。 具备先决条件以后，即可通过运行 `curl` 来安装 CLI。
+不管是安装还是更新 CLI，都需要执行完整安装。 具备先决条件以后，即可通过运行 `curl` 来安装 CLI。
 
 ```bash
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-如果你愿意，或者如果系统中没有 `curl`，也可改为下载脚本并在本地运行。 可能需要重启 shell 才能使更改生效。 安装后，请使用 `az` 命令运行 CLI。
+也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。 安装后，请使用 `az` 命令运行 CLI。
 
 ## <a name="troubleshooting"></a>故障排除
 
+下面是手动安装过程中可能出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
 ### <a name="curl-object-moved-error"></a>curl“对象已移动”错误
 
 如果从有关 `-L` 参数的 `curl` 收到错误，或者收到包含“对象已移动”的错误消息，请尝试使用完整 URL 而不是 `aka.ms` 重定向：
@@ -52,43 +55,40 @@ curl https://azurecliprod.blob.core.windows.net/install | bash
 
 ### <a name="az-command-not-found"></a>找不到 `az` 命令
 
-如果在安装后无法运行该命令，则可能需要清除 shell 的命令哈希缓存。 运行
+如果在安装后以及在使用 `bash` 或 `zsh` 时无法运行该命令，请清除 shell 的命令哈希缓存。 运行
 
 ```bash
 hash -r
 ```
 
-并查看问题是否得以解决。
+并查看问题是否得到解决。
 
-如果在安装后没有重启 shell，也可能出现此问题。 确保 `az` 命令的位置在 `$PATH` 中。
-
-如果运行过安装脚本，则该位置为：
+如果在安装后没有重启 shell，也可能出现此错误。 确保 `az` 命令的位置在 `$PATH` 中。 `az` 命令的位置为
 
 ```bash
 <install path>/bin
 ```
 
-## <a name="unstinall-manually"></a>手动卸载
+## <a name="uninstall"></a>卸载
 
-如果你决定卸载 Azure CLI，我们会很遗憾。 在卸载之前，请执行 `az feedback` 命令，说明选择卸载的原因以及希望我们如何改进 CLI 体验。 我们希望尽力确保 Azure CLI 没有 Bug，为用户提供美好的体验。 也可[提交 GitHub 问题](https://github.com/Azure/azure-cli/issues)。
+[!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
-可以通过直接从安装位置删除文件的方式卸载 CLI。 如果是通过 `https://aka.ms/InstallAzureCLI` 脚本进行的安装，则应已在安装时选定安装位置。 默认安装位置为 `$HOME`。
+可以通过直接从安装时所选的位置删除文件来卸载 CLI。 默认安装位置是 `$HOME`。
 
-首先，删除安装的 CLI 文件：
+1. 删除安装的 CLI 文件。
+  
+  ```bash
+  rm -r <install location>/lib/azure-cli
+  rm <install location>/bin/az
+  ```
+2. 修改 `$HOME/.bash_profile` 文件，删除以下行：
+  
+  ```
+  <install location>/lib/azure-cli/az.completion
+  ```
 
-```bash
-rm -r <install location>/lib/azure-cli
-rm <install location>/bin/az
-```
-
-然后修改 `$HOME/.bash_profile` 文件，删除以下行：
-
-```
-<install location>/lib/azure-cli/az.completion
-```
-
-最后，重载 shell 的命令缓存（如果已启用）。 `bash` 和 `zsh` 用户需执行以下步骤：
-
-```bash
-hash -r
-```
+3. 如果使用 `bash` 或 `zsh`，请重新加载 shell 的命令缓存。
+  
+  ```bash
+  hash -r
+  ```
