@@ -1,421 +1,112 @@
 ---
 title: "Azure CLI 2.0 入门"
-description: "Linux、Mac 或 Windows 上的 Azure CLI 2.0 入门。"
-keywords: Azure CLI 2.0, Linux, Mac, Windows, OS X, Ubuntu, Debian, CentOS, RHEL, SUSE, CoreOS, Docker, Windows, Python, PIP
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+description: "学习命令基础知识开始使用 Azure CLI 2.0。"
+keywords: "Azure CLI, CLI 帮助, Azure 帮助, 查询, 自动化,"
+author: sptramer
+ms.author: sttramer
+manager: routlaw
+ms.date: 02/05/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 689b8f4d77af5a6f398c0dd85e922baa398f767a
-ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
+ms.openlocfilehash: c2758922d74080d3a3110b1e3a507ddf0f8d85d1
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
-Azure CLI 2.0 是 Azure 的新命令行体验，用于管理 Azure 资源。
-可以通过 [Azure Cloud Shell](/azure/cloud-shell/overview) 在浏览器中使用它，也可以将其[安装](install-azure-cli.md)在 macOS、Linux 和 Windows 上，然后从命令行运行它。
+欢迎使用 Azure CLI 2.0！ CLI 是旨在让你快速、高效地使用 Azure 服务且主要侧重于自动化的工具。 本文介绍 CLI 功能，并提供可帮助你高效工作的外部资源的链接。
 
-Azure CLI 2.0 经过优化，可用于从命令行管理 Azure 资源，以及生成可以针对 Azure 资源管理器运行的自动化脚本。
-本文将帮助你开始使用 Azure PowerShell，并讲解其重要概念。
+## <a name="install-and-log-in"></a>安装和登录
 
-有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
+[安装 CLI](install-azure-cli.md)（如果尚未安装），或试用 [Azure Cloud Shell](/azure/cloud-shell/overview)。
 
-## <a name="connect"></a>连接
+对本地安装使用任何 CLI 命令之前，需要使用 [az login](/cli/azure/index#az_login) 登录。
 
-最简单的入门方法是[启动 Cloud Shell](/azure/cloud-shell/quickstart)。
-
-1. 从 Azure 门户的顶部导航栏启动 Cloud Shell。
-
-   ![Shell 图标](media/get-started-with-azure-cli/shell-icon.png)
-
-2. 选择要使用的订阅并创建存储帐户。
-
-   ![创建存储帐户](media/get-started-with-azure-cli/storage-prompt.png)
-
-还可以[安装](install-azure-cli.md)并在本地通过命令行运行 CLI。 安装 CLI 后，运行 `az login` 以使用默认订阅进行登录。
-
-## <a name="create-a-resource-group"></a>创建资源组。
-
-完成所有设置后，让我们使用 Azure CLI 在 Azure 中创建资源。
-
-首先，请创建一个资源组。  使用 Azure 中的资源组可以管理希望以逻辑方式分组的多个资源。  例如，可为应用程序或项目创建资源组，并在其中添加虚拟机、数据库和 CDN 服务。
-
-让我们在 Azure 的 *westus2* 区域创建一个名为“MyResourceGroup”的资源组。  为此，请键入以下命令：
-
-```azurecli-interactive
-az group create -n MyResourceGroup -l westus2
+```azurecli
+az login
 ```
 
-创建资源组后，`az group create` 命令将输出新建的资源的多个属性：
+此命令会提示你通过网站使用身份验证代码登录。 非交互方式登录有很方法，在[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)中详细介绍。
 
-```Output
-{
-  "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup",
-  "location": "westus2",
-  "managedBy": null,
-  "name": "MyResourceGroup",
-  "properties": {
-    "provisioningState": "Succeeded"
-  },
-  "tags": null
-}
+## <a name="common-commands"></a>常用命令
+
+此表列出了 CLI 中使用的常用命令，并链接到外部参考中的其文档页。
+这些组的所有子命令及其文档可以在联机参考中查找，或使用 `--help` 参数查找。
+
+| 资源类型 | Azure CLI 命令组 |
+|---------------|-------------------------|
+| [资源组](/azure/azure-resource-manager/resource-group-overview) | [az group](/cli/azure/group) |
+| [虚拟机](/azure/virtual-machines) | [az vm](/cli/azure/vm) |
+| [存储帐户](/azure/storage/common/storage-introduction) | [az storage account](/cli/azure/storage/account) |
+| [Key Vault](/azure/key-vault/key-vault-whatis) | [az keyvault](/cli/azure/keyvault) |
+| [Web 应用程序](/azure/ap-service) | [az webapp](/cli/azure/webapp) |
+| [SQL 数据库](/azure/sql-database) | [az sql server](/cli/azure/sql/server) |
+| [CosmosDB](/azure/cosmos-db) | [az cosmosdb](/cli/azure/cosmosdb) |
+
+## <a name="finding-commands"></a>查找命令
+
+CLI 中的命令以_组_的_子命令_形式提供。
+每个组表示由 Azure 提供的一个服务，而子组将这些服务的命令划分为逻辑分组。
+
+若要搜索命令，请使用 [az find](/cli/azure/index#az_find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
+
+```azurecli
+az find -q secret
 ```
 
-## <a name="create-a-linux-virtual-machine"></a>创建 Linux 虚拟机
+如果你知道要使用哪组命令，`--help` 参数可能是更好的选择。 此参数不仅显示某个命令的详细信息，而且在用于命令组时，会显示所有可用的子命令。 例如，用于网络安全组 (NSG) 时，可以查找可用的 NSG 子组和命令。
 
-创建资源组后，让我们在其中创建 Linux VM。
-
-可以运行以下命令，使用常用的 UbuntuLTS 映像创建附有两个存储磁盘（大小分别为 10 GB 和 20 GB）的 Linux VM：
-
-```azurecli-interactive
-az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20
+```azurecli
+az network nsg --help
 ```
 
-运行上述命令时，Azure CLI 2.0 将查找存储在 ~/.ssh 目录下的 SSH 密钥对。  如果尚未在该位置存储 SSH 密钥对，可让 Azure CLI 绕过 --generate-ssh-keys 参数，自动创建一个密钥对：
+CLI 为 bash shell 下的命令提供完整 tab 键补全。
 
-```azurecli-interactive
-az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20 --generate-ssh-keys
-```
+## <a name="globally-available-arguments"></a>全局可用参数
 
-完全创建并已准备好访问和使用 VM 后，`az vm create` 命令将返回输出。 输出包含新建的 VM 的多个属性，包括其公共 IP 地址：
+有一些参数可用于每条命令。
 
-```Output
-{
-  "fqdns": "",
-  "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyLinuxVM",
-  "location": "westus2",
-  "macAddress": "xx-xx-xx-xx-xx-xx",
-  "powerState": "VM running",
-  "privateIpAddress": "xx.x.x.x",
-  "publicIpAddress": "xx.xxx.xxx.xx",
-  "resourceGroup": "MyResourceGroup"
-}
-```
+* `--help` 会输出有关命令及其参数的 CLI 参考信息并列出可用的子组和命令。
+* `--output` 可更改输出格式。 可用的输出格式包括 `json`、`jsonc`（彩色 JSON）、`tsv`（制表符分隔值）和 `table`（用户可读 ASCII 表）。 默认情况下，CLI 输出 `json`。 若要了解有关可用输出格式的详细信息，请参阅 [Azure CLI 2.0 的输出格式](format-output-azure-cli.md)。
+* `--query` 使用 [JMESPath 查询语言](http://jmespath.org/)筛选从 Azure 服务返回的输出。 若要了解有关查询的详细信息，请参阅[使用 Azure CLI 2.0 查询命令结果](query-azure-cli.md)和 [JMESPath 教程](http://jmespath.org/tutorial.html)。
+* `--verbose` 输出有关操作期间在 Azure 中创建的资源的信息和其他有用信息。
+* `--debug` 输出有关 CLI 操作的更详细信息，用于调试目的。 如果遇到 bug，在提交 bug 报告时，请提供启用 `--debug` 标志生成的输出。
 
-创建 VM 后，可以使用创建的 VM 的公共 IP 地址通过 **SSH** 登录到新的 Linux VM：
 
-```azurecli-interactive
-ssh xx.xxx.xxx.xxx
-```
+## <a name="interactive-mode"></a>交互模式
 
-```Output
-Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
+CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地选择子命令。 使用 `az interactive` 命令即可进入交互模式。 有关交互模式以及它如何帮助你了解 CLI 的详细信息，请参阅 [Azure CLI 2.0 交互模式](interactive-azure-cli.md)。
 
- * Documentation:  https://help.ubuntu.com/
+此外，还有提供交互体验的 [Visual Studio Code 插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)，包括自动完成和鼠标悬停显示的文档。
 
-  System information as of Sun Feb 19 00:32:28 UTC 2017
 
-  System load: 0.31              Memory usage: 3%   Processes:       89
-  Usage of /:  39.6% of 1.94GB   Swap usage:   0%   Users logged in: 0
 
-  Graph this data and manage this system at:
-    https://landscape.canonical.com/
+## <a name="learn-cli-basics-with-quickstarts-and-tutorials"></a>使用快速入门和教程了解 CLI 基础知识
 
-  Get cloud support with Ubuntu Advantage Cloud Guest:
-    http://www.ubuntu.com/business/services/cloud
+若要开始使用 Azure CLI 2.0，请试用深入教程以设置虚拟机并利用 CLI 的功能查询 Azure 资源。
 
-0 packages can be updated.
-0 updates are security updates.
+> [!div class="nextstepaction"]
+> [使用 Azure CLI 2.0 教程创建虚拟机](azure-cli-vm-tutorial.yml)
 
+如果你更关注其他服务，有多种使用 CLI 的 Azure 服务的快速入门。
 
+* [使用 Azure CLI 创建存储帐户](/azure/storage/common/storage-quickstart-create-storage-account-cl)
+* [使用 CLI 向/从 Azure Blob 存储转移对象](/storage/blobs/storage-quickstart-blobs-cli)
+* [使用 Azure CLI 创建单一 Azure SQL 数据库](/azure/sql-database/sql-database-get-started-cli)
+* [使用 Azure CLI 创建 Azure Database for MySQL 服务器](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli)
+* [使用 Azure CLI 创建用于 PostgreSQL 的 Azure 数据库](/azure/postgresql/quickstart-create-server-database-azure-cli)
+* [在 Azure 中创建 Python Web 应用](/azure/app-service/app-service-web-get-started-python)
+* [在用于容器的 Azure Web 应用中运行自定义 Docker 中心映像](/azure/app-service/containers/quickstart-custom-docker-image)
 
-The programs included with the Ubuntu system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
+## <a name="give-feedback"></a>提供反馈
 
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
+我们欢迎你提供有关 CLI 的反馈以帮助我们改进和解决 bug。 可以[在 Github 上提出问题](https://github.com/azure/azure-cli/issues)或利用 CLI 的内置功能使用 `az feedback` 命令留下常规反馈。
 
-my-login@MyLinuxVM:~$
-```
-
-## <a name="create-a-windows-server-virtual-machine"></a>创建 Windows Server 虚拟机
-
-现在，让我们使用 `az vm create` 命令创建基于 Windows Server 2016 Datacenter 的 VM，并将其添加到用于 Linux VM 的同一个“MyResourceGroup”资源组。  与 Linux VM 示例一样，我们还要使用 `--data-disk-sizes-gb` 参数附加两个存储磁盘。
-
-Azure 要求避免使用很容易猜出的用户名/密码。 在可以使用哪些字符以及用户名和密码的最小长度方面，都有特定的规则。
-
-> [!NOTE]
-> 运行此命令时，系统会提示输入用户名和密码。
-
-```azurecli-interactive
-az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
-```
-
-完全创建并已准备好访问和使用 VM 后，`az vm create` 命令将输出结果。
-
-```Output
-{
-  "fqdns": "",
-  "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWinVM",
-  "location": "westus2",
-  "macAddress": "xx-xx-xx-xx-xx-xx",
-  "powerState": "VM running",
-  "privateIpAddress": "xx.x.x.x",
-  "publicIpAddress": "xx.xxx.xx.xxx",
-  "resourceGroup": "MyResourceGroup"
-}
-```
-
-现在，请使用远程桌面和 VM 的公共 IP 地址（在 `az vm create` 的输出中返回）登录到新建的 Windows Server VM。
-如果使用的是基于 Windows 的系统，可以在命令行中使用 `mstsc` 命令来执行此操作：
-
-```azurecli-interactive
-mstsc /v:xx.xxx.xx.xxx
-```
-
-提供创建 VM 时所用的同一用户名/密码组合进行登录。
-
-## <a name="creating-other-resources-in-azure"></a>在 Azure 中创建其他资源
-
-前面已经逐步讲解了如何创建资源组、Linux VM 和 Windows Server VM。 还可以创建许多其他类型的 Azure 资源。
-
-所有新资源是使用一致的 `az <resource type name> create` 命名模式创建的。  例如，若要创建稍后可与新建的 VM 相关联的 Azure 网络负载均衡器，可以使用以下 create 命令：
-
-```azurecli-interactive
-az network lb create -n MyLoadBalancer -g MyResourceGroup
-```
-
-还可以使用以下 create 命令为基础结构创建新的专用虚拟网络（在 Azure 中通常称为“VNet”）：
-
-```azurecli-interactive
-az network vnet create -n MyVirtualNetwork -g MyResourceGroup --address-prefix 10.0.0.0/16
-```
-
-Azure 和 Azure CLI 的强大之处在于，我们不仅可以使用它们来获取基于云的基础结构，而且还可以创建托管的平台服务。  此外，可将托管的平台服务与基础结构结合使用，构建更强大的解决方案。
-
-例如，可以使用 Azure CLI 创建 Azure 应用服务。  Azure 应用服务是一个托管的平台服务，使用它能够十分方便地托管 Web 应用，而无需考虑基础结构。  创建 Azure 应用服务后，可以使用以下 create 命令在应用服务中创建两个新的 Azure Web 应用：
-
-```azurecli-interactive
-# Create an Azure AppService that we can host any number of web apps within
-az appservice plan create -n MyAppServicePlan -g MyResourceGroup
-
-# Create Two Web Apps within the AppService (note: name param must be a unique DNS entry)
-az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan
-az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan
-```
-
-了解 `az <resource type name> create` 模式的基础知识后，便可以轻松创建任何对象。 下面是一些常见的 Azure 资源类型，以及用于创建这些资源类型的相应 Azure CLI create 命令：
-
-```
-Resource Type               Azure CLI create command
--------------               ------------------------
-Resource Group              az group create
-Virtual Machine             az vm create
-Virtual Network             az network vnet create
-Load Balancer               az network lb create
-Managed Disk                az disk create
-Storage account             az storage account create
-Virtual Machine Scale Set   az vmss create
-Azure Container Service     az acs create
-Web App                     az webapp create
-SQL Database Server         az sql server create
-Document DB                 az documentdb create
-```
-
-请访问[参考文档](/cli/azure)，详细了解可传递给上述每个命令的其他特定于资源的参数，以及可创建的资源类型。
-
-## <a name="useful-tip-optimizing-create-operations-using---no-wait"></a>有用的提示：使用 --no-wait 优化创建操作
-
-默认情况下，在使用 Azure CLI 2.0 创建资源时，`az <resource type name> create` 命令将等到资源已创建并可供使用为止。  例如，如果在创建某个 VM，则默认情况下，只有在已创建该 VM 并且可以通过 SSH 或 RDP 连接到该 VM 后，`az vm create` 才会返回。
-
-之所以使用这种方案，是因为可以更方便地编写包含多个步骤和依赖项的自动化脚本（需要借助一个前置任务来确保继续下一步之前已成功完成前面的操作）。
-
-如果不需要等到创建资源之后才继续下一步，可以使用 `no-wait` 选项在后台启动创建操作。 这样，就可以继续使用 CLI 执行其他命令。
-
-例如，下面使用的 `az vm create` 将启动 VM 部署，然后以快得多的速度返回（在完全启动 VM 之前即可返回）：
-
-```azurecli-interactive
-az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
-```
-
-使用 `--no-wait` 方法有助于明显优化自动化脚本的性能。
-
-## <a name="listing-resources-and-formatting-output"></a>列出资源和设置输出的格式
-
-可以使用 Azure CLI 中的 `list` 命令来查找和列出 Azure 中运行的资源。
-
-像使用 create 命令一样，可以使用 Azure CLI 2.0 以通用的 `az <resource type name> list` 命名模式（在所有资源类型之间保持一致）列出资源。  可以根据偏好的方式，使用各种输出格式和查询选项来筛选资源列表并为其排序。
-
-例如，`az vm list` 显示所有 VM 的列表。
-
-```azurecli-interactive
-az vm list
-```
-返回的值默认采用 JSON 格式（为了简洁起见，仅显示部分输出）。
-
-```json
-[
-  {
-    "availabilitySet": null,
-    "diagnosticsProfile": null,
-    "hardwareProfile": {
-      "vmSize": "Standard_DS1_v2"
-    },
-    "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010",
-    "instanceView": null,
-    "licenseType": null,
-    "location": "westus2",
-    "name": "MyLinuxVM",
-    "networkProfile": {
-      "networkInterfaces": [
-        {
-          "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/demorg1/providers/Microsoft.Network/networkInterfaces/DemoVM010VMNic",
-          "primary": null,
-          "resourceGroup": "MyResourceGroup"
-        }
-      ]
-    },
-          ...
-          ...
-          ...
-]
-```
-
-可以根据需要使用 `--output` 选项修改输出格式。  运行 `az vm list` 命令可以使用易于阅读的*表*格式选项查看以前创建的 Linux 和 Windows Server VM，以及 VM 的最常见属性：
-
-```azurecli-interactive
-az vm list --output table
-```
-
-```Output
-Name       ResourceGroup    Location
----------  ---------------  ----------
-MyLinuxVM  MyResourceGroup  westus2
-MyWinVM    MyResourceGroup  westus2
-```
-
-*tsv* 输出选项可以用于获取基于文本的、不带任何标头的制表符分隔格式。  如果想要将输出传递到 grep 等其他基于文本的工具，此格式很有用。
-
-```azurecli-interactive
-az vm list --output tsv
-```
-
-```
-None    None            /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyLinuxVM        None    None    westus2 MyLinuxVM                   None        Succeeded       MyResourceGroup None                    Microsoft.Compute/virtualMachines       XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-None    None            /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWinVM  None    None    westus2 MyWinVM                 None    Succeeded       MyResourceGroup None                    Microsoft.Compute/virtualMachines       XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-```
-请访问有关[输出格式](format-output-azure-cli.md)的文章，详细了解用于列出资源和设置输出格式的其他方法。
-
-## <a name="querying-resources-and-shaping-outputs"></a>查询资源以及为输出塑型
-
-通常，我们希望能够只查询符合特定条件的资源。
-
-`list` 命令提供内置支持，可让用户按资源组名称轻松筛选资源。  例如，可向 `list` 命令传递 `--ResourceGroup` 或 `-g` 参数，以便只检索特定资源组中的这些资源：
-
-
-```azurecli-interactive
-az vm list -g MyResourceGroup --output table
-```
-
-```Output
-Name       ResourceGroup    Location
----------  ---------------  ----------
-MyLinuxVM  MyResourceGroup  westus2
-MyWinVM    MyResourceGroup  westus2
-```
-
-若要获得更强大的查询支持，可以使用 `--query` 参数针对*任何* `az` 命令的结果执行 JMESPath 查询。  JMESPath 查询既可用于筛选，也可用于对任何返回结果的输出塑型。
-
-例如，执行以下命令可以查询任何资源组中包含字母“My”的任何 VM 资源：
-
-```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup, 'MY')]"
-```
-
-```Output
-ResourceGroup    ProvisioningState    Name       Location    VmId
----------------  -------------------  ---------  ----------  ------------------------------------
-MYRESOURCEGROUP  Succeeded            MyLinuxVM  westus2     XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-MYRESOURCEGROUP  Succeeded            MyWinVM    westus2     XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-```
-
-然后，我们可以选择使用 JMESPath 查询的塑型功能来细化输出，以便同时输出不同的值。  例如，以下命令检索 VM 使用的 OS 磁盘类型，以确定 OS 是基于 Linux 还是基于 Windows：
-
-```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }"
-```
-
-```Output
-VMName     OSType
----------  --------
-MyLinuxVM  Linux
-MyWinVM    Windows
-```
-
-Azure CLI 中的 JMESPath 支持非常强大。  请在有关[查询](query-azure-cli.md)的文章中详细了解其用法。
-
-## <a name="deleting-resources"></a>删除资源
-
-可以使用 Azure CLI 中的 `delete` 命令删除不再需要的资源。 可对任何资源使用 `delete` 命令，就像使用 `create` 命令时一样。
-
-```azurecli-interactive
-az vm delete -n MyLinuxVM -g MyResourceGroup
-```
-
-默认情况下，CLI 会提示确认删除。  对于自动化脚本，可以禁止显示此提示。
-
-```Output
-Are you sure you want to perform this operation? (y/n): y
-EndTime                           Name                                  StartTime                         Status
---------------------------------  ------------------------------------  --------------------------------  ---------
-2017-02-19T02:35:56.678905+00:00  5b74ab80-9b29-4329-b483-52b406583e2f  2017-02-19T02:33:35.372769+00:00  Succeeded
-```
-
-还可以使用 `delete` 命令一次性删除多个资源。 例如，以下命令将删除本入门教程中的所有示例使用的“MyResourceGroup”资源组中的所有资源。
-
-```azurecli-interactive
-az group delete -n MyResourceGroup
-```
-
-```Output
-Are you sure you want to perform this operation? (y/n): y
-```
-
-## <a name="get-samples"></a>获取示例
-
-若要详细了解 Azure CLI 的用法，请查看适用于 [Linux VM](/azure/virtual-machines/virtual-machines-linux-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)、[Windows VM](/azure/virtual-machines/virtual-machines-windows-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)、[Web 应用](/azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)和 [SQL 数据库](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)的最常用脚本。
-
-## <a name="read-the-api-reference-docs"></a>阅读 API 参考文档
-
-[API 参考](/cli/azure)
-
-## <a name="get-help"></a>获取帮助
-
-Azure CLI 提供内置的帮助文档，其内容与可从命令行运行的 Web 文档相符：
-
-```azurecli-interactive
-az [command-group [command]] -h
-```
-
-例如，若要查看哪些命令和子组适用于 VM，请使用：
-
-```azurecli-interactive
-az vm -h
-```
-
-若要获取用于创建 VM 的命令的帮助，请使用：
-
-```azurecli-interactive
-az vm create -h
-```
-
-## <a name="switch-from-azure-cli-10"></a>从 Azure CLI 1.0 切换
-
-如果已了解 Azure CLI 1.0 (azure.js) 的用法，可能会发现，某些命令并不完全相同。
-有时，用于执行任务的命令有很大的差别。
-为了帮助从 Azure CLI 1.0 切换到 Azure CLI 2.0，我们制作了此[命令映射](https://github.com/Azure/azure-cli/blob/master/doc/azure2az_commands.rst)表。
-
-## <a name="send-us-your-feedback"></a>向我们发送反馈
-
-```azurecli-interactive
+```azurecli
 az feedback
 ```

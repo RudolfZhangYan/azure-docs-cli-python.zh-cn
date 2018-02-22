@@ -1,23 +1,193 @@
 ---
 title: "Azure CLI 2.0 发行说明"
 description: "了解 Azure CLI 2.0 的最新更新"
-keywords: "Azure CLI 2.0, 发行说明"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 01/17/2018
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 86babea3030ea932de1858a391014e5d0bba7f73
-ms.sourcegitcommit: cae66f994cb7b7f829f75ac528093fdb6851f64e
+ms.openlocfilehash: 480b646b7230c8fb22f10b28a9204287cd0acc19
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="february-13-2018"></a>2018 年 2 月 13 日
+
+版本 2.0.27
+
+### <a name="core"></a>核心
+
+* 更改了同时根据订阅 ID 和在 MSI 登录名对密钥进行身份验证
+
+### <a name="acs"></a>ACS
+
+* [重大更改] 为了准确性已将 `aks get-versions` 重命名为 `aks get-upgrades`
+* 更改了 `aks get-versions` 以显示可用于 `aks create` 的 Kubernetes 版本
+* 更改了 `aks create` 默认值以允许服务器选择 Kubernetes 版本
+* 更新了引用由 AKS 生成的服务主体的帮助消息
+* 更改了 `aks create` 的默认节点大小，从“Standard\_D1\_v2”更改为“Standard\_DS1\_v2”
+* 改进了定位 `az aks browse` 的仪表板 pod 时的可靠性
+* 修复了 `aks get-credentials` 以便在加载 Kubernetes 配置文件时处理 Unicode 错误
+* 向 `az aks install-cli` 添加了一条消息，以便帮助在 `$PATH` 中获取 `kubectl`
+
+### <a name="appservice"></a>应用服务
+
+* 修复了由于空引用 `webapp [backup|restore]` 失败的问题
+* 通过 `az configure --defaults appserviceplan=my-asp` 添加了对默认应用服务计划的支持
+
+### <a name="cdn"></a>CDN
+
+* 添加了 `cdn custom-domain [enable-https|disable-https]` 命令
+
+### <a name="container"></a>容器
+
+* 向 `az container logs` 添加了 `--follow` 选项，用于流式传输日志
+* 添加了 `container attach` 命令，用于将本地标准输出和错误流附加到容器组中的容器
+
+### <a name="cosmosdb"></a>CosmosDB
+
+* 添加了对设置功能的支持
+
+### <a name="extension"></a>分机
+
+* 向 `az extension [add|update]` 命令添加了对 `--pip-proxy` 参数的支持
+* 向 `az extension [add|update]` 命令添加了对 `--pip-extra-index-urls` 参数的支持
+
+### <a name="feedback"></a>反馈
+
+* 将扩展信息添加到了遥测数据
+
+### <a name="interactive"></a>交互
+
+* 修复了在 Cloud Shell 中使用交互模式时提示用户登录的问题
+* 修复了缺少参数补全时的回归问题
+
+### <a name="iot"></a>IoT
+
+* 修复了成功时 `iot dps access policy [create|update]` 返回“未找到”错误的问题。
+* 修复了成功时 `iot dps linked-hub [create|update]` 返回“未找到”错误的问题。
+* 向 `iot dps access policy [create|update]` 和 `iot dps linked-hub [create|update]` 添加了 `--no-wait` 支持
+* 更改了 `iot hub create` 以允许指定分区数
+
+### <a name="monitor"></a>监视
+
+* 修复了 `az monitor log-profiles create` 命令
+
+### <a name="network"></a>网络
+
+* 修复了以下命令的 `--tags` 选项：
+  * `network public-ip create`
+  * `network lb create`
+  * `network local-gateway create`
+  * `network nic create`
+  * `network vnet-gateway create`
+  * `network vpn-connection create`
+
+### <a name="profile"></a>配置文件
+
+* 在交互模式中启用了 `az login`
+
+### <a name="resource"></a>资源
+
+* 重新添加了 `feature show`
+
+### <a name="role"></a>角色
+
+* 为 `ad app update` 添加了 `--available-to-other-tenants` 参数
+
+### <a name="sql"></a>SQL
+
+* 添加了 `sql server dns-alias` 命令
+* 添加了 `sql db rename`
+* 向所有 sql 命令添加了对 `--ids` 参数的支持
+
+### <a name="storage"></a>存储
+
+* 添加了 `storage blob service-properties delete-policy` 和 `storage blob undelete` 命令以启用软删除
+
+### <a name="vm"></a>VM
+
+* 修复了无法完全初始化 VM 加密时出现的崩溃
+* 添加了启用 MSI 时的主体 ID 输出
+* 固定 `vm boot-diagnostics get-boot-log`
+
+
+## <a name="january-31-2018"></a>2018 年 1 月 31 日
+
+版本 2.0.26
+
+### <a name="core"></a>核心
+
+* 添加了支持在 MSI 上下文中检索原始令牌
+* 删除了完成对 Windows cmd.exe 进行 LRO 操作后轮询指示器字符串
+* 添加了将使用配置的默认值时显示的警告更改为信息级别条目。 请使用 `--verbose` 查看
+* 为等待命令添加了进度指示器
+
+### <a name="acs"></a>ACS
+
+* 说明了 `--disable-browser` 参数
+* 改进了 `--vm-size` 参数的 tab 键补全功能
+
+### <a name="appservice"></a>应用服务
+
+* 固定 `webapp log [tail|download]`
+* 删除了对 Web 应用和函数的 `kind` 检查
+
+### <a name="cdn"></a>CDN
+
+* 修复了运行 `cdn custom-domain create` 时出现的缺少客户端问题
+
+### <a name="cosmosdb"></a>CosmosDB
+
+* 修复了故障转移策略的参数说明
+
+### <a name="interactive"></a>交互
+
+* 修复了不再显示命令选项补全的问题
+
+### <a name="network"></a>网络
+
+* 向 `application-gateway create` 添加了对 `--cert-password` 的保护
+* 修复了 `application-gateway update` 出现的 `--sku` 错误应用默认值的问题
+* 向 `vpn-connection create` 添加了对 `--shared-key` 和 `--authorization-key` 的保护
+* 修复了运行 `asg create` 时出现的缺少客户端问题
+* 向 `dns zone export` 添加了用于导出名称的 `--file-name / -f` 参数
+* 修复了 `dns zone export` 存在的以下问题：
+  * 修复了未正确导出长 TXT 记录的问题
+  * 修复了不使用转义引号无法正确导出带引号的 TXT 记录的问题
+* 修复了使用 `dns zone import` 某些记录会导入两次的问题 
+* 已还原 `vnet-gateway root-cert` 和 `vnet-gateway revoked-cert` 命令
+
+### <a name="profile"></a>配置文件
+
+* 修复了 `get-access-token`，使其在 VM 中使用标识正常工作
+
+### <a name="resource"></a>资源
+
+* 修复了 `deployment [create|validate]` 存在的 bug，即当模板的 type 字段包含大写值时错误地显示警告
+
+### <a name="storage"></a>存储
+
+* 修复了将存储 V1 帐户迁移到存储 V2 时出现的问题
+* 为所有上传/下载命令添加了进度报告
+* 修复了 `storage account check-name` 不显示“-n”参数选项的 bug  
+* 向 `blob [list|show]` 的表输出添加了“snapshot”列
+* 修复了需要作为整数分析的各种参数的 bug
+
+### <a name="vm"></a>VM
+
+* 添加了 `vm image accept-terms` 命令，以允许使用额外费用从映像创建 VM
+* 修复了 `[vm|vmss create]`，以确保可以在使用未签名证书的代理下运行命令
+* [预览] 向 VMSS 添加了对“低”优先级的支持
+* 向 `[vm|vmss] create` 添加了对 `--admin-password` 的保护
+
 
 ## <a name="january-17-2018"></a>2018 年 1 月 17 日
 
@@ -84,7 +254,7 @@ ms.lasthandoff: 01/29/2018
 ### <a name="monitor"></a>监视
 
 * 添加了多诊断设置支持。 `az monitor diagnostic-settings create` 现在必需 `--name` 参数。
-* 添加了命令 `monitor diagnostic-settings categories` 用于获取诊断设置类别 
+* 添加了命令 `monitor diagnostic-settings categories` 用于获取诊断设置类别
 
 ### <a name="network"></a>网络
 

@@ -5,31 +5,31 @@ keywords: "Azure CLI, 扩展"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 10/30/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: a76e58c4430a184d133cca0ef0623f325aeb2f27
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: 548c06c64cc98598a2bd24bcc5959e59bffb4930
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>将扩展与 Azure CLI 2.0 配合使用
 
-扩展是未随 Azure CLI 本身一起提供的单个模块，用于通过新命令添加功能。 这些可能是实验性产品或预发布产品、Microsoft 针对你的需求提供的专用工具或你自己编写的扩展。 扩展使 CLI 可以有一定程度的灵活性，让你可以按自己的需求修改它，而无需随附许多不被视为核心功能集的一部分的其他包。
+扩展是未随 Azure CLI 本身一起提供的单个模块，用于通过新命令添加功能。 这些扩展可能是实验性产品或预发布产品、Microsoft 提供的专用工具或你自己编写的自定义功能。 扩展使 CLI 可以有一定程度的灵活性，让你可以按自己的需求修改它，而无需随附许多不被视为核心功能集的一部分的其他包。
 
 本文将帮助了解如何安装、更新和删除 CLI 的扩展。 它还会回答有关扩展行为的常见问题。
 
 ## <a name="finding-extensions"></a>查找扩展
 
-若要了解有哪些扩展可用，可以使用 `az extension list-available`。 此命令列出 Microsoft 提供并支持的可用官方扩展。
+若要了解有哪些扩展可用，可以使用 [az extension list-available](/cli/azure/extension?view=azure-cli-latest#az_extension_list_available)。 此命令列出 Microsoft 提供并支持的可用官方扩展。
 
 ## <a name="installing-extensions"></a>安装扩展
 
-找到要安装的扩展后，请使用 `az extension add` 获取它。 如果扩展是 `az extension list-available` 中列出的官方 Microsoft 扩展，可以按名称安装该扩展。
+找到要安装的扩展后，请使用 [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az_extension_add) 获取它。 如果该扩展在 `az extension list-available` 中列出，可以按名称安装该扩展。
 
 ```azurecli
 az extension add --name <extension-name>
@@ -45,7 +45,7 @@ az extension add --source <URL-or-path>
 
 ## <a name="updating-extensions"></a>更新扩展
 
-扩展只能按名称更新：
+扩展只能使用 [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az_extension_update) 按名称更新。
 
 ```azurecli
 az extension update --name <extension-name>
@@ -55,7 +55,7 @@ az extension update --name <extension-name>
 
 ## <a name="uninstalling-extensions"></a>卸载扩展
 
-如果不再需要扩展，可以使用 `az extension remove` 进行卸载。
+如果不再需要某个扩展，可以使用 [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az_extension_remove) 进行卸载。
 
 ```azurecli
 az extension remove --name <extension-name>

@@ -1,7 +1,6 @@
 ---
 title: "使用 Azure CLI 2.0 查询命令结果"
-description: "使用 --query 针对 Azure CLI 2.0 命令的输出执行 JMESPath 查询。"
-keywords: "Azure CLI 2.0, JMESPath, 查询, Linux, Mac, Windows, OS X"
+description: "了解如何针对 Azure CLI 2.0 命令的输出执行 JMESPath 查询。"
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,20 +10,19 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.assetid: 5979acc5-21a5-41e2-a4b6-3183bfe6aa22
-ms.openlocfilehash: 0de18adc91589377d4f96a306a70c9adfeabdcab
-ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
+ms.openlocfilehash: 98bc35c1e8136231011a2303901f42c68c9a7758
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
-# <a name="using-jmespath-queries-with-azure-cli-20"></a>在 Azure CLI 2.0 中使用 JMESPath 查询
+# <a name="use-jmespath-queries-with-azure-cli-20"></a>在 Azure CLI 2.0 中使用 JMESPath 查询
 
 Azure CLI 2.0 使用 `--query` 参数针对 `az` 命令的结果执行 [JMESPath 查询](http://jmespath.org)。 JMESPath 是适用于 JSON 输出的强大查询语言。  如果不熟悉 JMESPath 查询，可以在 [JMESPath.org/tutorial](http://JMESPath.org/tutorial.html) 中找到教程。
 
 Azure CLI 2.0 中的每种资源类型（容器服务、Web 应用、VM 等）都支持 `Query` 参数，可将该参数用于各种不同的目的。  下面列出了几个示例。
 
-## <a name="selecting-simple-properties"></a>选择简单属性
+## <a name="select-simple-properties"></a>选择简单属性
 
 采用 `table` 输出格式的简单 `list` 命令以易于阅读的表格格式返回每种资源类型的一组最常见的、组织有序的简单属性。
 
@@ -85,7 +83,7 @@ RGDEMO001  KBDemo001VM
 RGDEMO001  KBDemo020
 ```
 
-## <a name="selecting-complex-nested-properties"></a>选择复杂的嵌套属性
+## <a name="select-complex-nested-properties"></a>选择复杂的嵌套属性
 
 如果要选择的属性嵌套在 JSON 输出中的深层位置，则需要提供该嵌套属性的完整路径。 以下示例演示如何通过 vm list 命令选择 VM 名称和 OS 类型。
 

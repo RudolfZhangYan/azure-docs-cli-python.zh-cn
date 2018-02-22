@@ -1,29 +1,29 @@
 ---
 title: "安装适用于 macOS 的 Azure CLI"
 description: "如何在 macOS 上安装 Azure CLI 2.0"
-keywords: "Azure CLI, 安装 Azure CLI, azure macos, azure 安装 macos"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 01/29/18
+ms.date: 01/29/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 36fd2604677db0b7f820ee11884bf790fb1d75cb
-ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
+ms.openlocfilehash: 0295846abc2fe6091940824c6efc47b8fd64ce9f
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="install-azure-cli-20-on-macos"></a>在 macOS 上安装 Azure CLI 2.0
 
-对于 macOS 平台，可以通过 [Homebrew 包管理器](http://brew.sh)安装 Azure CLI。 使用 Homebrew 可以轻松保持 CLI 的最新安装状态。 该 CLI 包已在 macOS 10.9 和更高版本中测试。
+对于 macOS 平台，可以通过 [homebrew 包管理器](http://brew.sh)安装 Azure CLI。 使用 Homebrew 可以轻松保持 CLI 的最新安装状态。 该 CLI 包已在 macOS 10.9 和更高版本中测试。
 
 ## <a name="install"></a>安装
 
-Homebrew 是管理 CLI 安装的最容易的方法。 它可以方便地进行安装、更新和卸载。 如果系统中没有可用的 Homebrew，请先[安装 Homebrew](https://docs.brew.sh/Installation.html)，然后继续。
+Homebrew 是管理 CLI 安装的最容易的方法。 它可以方便地进行安装、更新和卸载。
+如果系统中没有可用的 Homebrew，请先[安装 Homebrew](https://docs.brew.sh/Installation.html)，然后继续。
 
 安装 CLI 时，可以先更新 brew 存储库信息，然后运行 `install` 命令：
 
