@@ -10,17 +10,17 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 4076fefb902a324f77f97bc042b9f5ba3e787734
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 840e5e7d6531fe92d30235f621e381589266d1d3
+ms.sourcegitcommit: f82774a6f92598c41da9956284f563757f402774
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
 如果运行附带 `apt` 的发行版（例如 Ubuntu 或 Debian），则可以安装适用于 Azure CLI 的 64 位包。 此包已在以下项中测试：
 
-* Ubuntu wheezy、xenial 和 artful
+* Ubuntu trusty、xenial 和 artful
 * Debian wheezy、jessie 和 stretch
 
 ## <a name="install"></a>安装

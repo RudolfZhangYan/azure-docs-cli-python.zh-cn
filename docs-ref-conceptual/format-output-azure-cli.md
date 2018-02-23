@@ -10,34 +10,32 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: a5d629675b468421e3abee41b9c8bffd7e96e5b0
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: ec96d1cb21b32cd982dbec5e4bf38110f8686c25
+ms.sourcegitcommit: f82774a6f92598c41da9956284f563757f402774
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Azure CLI 2.0 命令的输出格式
 
-Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。  使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一。
+Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。  使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一：
 
 --output | 说明
 ---------|-------------------------------
-`json`   | json 字符串。 `json` 为默认值。
-`jsonc`  | 彩色 json 字符串。
-`table`  | 包含列标题的表。
-`tsv`    | 制表符分隔值。
+`json`   | JSON 字符串。 此设置为默认设置。
+`jsonc`  | 彩色 JSON。
+`table`  | 将键作为列标题的 ASCII 表。
+`tsv`    | 制表符分隔值，没有键
 
-[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
-
-## <a name="using-the-json-option"></a>使用 json 选项
+## <a name="json-output-format"></a>JSON 输出格式
 
 以下示例以默认 json 格式显示订阅中的虚拟机列表。
 
-```azurecli-interactive
+```azurecli
 az vm list --output json
 ```
 
-结果会采用此格式（为简洁起见，仅显示部分输出）。
+以下输出有为简便起见而省略的一些字段并替换了标识信息。
 
 ```json
 [
@@ -47,7 +45,7 @@ az vm list --output json
     "hardwareProfile": {
       "vmSize": "Standard_DS1"
     },
-    "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010",
+    "id": "/subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010",
     "instanceView": null,
     "licenseType": null,
     "location": "westus",
@@ -55,7 +53,7 @@ az vm list --output json
     "networkProfile": {
       "networkInterfaces": [
         {
-          "id": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/demorg1/providers/Microsoft.Network/networkInterfaces/DemoVM010VMNic",
+          "id": "/subscriptions/.../resourceGroups/demorg1/providers/Microsoft.Network/networkInterfaces/DemoVM010VMNic",
           "primary": null,
           "resourceGroup": "demorg1"
         }
@@ -67,15 +65,15 @@ az vm list --output json
 ]
 ```
 
-## <a name="using-the-table-option"></a>使用 table 选项
+## <a name="table-output-format"></a>表输出格式
 
-使用 table 选项可以提供易于阅读的输出集，但请注意，与前面的.json 示例不同，使用简单 `--output table` 时，嵌套的对象不会包含在输出中。  在同一示例中使用“table”输出格式会组织有序的最常见属性值列表。
+`table` 输出格式提供格式化为排序规则数据的行和列的无格式输出，以便更轻松地读取和扫描。 嵌套对象不包含在表输出中，但仍可以作为查询的一部分进行筛选。 还从表数据中省略了一些字段，因此当你想要数据的快速、人工可搜索的概述时，此格式最佳。
 
-```azurecli-interactive
+```azurecli
 az vm list --out table
 ```
 
-```
+```output
 Name         ResourceGroup    Location
 -----------  ---------------  ----------
 DemoVM010    DEMORG1          westus
@@ -84,11 +82,10 @@ demovm213    DEMORG1          westus
 KBDemo001VM  RGDEMO001        westus
 KBDemo020    RGDEMO001        westus
 ```
-
 可以使用 `--query` 参数来自定义要在列表输出中显示的属性和列。 以下示例演示如何只在 `list` 命令中选择 VM 名称和资源组名称。
 
-```azurecli-interactive
-az vm list --query "[].{ resource: resourceGroup, name: name }" -o table
+```azurecli
+az vm list --query "[].{resource:resourceGroup, name:name}" -o table
 ```
 
 ```
@@ -101,42 +98,70 @@ RGDEMO001   KBDemo001VM
 RGDEMO001   KBDemo020
 ```
 
-## <a name="using-the-tsv-option"></a>使用 tsv 选项
+> [!NOTE]
+> 某些键已筛选掉，未在表视图中输出。 这些键是 `id`、`type` 和 `etag`。 如果需要在输出中查看这些键，可以使用 JMESPath 重新键入功能更改键名称，并避免筛选。
+>
+> ```azurecli
+> az vm list --query "[].{objectID:id}" -o table
+> ```
 
-“tsv”输出格式返回不带标题和短划线的、基于文本的制表符分隔输出。 采用这种格式可在需要以某种形式处理文本的其他命令和工具中轻松使用输出。 在前面的示例中使用 `tsv` 选项会输出制表符分隔结果。
+有关使用查询筛选数据的详细信息，请参阅[在 Azure CLI 2.0 中使用 JMESPath 查询](/cli/azure/query-azure-cli)。
 
-```azurecli-interactive
+## <a name="tsv-output-format"></a>TSV 输出格式
+
+`tsv` 输出格式返回制表符和换行符分隔的值，而不带附加格式设置、键或其他符号。 采用这种格式可在需要以某种形式处理文本的其他命令和工具中轻松使用输出。 与 `table` 格式一样，`tsv` 输出选项不输出嵌套对象。
+
+在前面的示例中使用 `tsv` 选项会输出制表符分隔结果。
+
+```azurecli
 az vm list --out tsv
 ```
 
-```
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010    None    None    westus  DemoVM010           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   cbd56d9b-9340-44bc-a722-25f15b578444
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm212    None    None    westus  demovm212           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   4bdac85d-c2f7-410f-9907-ca7921d930b4
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm213    None    None    westus  demovm213           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   2131c664-221a-4b7f-9653-f6d542fbfa34
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo001VM    None    None    westus  KBDemo001VM         None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines   14e74761-c17e-4530-a7be-9e4ff06ea74b
-None    None        /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None   None    westus  KBDemo020           None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachinesed36baa9-9b80-48a8-b4a9-854c7a858ece
+```output
+None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010 None    None    westus  DemoVM010           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   cbd56d9b-9340-44bc-a722-25f15b578444
+None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm212 None    None    westus  demovm212           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   4bdac85d-c2f7-410f-9907-ca7921d930b4
+None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm213 None    None    westus  demovm213           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   2131c664-221a-4b7f-9653-f6d542fbfa34
+None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo001VM None    None    westus  KBDemo001VM         None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines   14e74761-c17e-4530-a7be-9e4ff06ea74b
+None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None    None    westus  KBDemo020           None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines    36baa9-9b80-48a8-b4a9-854c7a858ece
 ```
 
-下一示例演示如何将 `tsv` 输出传递给 `grep` 和 `cut` 等命令，以进一步分析 `list` 输出中的特定值。 `grep` 命令仅选择包含文本“RGD”的项，`cut` 命令仅选择在输出中显示第 8 个字符（制表符分隔）。
+下面的示例说明如何将 `tsv` 输出通过管道传递给 UNIX 系统上的其他命令以提取更具体的数据。 `grep` 命令选择包含文本“RGD”的项，然后 `cut` 命令选择第 8 个字符（由制表符分隔）以在输出中显示 VM 的名称。
 
-```azurecli
+```bash
 az vm list --out tsv | grep RGD | cut -f8
 ```
 
-```
+```output
 KBDemo001VM
 KBDemo020
 ```
 
-## <a name="setting-the-default-output-format"></a>设置默认的输出格式
+为了处理制表符分隔的字段，值的顺序与它们在输出的 JSON 对象中显示的顺序相同。 需保证此顺序在该命令的多次运行之间保持一致。
 
-可以使用 `az configure` 命令设置环境或者建立首选项，例如，输出格式的默认设置。 对于一般用途，最方便的默认输出格式为“table”格式 - 系统提示选择输出格式时请选择 **3**。
+## <a name="set-the-default-output-format"></a>设置默认输出格式
 
+使用交互式 `az configure` 命令设置环境并建立输出格式的默认设置。 默认输出格式为 `json`。 
+
+```azurecli
+az configure
 ```
+
+```output
+Welcome to the Azure CLI! This command will guide you through logging in and setting some default values.
+
+Your settings can be found at /home/defaultuser/.azure/config
+Your current configuration is as follows:
+
+  ...
+
+Do you wish to change your settings? (y/N): y
+
 What default output format would you like?
  [1] json - JSON formatted output that most closely matches API responses
  [2] jsonc - Colored JSON formatted output that most closely matches API responses
  [3] table - Human-readable output format
- [4] tsv - Tab and Newline delimited, great for GREP, AWK, etc.
-Please enter a choice [3]:
+ [4] tsv - Tab- and Newline-delimited, great for GREP, AWK, etc.
+Please enter a choice [1]:
 ```
+
+若要了解有关配置环境的详细信息，请参阅 [Azure CLI 2.0 配置](/cli/azure/azure-cli-configuration)。
