@@ -1,166 +1,128 @@
 ---
 title: "使用 Azure CLI 2.0 查询命令结果"
 description: "了解如何针对 Azure CLI 2.0 命令的输出执行 JMESPath 查询。"
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 98bc35c1e8136231011a2303901f42c68c9a7758
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 2a0cdc34bbaf0864885588ecaddff725c744c90e
+ms.sourcegitcommit: 5a4c7205087d2f6c4800cf25178f0543a6157d99
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/24/2018
 ---
-# <a name="use-jmespath-queries-with-azure-cli-20"></a><span data-ttu-id="8b917-103">在 Azure CLI 2.0 中使用 JMESPath 查询</span><span class="sxs-lookup"><span data-stu-id="8b917-103">Use JMESPath queries with Azure CLI 2.0</span></span>
+# <a name="use-jmespath-queries-with-azure-cli-20"></a><span data-ttu-id="97fba-103">在 Azure CLI 2.0 中使用 JMESPath 查询</span><span class="sxs-lookup"><span data-stu-id="97fba-103">Use JMESPath queries with Azure CLI 2.0</span></span>
 
-<span data-ttu-id="8b917-104">Azure CLI 2.0 使用 `--query` 参数针对 `az` 命令的结果执行 [JMESPath 查询](http://jmespath.org)。</span><span class="sxs-lookup"><span data-stu-id="8b917-104">The Azure CLI 2.0 uses the `--query` parameter to execute a [JMESPath query](http://jmespath.org) on the results of your `az` command.</span></span> <span data-ttu-id="8b917-105">JMESPath 是适用于 JSON 输出的强大查询语言。</span><span class="sxs-lookup"><span data-stu-id="8b917-105">JMESPath is a powerful query language for JSON outputs.</span></span>  <span data-ttu-id="8b917-106">如果不熟悉 JMESPath 查询，可以在 [JMESPath.org/tutorial](http://JMESPath.org/tutorial.html) 中找到教程。</span><span class="sxs-lookup"><span data-stu-id="8b917-106">If you are unfamiliar with JMESPath queries you can find a tutorial at [JMESPath.org/tutorial](http://JMESPath.org/tutorial.html).</span></span>
+<span data-ttu-id="97fba-104">Azure CLI 2.0 使用 `--query` 参数针对命令的结果执行 [JMESPath 查询](http://jmespath.org)。</span><span class="sxs-lookup"><span data-stu-id="97fba-104">The Azure CLI 2.0 uses the `--query` argument to execute a [JMESPath query](http://jmespath.org) on the results of commands.</span></span> <span data-ttu-id="97fba-105">JMESPath 是用于 JSON 的查询语言，提供从 CLI 输出中选择和显示数据的能力。</span><span class="sxs-lookup"><span data-stu-id="97fba-105">JMESPath is a query language for JSON, giving you the ability to select and present data from CLI output.</span></span> <span data-ttu-id="97fba-106">这些查询在执行任何其他显示格式设置之前针对 JSON 输出执行。</span><span class="sxs-lookup"><span data-stu-id="97fba-106">These queries are executed on the JSON output, before performing any other display formatting.</span></span>
 
-<span data-ttu-id="8b917-107">Azure CLI 2.0 中的每种资源类型（容器服务、Web 应用、VM 等）都支持 `Query` 参数，可将该参数用于各种不同的目的。</span><span class="sxs-lookup"><span data-stu-id="8b917-107">`Query` parameter is supported by every resource type (Container Services, Web Apps, VM, etc.) within Azure CLI 2.0 and can be used for various different purposes.</span></span>  <span data-ttu-id="8b917-108">下面列出了几个示例。</span><span class="sxs-lookup"><span data-stu-id="8b917-108">We have listed several examples below.</span></span>
+<span data-ttu-id="97fba-107">Azure CLI 中的所有命令均支持 `--query` 参数。</span><span class="sxs-lookup"><span data-stu-id="97fba-107">The `--query` argument is supported by all commands in the Azure CLI.</span></span> <span data-ttu-id="97fba-108">本文中的示例涵盖了常见用例，并演示了如何使用 JMESPath 的功能。</span><span class="sxs-lookup"><span data-stu-id="97fba-108">This article's examples cover common use cases and demonstrate how to use the features of JMESPath.</span></span>
 
-## <a name="select-simple-properties"></a><span data-ttu-id="8b917-109">选择简单属性</span><span class="sxs-lookup"><span data-stu-id="8b917-109">Select simple properties</span></span>
+## <a name="work-with-dictionary-output"></a><span data-ttu-id="97fba-109">使用字典输出</span><span class="sxs-lookup"><span data-stu-id="97fba-109">Work with dictionary output</span></span>
 
-<span data-ttu-id="8b917-110">采用 `table` 输出格式的简单 `list` 命令以易于阅读的表格格式返回每种资源类型的一组最常见的、组织有序的简单属性。</span><span class="sxs-lookup"><span data-stu-id="8b917-110">The simple `list` command with `table` output format returns a curated set of most common, simple properties for each resource type in an easy-to-read tabular format.</span></span>
+<span data-ttu-id="97fba-110">返回 JSON 字典的命令可以单独按其键名称查阅。</span><span class="sxs-lookup"><span data-stu-id="97fba-110">Commands that return a JSON dictionary can be explored by their key names alone.</span></span> <span data-ttu-id="97fba-111">键路径使用 `.` 字符作为分隔符。</span><span class="sxs-lookup"><span data-stu-id="97fba-111">Key paths use the `.` character as a separator.</span></span> <span data-ttu-id="97fba-112">下面的示例拉取允许连接到 Linux VM 的公共 SSH 密钥列表：</span><span class="sxs-lookup"><span data-stu-id="97fba-112">The following example pulls a list of the public SSH keys allowed to connect to a Linux VM:</span></span>
 
-```azurecli-interactive
-az vm list --out table
+```azurecli
+az vm show -g QueryDemo -n TestVM --query osProfile.linuxConfiguration.ssh.publicKeys
 ```
 
-```
-Name         ResourceGroup    Location
------------  ---------------  ----------
-DemoVM010    DEMORG1          westus
-demovm212    DEMORG1          westus
-demovm213    DEMORG1          westus
-KBDemo001VM  RGDEMO001        westus
-KBDemo020    RGDEMO001        westus
+<span data-ttu-id="97fba-113">也可以获取多个值，将它们放在一个有序数组中。</span><span class="sxs-lookup"><span data-stu-id="97fba-113">You can also get multiple values, putting them in an ordered array.</span></span> <span data-ttu-id="97fba-114">该数组没有任何键信息，但数组元素的顺序与所查询键的顺序匹配。</span><span class="sxs-lookup"><span data-stu-id="97fba-114">The array doesn't have any key information, but the order of the array's elements matches the order of the queried keys.</span></span> <span data-ttu-id="97fba-115">下面的示例演示如何检索 Azure 映像产品名称和 OS 磁盘大小：</span><span class="sxs-lookup"><span data-stu-id="97fba-115">The following example shows how to retrieve the Azure image offering name and the size of the OS disk:</span></span>
+
+```azurecli
+az vm show -g QueryDemo -n TestVM --query 'storageProfile.[imageReference.offer, osDisk.diskSizeGb]'
 ```
 
-<span data-ttu-id="8b917-111">使用 `--query` 参数可以仅显示订阅中所有虚拟机的资源组名称和 VM 名称。</span><span class="sxs-lookup"><span data-stu-id="8b917-111">You can use the `--query` parameter to show just the Resource Group name and VM name for all virtual machines in your subscription.</span></span>
-
-```azurecli-interactive
-az vm list \
-  --query "[].[name, resourceGroup]" --out table
+```json
+[
+  "UbuntuServer",
+  30
+]
 ```
 
-```
-Column1     Column2
----------   -----------
-DemoVM010   DEMORG1
-demovm111   DEMORG1
-demovm211   DEMORG1
-demovm212   DEMORG1
-demovm213   DEMORG1
-demovm214   DEMORG1
-demovm222   DEMORG1
-KBDemo001VM RGDEMO001
-KBDemo020   RGDEMO001
+<span data-ttu-id="97fba-116">如果希望输出中有键，可以使用另一种字典语法。</span><span class="sxs-lookup"><span data-stu-id="97fba-116">If you want keys in your output, you can use an alternate dictionary syntax.</span></span> <span data-ttu-id="97fba-117">将多个元素选择到一个字典时使用格式 `{displayKey:keyPath, ...}` 来针对 `keyPath` JMESPath 表达式进行筛选。</span><span class="sxs-lookup"><span data-stu-id="97fba-117">Multiple element selection into a dictionary uses the format `{displayKey:keyPath, ...}` to filter on the `keyPath` JMESPath expression.</span></span> <span data-ttu-id="97fba-118">这在输出中以 `{displayKey: value}` 形式显示。</span><span class="sxs-lookup"><span data-stu-id="97fba-118">This displays in the output as `{displayKey: value}`.</span></span> <span data-ttu-id="97fba-119">下一个示例采用上一个示例的查询，并通过将键指定到输出来使输出更加清晰：</span><span class="sxs-lookup"><span data-stu-id="97fba-119">The next example takes the last example's query, and makes it clearer by assigning keys to the output:</span></span>
+
+```azurecli
+az vm show -g QueryDemo -n TestVM --query 'storageProfile.{image:imageReference.offer, diskSize:osDisk.diskSizeGb}'
 ```
 
-<span data-ttu-id="8b917-112">在前面的示例中，可以看到列标题为“Column1”和“Column2”。</span><span class="sxs-lookup"><span data-stu-id="8b917-112">In the previous example, you notice that the column headings are "Column1" and "Column2".</span></span>  <span data-ttu-id="8b917-113">还可以将友好的标签或名称添加到所选的属性。</span><span class="sxs-lookup"><span data-stu-id="8b917-113">You can add friendly labels or names to the properties you select, as well.</span></span>  <span data-ttu-id="8b917-114">在以下示例中，我们已将标签“VMName”和“RGName”添加到所选的属性“name”和“resourceGroup”。</span><span class="sxs-lookup"><span data-stu-id="8b917-114">In the following example, we added the labels "VMName" and "RGName" to the selected properties "name" and "resourceGroup".</span></span>
-
-
-```azurecli-interactive
-az vm list \
-  --query "[].{RGName:resourceGroup, VMName:name}" --out table
+```json
+{
+  "diskSize": 30,
+  "image": "UbuntuServer"
+}
 ```
 
-```
-RGName     VMName
----------  -----------
-DEMORG1    DemoVM010
-DEMORG1    demovm111
-DEMORG1    demovm211
-DEMORG1    demovm212
-DEMORG1    demovm213
-DEMORG1    demovm214
-DEMORG1    demovm222
-RGDEMO001  KBDemo001VM
-RGDEMO001  KBDemo020
-```
+<span data-ttu-id="97fba-120">以 `table` 输出格式显示信息时，字典显示尤其有用。</span><span class="sxs-lookup"><span data-stu-id="97fba-120">When displaying information in the `table` output format, dictionary display is especially useful.</span></span> <span data-ttu-id="97fba-121">它允许设置你自己的列标题，使输出更易于理解。</span><span class="sxs-lookup"><span data-stu-id="97fba-121">This allows for setting your own column headers, making output even easier to read.</span></span> <span data-ttu-id="97fba-122">有关输出格式的详细信息，请参阅 [Azure CLI 2.0 命令的输出格式](/cli/azure/format-output-azure-cli)。</span><span class="sxs-lookup"><span data-stu-id="97fba-122">For more information on output formats, see [Output formats for Azure CLI 2.0 commands](/cli/azure/format-output-azure-cli).</span></span>
 
-## <a name="select-complex-nested-properties"></a><span data-ttu-id="8b917-115">选择复杂的嵌套属性</span><span class="sxs-lookup"><span data-stu-id="8b917-115">Select complex nested properties</span></span>
+> [!NOTE]
+> <span data-ttu-id="97fba-123">某些键已筛选掉，未在表视图中输出。</span><span class="sxs-lookup"><span data-stu-id="97fba-123">Certain keys are filtered out and not printed in the table view.</span></span> <span data-ttu-id="97fba-124">这些键为 `id`、`type` 和 `etag`。</span><span class="sxs-lookup"><span data-stu-id="97fba-124">These keys are `id`, `type`, and `etag`.</span></span> <span data-ttu-id="97fba-125">如果需要查看此信息，可以更改键名称并避免筛选。</span><span class="sxs-lookup"><span data-stu-id="97fba-125">If you need to see this information, you can change the key name and avoid filtering.</span></span>
+>
+> ```azurecli
+> az vm show -g QueryDemo -n TestVM --query "{objectID:id}" -o table
+> ```
 
-<span data-ttu-id="8b917-116">如果要选择的属性嵌套在 JSON 输出中的深层位置，则需要提供该嵌套属性的完整路径。</span><span class="sxs-lookup"><span data-stu-id="8b917-116">If the property you want to select is nested deep in the JSON output you need to supply the full path to that nested property.</span></span> <span data-ttu-id="8b917-117">以下示例演示如何通过 vm list 命令选择 VM 名称和 OS 类型。</span><span class="sxs-lookup"><span data-stu-id="8b917-117">The following example shows how to select the VMName and the OS type from the vm list command.</span></span>
+## <a name="work-with-list-output"></a><span data-ttu-id="97fba-126">使用列表输出</span><span class="sxs-lookup"><span data-stu-id="97fba-126">Work with list output</span></span>
 
-```azurecli-interactive
-az vm list \
-  --query "[].{VMName:name, OSType:storageProfile.osDisk.osType}" --out table
+<span data-ttu-id="97fba-127">可能会返回多个值的 CLI 命令总是会返回一个数组。</span><span class="sxs-lookup"><span data-stu-id="97fba-127">CLI commands that may return more than one value always return an array.</span></span> <span data-ttu-id="97fba-128">数组可以使其元素按索引进行访问，但 CLI 中永远不会有顺序保证。</span><span class="sxs-lookup"><span data-stu-id="97fba-128">Arrays can have their elements accessed by index, but there's never an order guarantee from the CLI.</span></span> <span data-ttu-id="97fba-129">查询数组值的最佳方法是使用 `[]` 运算符平展这些值。</span><span class="sxs-lookup"><span data-stu-id="97fba-129">The best way to query an array of values is to flatten them with the `[]` operator.</span></span> <span data-ttu-id="97fba-130">该运算符写在数组的键后面，或写为表达式中的第一个元素。</span><span class="sxs-lookup"><span data-stu-id="97fba-130">The operator is written after the key for the array, or as the first element in the expression.</span></span> <span data-ttu-id="97fba-131">平展时将针对数组中的每个单独元素运行该运算符后的查询，并将结果值放入一个新数组。</span><span class="sxs-lookup"><span data-stu-id="97fba-131">Flattening runs the query following it against each individual element in the array, and places the resulting values into a new array.</span></span> <span data-ttu-id="97fba-132">以下示例输出资源组中每个 VM 的名称以及其上运行的 OS。</span><span class="sxs-lookup"><span data-stu-id="97fba-132">The following example prints out the name and OS running on each VM in a resource group.</span></span> 
+
+```azurecli
+az vm list -g QueryDemo --query '[].{name:name, image:storageProfile.imageReference.offer}'
 ```
 
-```
-VMName       OSType
------------  --------
-DemoVM010    Linux
-demovm111    Linux
-demovm211    Linux
-demovm212    Linux
-demovm213    Linux
-demovm214    Linux
-demovm222    Linux
-KBDemo001VM  Linux
-KBDemo020    Linux
-```
-
-## <a name="filter-with-the-contains-function"></a><span data-ttu-id="8b917-118">使用 contains 函数进行筛选</span><span class="sxs-lookup"><span data-stu-id="8b917-118">Filter with the contains function</span></span>
-
-<span data-ttu-id="8b917-119">可以使用 JMESPath `contains` 函数来细化查询中返回的结果。</span><span class="sxs-lookup"><span data-stu-id="8b917-119">You can use the JMESPath `contains` function to refine your results returned in the query.</span></span>
-<span data-ttu-id="8b917-120">在以下示例中，命令仅选择名称中包含文本“RGD”的 VM。</span><span class="sxs-lookup"><span data-stu-id="8b917-120">In the following example, the command selects only VMs that have the text "RGD" in their name.</span></span>
-
-```azurecli-interactive
-az vm list \
-  --query "[?contains(resourceGroup, 'RGD')].{ resource: resourceGroup, name: name }" --out table
-```
-
-```
-Resource    VMName
-----------  -----------
-RGDEMO001   KBDemo001VM
-RGDEMO001   KBDemo020
+```json
+[
+  {
+    "image": "CentOS",
+    "name": "CentBox"
+  },
+  {
+    "image": "openSUSE-Leap",
+    "name": "SUSEBox"
+  },
+  {
+    "image": "UbuntuServer",
+    "name": "TestVM"
+  },
+  {
+    "image": "UbuntuServer",
+    "name": "Test2"
+  },
+  {
+    "image": "WindowsServer",
+    "name": "WinServ"
+  }
+]
 ```
 
-<span data-ttu-id="8b917-121">在下一个示例中，结果将返回 vmSize 为“Standard_DS1”的 VM。</span><span class="sxs-lookup"><span data-stu-id="8b917-121">With the next example, the results will return the VMs that have the vmSize 'Standard_DS1'.</span></span>
+<span data-ttu-id="97fba-133">作为键路径一部分的数组也可以平展。</span><span class="sxs-lookup"><span data-stu-id="97fba-133">Arrays that are part of a key path can be flattened as well.</span></span> <span data-ttu-id="97fba-134">此示例演示一个查询，该查询获取 VM 连接到的 NIC 的 Azure 对象 ID。</span><span class="sxs-lookup"><span data-stu-id="97fba-134">This example demonstrates a query that gets the Azure object IDs for the NICs a VM is connected to.</span></span>
 
-```azurecli-interactive
-az vm list \
-  --query "[?contains(hardwareProfile.vmSize, 'Standard_DS1')]" --out table
+```azurecli
+az vm show -g QueryDemo -n TestVM --query 'networkProfile.networkInterfaces[].id'
 ```
 
-```
-ResourceGroup    VMName     VmId                                  Location    ProvisioningState
----------------  ---------  ------------------------------------  ----------  -------------------
-DEMORG1          DemoVM010  cbd56d9b-9340-44bc-a722-25f15b578444  westus      Succeeded
-DEMORG1          demovm111  c1c024eb-3837-4075-9117-bfbc212fa7da  westus      Succeeded
-DEMORG1          demovm211  95eda642-417f-4036-9475-67246ac0f0d0  westus      Succeeded
-DEMORG1          demovm212  4bdac85d-c2f7-410f-9907-ca7921d930b4  westus      Succeeded
-DEMORG1          demovm213  2131c664-221a-4b7f-9653-f6d542fbfa34  westus      Succeeded
-DEMORG1          demovm214  48f419af-d27a-4df0-87f3-9481007c2e5a  westus      Succeeded
-DEMORG1          demovm222  e0f59516-1d69-4d54-b8a2-f6c4a5d031de  westus      Succeeded
+## <a name="filter-array-output-with-predicates"></a><span data-ttu-id="97fba-135">使用谓词筛选数组输出</span><span class="sxs-lookup"><span data-stu-id="97fba-135">Filter array output with predicates</span></span>
+
+<span data-ttu-id="97fba-136">JMESPath 提供[筛选表达式](http://jmespath.org/specification.html#filterexpressions)以筛选显示的数据。</span><span class="sxs-lookup"><span data-stu-id="97fba-136">JMESPath offers [filtering expressions](http://jmespath.org/specification.html#filterexpressions) to filter out the data displayed.</span></span> <span data-ttu-id="97fba-137">这些表达式功能强大，尤其是在与 [JMESPath 内置函数](http://jmespath.org/specification.html#built-in-functions)结合使用以执行部分匹配或将数据处理为标准格式时。</span><span class="sxs-lookup"><span data-stu-id="97fba-137">These expressions are powerful, especially when combined with [JMESPath built-in functions](http://jmespath.org/specification.html#built-in-functions) to perform partial matches or manipulate data into a standard format.</span></span> <span data-ttu-id="97fba-138">筛选表达式只适用于数组数据，在任何其他情况下使用时将返回 `null` 值。</span><span class="sxs-lookup"><span data-stu-id="97fba-138">Filtering expressions only work on array data, and when used in any other situation, return the `null` value.</span></span> <span data-ttu-id="97fba-139">例如，可以采用 `vm list` 等命令的输出，并针对其进行筛选，以查找特定类型的 VM。</span><span class="sxs-lookup"><span data-stu-id="97fba-139">For example, you can take the output of commands like `vm list` and filter on it to look for specific types of VMs.</span></span> <span data-ttu-id="97fba-140">以下示例通过筛选 VM 类型以仅捕获 Windows VM 并打印其名称，在前一个示例的基础上进行了扩展。</span><span class="sxs-lookup"><span data-stu-id="97fba-140">The following example expands on the previous by filtering out the VM type to capture only Windows VMs and print their name.</span></span>
+
+```azurecli
+az vm list --query '[?osProfile.windowsConfiguration!=null].name'
 ```
 
-## <a name="filter-with-grep"></a><span data-ttu-id="8b917-122">使用 grep 进行筛选</span><span class="sxs-lookup"><span data-stu-id="8b917-122">Filter with grep</span></span>
-
-<span data-ttu-id="8b917-123">`tsv` 输出格式是不带标题的制表符分隔文本。</span><span class="sxs-lookup"><span data-stu-id="8b917-123">The `tsv` output format is a tab-separated text with no headers.</span></span> <span data-ttu-id="8b917-124">可将它传递给 `grep` 和 `cut` 等命令，以进一步分析 `list` 输出中的特定值。</span><span class="sxs-lookup"><span data-stu-id="8b917-124">It can be piped to commands like `grep` and `cut` to further parse specific values out of the `list` output.</span></span> <span data-ttu-id="8b917-125">在以下示例中，`grep` 命令仅选择名称中包含文本“RGD”的 VM。</span><span class="sxs-lookup"><span data-stu-id="8b917-125">In the following example, the `grep` command selects only VMs that have text "RGD" in their name.</span></span>  <span data-ttu-id="8b917-126">`cut` 命令仅选择在输出中显示第 8 个字段值（制表符分隔）。</span><span class="sxs-lookup"><span data-stu-id="8b917-126">The `cut` command selects only the 8th field (separated by tabs) value to show in the output.</span></span>
-
-```azurecli-interactive
-az vm list --out tsv | grep RGD | cut -f8
+```json
+[
+  "WinServ"
+]
 ```
 
-```
-KBDemo001VM
-KBDemo020
-```
+## <a name="experiment-with-queries-interactively"></a><span data-ttu-id="97fba-141">以交互方式试验查询</span><span class="sxs-lookup"><span data-stu-id="97fba-141">Experiment with queries interactively</span></span>
 
-## <a name="explore-with-jpterm"></a><span data-ttu-id="8b917-127">使用 jpterm 进行浏览</span><span class="sxs-lookup"><span data-stu-id="8b917-127">Explore with jpterm</span></span>
-
-<span data-ttu-id="8b917-128">还可以将命令输出传递给 [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal)，然后在该位置体验 JMESPath 查询。</span><span class="sxs-lookup"><span data-stu-id="8b917-128">You can also pipe the command output to [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal) and experiment with your JMESPath query there.</span></span>
+<span data-ttu-id="97fba-142">为了试验 JMESPath 表达式，你可能希望以一种可以快速编辑查询并检查输出的方式工作。</span><span class="sxs-lookup"><span data-stu-id="97fba-142">To experiment with JMESPath expressions, you might want to work in a way where you can quickly edit queries and inspect the output.</span></span> <span data-ttu-id="97fba-143">[JMESPath-terminal](https://github.com/jmespath/jmespath.terminal) Python 包提供了一种交互式环境，允许通过管道传输数据作为输入并随后编写程序内查询来提取数据。</span><span class="sxs-lookup"><span data-stu-id="97fba-143">An interactive environment is offered by the [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal) Python package, which allows for piping data as input and then writing in-program queries to extract the data.</span></span>
 
 ```bash
 pip install jmespath-terminal
 az vm list | jpterm
 ```
-
