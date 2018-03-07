@@ -3,20 +3,80 @@ title: "Azure CLI 2.0 发行说明"
 description: "了解 Azure CLI 2.0 的最新更新"
 author: sptramer
 ms.author: sttramer
-manager: routlaw
-ms.date: 02/13/2018
+manager: carmonm
+ms.date: 02/27/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 480b646b7230c8fb22f10b28a9204287cd0acc19
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 01078b7a3665f563f0a6b1d809c9a41f18d136d6
+ms.sourcegitcommit: f3ab5da6019083ef2482b62c7355817e6170dcfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="february-27-2018"></a>2018 年 2 月 27 日
+
+版本 2.0.28
+
+### <a name="core"></a>核心
+
+* 已修复 [#5184](https://github.com/Azure/azure-cli/issues/5184)：Homebrew 安装问题
+* 添加了对具有自定义密钥的扩展遥测的支持
+* 为 `--debug` 添加了 HTTP 日志记录
+
+### <a name="acs"></a>ACS
+
+* 已更改为默认情况下对 `aks install-connector` 使用 `virtual-kubelet-for-aks` Helm 图
+* 已修复问题：服务主体没有足够的权限来创建 ACI 容器组的问题
+* 已为 `aks install-connector` 添加了 `--aci-container-group`、`--location` 和 `--image-tag`
+* 从 `aks get-versions` 中删除了弃用通知
+
+### <a name="appservice"></a>应用服务
+
+* 针对新 SDK 版本 (azure-mgmt-web 0.35.0) 的更新
+* 已修复 [#5538](https://github.com/Azure/azure-cli/issues/5538)：`Free` 被报告为无效 SKU
+
+### <a name="cognitive-services"></a>认知服务
+
+* 更新了创建新的认知服务帐户时的“通知”
+
+### <a name="consumption"></a>消耗
+
+* 为 pricesheet API 添加了新命令
+* 更新了现有“使用情况详细信息”和“预订详细信息”格式
+
+### <a name="container"></a>容器
+
+* 为 `container create` 添加了 `--secrets` 和 `--secrets-mount-path` 参数以在 ACI 中使用机密
+
+### <a name="network"></a>网络
+
+* 修复了 [#5559](https://github.com/Azure/azure-cli/issues/5559)：`network vnet-gateway vpn-client generate` 中缺少客户端
+
+### <a name="resource"></a>资源
+
+* 更改了 `group deployment export` 以在失败时显示部分模板和错误
+
+### <a name="role"></a>角色
+
+* 添加了 `role assignment list-changelogs` 以允许审核服务主体角色
+
+### <a name="sql"></a>SQL
+
+* 添加了在创建和更新时对数据库和弹性池的区域冗余支持
+
+### <a name="storage"></a>存储
+
+* 已允许为 `storage blob [upload-batch|download-batch]` 指定 destination-path/prefix
+
+### <a name="vm"></a>VM
+
+* 添加了对在单个 VMSS 实例上附加/分离磁盘的支持
+
 
 ## <a name="february-13-2018"></a>2018 年 2 月 13 日
 

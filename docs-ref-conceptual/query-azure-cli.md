@@ -1,166 +1,128 @@
 ---
 title: "使用 Azure CLI 2.0 查询命令结果"
 description: "了解如何针对 Azure CLI 2.0 命令的输出执行 JMESPath 查询。"
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 98bc35c1e8136231011a2303901f42c68c9a7758
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 2a0cdc34bbaf0864885588ecaddff725c744c90e
+ms.sourcegitcommit: 5a4c7205087d2f6c4800cf25178f0543a6157d99
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/24/2018
 ---
 # <a name="use-jmespath-queries-with-azure-cli-20"></a>在 Azure CLI 2.0 中使用 JMESPath 查询
 
-Azure CLI 2.0 使用 `--query` 参数针对 `az` 命令的结果执行 [JMESPath 查询](http://jmespath.org)。 JMESPath 是适用于 JSON 输出的强大查询语言。  如果不熟悉 JMESPath 查询，可以在 [JMESPath.org/tutorial](http://JMESPath.org/tutorial.html) 中找到教程。
+Azure CLI 2.0 使用 `--query` 参数针对命令的结果执行 [JMESPath 查询](http://jmespath.org)。 JMESPath 是用于 JSON 的查询语言，提供从 CLI 输出中选择和显示数据的能力。 这些查询在执行任何其他显示格式设置之前针对 JSON 输出执行。
 
-Azure CLI 2.0 中的每种资源类型（容器服务、Web 应用、VM 等）都支持 `Query` 参数，可将该参数用于各种不同的目的。  下面列出了几个示例。
+Azure CLI 中的所有命令均支持 `--query` 参数。 本文中的示例涵盖了常见用例，并演示了如何使用 JMESPath 的功能。
 
-## <a name="select-simple-properties"></a>选择简单属性
+## <a name="work-with-dictionary-output"></a>使用字典输出
 
-采用 `table` 输出格式的简单 `list` 命令以易于阅读的表格格式返回每种资源类型的一组最常见的、组织有序的简单属性。
+返回 JSON 字典的命令可以单独按其键名称查阅。 键路径使用 `.` 字符作为分隔符。 下面的示例拉取允许连接到 Linux VM 的公共 SSH 密钥列表：
 
-```azurecli-interactive
-az vm list --out table
+```azurecli
+az vm show -g QueryDemo -n TestVM --query osProfile.linuxConfiguration.ssh.publicKeys
 ```
 
-```
-Name         ResourceGroup    Location
------------  ---------------  ----------
-DemoVM010    DEMORG1          westus
-demovm212    DEMORG1          westus
-demovm213    DEMORG1          westus
-KBDemo001VM  RGDEMO001        westus
-KBDemo020    RGDEMO001        westus
+也可以获取多个值，将它们放在一个有序数组中。 该数组没有任何键信息，但数组元素的顺序与所查询键的顺序匹配。 下面的示例演示如何检索 Azure 映像产品名称和 OS 磁盘大小：
+
+```azurecli
+az vm show -g QueryDemo -n TestVM --query 'storageProfile.[imageReference.offer, osDisk.diskSizeGb]'
 ```
 
-使用 `--query` 参数可以仅显示订阅中所有虚拟机的资源组名称和 VM 名称。
-
-```azurecli-interactive
-az vm list \
-  --query "[].[name, resourceGroup]" --out table
+```json
+[
+  "UbuntuServer",
+  30
+]
 ```
 
-```
-Column1     Column2
----------   -----------
-DemoVM010   DEMORG1
-demovm111   DEMORG1
-demovm211   DEMORG1
-demovm212   DEMORG1
-demovm213   DEMORG1
-demovm214   DEMORG1
-demovm222   DEMORG1
-KBDemo001VM RGDEMO001
-KBDemo020   RGDEMO001
+如果希望输出中有键，可以使用另一种字典语法。 将多个元素选择到一个字典时使用格式 `{displayKey:keyPath, ...}` 来针对 `keyPath` JMESPath 表达式进行筛选。 这在输出中以 `{displayKey: value}` 形式显示。 下一个示例采用上一个示例的查询，并通过将键指定到输出来使输出更加清晰：
+
+```azurecli
+az vm show -g QueryDemo -n TestVM --query 'storageProfile.{image:imageReference.offer, diskSize:osDisk.diskSizeGb}'
 ```
 
-在前面的示例中，可以看到列标题为“Column1”和“Column2”。  还可以将友好的标签或名称添加到所选的属性。  在以下示例中，我们已将标签“VMName”和“RGName”添加到所选的属性“name”和“resourceGroup”。
-
-
-```azurecli-interactive
-az vm list \
-  --query "[].{RGName:resourceGroup, VMName:name}" --out table
+```json
+{
+  "diskSize": 30,
+  "image": "UbuntuServer"
+}
 ```
 
-```
-RGName     VMName
----------  -----------
-DEMORG1    DemoVM010
-DEMORG1    demovm111
-DEMORG1    demovm211
-DEMORG1    demovm212
-DEMORG1    demovm213
-DEMORG1    demovm214
-DEMORG1    demovm222
-RGDEMO001  KBDemo001VM
-RGDEMO001  KBDemo020
-```
+以 `table` 输出格式显示信息时，字典显示尤其有用。 它允许设置你自己的列标题，使输出更易于理解。 有关输出格式的详细信息，请参阅 [Azure CLI 2.0 命令的输出格式](/cli/azure/format-output-azure-cli)。
 
-## <a name="select-complex-nested-properties"></a>选择复杂的嵌套属性
+> [!NOTE]
+> 某些键已筛选掉，未在表视图中输出。 这些键为 `id`、`type` 和 `etag`。 如果需要查看此信息，可以更改键名称并避免筛选。
+>
+> ```azurecli
+> az vm show -g QueryDemo -n TestVM --query "{objectID:id}" -o table
+> ```
 
-如果要选择的属性嵌套在 JSON 输出中的深层位置，则需要提供该嵌套属性的完整路径。 以下示例演示如何通过 vm list 命令选择 VM 名称和 OS 类型。
+## <a name="work-with-list-output"></a>使用列表输出
 
-```azurecli-interactive
-az vm list \
-  --query "[].{VMName:name, OSType:storageProfile.osDisk.osType}" --out table
+可能会返回多个值的 CLI 命令总是会返回一个数组。 数组可以使其元素按索引进行访问，但 CLI 中永远不会有顺序保证。 查询数组值的最佳方法是使用 `[]` 运算符平展这些值。 该运算符写在数组的键后面，或写为表达式中的第一个元素。 平展时将针对数组中的每个单独元素运行该运算符后的查询，并将结果值放入一个新数组。 以下示例输出资源组中每个 VM 的名称以及其上运行的 OS。 
+
+```azurecli
+az vm list -g QueryDemo --query '[].{name:name, image:storageProfile.imageReference.offer}'
 ```
 
-```
-VMName       OSType
------------  --------
-DemoVM010    Linux
-demovm111    Linux
-demovm211    Linux
-demovm212    Linux
-demovm213    Linux
-demovm214    Linux
-demovm222    Linux
-KBDemo001VM  Linux
-KBDemo020    Linux
-```
-
-## <a name="filter-with-the-contains-function"></a>使用 contains 函数进行筛选
-
-可以使用 JMESPath `contains` 函数来细化查询中返回的结果。
-在以下示例中，命令仅选择名称中包含文本“RGD”的 VM。
-
-```azurecli-interactive
-az vm list \
-  --query "[?contains(resourceGroup, 'RGD')].{ resource: resourceGroup, name: name }" --out table
-```
-
-```
-Resource    VMName
-----------  -----------
-RGDEMO001   KBDemo001VM
-RGDEMO001   KBDemo020
+```json
+[
+  {
+    "image": "CentOS",
+    "name": "CentBox"
+  },
+  {
+    "image": "openSUSE-Leap",
+    "name": "SUSEBox"
+  },
+  {
+    "image": "UbuntuServer",
+    "name": "TestVM"
+  },
+  {
+    "image": "UbuntuServer",
+    "name": "Test2"
+  },
+  {
+    "image": "WindowsServer",
+    "name": "WinServ"
+  }
+]
 ```
 
-在下一个示例中，结果将返回 vmSize 为“Standard_DS1”的 VM。
+作为键路径一部分的数组也可以平展。 此示例演示一个查询，该查询获取 VM 连接到的 NIC 的 Azure 对象 ID。
 
-```azurecli-interactive
-az vm list \
-  --query "[?contains(hardwareProfile.vmSize, 'Standard_DS1')]" --out table
+```azurecli
+az vm show -g QueryDemo -n TestVM --query 'networkProfile.networkInterfaces[].id'
 ```
 
-```
-ResourceGroup    VMName     VmId                                  Location    ProvisioningState
----------------  ---------  ------------------------------------  ----------  -------------------
-DEMORG1          DemoVM010  cbd56d9b-9340-44bc-a722-25f15b578444  westus      Succeeded
-DEMORG1          demovm111  c1c024eb-3837-4075-9117-bfbc212fa7da  westus      Succeeded
-DEMORG1          demovm211  95eda642-417f-4036-9475-67246ac0f0d0  westus      Succeeded
-DEMORG1          demovm212  4bdac85d-c2f7-410f-9907-ca7921d930b4  westus      Succeeded
-DEMORG1          demovm213  2131c664-221a-4b7f-9653-f6d542fbfa34  westus      Succeeded
-DEMORG1          demovm214  48f419af-d27a-4df0-87f3-9481007c2e5a  westus      Succeeded
-DEMORG1          demovm222  e0f59516-1d69-4d54-b8a2-f6c4a5d031de  westus      Succeeded
+## <a name="filter-array-output-with-predicates"></a>使用谓词筛选数组输出
+
+JMESPath 提供[筛选表达式](http://jmespath.org/specification.html#filterexpressions)以筛选显示的数据。 这些表达式功能强大，尤其是在与 [JMESPath 内置函数](http://jmespath.org/specification.html#built-in-functions)结合使用以执行部分匹配或将数据处理为标准格式时。 筛选表达式只适用于数组数据，在任何其他情况下使用时将返回 `null` 值。 例如，可以采用 `vm list` 等命令的输出，并针对其进行筛选，以查找特定类型的 VM。 以下示例通过筛选 VM 类型以仅捕获 Windows VM 并打印其名称，在前一个示例的基础上进行了扩展。
+
+```azurecli
+az vm list --query '[?osProfile.windowsConfiguration!=null].name'
 ```
 
-## <a name="filter-with-grep"></a>使用 grep 进行筛选
-
-`tsv` 输出格式是不带标题的制表符分隔文本。 可将它传递给 `grep` 和 `cut` 等命令，以进一步分析 `list` 输出中的特定值。 在以下示例中，`grep` 命令仅选择名称中包含文本“RGD”的 VM。  `cut` 命令仅选择在输出中显示第 8 个字段值（制表符分隔）。
-
-```azurecli-interactive
-az vm list --out tsv | grep RGD | cut -f8
+```json
+[
+  "WinServ"
+]
 ```
 
-```
-KBDemo001VM
-KBDemo020
-```
+## <a name="experiment-with-queries-interactively"></a>以交互方式试验查询
 
-## <a name="explore-with-jpterm"></a>使用 jpterm 进行浏览
-
-还可以将命令输出传递给 [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal)，然后在该位置体验 JMESPath 查询。
+为了试验 JMESPath 表达式，你可能希望以一种可以快速编辑查询并检查输出的方式工作。 [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal) Python 包提供了一种交互式环境，允许通过管道传输数据作为输入并随后编写程序内查询来提取数据。
 
 ```bash
 pip install jmespath-terminal
 az vm list | jpterm
 ```
-
