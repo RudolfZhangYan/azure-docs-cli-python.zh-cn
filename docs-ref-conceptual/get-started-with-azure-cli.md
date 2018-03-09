@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: c2758922d74080d3a3110b1e3a507ddf0f8d85d1
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 3f5fe1b01a8ce691846126a6c03e7222e9b20e0d
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/15/2018
 
 [安装 CLI](install-azure-cli.md)（如果尚未安装），或试用 [Azure Cloud Shell](/azure/cloud-shell/overview)。
 
-对本地安装使用任何 CLI 命令之前，需要使用 [az login](/cli/azure/index#az_login) 登录。
+对本地安装使用任何 CLI 命令之前，需要使用 [az login](/cli/azure/reference-index#az_login) 登录。
 
 ```azurecli
 az login
@@ -53,7 +53,7 @@ az login
 CLI 中的命令以_组_的_子命令_形式提供。
 每个组表示由 Azure 提供的一个服务，而子组将这些服务的命令划分为逻辑分组。
 
-若要搜索命令，请使用 [az find](/cli/azure/index#az_find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
+若要搜索命令，请使用 [az find](/cli/azure/reference-index#az_find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
 
 ```azurecli
 az find -q secret
@@ -95,8 +95,8 @@ CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地�
 
 如果你更关注其他服务，有多种使用 CLI 的 Azure 服务的快速入门。
 
-* [使用 Azure CLI 创建存储帐户](/azure/storage/common/storage-quickstart-create-storage-account-cl)
-* [使用 CLI 向/从 Azure Blob 存储转移对象](/storage/blobs/storage-quickstart-blobs-cli)
+* [使用 Azure CLI 创建存储帐户](/azure/storage/common/storage-quickstart-create-storage-account-cli)
+* [使用 CLI 向/从 Azure Blob 存储转移对象](/azure/storage/blobs/storage-quickstart-blobs-cli)
 * [使用 Azure CLI 创建单一 Azure SQL 数据库](/azure/sql-database/sql-database-get-started-cli)
 * [使用 Azure CLI 创建 Azure Database for MySQL 服务器](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli)
 * [使用 Azure CLI 创建用于 PostgreSQL 的 Azure 数据库](/azure/postgresql/quickstart-create-server-database-azure-cli)
