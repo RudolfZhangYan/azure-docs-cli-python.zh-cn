@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: a140f8f54ad72f7f3b5e2d63e2300d0aa2c061ac
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 92c96b7e969de686689ef02bf068392b9f565698
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
@@ -42,6 +42,14 @@ ms.lasthandoff: 02/15/2018
 az login -u <username> -p <password>
 ```
 
+## <a name="log-in-with-a-specific-tenant"></a>使用特定租户登录
+
+如果使用多个租户，可以使用 `--tenant` 参数选择要登录到的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 可以采用交互方式登录，也可以使用 `--user` 和 `--password` 参数提供凭据。 
+
+```
+az login --tenant <tenant>
+```
+
 ## <a name="logging-in-with-a-service-principal"></a>使用服务主体登录
 
 服务主体是未绑定到任何特定用户的帐户，这些帐户具有通过预定义角色分配的权限。 使用服务主体进行身份验证是编写安全脚本或程序的最佳方法，因为这样可以同时应用权限限制和本地存储的静态凭据信息。 若要了解有关服务主体的详细信息，请参阅[使用 Azure CLI 创建 Azure 服务主体](create-an-azure-service-principal-azure-cli.md)。
@@ -52,10 +60,9 @@ az login -u <username> -p <password>
 az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
 ```
 
-租户值是与服务主体关联的 Azure Active Directory 租户。 这可以是 .onmicrosoft.com 域，或租户的 Azure 对象 ID。
+租户值是与服务主体关联的 Azure Active Directory 租户。 这可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。
 可使用以下命令获取当前登录名的租户对象 ID：
 
 ```azurecli
 az account show --query 'tenantId' -o tsv
 ```
-
