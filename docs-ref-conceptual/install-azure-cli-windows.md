@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 3e732ea7fae118ddb1564bed28d54d15bab4f7f0
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: df1c2b33589c160525710845cc81d076082a9ecc
+ms.sourcegitcommit: def1a07bfccf26a4178ba6dd836764a1df205929
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="install-azure-cli-20-on-windows"></a>在 Windows 上安装 Azure CLI 2.0
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 02/15/2018
 MSI 发行版用于在 Windows 上安装、更新和卸载 `az` 命令。
 
 > [!div class="nextstepaction"]
-> [下载 MSI 安装程序](https://azurecliprod.blob.core.windows.net/msi/azure-cli-latest.msi)
+> [下载 MSI 安装程序](https://aka.ms/installazurecliwindows)
 
 当安装程序询问是否可以对计算机进行更改时，请单击“是”框。
 
@@ -39,4 +39,4 @@ MSI 发行版用于在 Windows 上安装、更新和卸载 `az` 命令。
 再次运行 MSI 并选择“卸载”选项即可进行卸载。
 
 > [!div class="nextstepaction"]
-> [下载 MSI 安装程序](https://azurecliprod.blob.core.windows.net/msi/azure-cli-latest.msi)
+> [下载 MSI 安装程序](https://aka.ms/installazurecliwindows)
