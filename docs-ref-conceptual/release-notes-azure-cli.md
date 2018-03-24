@@ -1,6 +1,6 @@
 ---
-title: "Azure CLI 2.0 发行说明"
-description: "了解 Azure CLI 2.0 的最新更新"
+title: Azure CLI 2.0 发行说明
+description: 了解 Azure CLI 2.0 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -10,13 +10,100 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 01078b7a3665f563f0a6b1d809c9a41f18d136d6
-ms.sourcegitcommit: f3ab5da6019083ef2482b62c7355817e6170dcfb
+ms.openlocfilehash: 116fa95e51399b9b97c1b35c38445f30db7efc94
+ms.sourcegitcommit: fefb5bb6a21cab30c44592c0577408a8d1a2ccc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="march-13-2018"></a>2018 年 3 月 13 日
+
+版本 2.0.29
+
+### <a name="acr"></a>ACR
+
+* 为 `repository delete` 添加了对 `--image` 参数的支持
+* 弃用了 `repository delete` 命令的 `--manifest` 和 `--tag` 参数
+* 添加了 `repository untag` 命令以在不删除数据的情况下删除标记
+
+### <a name="acs"></a>ACS
+
+* 添加了 `aks upgrade-connector` 命令以升级现有连接器
+* 更改了 `kubectl` 配置文件以使用更具可读性的块样式 YAML
+
+### <a name="advisor"></a>Advisor
+
+* [重大更改] 已将 `advisor configuration get` 重命名为 `advisor configuration list`
+* [重大更改] 已将 `advisor configuration set` 重命名为 `advisor configuration update`
+* [重大更改] 删除了 `advisor recommendation generate` 
+* 为 `advisor recommendation list` 添加了 `--refresh` 参数
+* 添加了 `advisor recommendation show` 命令
+
+### <a name="appservice"></a>Appservice
+
+* 弃用了 `[webapp|functionapp] assign-identity`
+* 添加了托管标识命令 `webapp identity [assign|show]` 和 `functionapp identity [assign|show]`
+
+### <a name="eventhubs"></a>Eventhubs
+
+* 初始版本
+
+### <a name="extension"></a>Extension
+
+* 添加了检查，以在使用的发行版不是程序包源文件中存储的发行版时提醒用户，因为这可能导致错误
+
+### <a name="interactive"></a>交互
+
+* 修复了 [#5625](https://github.com/Azure/azure-cli/issues/5625)：在不同会话之间永久保留历史记录
+* 修复了 [#3016](https://github.com/Azure/azure-cli/issues/3016)：在作用域中时不记录历史记录
+* 修复了 [#5688](https://github.com/Azure/azure-cli/issues/5688)：如果命令表加载遇到了异常，不显示“完成”
+* 修复了用于长时间运行的操作的进度指示器
+
+### <a name="monitor"></a>Monitor
+
+* 弃用了 `monitor autoscale-settings` 命令
+* 添加了 `monitor autoscale` 命令
+* 添加了 `monitor autoscale profile` 命令
+* 添加了 `monitor autoscale rule` 命令
+
+### <a name="network"></a>网络
+
+* [重大更改] 从 `route-filter rule create` 中删除了 `--tags` 参数
+* 删除了以下命令的某些错误默认值：
+  * `network express-route update`
+  * `network nsg rule update`
+  * `network public-ip update`
+  * `traffic-manager profile update`
+  * `network vnet-gateway update`
+* 添加了 `network watcher connection-monitor` 命令
+* 为 `network watcher show-topology` 添加了 `--vnet` 和 `--subnet`
+
+### <a name="profile"></a>配置文件
+
+* 弃用了 `az login` 的 `--msi` 参数
+* 为 `az login` 添加了 `--identity` 参数以替换 `--msi`
+
+### <a name="rdbms"></a>RDBMS
+
+* [预览] 已更改为使用 API 2017-12-01-preview
+
+### <a name="service-bus"></a>服务总线
+
+* 初始版本
+
+### <a name="storage"></a>存储
+
+* 修复了 [#4971](https://github.com/Azure/azure-cli/issues/4971)：`storage blob copy` 现在支持其他 Azure 云。
+* 修复了 [#5286](https://github.com/Azure/azure-cli/issues/5286)：Batch 命令 `storage blob [delete-batch|download-batch|upload-batch]` 不再在前置条件失败时引发错误
+
+### <a name="vm"></a>VM
+
+* 为 `[vm|vmss] create` 添加了支持，以附加非托管数据磁盘和配置缓存
+* 弃用了 `[vm|vmss] assign-identity` 和 `[vm|vmss] remove-identity`
+* 添加了 `vm identity [assign|remove|show]` 和 `vmss identity [assign|remove|show]` 以替换弃用的命令
+* 已将 `vmss create` 中的默认优先级更改为 None
 
 ## <a name="february-27-2018"></a>2018 年 2 月 27 日
 
@@ -1457,7 +1544,7 @@ vm (2.0.2)
 * VM/VMSS：合并了门户使用的凭据验证逻辑 ([#2537](https://github.com/Azure/azure-cli/pull/2537))
 * 添加了 wait 命令和 --no-wait 支持 ([#2524](https://github.com/Azure/azure-cli/pull/2524))
 * 虚拟机规模集：支持使用 * 列出不同 VM 上的实例视图 ([#2467](https://github.com/Azure/azure-cli/pull/2467))
-* 添加了适用于 VM 和虚拟机规模集的 --secrets ([#2212}(https://github.com/Azure/azure-cli/pull/2212))
+* 为 VM 和虚拟机规模集添加了 --secrets ([#2212}(https://github.com/Azure/azure-cli/pull/2212))
 * 允许使用专用 VHD 创建 VM ([#2256](https://github.com/Azure/azure-cli/pull/2256))
 
 ## <a name="february-27-2017"></a>2017 年 2 月 27 日
@@ -1510,7 +1597,7 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 ```
 
 > [!Note]
-> 某些命令模块带有“bn”或“rcn”后缀。
+> 某些命令模块带有“b*n*”或“rc*n*”后缀。
 > 这些命令模块仍以预览版提供，将来会发布正式版。
 
 此外，我们还提供 CLI 夜间预览版。
