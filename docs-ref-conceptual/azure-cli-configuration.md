@@ -1,7 +1,7 @@
 ---
-title: "Azure CLI 配置选项"
-description: "如何配置 Azure CLI 2.0"
-keywords: "Azure CLI, 配置, 设置, Azure"
+title: Azure CLI 配置选项
+description: 如何配置 Azure CLI 2.0
+keywords: Azure CLI, 配置, 设置, Azure
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: a85824cfcd1eb4176c7675a6e38327eccb390ca0
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.openlocfilehash: 6970844bf9eba5ccf18b7603115de629e995f2c4
+ms.sourcegitcommit: f57b5666523ef3642bee644eb0e0fe7085b3194a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Azure CLI 2.0 配置
 
@@ -47,7 +47,7 @@ CLI 使用的配置值按以下优先顺序计算，列表中位于较高顺序�
 例如，可按如下所示设置所有命令的默认资源组和位置。
 
 ```azurecli
-az configure --defaults "location=westus2 group=MyResourceGroup"
+az configure --defaults location=westus2 group=MyResourceGroup
 ```
 
 ## <a name="cli-configuration-file"></a>CLI 配置文件
