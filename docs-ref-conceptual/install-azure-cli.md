@@ -1,7 +1,7 @@
 ---
-title: "安装 Azure CLI 2.0"
-description: "Azure CLI 2.0 安装参考"
-keywords: "Azure CLI, 安装 Azure CLI"
+title: 安装 Azure CLI 2.0
+description: Azure CLI 2.0 安装参考
+keywords: Azure CLI, 安装 Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -11,27 +11,27 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: ae7b2da00d9ae17a5c1487390d1f81d8ef812ba9
-ms.sourcegitcommit: 5c004b455eff196d853bfbe12901c6114a1652d7
+ms.openlocfilehash: f3adcb838c8d335d3e03691bce7682a045859078
+ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="install-azure-cli-20"></a><span data-ttu-id="3e712-104">安装 Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="3e712-104">Install Azure CLI 2.0</span></span>
+# <a name="install-azure-cli-20"></a><span data-ttu-id="0da03-104">安装 Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="0da03-104">Install Azure CLI 2.0</span></span>
 
-<span data-ttu-id="3e712-105">Azure CLI 2.0 是一个命令行工具，可为 Azure 资源管理提供优异的体验。</span><span class="sxs-lookup"><span data-stu-id="3e712-105">The Azure CLI 2.0 is a command-line tool providing a great experience for managing Azure resources.</span></span> <span data-ttu-id="3e712-106">CLI 旨在简化脚本编写、提高数据查询灵活性、支持非阻塞进程形式的长时间操作，等等。</span><span class="sxs-lookup"><span data-stu-id="3e712-106">The CLI is designed to make scripting easy, flexibly query data, support long-running operations as non-blocking processes, and more.</span></span> <span data-ttu-id="3e712-107">欢迎立即试用 CLI 的功能！</span><span class="sxs-lookup"><span data-stu-id="3e712-107">Try it today and find out what the CLI has to offer!</span></span>
+<span data-ttu-id="0da03-105">Azure CLI 2.0 是一个命令行工具，可为 Azure 资源管理提供优异的体验。</span><span class="sxs-lookup"><span data-stu-id="0da03-105">The Azure CLI 2.0 is a command-line tool providing a great experience for managing Azure resources.</span></span> <span data-ttu-id="0da03-106">CLI 旨在简化脚本编写、提高数据查询灵活性、支持非阻塞进程形式的长时间操作，等等。</span><span class="sxs-lookup"><span data-stu-id="0da03-106">The CLI is designed to make scripting easy, flexibly query data, support long-running operations as non-blocking processes, and more.</span></span> <span data-ttu-id="0da03-107">欢迎立即试用 CLI 的功能！</span><span class="sxs-lookup"><span data-stu-id="0da03-107">Try it today and find out what the CLI has to offer!</span></span>
 
-<span data-ttu-id="3e712-108">CLI 的当前版本为 __2.0.29__。</span><span class="sxs-lookup"><span data-stu-id="3e712-108">The current version of the CLI is __2.0.29__.</span></span> <span data-ttu-id="3e712-109">有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。</span><span class="sxs-lookup"><span data-stu-id="3e712-109">For information about the latest release, see the [release notes](release-notes-azure-cli.md).</span></span>
+<span data-ttu-id="0da03-108">CLI 的当前版本为 __2.0.30__。</span><span class="sxs-lookup"><span data-stu-id="0da03-108">The current version of the CLI is __2.0.30__.</span></span> <span data-ttu-id="0da03-109">有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。</span><span class="sxs-lookup"><span data-stu-id="0da03-109">For information about the latest release, see the [release notes](release-notes-azure-cli.md).</span></span>
 
-* [<span data-ttu-id="3e712-110">在 Windows 上安装</span><span class="sxs-lookup"><span data-stu-id="3e712-110">Install on Windows</span></span>](install-azure-cli-windows.md)
-* [<span data-ttu-id="3e712-111">在 macOS 上安装</span><span class="sxs-lookup"><span data-stu-id="3e712-111">Install on macOS</span></span>](install-azure-cli-macos.md)
-* <span data-ttu-id="3e712-112">在 Linux 或适用于 Linux 的 Windows 子系统 (WSL) 上安装</span><span class="sxs-lookup"><span data-stu-id="3e712-112">Install on Linux or Windows Subsystem for Linux (WSL)</span></span>
-  * [<span data-ttu-id="3e712-113">在 Debian 或 Ubuntu 上使用 apt 进行安装</span><span class="sxs-lookup"><span data-stu-id="3e712-113">Install with apt on Debian or Ubuntu</span></span>](install-azure-cli-apt.md)
-  * [<span data-ttu-id="3e712-114">在 RHEL、Fedora 或 CentOS 上使用 yum 进行安装</span><span class="sxs-lookup"><span data-stu-id="3e712-114">Install with yum on RHEL, Fedora, or CentOS </span></span>](install-azure-cli-yum.md)
-  * [<span data-ttu-id="3e712-115">在 openSUSE 或 SLE 上使用 zypper 进行安装</span><span class="sxs-lookup"><span data-stu-id="3e712-115">Install with zypper on openSUSE or SLE </span></span>](install-azure-cli-zypper.md)
-  * [<span data-ttu-id="3e712-116">从脚本安装</span><span class="sxs-lookup"><span data-stu-id="3e712-116">Install from script</span></span>](install-azure-cli-linux.md)
-* [<span data-ttu-id="3e712-117">在 Docker 容器中运行</span><span class="sxs-lookup"><span data-stu-id="3e712-117">Run in Docker container</span></span>](run-azure-cli-docker.md)
+* [<span data-ttu-id="0da03-110">在 Windows 上安装</span><span class="sxs-lookup"><span data-stu-id="0da03-110">Install on Windows</span></span>](install-azure-cli-windows.md)
+* [<span data-ttu-id="0da03-111">在 macOS 上安装</span><span class="sxs-lookup"><span data-stu-id="0da03-111">Install on macOS</span></span>](install-azure-cli-macos.md)
+* <span data-ttu-id="0da03-112">在 Linux 或适用于 Linux 的 Windows 子系统 (WSL) 上安装</span><span class="sxs-lookup"><span data-stu-id="0da03-112">Install on Linux or Windows Subsystem for Linux (WSL)</span></span>
+  * [<span data-ttu-id="0da03-113">在 Debian 或 Ubuntu 上使用 apt 进行安装</span><span class="sxs-lookup"><span data-stu-id="0da03-113">Install with apt on Debian or Ubuntu</span></span>](install-azure-cli-apt.md)
+  * [<span data-ttu-id="0da03-114">在 RHEL、Fedora 或 CentOS 上使用 yum 进行安装</span><span class="sxs-lookup"><span data-stu-id="0da03-114">Install with yum on RHEL, Fedora, or CentOS </span></span>](install-azure-cli-yum.md)
+  * [<span data-ttu-id="0da03-115">在 openSUSE 或 SLE 上使用 zypper 进行安装</span><span class="sxs-lookup"><span data-stu-id="0da03-115">Install with zypper on openSUSE or SLE </span></span>](install-azure-cli-zypper.md)
+  * [<span data-ttu-id="0da03-116">从脚本安装</span><span class="sxs-lookup"><span data-stu-id="0da03-116">Install from script</span></span>](install-azure-cli-linux.md)
+* [<span data-ttu-id="0da03-117">在 Docker 容器中运行</span><span class="sxs-lookup"><span data-stu-id="0da03-117">Run in Docker container</span></span>](run-azure-cli-docker.md)
 
 > [!NOTE]
-> <span data-ttu-id="3e712-118">如果使用 Azure 经典部署模型，请[安装 Azure CLI 1.0](/azure/cli-install-nodejs)。</span><span class="sxs-lookup"><span data-stu-id="3e712-118">If you are using the Azure classic deployment model, [install Azure CLI 1.0](/azure/cli-install-nodejs).</span></span>
+> <span data-ttu-id="0da03-118">如果使用 Azure 经典部署模型，请[安装 Azure CLI 1.0](/azure/cli-install-nodejs)。</span><span class="sxs-lookup"><span data-stu-id="0da03-118">If you are using the Azure classic deployment model, [install Azure CLI 1.0](/azure/cli-install-nodejs).</span></span>
 
