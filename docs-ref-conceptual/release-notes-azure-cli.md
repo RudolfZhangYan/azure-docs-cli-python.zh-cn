@@ -10,13 +10,120 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 116fa95e51399b9b97c1b35c38445f30db7efc94
-ms.sourcegitcommit: fefb5bb6a21cab30c44592c0577408a8d1a2ccc7
+ms.openlocfilehash: 0e81f5723af47242f908b854045deb7d74c50c17
+ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="march-27-2018"></a>2018 年 3 月 27 日
+
+版本 2.0.30
+
+### <a name="core"></a>核心
+
+* 为帮助中标记为预览版的扩展显示消息
+
+### <a name="acs"></a>ACS
+
+* 为 Cloud Shell 中的 `aks install-cli` 修复 SSL 证书验证错误
+
+### <a name="appservice"></a>应用服务
+
+* 为 `webapp update` 添加了仅限 HTTPS 的支持
+* 为 `az webapp identity [assign|show]` 和 `az functionapp identity [assign|show]` 添加了对插槽的支持
+
+### <a name="backup"></a>备份
+
+* 添加了新命令 `az backup protection isenabled-for-vm`。 此命令可用于检查 VM 是否已由订阅中的任何保管库备份
+* 为下列命令的 `--resource-group` 和 `--vault-name` 参数启用了 Azure 对象 ID：
+  * `backup container show`
+  * `backup item set-policy`
+  * `backup item show`
+  * `backup job show`
+  * `backup job stop`
+  * `backup job wait`
+  * `backup policy delete`
+  * `backup policy get-default-for-vm`
+  * `backup policy list-associated-items`
+  * `backup policy set`
+  * `backup policy show`
+  * `backup protection backup-now`
+  * `backup protection disable`
+  * `backup protection enable-for-vm`
+  * `backup recoverypoint show`
+  * `backup restore files mount-rp`
+  * `backup restore files unmount-rp`
+  * `backup restore restore-disks`
+  * `backup vault delete`
+  * `backup vault show`
+* 更改了 `--name` 参数以接受 `backup ... show` 命令的输出格式
+
+### <a name="container"></a>容器
+
+* 添加了 `container exec` 命令。 在正在运行的容器组的容器中执行命令
+* 允许将表输出用于创建和更新容器组
+
+### <a name="extension"></a>扩展
+
+* 为 `extension add` 添加了消息（如果扩展处于预览状态）
+* 更改了 `extension list-available` 以通过 `--show-details` 显示完整扩展数据
+* [重大更改] 更改了 `extension list-available` 以在默认情况下显示简化的扩展数据
+
+### <a name="interactive"></a>交互
+
+* 已将“完成”更改为在执行命令表加载后立即激活
+* 修复了使用 `--style` 参数时的 bug
+* 交互式词法分析器在命令表转储后实例化（如果缺失）
+* 改进了完成符支持
+
+### <a name="lab"></a>实验室
+
+* 修复了 `create environment` 命令的 bug
+
+### <a name="monitor"></a>监视
+
+* 为 `metrics list` 添加了对 `--top`、`--orderby` 和 `--namespace` 的支持 [#5785](https://github.com/Azure/azure-cli/issues/5785)
+* 修复了 [#4529](https://github.com/Azure/azure-cli/issues/5785)：`metrics list`接受要检索的指标的空格分隔列表
+* 为 `metrics list-definitions` 添加了对 `--namespace` 的支持 [#5785](https://github.com/Azure/azure-cli/issues/5785)
+
+### <a name="network"></a>网络
+
+* 添加了对专用 DNS 区域的支持
+
+### <a name="profile"></a>配置文件
+
+* 为 `login` 添加了针对 `--identity-port` 和 `--msi-port` 的警告
+
+### <a name="rdbms"></a>RDBMS
+
+* 添加了业务模型 GA API 版本 2017-12-01
+
+### <a name="resource"></a>资源
+
+* [重大更改]: Changed `provider operation [list|show]` to not require `--api-version`
+
+### <a name="role"></a>角色
+
+* 为 `az ad app create` 添加了对所需访问权限配置和本机客户端的支持
+* 更改了 `rbac` 命令以在对象解析时返回少于 1000 个的 ID
+* 添加了凭据管理命令 `ad sp credential [reset|list|delete]`
+* [重大更改] 从 `az role assignment [list|show]` 输出中删除了“properties”
+* 为 `role definition` 添加了对 `dataActions` 和 `notDataActions` 权限的支持
+
+### <a name="storage"></a>存储
+
+* 修复了在上传大小介于 195GB 和 200GB 之间的文件时存在的问题
+* 修复了 [#4049](https://github.com/Azure/azure-cli/issues/4049)：上传 append 类型的 Blob 时忽略条件参数的问题
+
+### <a name="vm"></a>VM
+
+* 针对即将到来的、适用于包含 100 个以上实例的集合的重大更改，为 `vmss create` 添加了警告
+* 为 `vm [snapshot|image]` 添加了区域弹性支持
+* 更改了磁盘实例视图以更好地报告加密状态
+* [重大更改] 更改了 `vm extension delete` 以不再返回输出
 
 ## <a name="march-13-2018"></a>2018 年 3 月 13 日
 
@@ -33,7 +140,7 @@ ms.lasthandoff: 03/17/2018
 * 添加了 `aks upgrade-connector` 命令以升级现有连接器
 * 更改了 `kubectl` 配置文件以使用更具可读性的块样式 YAML
 
-### <a name="advisor"></a>Advisor
+### <a name="advisor"></a>顾问
 
 * [重大更改] 已将 `advisor configuration get` 重命名为 `advisor configuration list`
 * [重大更改] 已将 `advisor configuration set` 重命名为 `advisor configuration update`
@@ -41,7 +148,7 @@ ms.lasthandoff: 03/17/2018
 * 为 `advisor recommendation list` 添加了 `--refresh` 参数
 * 添加了 `advisor recommendation show` 命令
 
-### <a name="appservice"></a>Appservice
+### <a name="appservice"></a>应用服务
 
 * 弃用了 `[webapp|functionapp] assign-identity`
 * 添加了托管标识命令 `webapp identity [assign|show]` 和 `functionapp identity [assign|show]`
@@ -50,7 +157,7 @@ ms.lasthandoff: 03/17/2018
 
 * 初始版本
 
-### <a name="extension"></a>Extension
+### <a name="extension"></a>分机
 
 * 添加了检查，以在使用的发行版不是程序包源文件中存储的发行版时提醒用户，因为这可能导致错误
 
@@ -61,7 +168,7 @@ ms.lasthandoff: 03/17/2018
 * 修复了 [#5688](https://github.com/Azure/azure-cli/issues/5688)：如果命令表加载遇到了异常，不显示“完成”
 * 修复了用于长时间运行的操作的进度指示器
 
-### <a name="monitor"></a>Monitor
+### <a name="monitor"></a>监视
 
 * 弃用了 `monitor autoscale-settings` 命令
 * 添加了 `monitor autoscale` 命令
@@ -95,7 +202,7 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="storage"></a>存储
 
-* 修复了 [#4971](https://github.com/Azure/azure-cli/issues/4971)：`storage blob copy` 现在支持其他 Azure 云。
+* 修复了 [#4971](https://github.com/Azure/azure-cli/issues/4971)：`storage blob copy` 现在支持其他 Azure 云
 * 修复了 [#5286](https://github.com/Azure/azure-cli/issues/5286)：Batch 命令 `storage blob [delete-batch|download-batch|upload-batch]` 不再在前置条件失败时引发错误
 
 ### <a name="vm"></a>VM
@@ -175,7 +282,7 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="acs"></a>ACS
 
-* [重大更改] 为了准确性已将 `aks get-versions` 重命名为 `aks get-upgrades`
+* [重大更改] 为了提高准确性，已将 `aks get-versions` 重命名为 `aks get-upgrades`
 * 更改了 `aks get-versions` 以显示可用于 `aks create` 的 Kubernetes 版本
 * 更改了 `aks create` 默认值以允许服务器选择 Kubernetes 版本
 * 更新了引用由 AKS 生成的服务主体的帮助消息
@@ -218,8 +325,8 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="iot"></a>IoT
 
-* 修复了成功时 `iot dps access policy [create|update]` 返回“未找到”错误的问题。
-* 修复了成功时 `iot dps linked-hub [create|update]` 返回“未找到”错误的问题。
+* 修复了 `iot dps access policy [create|update]` 在成功时返回“not found”错误的问题
+* 修复了 `iot dps linked-hub [create|update]` 在成功时返回“not found”错误的问题
 * 向 `iot dps access policy [create|update]` 和 `iot dps linked-hub [create|update]` 添加了 `--no-wait` 支持
 * 更改了 `iot hub create` 以允许指定分区数
 
@@ -378,8 +485,8 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="event-grid"></a>事件网格
 
-* [重大更改] 已将 `az eventgrid topic event-subscription` 命令移至 `eventgrid event-subscription`
-* [重大更改] 已将 `az eventgrid resource event-subscription` 命令移至 `eventgrid event-subscription`
+* [重大更改] 已将 `az eventgrid topic event-subscription` 命令变动为 `eventgrid event-subscription`
+* [重大更改] 已将 `az eventgrid resource event-subscription` 命令变动为 `eventgrid event-subscription`
 * [重大更改] 已删除 `eventgrid event-subscription show-endpoint-url` 命令。 请改用 `eventgrid event-subscription show --include-full-endpoint-url`
 * 添加了命令 `eventgrid topic update`
 * 添加了命令 `eventgrid event-subscription update`
@@ -424,7 +531,7 @@ ms.lasthandoff: 03/17/2018
 ### <a name="vm"></a>VM
 
 * [预览] `vmss` 的跨区域支持
-* [重大更改] 已将单区域 `vmss` 默认值更改为“标准”负载均衡器
+* [重大更改] 已将单区域 `vmss` 默认值更改为“Standard”负载均衡器
 * [重大更改] 已将EMSI 的 `externalIdentities` 更改为 `userAssignedIdentities`
 * [预览] 添加了 OS 磁盘交换支持
 * 添加了使用其他订阅中的 VM 映像的支持
@@ -728,7 +835,7 @@ ms.lasthandoff: 03/17/2018
 * 添加了对显示内置策略定义的支持
 * 添加了用于创建策略定义的支持模式参数
 * 为 `managedapp definition create` 添加了对 UI 定义和模板的支持
-* [重大更改] 将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`
+* [重大更改] 已将 `managedapp` 资源类型从 `appliances` 更改到 `applications`，从 `applianceDefinitions` 更改到 `applicationDefinitions`
 
 ### <a name="network"></a>网络
 
@@ -799,15 +906,15 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="cdn"></a>CDN
 
-* 修复了 `cdn custom-domain create` 的“CustomDomain 不可迭代” bug。
+* 修复了 `cdn custom-domain create` 的“CustomDomain is not interable”bug
 
-### <a name="extension"></a>分机
+### <a name="extension"></a>Extension
 
-* 初始版本。
+* 初始版本
 
 ### <a name="keyvault"></a>KeyVault
 
-* 修复了 `keyvault set-policy` 的权限区分大小写的问题。
+* 为 `keyvault set-policy` 修复了权限区分大小写的问题
 
 ### <a name="network"></a>网络
 
@@ -859,17 +966,17 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="cli"></a>CLI
 
-* 在 `--version` 中添加了法律说明。
+* 在 `--version` 中添加了法律说明
 
 ### <a name="acs"></a>ACS
 
-* 更正了预览区域。
-* 正确设置了默认 `dns_name_prefix` 的格式。
-* 优化了 acs 命令输出。
+* 更正了预览区域
+* 正确设置了默认 `dns_name_prefix` 的格式
+* 优化了 acs 命令输出
 
 ### <a name="appservice"></a>应用服务
 
-* [重大更改] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致问题
+* [重大更改] 修复了 `az webapp config appsettings [delete|set]` 输出中的不一致
 * 为 `az webapp config container set --docker-custom-image-name` 的 `-i` 添加了新别名
 * 公开了 `az webapp log show`
 * 公开了 `az webapp delete` 中的新参数，用于保留应用服务计划、指标或 dns 注册
@@ -1090,7 +1197,7 @@ vm (2.0.11)
 
 ### <a name="cdn"></a>CDN
 
-* 当 `--profile-name` 指定的配置文件不存在时，针对 `cdn endpoint list` 提供更完善的错误消息。
+* 当 `--profile-name` 指定的配置文件不存在时，为 `cdn endpoint list` 提供更完善的错误消息
 
 ### <a name="cloud"></a>云
 
@@ -1103,7 +1210,7 @@ vm (2.0.11)
 ### <a name="cosmosdb"></a>CosmosDB
 
 * 修复了允许使用自定义分区键创建集合的问题
-* 添加了对集合默认 TTL 的支持。
+* 添加了对集合默认 TTL 的支持
 
 ### <a name="data-lake-analytics"></a>数据湖分析
 
@@ -1257,7 +1364,7 @@ vm (2.0.11)
 * 支持配置 NSG
 * 修复了无法正确配置 DNS 服务器的 bug
 * 支持托管服务标识
-* 修复了包含现有负载均衡器的 `cmss create` 需要 `--backend-pool-name` 的问题。
+* 修复了包含现有负载均衡器的 `cmss create` 需要 `--backend-pool-name` 的问题
 * 要求使用 `vm image create` LUN 创建的数据磁盘以 0 开头
 
 
@@ -1267,12 +1374,12 @@ vm (2.0.11)
 
 * Documentdb 已重命名为 Cosmosdb
 * 添加 rdbms (mysql, postgres)
-* 包括 Data Lake Analytics 和 Data Lake Store 模块。
-* 包括认知服务模块。
-* 包括 Service Fabric 模块。
-* 包括交互式模块（重命名 az-shell）。
-* 添加对 CDN 命令的支持。
-* 删除容器模块。
+* 包括 Data Lake Analytics 和 Data Lake Store 模块
+* 包括认知服务模块
+* 包括 Service Fabric 模块
+* 包括交互式模块（重命名 az-shell）
+* 添加对 CDN 命令的支持
+* 删除容器模块
 * 添加“az -v”作为“az --version”的快捷方式 ([#2926](https://github.com/Azure/azure-cli/issues/2926))
 * 提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))
 
@@ -1349,25 +1456,25 @@ vm (2.0.6)
 
 ### <a name="cosmosdb"></a>CosmosDB
 
-* 将 DocumentDB 模块重命名为 CosmosDB。
+* 将 documentdb 模块重命名为 cosmosdb
 * 增加对 DocumentDB 数据平面 API 的支持：数据库和集合管理
 * 增加对数据库帐户启用自动故障转移的支持
 * 增加对新一致性策略 ConsistentPrefix 的支持
 
-### <a name="data-lake-analytics"></a>数据湖分析
+### <a name="data-lake-analytics"></a>Data Lake Analytics
 
-* Bug 修复：在筛选作业结果和状态列表时会引发错误。
+* 修复了在筛选作业结果和状态列表时会引发错误的 bug
 * 增加对新目录项类型的支持：包。 访问方法：`az dla catalog package`
 * 可从数据库内列出下列目录项（无需架构规范）：
 
   * 表
   * 表值函数
   * 查看
-  * 表统计信息。 也可以使用架构列出，但无需指定表名。
+  * 表统计信息。 这也可以使用架构（但无需指定表名）列出
 
 ### <a name="data-lake-store"></a>Data Lake Store
 
-* 更新基础文件系统 SDK 版本，可更好地支持处理服务器端限制方案。
+* 更新基础文件系统 SDK 的版本，以便为处理服务器端限制场景提供更好的支持
 * 提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))
 * 访问显示帮助丢失。 正在添加。 ([#2743](https://github.com/Azure/azure-cli/issues/2743))
 
@@ -1378,18 +1485,18 @@ vm (2.0.6)
 ### <a name="keyvault"></a>KeyVault
 
 * BC：`az keyvault certificate download` 将 -e 从字符串或二进制更改为 PEM 或 DER，从而更好地表示选项
-* BC：从 `keyvault certificate create` 删除 --expires 和 --not-before，因为此服务不支持这些参数。
+* BC：从 `keyvault certificate create` 删除 --expires 和 --not-before，因为此服务不支持这些参数
 * 将 --validity 参数添加到 `keyvault certificate create`，有选择地替代 --policy 中的值
-* 解决 `keyvault certificate get-default-policy` 中的问题：“expires”和“not_before”已公开，但“validity_in_months”未公开。
+* 修复了 `keyvault certificate get-default-policy` 中已公开“expires”和“not_before”但未公开“validity_in_months”的问题
 * KeyVault 解决了 pem 和 pfx 的导入问题 ([#2754](https://github.com/Azure/azure-cli/issues/2754))
 
 ### <a name="lab"></a>实验室
 
-* 针对实验室环境添加 create、show、delete 和 list 命令。
-* 添加 show 和 list 命令，查看实验室中的 ARM 模板。
-* 在 `az lab vm list` 中添加 --environment 标志，按实验室环境筛选 VM。
-* 添加 convenience 命令 `az lab formula export-artifacts`，导出实验室公式中的项目基架。
-* 添加命令，管理实验室中的机密。
+* 为实验室中的环境添加 create、show、delete 和 list 命令
+* 添加 show 和 list 命令以查看实验室中的 ARM 模板
+* 在 `az lab vm list` 中添加 --environment 标志，以便按实验室中的环境筛选 VM
+* 添加方便命令 `az lab formula export-artifacts`，以便导出实验室公式中的项目基架
+* 添加命令以管理实验室中的机密
 
 ### <a name="monitor"></a>监视
 
@@ -1398,22 +1505,22 @@ vm (2.0.6)
 
 ### <a name="network"></a>网络
 
-* 添加 `network watcher test-connectivity` 命令。
-* 添加对 `network watcher packet-capture create` 的 `--filters` 参数的支持。
-* 添加对应用程序网关连接排出的支持。
-* 添加对应用程序网关 WAF 规则集配置的支持。
-* 添加对 ExpressRoute 路由筛选器和规则的支持。
-* 添加对 TrafficManager 地理路由的支持。
-* 添加对基于 VPN 连接策略的流量选择器的支持。
-* 添加对 VPN 连接 IPSec 策略的支持。
-* 修复使用 `--no-wait` 或 `--validate` 参数时 `vpn-connection create` 出现的 bug。
+* 添加 `network watcher test-connectivity` 命令
+* 为 `network watcher packet-capture create` 添加对 `--filters` 参数的支持
+* 添加对应用程序网关连接排出的支持
+* 添加对应用程序网关 WAF 规则集配置的支持
+* 添加对 ExpressRoute 路由筛选器和规则的支持
+* 添加对 TrafficManager 地理路由的支持
+* 添加对基于 VPN 连接策略的流量选择器的支持
+* 添加对 VPN 连接 IPSec 策略的支持
+* 修复使用 `--no-wait` 或 `--validate` 参数时 `vpn-connection create` 出现的 bug
 * 添加对主动-主动 VNet 网关的支持
-* 从 `network vpn-connection list/show` 命令的输出中删除 null 值。
+* 从 `network vpn-connection list/show` 命令的输出中删除 null 值
 * BC：修复 `vpn-connection create` 输出中的 bug
-* Bug 修复：“vpn-connection create”的“--key-length”参数未正确分析。
-* 修复 `dns zone import` 中的 Bug：记录未正确导入。
-* Bug 修复：`traffic-manager endpoint update` 不起作用。
-* 添加“network watcher”预览命令。
+* 修复无法正确分析“vpn-connection create”的“--key-length”参数的 bug
+* 修复 `dns zone import` 中无法正确导入记录的 bug
+* 修复 `traffic-manager endpoint update` 不起作用的 bug
+* 添加“network watcher”预览命令
 
 ### <a name="profile"></a>配置文件
 
@@ -1423,7 +1530,7 @@ vm (2.0.6)
 ### <a name="redis"></a>Redis
 
 * 添加 update 命令，也增加了对 redis 缓存进行缩放的功能
-* 弃用“update-settings”命令。
+* 弃用“update-settings”命令
 
 ### <a name="resource"></a>资源
 
@@ -1445,12 +1552,12 @@ vm (2.0.6)
 
 ### <a name="sql"></a>SQL
 
-* 添加了 az sql server list-usages 和 az sql db list-usages 命令。
+* 添加了 az sql server list-usages 和 az sql db list-usages 命令
 * SQL - 能够直接连接到资源提供程序 ([#2832](https://github.com/Azure/azure-cli/issues/2832))
 
 ### <a name="storage"></a>存储
 
-* 位置默认为 `storage account create` 的资源组位置。
+* 对于 `storage account create`，将位置默认为资源组位置
 * 添加对增量 blob 复制的支持
 * 添加对大型块 blob 上传的支持
 * 如果要上传的文件大于 200GB，则将块大小更改为 100MB
@@ -1471,7 +1578,7 @@ vm (2.0.6)
 
 版本 2.0.2
 
-此版本中已发布 ACR、批处理、KeyVault 和 SQL 组件。
+此版本中已发布 ACR、Batch、KeyVault 和 SQL 组件
 
 ```
 azure-cli (2.0.2)
@@ -1505,7 +1612,7 @@ vm (2.0.2)
 
 ### <a name="core"></a>核心
 
-* 在默认列表中添加了 acr、实验室、监视和查找模块。
+* 在默认列表中添加了 acr、lab、monitor 和 find 模块
 * 登录：跳过错误的租户 ([#2634](https://github.com/Azure/azure-cli/pull/2634))
 * 登录：将默认订阅设置为处于“已启用”状态的订阅 ([#2575](https://github.com/Azure/azure-cli/pull/2575))
 * 添加了 wait 命令，并添加了对其他命令的 --no-wait 支持 ([#2524](https://github.com/Azure/azure-cli/pull/2524))
@@ -1530,8 +1637,8 @@ vm (2.0.2)
 
 ### <a name="datalake"></a>DataLake
 
-* Data Lake Analytics 模块的初始版本。
-* Data Lake Store 模块的初始版本。
+* Data Lake Analytics 模块的初始版本
+* Data Lake Store 模块的初始版本
 
 ### <a name="docuemntdb"></a>DocuemntDB
 
@@ -1551,21 +1658,17 @@ vm (2.0.2)
 
 版本 2.0.0
 
-此版 Azure CLI 2.0 是第一个“正式版”。
-正式版适用于以下命令模块：
+此 Azure CLI 2.0 发布版是第一个“正式版”。正式版适用于以下命令模块：
 - 容器服务 (ACS)
 - 计算（包括 Resource Manager、VM、虚拟机规模集、托管磁盘）
 - 网络
 - 存储
 
-这些命令模块可在生产环境中使用，并受标准 Microsoft SLA 的支持。
-可以直接向 Microsoft 支持部门或者通过 [github 问题列表](https://github.com/azure/azure-cli/issues/)提出问题。
-可以[在 StackOverflow 上使用 azure-cli 标记](http://stackoverflow.com/questions/tagged/azure-cli)或者通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队来提出问题。可以通过命令行使用 `az feedback` 命令提供反馈。
+这些命令模块可在生产中使用，并且受标准 Microsoft SLA 支持。可以直接通过 Microsoft 支持部门创建问题，也可以在我们的 [github 问题列表](https://github.com/azure/azure-cli/issues/)中创建问题。可以[使用 azure-cli 标记在 StackOverflow 上](http://stackoverflow.com/questions/tagged/azure-cli)提问，也可以通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队。可以从命令行使用 `az feedback` 命令提供反馈。
 
-这些模块中的命令非常稳定，其语法在此 Azure CLI 版本的后续发行版中预期不会变化。
+这些模块中的命令非常稳定，其语法在此 Azure CLI 版本即将到来的发行版中预期不会变化。
 
-若要检查 CLI 版本，请使用 `az --version`。
-输出中将列出 CLI 本身的版本（在此发行版中为 2.0.0）、各个命令模块的版本，以及所用 Python 和 GCC 的版本。
+若要验证 CLI 的版本，请使用 `az --version`。输出中将列出 CLI 本身的版本（在此发行版中为 2.0.0）、各个命令模块的版本，以及所用 Python 和 GCC 的版本。
 
 ```
 azure-cli (2.0.0)
@@ -1597,14 +1700,12 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 ```
 
 > [!Note]
-> 某些命令模块带有“b*n*”或“rc*n*”后缀。
-> 这些命令模块仍以预览版提供，将来会发布正式版。
+> 其中的一些命令模块有“b*n*”或“rc*n*”后缀。这些命令模块仍在预览版中提供，将来会发布正式版。
 
-此外，我们还提供 CLI 夜间预览版。
-有关信息，请参阅有关[获取夜间预览版](https://github.com/Azure/azure-cli#nightly-builds)的说明，以及有关[开发人员设置与贡献代码](https://github.com/Azure/azure-cli#developer-setup)的说明。
+此外，我们还提供 CLI 夜间预览版。有关信息，请参阅有关[获取夜间预览版](https://github.com/Azure/azure-cli#nightly-builds)的说明，以及有关[开发人员设置与贡献代码](https://github.com/Azure/azure-cli#developer-setup)的说明。
 
 可通过以下方式报告夜间预览版的问题：
 - 在 [github 问题列表](https://github.com/azure/azure-cli/issues/)中报告问题
-- 通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队。
-- 请通过命令行使用 `az feedback` 命令提供反馈。
+- 通过 [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com) 联系产品团队
+- 通过命令行使用 `az feedback` 命令提供反馈
 
