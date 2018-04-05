@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: f3adcb838c8d335d3e03691bce7682a045859078
-ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+ms.openlocfilehash: 5f42605844432002959e308a0c536ff990f97d4b
+ms.sourcegitcommit: d9e5743a4321684c412c1740d26e7c1e258af5b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
@@ -33,5 +33,5 @@ CLI 的当前版本为 __2.0.30__。 有关最新版本的信息，请参阅[发
 * [在 Docker 容器中运行](run-azure-cli-docker.md)
 
 > [!NOTE]
-> 如果使用 Azure 经典部署模型，请[安装 Azure CLI 1.0](/azure/cli-install-nodejs)。
+> 如果使用 Azure 经典部署模型，请[安装 Azure CLI 1.0](install-cli-version-1.0.md)。
 
