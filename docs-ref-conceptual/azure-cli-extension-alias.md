@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: e8419394bb221d2614e15171bd19dd76fd9cd773
-ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+ms.openlocfilehash: e457d78b1009fe573554df36db18f525516e0b4a
+ms.sourcegitcommit: 335c11e6c34f7907e61a43507745ba84ed4e7469
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-azure-cli-20-alias-extension"></a>Azure CLI 2.0 别名扩展
 
@@ -99,7 +99,7 @@ az ls-groups
 
 ## <a name="create-an-alias-command-with-arguments"></a>使用参数创建别名命令
 
-还可以将位置参数包含为别名中的 `{{ arg_name }}`，来将其添加到别名命令中。 大括号内的空格是必需的。
+还可以将位置参数包含为别名中的 `{{ arg_name }}`，来将其添加到别名命令中。 括号内的空格是必需的。
 
 ```
 [alias_name {{ arg1 }} {{ arg2 }} ...]
@@ -115,7 +115,7 @@ command = vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vm
 
 当运行此命令时，需要为位置参数提供值。
 
-```azruecli
+```azurecli
 az get-vm-ip MyResourceGroup MyVM
 ```
 
@@ -143,7 +143,7 @@ command = storage blob list --account-name {{ url.replace('https://', '').split(
 
 若要卸载扩展，请使用 [az extension remove](/cli/azure/extension#az-extension-remove)命令。
 
-```bash
+```azurecli
 az extension remove --name alias
 ```
 
