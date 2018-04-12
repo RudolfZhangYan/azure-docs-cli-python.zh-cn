@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 6970844bf9eba5ccf18b7603115de629e995f2c4
-ms.sourcegitcommit: f57b5666523ef3642bee644eb0e0fe7085b3194a
+ms.openlocfilehash: 7ef6175815014ac3f822e8c1038b4f5af8bba9dc
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Azure CLI 2.0 配置
 
@@ -29,7 +29,7 @@ CLI 使用的配置值按以下优先顺序计算，列表中位于较高顺序�
 
 ## <a name="cli-configuration-with-az-configure"></a>使用 az configure 进行 CLI 配置
 
-使用 [az configure](/cli/azure/reference-index#az_configure) 命令设置 CLI 的默认值。
+使用 [az configure](/cli/azure/reference-index#az-configure) 命令设置 CLI 的默认值。
 此命令采用一个参数 `--defaults`，即 `key=value` 对的空格分隔列表。 CLI 使用提供的值来取代所需的参数。
 
 下面是可以使用的键列表。

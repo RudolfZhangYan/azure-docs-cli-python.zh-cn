@@ -1,6 +1,6 @@
 ---
-title: "通过 Azure CLI 2.0 使用 Azure 服务主体"
-description: "了解如何通过 Azure CLI 2.0 创建和使用服务主体。"
+title: 通过 Azure CLI 2.0 使用 Azure 服务主体
+description: 了解如何通过 Azure CLI 2.0 创建和使用服务主体。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: b46c735a14240bddd07659475ada1c33c75a1e67
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: fd615c762f997cb8bd4835d387cd96dd9c475928
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 02/15/2018
 
 ## <a name="create-the-service-principal"></a>创建服务主体
 
-使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) 命令创建服务主体。 服务主体名称不与任何现有应用程序或用户名相关联。 可以使用所选身份验证类型创建服务主体。
+使用 [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) 命令创建服务主体。 服务主体名称不与任何现有应用程序或用户名相关联。 可以使用所选身份验证类型创建服务主体。
 
 * `--password` 用于基于密码的身份验证。 请确保按照 [Azure Active Directory 密码规则和限制](/azure/active-directory/active-directory-passwords-policy)创建强密码。 如果未指定密码，系统将为你创建一个。
 
@@ -67,9 +67,9 @@ ms.lasthandoff: 02/15/2018
 
 Azure CLI 2.0 提供以下命令用于管理角色分配。
 
-* [az role assignment list](/cli/azure/role/assignment#list)
-* [az role assignment create](/cli/azure/role/assignment#create)
-* [az role assignment delete](/cli/azure/role/assignment#delete)
+* [az role assignment list](/cli/azure/role/assignment#az-role-assignment-list)
+* [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create)
+* [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete)
 
 服务主体的默认角色是“参与者”。 此角色具有可读取和写入 Azure 帐户的完全权限，但通常不适合于应用程序。 “读者”角色限制性更强，提供只读访问权限。  有关基于角色的访问控制 (RBAC) 和角色的详细信息，请参阅 [RBAC：内置角色](/azure/active-directory/role-based-access-built-in-roles)。
 
@@ -108,7 +108,7 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password PAT
 ```
 ## <a name="reset-credentials"></a>重置凭据
 
-如果你忘记了服务主体的凭据，可以使用 [az ad sp reset-credentials](https://docs.microsoft.com/en-us/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_reset_credentials) 命令重置凭据。 用于创建新服务主体的相同限制和选项在此处同样适用。
+如果你忘记了服务主体的凭据，可以使用 [az ad sp reset-credentials](https://docs.microsoft.com/en-us/cli/azure/ad/sp#az-ad-sp-reset-credentials) 命令重置凭据。 用于创建新服务主体的相同限制和选项在此处同样适用。
 
 ```azurecli
 az ad sp reset-credentials --name APP_ID --password NEW_PASSWORD

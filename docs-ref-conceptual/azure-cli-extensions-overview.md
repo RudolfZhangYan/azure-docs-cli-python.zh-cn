@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 5695d1df42689b315dd9d8783232ce35205a0a0e
-ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+ms.openlocfilehash: a150edbc174ff77f4320a2cb60e031dc3c6ad1cc
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>将扩展与 Azure CLI 2.0 配合使用
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/28/2018
 
 ## <a name="find-extensions"></a>查找扩展
 
-若要了解有哪些扩展可用，可以使用 [az extension list-available](/cli/azure/extension?view=azure-cli-latest#az-extension-list-available)。 此命令列出由 Microsoft 提供并维护的正式扩展。
+若要了解有哪些扩展可用，可以使用 [az extension list-available](/cli/azure/extension#az-extension-list-available)。 此命令列出由 Microsoft 提供并维护的正式扩展。
 
 ```azurecli
 az extension list-available --output table
@@ -35,7 +35,7 @@ az extension list-available --output table
 
 ## <a name="install-extensions"></a>安装扩展
 
-找到要安装的扩展后，请使用 [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-add) 获取它。 如果该扩展在 `az extension list-available` 中列出，可以按名称安装该扩展。
+找到要安装的扩展后，请使用 [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-add) 获取它。 如果该扩展在 `az extension list-available` 中列出，可以按名称安装该扩展。
 
 ```azurecli
 az extension add --name <extension-name>
@@ -51,7 +51,7 @@ az extension add --source <URL-or-path>
 
 ## <a name="update-extensions"></a>更新扩展
 
-如果已按名称安装了扩展，可以使用 [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-update) 更新该扩展。
+如果已按名称安装了扩展，可以使用 [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-update) 更新该扩展。
 
 ```azurecli
 az extension update --name <extension-name>
@@ -63,7 +63,7 @@ az extension update --name <extension-name>
 
 ## <a name="uninstall-extensions"></a>卸载扩展
 
-如果不再需要某个扩展，可以使用 [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-remove) 进行卸载。
+如果不再需要某个扩展，可以使用 [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-remove) 进行卸载。
 
 ```azurecli
 az extension remove --name <extension-name>
