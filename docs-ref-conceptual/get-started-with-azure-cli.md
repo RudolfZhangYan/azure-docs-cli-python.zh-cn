@@ -1,7 +1,7 @@
 ---
-title: "Azure CLI 2.0 入门"
-description: "学习命令基础知识开始使用 Azure CLI 2.0。"
-keywords: "Azure CLI, CLI 帮助, Azure 帮助, 查询, 自动化,"
+title: Azure CLI 2.0 入门
+description: 学习命令基础知识开始使用 Azure CLI 2.0。
+keywords: Azure CLI, CLI 帮助, Azure 帮助, 查询, 自动化,
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 3f5fe1b01a8ce691846126a6c03e7222e9b20e0d
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.openlocfilehash: 9eec3161a726d6cca53d92f80992059bfd056bf7
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/08/2018
 
 [安装 CLI](install-azure-cli.md)（如果尚未安装），或试用 [Azure Cloud Shell](/azure/cloud-shell/overview)。
 
-对本地安装使用任何 CLI 命令之前，需要使用 [az login](/cli/azure/reference-index#az_login) 登录。
+对本地安装使用任何 CLI 命令之前，需要使用 [az login](/cli/azure/reference-index#az-login) 登录。
 
 ```azurecli
 az login
@@ -53,7 +53,7 @@ az login
 CLI 中的命令以_组_的_子命令_形式提供。
 每个组表示由 Azure 提供的一个服务，而子组将这些服务的命令划分为逻辑分组。
 
-若要搜索命令，请使用 [az find](/cli/azure/reference-index#az_find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
+若要搜索命令，请使用 [az find](/cli/azure/reference-index#az-find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
 
 ```azurecli
 az find -q secret
@@ -80,7 +80,7 @@ CLI 为 bash shell 下的命令提供完整 tab 键补全。
 
 ## <a name="interactive-mode"></a>交互模式
 
-CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地选择子命令。 使用 `az interactive` 命令即可进入交互模式。 有关交互模式以及它如何帮助你了解 CLI 的详细信息，请参阅 [Azure CLI 2.0 交互模式](interactive-azure-cli.md)。
+CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地选择子命令。 使用 [az interactive](/cli/azure/reference-index#az-interactive) 命令即可进入交互模式。 有关交互模式以及它如何帮助你了解 CLI 的详细信息，请参阅 [Azure CLI 2.0 交互模式](interactive-azure-cli.md)。
 
 此外，还有提供交互体验的 [Visual Studio Code 插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)，包括自动完成和鼠标悬停显示的文档。
 
@@ -105,7 +105,7 @@ CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地�
 
 ## <a name="give-feedback"></a>提供反馈
 
-我们欢迎你提供有关 CLI 的反馈以帮助我们改进和解决 bug。 可以[在 Github 上提出问题](https://github.com/azure/azure-cli/issues)或利用 CLI 的内置功能使用 `az feedback` 命令留下常规反馈。
+我们欢迎你提供有关 CLI 的反馈以帮助我们改进和解决 bug。 可以[在 Github 上提出问题](https://github.com/azure/azure-cli/issues)，或利用 CLI 的内置功能来通过 [az feedback](/cli/azure/reference-index#az-feedback) 命令留下常规反馈。
 
 ```azurecli
 az feedback
