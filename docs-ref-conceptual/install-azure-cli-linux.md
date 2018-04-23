@@ -1,6 +1,6 @@
 ---
-title: "手动安装适用于 Linux 的 Azure CLI 2.0"
-description: "如何在 Linux 上手动安装 Azure CLI 2.0"
+title: 手动安装适用于 Linux 的 Azure CLI 2.0
+description: 如何在 Linux 上手动安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 4ab1f70308810e045b9a1d923fd809ad9848f6c6
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: a74a4d30709f5d10fc3a3f2b63c9df931ab0516b
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI 2.0
 
@@ -39,7 +39,15 @@ ms.lasthandoff: 02/15/2018
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。 安装后，请使用 `az` 命令运行 CLI。
+也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。 
+
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+
+```azurecli
+az login
+```
+
+若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="troubleshooting"></a>故障排除
 

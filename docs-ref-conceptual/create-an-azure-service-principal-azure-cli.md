@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: fd615c762f997cb8bd4835d387cd96dd9c475928
-ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
+ms.openlocfilehash: fc87e3476d3a58bb16dd37bdde9679679a860f53
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -38,10 +38,20 @@ ms.lasthandoff: 04/06/2018
 
   可以添加 `--keyvault` 参数以指示证书存储在 Azure Key Vault 中。 在这种情况下，`--cert` 值引用 Key Vault 中证书的名称。
 
-* `--create-cert` 创建用于身份验证的_自签名_证书。 可以添加 `--keyvault` 参数以将证书存储在 Azure Key Vault 中。
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault VaultName
+  ```
+
+* `--create-cert` 创建用于身份验证的_自签名_证书。 如果未提供 `--cert` 参数，将会生成随机证书名称。
 
   ```azurecli
   az ad sp create-for-rbac --name ServicePrincipalName --create-cert
+  ```
+
+  可以添加 `--keyvault` 参数以将证书存储在 Azure Key Vault 中。 使用 `--keyvault` 时，也必须提供 `--cert` 参数。
+
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName
   ```
 
 如果不包括指示身份验证类型的参数，则默认情况下使用 `--password`。

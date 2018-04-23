@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
-ms.openlocfilehash: c17506cc81adc859ff5778b109c1832c857764e6
-ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
+ms.openlocfilehash: 1a01dde9381e40065299a4165d649fc85af7ca2e
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>使用 Azure CLI 2.0 管理多个云
 
@@ -85,7 +85,7 @@ az cloud set --name AzureChinaCloud
 
 ## <a name="register-a-cloud"></a>注册云
 
-如果对 Azure Stack 使用了自己的终结点，请注册新云。 可以使用 [az cloud register](/cli/azure/cloud#az-cloud-register) 命令创建云。 此命令需要一个名称，以及一组具有关联终结点的功能。 若要了解如何注册用于 Azure Stack 的云，请参阅[安装和配置用于 Azure Stack 的 CLI](/azure/azure-stack/user/azure-stack-connect-cli#connect-to-azure-stack)。
+如果对 Azure Stack 使用了自己的终结点，请注册新云。 可以使用 [az cloud register](/cli/azure/cloud#az-cloud-register) 命令创建云。 此命令需要一个名称，以及一组具有关联终结点的功能。 若要了解如何注册用于 Azure Stack 的云，请参阅[在 Azure Stack 中配合 Azure CLI 2.0 使用 API 版本配置文件](/azure/azure-stack/user/azure-stack-version-profiles-azurecli2#connect-to-azure-stack)。
 
 在中国、美国政府或德国区域，不需要注册自己的云。 这些设置由 Microsoft 管理，并根据默认情况开通。  有关所有可用终结点设置的详细信息，请参阅 [`az cloud register` 的文档](/cli/azure/cloud#az-cloud-register)。
 

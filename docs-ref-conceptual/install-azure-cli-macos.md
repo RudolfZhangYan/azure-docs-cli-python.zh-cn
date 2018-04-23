@@ -1,6 +1,6 @@
 ---
-title: "安装适用于 macOS 的 Azure CLI"
-description: "如何在 macOS 上安装 Azure CLI 2.0"
+title: 安装适用于 macOS 的 Azure CLI
+description: 如何在 macOS 上安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 0295846abc2fe6091940824c6efc47b8fd64ce9f
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 295e84d2d30365aac4334e1e962f23c7b8e38d37
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-on-macos"></a>在 macOS 上安装 Azure CLI 2.0
 
@@ -31,7 +31,13 @@ Homebrew 是管理 CLI 安装的最容易的方法。 它可以方便地进行�
 brew update && brew install azure-cli
 ```
 
-然后即可使用 `az` 命令来运行 Azure CLI。
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+
+```azurecli
+az login
+```
+
+若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="troubleshooting"></a>故障排除
 

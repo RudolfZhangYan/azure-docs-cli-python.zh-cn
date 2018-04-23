@@ -4,19 +4,136 @@ description: 了解 Azure CLI 2.0 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/27/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 0e81f5723af47242f908b854045deb7d74c50c17
-ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+ms.openlocfilehash: 1e6bd4cd8bab853fb417ed9c4dd71d56e5de7cdc
+ms.sourcegitcommit: 204fd027d3668959b98b936969ccb41eada0fd29
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="april-10-2018"></a>2018 年 4 月 10 日
+
+版本 2.0.31
+
+### <a name="acr"></a>ACR
+
+* 改进了 wincred 回退错误处理
+
+### <a name="acs"></a>ACS
+
+* 更改了 aks 创建的 SPN，使其有效期达到 5 年
+
+### <a name="appservice"></a>应用服务
+
+* [重大更改]: Removed `assign-identity`
+* 修复了 Web 应用计划不存在导致的未捕获异常
+
+### <a name="batchai"></a>BatchAI
+
+* 添加了对 2018-03-01 API 的支持
+
+ - 作业级装载
+ - 使用机密值的环境变量
+ - 性能计数器设置
+ - 报告作业特定的路径段
+ - 支持“列出文件”API 中的子文件夹
+ - 使用情况和限制报告
+ - 允许为 NFS 服务器指定缓存类型
+ - 支持自定义映像
+ - 添加了 pyTorch 工具包支持
+
+* 添加了 `job wait` 命令，以允许等待作业完成和报告作业退出代码
+* 添加了 `usage show` 命令，用于列出不同区域的当前 Batch AI 资源使用情况和限制
+* 支持国家云
+* 添加了作业命令行参数，以便除了装载配置文件以外，还能装载作业级别的文件系统
+* 添加了更多选项用于自定义群集 - VM 优先级、子网、自动缩放群集的初始节点计数，以及指定自定义映像
+* 添加了命令行选项用于指定 Batch AI 托管 NFS 的缓存类型
+* 简化了在配置文件中指定装载文件系统的方法。 现在，可以省略 Azure 文件共享和 Azure Blob 容器的凭据 - CLI 将会使用通过命令行参数提供的或通过环境变量指定的存储帐户密钥来填充缺少的凭据，或者从 Azure 存储查询密钥（如果存储帐户属于当前订阅）
+* 作业完成后（成功、失败、已终止或已删除），作业文件流命令现在会自动完成
+* 改进了 `show` 操作的 `table` 输出
+* 添加了 `--use-auto-storage` 选项用于创建群集。 使用此选项可以更方便地管理存储帐户，以及将 Azure 文件共享和 Azure Blob 容器装载到群集
+* 为 `cluster create` 和 `file-server create` 添加了 `--generate-ssh-keys` 选项
+* 添加了通过命令行提供节点设置任务的功能
+* [重大更改]移动了 `job file` 组下面的 `job stream-file` 和 `job list-files` 命令
+* [重大更改]已将 `file-server create` 命令中的 `--admin-user-name` 重命名为 `--user-name`，使其与 `cluster create` 命令一致
+
+### <a name="billing"></a>计费
+
+* 添加了登记帐户命令
+
+### <a name="consumption"></a>消耗
+
+* 添加了 `marketplace` 命令
+* [重大更改] 已将 `reservations summaries` 重命名为 `reservation summary`
+* [重大更改] 已将 `reservations details` 重命名为 `reservation detail`
+* [重大更改]删除了 `reservation` 命令的 `--reservation-order-id` 和 `--reservation-id` 短选项
+* [重大更改]删除了 `reservation summary` 命令的 `--grain` 短选项
+* [重大更改]删除了 `pricesheet` 命令的 `--include-meter-details` 短选项
+
+### <a name="container"></a>容器
+
+* 添加了 git 存储库卷装载参数 `--gitrepo-url` `--gitrepo-dir` `--gitrepo-revision` 和 `--gitrepo-mount-path`
+* 修复了 [#5926](https://github.com/Azure/azure-cli/issues/5926)：指定 --container-name 时 `az container exec` 失败
+
+### <a name="extension"></a>分机
+
+* 已将分配检查消息更改为调试级别
+
+### <a name="interactive"></a>交互
+
+* 更改为在命令不可识别时停止完成
+* 添加了创建命令子树之前和之后所用的事件挂钩
+* 添加了 `--ids` 参数补全
+
+### <a name="network"></a>网络
+
+* 修复了 [#5936](https://github.com/Azure/azure-cli/issues/5936)：无法设置 `application-gateway create` 标记
+* 添加了参数 `--auth-certs`，以附加 `application-gateway http-settings [create|update]` 的身份验证证书。 [#4910](https://github.com/Azure/azure-cli/issues/4910)
+* 添加了 `ddos-protection` 命令用于创建 DDoS 保护计划 
+* 为 `vnet [create|update]` 添加了 `--ddos-protection-plan` 支持，以便将 VNet 关联到 DDoS 保护计划
+* 修复了 `network route-table [create|update]` 中 `--disable-bgp-route-propagation` 标志的问题
+* 删除了 `network lb [create|update]` 的虚拟参数 `--public-ip-address-type` 和 `--subnet-type`
+* 为 `network dns zone [import|export]` 和 `network dns record-set txt add-record` 添加了采用 RFC 1035 转义序列的 TXT 记录支持
+
+### <a name="profile"></a>配置文件
+
+* 在 `account list` 中添加了 Azure 经典帐户支持
+* [重大更改]删除了 `--msi` & `--msi-port` 参数
+
+### <a name="rdbms"></a>RDBMS
+
+* 添加了 `georestore` 命令
+* 删除了 `create` 命令的存储大小限制
+
+### <a name="resource"></a>资源
+
+* 在 `policy definition create` 中添加了对 `--metadata` 的支持
+* 为 `policy definition update` 添加了对 `--metadata`、`--set`、`--add` 和 `--remove` 的支持
+
+### <a name="sql"></a>SQL
+
+* 添加了 `sql elastic-pool op list` 和 `sql elastic-pool op cancel`
+
+### <a name="storage"></a>存储
+
+* 改进了有关连接字符串格式不当的错误消息
+
+### <a name="vm"></a>VM
+
+* 为 `vmss create` 添加了配置平台容错域计数的支持
+* 已将 `vmss create` 的默认值更改为区域性、大型或禁用单一位置组的规模集的标准负载均衡器
+* [重大更改]: Removed `vm assign-identity`, `vm remove-identity and `vm format-secret`
+* 为 `vm create` 添加了对公共 IP SKU 的支持
+* 为 `vm secret format` 添加了 `--keyvault` 和 `--resource-group` 参数，以便在命令无法解析保管库 ID 的情况下提供支持。 [#5718](https://github.com/Azure/azure-cli/issues/5718)
+* 改进了当资源组的位置不支持区域时，`[vm|vmss create]` 发生的错误
+
 
 ## <a name="march-27-2018"></a>2018 年 3 月 27 日
 
@@ -66,7 +183,7 @@ ms.lasthandoff: 03/28/2018
 * 添加了 `container exec` 命令。 在正在运行的容器组的容器中执行命令
 * 允许将表输出用于创建和更新容器组
 
-### <a name="extension"></a>扩展
+### <a name="extension"></a>分机
 
 * 为 `extension add` 添加了消息（如果扩展处于预览状态）
 * 更改了 `extension list-available` 以通过 `--show-details` 显示完整扩展数据
@@ -908,7 +1025,7 @@ ms.lasthandoff: 03/28/2018
 
 * 修复了 `cdn custom-domain create` 的“CustomDomain is not interable”bug
 
-### <a name="extension"></a>Extension
+### <a name="extension"></a>分机
 
 * 初始版本
 
@@ -1461,7 +1578,7 @@ vm (2.0.6)
 * 增加对数据库帐户启用自动故障转移的支持
 * 增加对新一致性策略 ConsistentPrefix 的支持
 
-### <a name="data-lake-analytics"></a>Data Lake Analytics
+### <a name="data-lake-analytics"></a>数据湖分析
 
 * 修复了在筛选作业结果和状态列表时会引发错误的 bug
 * 增加对新目录项类型的支持：包。 访问方法：`az dla catalog package`

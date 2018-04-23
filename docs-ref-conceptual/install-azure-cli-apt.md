@@ -1,6 +1,6 @@
 ---
-title: "使用 apt 在 Linux 上安装 Azure CLI 2.0"
-description: "如何使用 apt 包管理器安装 Azure CLI 2.0"
+title: 使用 apt 在 Linux 上安装 Azure CLI 2.0
+description: 如何使用 apt 包管理器安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 188e7dfded21bb5c7036b3a950b3e4cb10bc1d33
-ms.sourcegitcommit: 5c004b455eff196d853bfbe12901c6114a1652d7
+ms.openlocfilehash: a2578c79ba961cb12f3f49e77a9eaa73c4fe97a2
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
@@ -33,15 +33,33 @@ ms.lasthandoff: 03/15/2018
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
-2. 运行以下 sudo 命令：
+2. 获取 Microsoft 签名密钥：
 
    ```bash
    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
+   ```
+
+  > [!WARNING]
+  > 此签名密钥已弃用，将在 2018 年 5 月底被替换。 为了能够通过 `apt` 持续获得更新，另请确保安装新密钥：
+  > 
+  > ```bash
+  > curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+  > ``` 
+
+3. 安装 CLI：
+
+   ```bash
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
-可以使用 `az` 命令来运行 Azure CLI。
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+
+```azurecli
+az login
+```
+
+若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="troubleshooting"></a>故障排除
 
