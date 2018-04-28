@@ -1,41 +1,40 @@
 ---
-title: "Azure CLI 2.0 的输出格式"
-description: "了解如何将 Azure CLI 2.0 命令的输出格式设置为表、列表或 json。"
+title: Azure CLI 2.0 的输出格式
+description: 了解如何将 Azure CLI 2.0 命令的输出格式设置为表、列表或 json。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.date: 02/15/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: ec96d1cb21b32cd982dbec5e4bf38110f8686c25
-ms.sourcegitcommit: f82774a6f92598c41da9956284f563757f402774
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 1eb0fa1421fc2a5f52ccebec7d535824c2434ed2
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="output-formats-for-azure-cli-20-commands"></a><span data-ttu-id="795d4-103">Azure CLI 2.0 命令的输出格式</span><span class="sxs-lookup"><span data-stu-id="795d4-103">Output formats for Azure CLI 2.0 commands</span></span>
+# <a name="output-formats-for-azure-cli-20-commands"></a><span data-ttu-id="957fd-103">Azure CLI 2.0 命令的输出格式</span><span class="sxs-lookup"><span data-stu-id="957fd-103">Output formats for Azure CLI 2.0 commands</span></span>
 
-<span data-ttu-id="795d4-104">Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。</span><span class="sxs-lookup"><span data-stu-id="795d4-104">Azure CLI 2.0 uses json as its default output option, but offers various ways for you to format the output of any command.</span></span>  <span data-ttu-id="795d4-105">使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一：</span><span class="sxs-lookup"><span data-stu-id="795d4-105">Use the `--output` (or `--out` or `-o`) parameter to format the output of the command into one of the output types noted in the following table:</span></span>
+<span data-ttu-id="957fd-104">Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法设置任何命令的输出。</span><span class="sxs-lookup"><span data-stu-id="957fd-104">Azure CLI 2.0 uses json as its default output option, but offers various ways for you to format the output of any command.</span></span>  <span data-ttu-id="957fd-105">使用 `--output`（或者 `--out` 或 `-o`）参数可将命令的输出格式设置为下表中所述的输出类型之一：</span><span class="sxs-lookup"><span data-stu-id="957fd-105">Use the `--output` (or `--out` or `-o`) parameter to format the output of the command into one of the output types noted in the following table:</span></span>
 
-<span data-ttu-id="795d4-106">--output</span><span class="sxs-lookup"><span data-stu-id="795d4-106">--output</span></span> | <span data-ttu-id="795d4-107">说明</span><span class="sxs-lookup"><span data-stu-id="795d4-107">Description</span></span>
+<span data-ttu-id="957fd-106">--output</span><span class="sxs-lookup"><span data-stu-id="957fd-106">--output</span></span> | <span data-ttu-id="957fd-107">说明</span><span class="sxs-lookup"><span data-stu-id="957fd-107">Description</span></span>
 ---------|-------------------------------
-`json`   | <span data-ttu-id="795d4-108">JSON 字符串。</span><span class="sxs-lookup"><span data-stu-id="795d4-108">JSON string.</span></span> <span data-ttu-id="795d4-109">此设置为默认设置。</span><span class="sxs-lookup"><span data-stu-id="795d4-109">This setting is the default.</span></span>
-`jsonc`  | <span data-ttu-id="795d4-110">彩色 JSON。</span><span class="sxs-lookup"><span data-stu-id="795d4-110">Colorized JSON.</span></span>
-`table`  | <span data-ttu-id="795d4-111">将键作为列标题的 ASCII 表。</span><span class="sxs-lookup"><span data-stu-id="795d4-111">ASCII table with keys as column headings.</span></span>
-`tsv`    | <span data-ttu-id="795d4-112">制表符分隔值，没有键</span><span class="sxs-lookup"><span data-stu-id="795d4-112">Tab-separated values, with no keys</span></span>
+`json`   | <span data-ttu-id="957fd-108">JSON 字符串。</span><span class="sxs-lookup"><span data-stu-id="957fd-108">JSON string.</span></span> <span data-ttu-id="957fd-109">此设置为默认设置。</span><span class="sxs-lookup"><span data-stu-id="957fd-109">This setting is the default.</span></span>
+`jsonc`  | <span data-ttu-id="957fd-110">彩色 JSON。</span><span class="sxs-lookup"><span data-stu-id="957fd-110">Colorized JSON.</span></span>
+`table`  | <span data-ttu-id="957fd-111">将键作为列标题的 ASCII 表。</span><span class="sxs-lookup"><span data-stu-id="957fd-111">ASCII table with keys as column headings.</span></span>
+`tsv`    | <span data-ttu-id="957fd-112">制表符分隔值，没有键</span><span class="sxs-lookup"><span data-stu-id="957fd-112">Tab-separated values, with no keys</span></span>
 
-## <a name="json-output-format"></a><span data-ttu-id="795d4-113">JSON 输出格式</span><span class="sxs-lookup"><span data-stu-id="795d4-113">JSON output format</span></span>
+## <a name="json-output-format"></a><span data-ttu-id="957fd-113">JSON 输出格式</span><span class="sxs-lookup"><span data-stu-id="957fd-113">JSON output format</span></span>
 
-<span data-ttu-id="795d4-114">以下示例以默认 json 格式显示订阅中的虚拟机列表。</span><span class="sxs-lookup"><span data-stu-id="795d4-114">The following example displays the list of virtual machines in your subscriptions in the default json format.</span></span>
+<span data-ttu-id="957fd-114">以下示例以默认 json 格式显示订阅中的虚拟机列表。</span><span class="sxs-lookup"><span data-stu-id="957fd-114">The following example displays the list of virtual machines in your subscriptions in the default json format.</span></span>
 
 ```azurecli
 az vm list --output json
 ```
 
-<span data-ttu-id="795d4-115">以下输出有为简便起见而省略的一些字段并替换了标识信息。</span><span class="sxs-lookup"><span data-stu-id="795d4-115">The following output has some fields omitted for brevity, and identifying information replaced.</span></span>
+<span data-ttu-id="957fd-115">以下输出有为简便起见而省略的一些字段并替换了标识信息。</span><span class="sxs-lookup"><span data-stu-id="957fd-115">The following output has some fields omitted for brevity, and identifying information replaced.</span></span>
 
 ```json
 [
@@ -65,9 +64,9 @@ az vm list --output json
 ]
 ```
 
-## <a name="table-output-format"></a><span data-ttu-id="795d4-116">表输出格式</span><span class="sxs-lookup"><span data-stu-id="795d4-116">Table output format</span></span>
+## <a name="table-output-format"></a><span data-ttu-id="957fd-116">表输出格式</span><span class="sxs-lookup"><span data-stu-id="957fd-116">Table output format</span></span>
 
-<span data-ttu-id="795d4-117">`table` 输出格式提供格式化为排序规则数据的行和列的无格式输出，以便更轻松地读取和扫描。</span><span class="sxs-lookup"><span data-stu-id="795d4-117">The `table` output format provides plain output formatted as rows and columns of collated data, making it easy to read and scan.</span></span> <span data-ttu-id="795d4-118">嵌套对象不包含在表输出中，但仍可以作为查询的一部分进行筛选。</span><span class="sxs-lookup"><span data-stu-id="795d4-118">Nested objects are not included in table output, but can still be filtered as part of a query.</span></span> <span data-ttu-id="795d4-119">还从表数据中省略了一些字段，因此当你想要数据的快速、人工可搜索的概述时，此格式最佳。</span><span class="sxs-lookup"><span data-stu-id="795d4-119">Some fields are also omitted from the table data, so this format is best when you want a quick, human-searchable overview of data.</span></span>
+<span data-ttu-id="957fd-117">`table` 输出格式提供格式化为排序规则数据的行和列的无格式输出，以便更轻松地读取和扫描。</span><span class="sxs-lookup"><span data-stu-id="957fd-117">The `table` output format provides plain output formatted as rows and columns of collated data, making it easy to read and scan.</span></span> <span data-ttu-id="957fd-118">嵌套对象不包含在表输出中，但仍可以作为查询的一部分进行筛选。</span><span class="sxs-lookup"><span data-stu-id="957fd-118">Nested objects are not included in table output, but can still be filtered as part of a query.</span></span> <span data-ttu-id="957fd-119">还从表数据中省略了一些字段，因此当你想要数据的快速、人工可搜索的概述时，此格式最佳。</span><span class="sxs-lookup"><span data-stu-id="957fd-119">Some fields are also omitted from the table data, so this format is best when you want a quick, human-searchable overview of data.</span></span>
 
 ```azurecli
 az vm list --out table
@@ -82,7 +81,7 @@ demovm213    DEMORG1          westus
 KBDemo001VM  RGDEMO001        westus
 KBDemo020    RGDEMO001        westus
 ```
-<span data-ttu-id="795d4-120">可以使用 `--query` 参数来自定义要在列表输出中显示的属性和列。</span><span class="sxs-lookup"><span data-stu-id="795d4-120">You can use the `--query` parameter to customize the properties and columns you want to show in the list output.</span></span> <span data-ttu-id="795d4-121">以下示例演示如何只在 `list` 命令中选择 VM 名称和资源组名称。</span><span class="sxs-lookup"><span data-stu-id="795d4-121">The following example shows how to select just the VM Name and the Resource Group Name in the `list` command.</span></span>
+<span data-ttu-id="957fd-120">可以使用 `--query` 参数来自定义要在列表输出中显示的属性和列。</span><span class="sxs-lookup"><span data-stu-id="957fd-120">You can use the `--query` parameter to customize the properties and columns you want to show in the list output.</span></span> <span data-ttu-id="957fd-121">以下示例演示如何只在 `list` 命令中选择 VM 名称和资源组名称。</span><span class="sxs-lookup"><span data-stu-id="957fd-121">The following example shows how to select just the VM Name and the Resource Group Name in the `list` command.</span></span>
 
 ```azurecli
 az vm list --query "[].{resource:resourceGroup, name:name}" -o table
@@ -99,19 +98,19 @@ RGDEMO001   KBDemo020
 ```
 
 > [!NOTE]
-> <span data-ttu-id="795d4-122">某些键已筛选掉，未在表视图中输出。</span><span class="sxs-lookup"><span data-stu-id="795d4-122">Certain keys are filtered out and not printed in the table view.</span></span> <span data-ttu-id="795d4-123">这些键是 `id`、`type` 和 `etag`。</span><span class="sxs-lookup"><span data-stu-id="795d4-123">These are `id`, `type`, and `etag`.</span></span> <span data-ttu-id="795d4-124">如果需要在输出中查看这些键，可以使用 JMESPath 重新键入功能更改键名称，并避免筛选。</span><span class="sxs-lookup"><span data-stu-id="795d4-124">If you need to see these in your output, you can use the JMESPath re-keying feature to change the key name and avoid filtering.</span></span>
+> <span data-ttu-id="957fd-122">某些键已筛选掉，未在表视图中输出。</span><span class="sxs-lookup"><span data-stu-id="957fd-122">Certain keys are filtered out and not printed in the table view.</span></span> <span data-ttu-id="957fd-123">这些键是 `id`、`type` 和 `etag`。</span><span class="sxs-lookup"><span data-stu-id="957fd-123">These are `id`, `type`, and `etag`.</span></span> <span data-ttu-id="957fd-124">如果需要在输出中查看这些键，可以使用 JMESPath 重新键入功能更改键名称，并避免筛选。</span><span class="sxs-lookup"><span data-stu-id="957fd-124">If you need to see these in your output, you can use the JMESPath re-keying feature to change the key name and avoid filtering.</span></span>
 >
 > ```azurecli
 > az vm list --query "[].{objectID:id}" -o table
 > ```
 
-<span data-ttu-id="795d4-125">有关使用查询筛选数据的详细信息，请参阅[在 Azure CLI 2.0 中使用 JMESPath 查询](/cli/azure/query-azure-cli)。</span><span class="sxs-lookup"><span data-stu-id="795d4-125">For more about using queries to filter data, see [Use JMESPath queries with Azure CLI 2.0](/cli/azure/query-azure-cli).</span></span>
+<span data-ttu-id="957fd-125">有关使用查询筛选数据的详细信息，请参阅[在 Azure CLI 2.0 中使用 JMESPath 查询](/cli/azure/query-azure-cli)。</span><span class="sxs-lookup"><span data-stu-id="957fd-125">For more about using queries to filter data, see [Use JMESPath queries with Azure CLI 2.0](/cli/azure/query-azure-cli).</span></span>
 
-## <a name="tsv-output-format"></a><span data-ttu-id="795d4-126">TSV 输出格式</span><span class="sxs-lookup"><span data-stu-id="795d4-126">TSV output format</span></span>
+## <a name="tsv-output-format"></a><span data-ttu-id="957fd-126">TSV 输出格式</span><span class="sxs-lookup"><span data-stu-id="957fd-126">TSV output format</span></span>
 
-<span data-ttu-id="795d4-127">`tsv` 输出格式返回制表符和换行符分隔的值，而不带附加格式设置、键或其他符号。</span><span class="sxs-lookup"><span data-stu-id="795d4-127">The `tsv` output format returns tab- and newline-separated values without additional formatting, keys, or other symbols.</span></span> <span data-ttu-id="795d4-128">采用这种格式可在需要以某种形式处理文本的其他命令和工具中轻松使用输出。</span><span class="sxs-lookup"><span data-stu-id="795d4-128">This format makes it easy to consume the output into other commands and tools that need to process the text in some form.</span></span> <span data-ttu-id="795d4-129">与 `table` 格式一样，`tsv` 输出选项不输出嵌套对象。</span><span class="sxs-lookup"><span data-stu-id="795d4-129">Like the `table` format, the `tsv` output option does not print nested objects.</span></span>
+<span data-ttu-id="957fd-127">`tsv` 输出格式返回制表符和换行符分隔的值，而不带附加格式设置、键或其他符号。</span><span class="sxs-lookup"><span data-stu-id="957fd-127">The `tsv` output format returns tab- and newline-separated values without additional formatting, keys, or other symbols.</span></span> <span data-ttu-id="957fd-128">采用这种格式可在需要以某种形式处理文本的其他命令和工具中轻松使用输出。</span><span class="sxs-lookup"><span data-stu-id="957fd-128">This format makes it easy to consume the output into other commands and tools that need to process the text in some form.</span></span> <span data-ttu-id="957fd-129">与 `table` 格式一样，`tsv` 输出选项不输出嵌套对象。</span><span class="sxs-lookup"><span data-stu-id="957fd-129">Like the `table` format, the `tsv` output option does not print nested objects.</span></span>
 
-<span data-ttu-id="795d4-130">在前面的示例中使用 `tsv` 选项会输出制表符分隔结果。</span><span class="sxs-lookup"><span data-stu-id="795d4-130">Using the preceding example with the `tsv` option outputs the tab-separated result.</span></span>
+<span data-ttu-id="957fd-130">在前面的示例中使用 `tsv` 选项会输出制表符分隔结果。</span><span class="sxs-lookup"><span data-stu-id="957fd-130">Using the preceding example with the `tsv` option outputs the tab-separated result.</span></span>
 
 ```azurecli
 az vm list --out tsv
@@ -125,7 +124,7 @@ None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Micros
 None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None    None    westus  KBDemo020           None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines    36baa9-9b80-48a8-b4a9-854c7a858ece
 ```
 
-<span data-ttu-id="795d4-131">下面的示例说明如何将 `tsv` 输出通过管道传递给 UNIX 系统上的其他命令以提取更具体的数据。</span><span class="sxs-lookup"><span data-stu-id="795d4-131">The next example shows how the `tsv` output can be piped to other commands on UNIX systems to extract more specific data.</span></span> <span data-ttu-id="795d4-132">`grep` 命令选择包含文本“RGD”的项，然后 `cut` 命令选择第 8 个字符（由制表符分隔）以在输出中显示 VM 的名称。</span><span class="sxs-lookup"><span data-stu-id="795d4-132">The `grep` command selects items that have text "RGD" in them, and then the `cut` command selects the eighth field (separated by tabs) to show the name of the VM in output.</span></span>
+<span data-ttu-id="957fd-131">下面的示例说明如何将 `tsv` 输出通过管道传递给 UNIX 系统上的其他命令以提取更具体的数据。</span><span class="sxs-lookup"><span data-stu-id="957fd-131">The next example shows how the `tsv` output can be piped to other commands on UNIX systems to extract more specific data.</span></span> <span data-ttu-id="957fd-132">`grep` 命令选择包含文本“RGD”的项，然后 `cut` 命令选择第 8 个字符（由制表符分隔）以在输出中显示 VM 的名称。</span><span class="sxs-lookup"><span data-stu-id="957fd-132">The `grep` command selects items that have text "RGD" in them, and then the `cut` command selects the eighth field (separated by tabs) to show the name of the VM in output.</span></span>
 
 ```bash
 az vm list --out tsv | grep RGD | cut -f8
@@ -136,11 +135,11 @@ KBDemo001VM
 KBDemo020
 ```
 
-<span data-ttu-id="795d4-133">为了处理制表符分隔的字段，值的顺序与它们在输出的 JSON 对象中显示的顺序相同。</span><span class="sxs-lookup"><span data-stu-id="795d4-133">For the purposes of processing tab-separated fields, the values are in the same order that they appear in the printed JSON object.</span></span> <span data-ttu-id="795d4-134">需保证此顺序在该命令的多次运行之间保持一致。</span><span class="sxs-lookup"><span data-stu-id="795d4-134">This order is guaranteed to be consistent between runs of the command.</span></span>
+<span data-ttu-id="957fd-133">为了处理制表符分隔的字段，值的顺序与它们在输出的 JSON 对象中显示的顺序相同。</span><span class="sxs-lookup"><span data-stu-id="957fd-133">For the purposes of processing tab-separated fields, the values are in the same order that they appear in the printed JSON object.</span></span> <span data-ttu-id="957fd-134">需保证此顺序在该命令的多次运行之间保持一致。</span><span class="sxs-lookup"><span data-stu-id="957fd-134">This order is guaranteed to be consistent between runs of the command.</span></span>
 
-## <a name="set-the-default-output-format"></a><span data-ttu-id="795d4-135">设置默认输出格式</span><span class="sxs-lookup"><span data-stu-id="795d4-135">Set the default output format</span></span>
+## <a name="set-the-default-output-format"></a><span data-ttu-id="957fd-135">设置默认输出格式</span><span class="sxs-lookup"><span data-stu-id="957fd-135">Set the default output format</span></span>
 
-<span data-ttu-id="795d4-136">使用交互式 `az configure` 命令设置环境并建立输出格式的默认设置。</span><span class="sxs-lookup"><span data-stu-id="795d4-136">Use the interactive `az configure` command to set up your environment and establish default settings for output formats.</span></span> <span data-ttu-id="795d4-137">默认输出格式为 `json`。</span><span class="sxs-lookup"><span data-stu-id="795d4-137">The default output format is `json`.</span></span> 
+<span data-ttu-id="957fd-136">使用交互式 `az configure` 命令设置环境并建立输出格式的默认设置。</span><span class="sxs-lookup"><span data-stu-id="957fd-136">Use the interactive `az configure` command to set up your environment and establish default settings for output formats.</span></span> <span data-ttu-id="957fd-137">默认输出格式为 `json`。</span><span class="sxs-lookup"><span data-stu-id="957fd-137">The default output format is `json`.</span></span> 
 
 ```azurecli
 az configure
@@ -164,4 +163,4 @@ What default output format would you like?
 Please enter a choice [1]:
 ```
 
-<span data-ttu-id="795d4-138">若要了解有关配置环境的详细信息，请参阅 [Azure CLI 2.0 配置](/cli/azure/azure-cli-configuration)。</span><span class="sxs-lookup"><span data-stu-id="795d4-138">To learn more about configuring your environment, see [Azure CLI 2.0 configuration](/cli/azure/azure-cli-configuration).</span></span>
+<span data-ttu-id="957fd-138">若要了解有关配置环境的详细信息，请参阅 [Azure CLI 2.0 配置](/cli/azure/azure-cli-configuration)。</span><span class="sxs-lookup"><span data-stu-id="957fd-138">To learn more about configuring your environment, see [Azure CLI 2.0 configuration](/cli/azure/azure-cli-configuration).</span></span>
