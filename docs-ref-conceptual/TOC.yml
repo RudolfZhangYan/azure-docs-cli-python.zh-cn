@@ -66,6 +66,8 @@
   items:
     - name: 创建虚拟机
       href: azure-cli-vm-tutorial.yml
+    - name: 训练 - 创建 VM
+      href: 'https://docs.microsoft.com/learn/azure-cli-2-0/index'
 - name: 示例脚本
   items:
     - name: Linux VM
