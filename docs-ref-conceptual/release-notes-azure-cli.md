@@ -1459,11 +1459,6 @@ vm (2.0.11)
 * 修复了允许使用自定义分区键创建集合的问题
 * 添加了对集合默认 TTL 的支持
 
-### <a name="data-lake-analytics"></a>Data Lake Analytics
-
-* 在 `dla account compute-policy` 标题下添加了用于计算策略管理的命令
-* 添加了 `dla job pipeline show`
-* 添加了 `dla job recurrence list`
 
 ### <a name="data-lake-store"></a>Data Lake Store
 
@@ -1708,11 +1703,6 @@ vm (2.0.6)
 * 增加对数据库帐户启用自动故障转移的支持
 * 增加对新一致性策略 ConsistentPrefix 的支持
 
-### <a name="data-lake-analytics"></a>Data Lake Analytics
-
-* 修复了在筛选作业结果和状态列表时会引发错误的 bug
-* 增加对新目录项类型的支持：包。 访问方法：`az dla catalog package`
-* 可从数据库内列出下列目录项（无需架构规范）：
 
   * 表
   * 表值函数
