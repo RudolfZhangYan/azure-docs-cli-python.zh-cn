@@ -9,11 +9,19 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
+ms.openlocfilehash: dde90e78f3ec53d323ca78c816ceefb8cf65608b
 ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
 ---
+# <a name="install-azure-cli-20-with-zypper"></a>使用 zypper 安装 Azure CLI 2.0
+
+如果运行附带 `zypper` 的发行版（例如 openSUSE 或 SLES），则可以安装适用于 Azure CLI 的包。 此包已在 openSUSE 42.2 和 SLES 12 SP 2 中测试。
+
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
+
+## <a name="install"></a>安装
 
 1. 安装 `curl`：
 
@@ -38,7 +46,11 @@ ms.lasthandoff: 05/07/2018
 
    ```bash
    sudo zypper refresh
+   sudo zypper install --from azure-cli -y azure-cli
    ```
+
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+
 ```azurecli
 az login
 ```
