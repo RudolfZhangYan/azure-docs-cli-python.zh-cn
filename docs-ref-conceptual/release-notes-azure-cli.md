@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
+<<<<<<< HEAD
 ms.openlocfilehash: 254c7b306440d921cef6b611268839150fdf3196
 ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
 ms.translationtype: HT
@@ -148,6 +149,16 @@ ms.lasthandoff: 05/07/2018
 * 更改了 `vm resize`，系统会检查请求的大小是否不同于当前设置的大小，只在二者有变化时进行更新
 
 
+=======
+ms.openlocfilehash: fd5d82e34089a9a884c25c9a5620526f9d30577a
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/28/2018
+---
+# <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+>>>>>>> parent of 7162ac3... Delete diff files
 ## <a name="april-10-2018"></a>2018 年 4 月 10 日
 
 版本 2.0.31
@@ -916,7 +927,11 @@ ms.lasthandoff: 05/07/2018
 * 添加了将 Azure 文件共享装载为卷的支持
 * 更新了帮助器文档
 
+<<<<<<< HEAD
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
+=======
+### <a name="data-lake-analytics"></a>数据湖分析
+>>>>>>> parent of 7162ac3... Delete diff files
 
 * 更改了 `[job|account] list` 以返回更简洁的信息
 
@@ -1459,7 +1474,11 @@ vm (2.0.11)
 * 修复了允许使用自定义分区键创建集合的问题
 * 添加了对集合默认 TTL 的支持
 
+<<<<<<< HEAD
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
+=======
+### <a name="data-lake-analytics"></a>数据湖分析
+>>>>>>> parent of 7162ac3... Delete diff files
 
 * 在 `dla account compute-policy` 标题下添加了用于计算策略管理的命令
 * 添加了 `dla job pipeline show`
@@ -1708,7 +1727,11 @@ vm (2.0.6)
 * 增加对数据库帐户启用自动故障转移的支持
 * 增加对新一致性策略 ConsistentPrefix 的支持
 
+<<<<<<< HEAD
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
+=======
+### <a name="data-lake-analytics"></a>数据湖分析
+>>>>>>> parent of 7162ac3... Delete diff files
 
 * 修复了在筛选作业结果和状态列表时会引发错误的 bug
 * 增加对新目录项类型的支持：包。 访问方法：`az dla catalog package`

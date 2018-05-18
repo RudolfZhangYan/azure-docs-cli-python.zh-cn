@@ -9,11 +9,19 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
+<<<<<<< HEAD
 ms.openlocfilehash: 7eb04b408f403264f3951bf663d43686601c4ab8
 ms.sourcegitcommit: 1d18f667af28b59f5524a3499a4b7dc12af5163d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/09/2018
+=======
+ms.openlocfilehash: 86d601fdc375ec59c4f7cbf0881bc67a08e24b19
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/28/2018
+>>>>>>> parent of 7162ac3... Delete diff files
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
@@ -64,6 +72,7 @@ az login
 
 下面是使用 `apt` 安装时出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
 
+<<<<<<< HEAD
 ### <a name="lsbrelease-fails-with-command-not-found"></a>lsb_release 失败，出现“找不到命令”错误
 
 运行 `lsb_release` 命令时，可能会看到类似于以下错误的输出：
@@ -78,6 +87,8 @@ az login
 sudo apt-get install lsb-release
 ```
 
+=======
+>>>>>>> parent of 7162ac3... Delete diff files
 ### <a name="apt-key-fails-with-no-dirmngr"></a>apt-key 失败，出现“没有 dirmngr”
 
 运行 `apt-key` 命令时，可能会看到类似于以下错误的输出：

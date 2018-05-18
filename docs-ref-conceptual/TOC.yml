@@ -66,8 +66,11 @@
   items:
     - name: 创建虚拟机
       href: azure-cli-vm-tutorial.yml
+<<<<<<< HEAD
     - name: 训练 - 创建 VM
       href: 'https://docs.microsoft.com/learn/azure-cli-2-0/index'
+=======
+>>>>>>> parent of 7162ac3... Delete diff files
 - name: 示例脚本
   items:
     - name: Linux VM

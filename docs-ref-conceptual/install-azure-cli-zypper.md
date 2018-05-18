@@ -9,11 +9,19 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
+<<<<<<< HEAD
 ms.openlocfilehash: dde90e78f3ec53d323ca78c816ceefb8cf65608b
 ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
+=======
+ms.openlocfilehash: 3a1e82dc666cd034d0cc4320a8b99dd6a9a14b6d
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/28/2018
+>>>>>>> parent of 7162ac3... Delete diff files
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>使用 zypper 安装 Azure CLI 2.0
 
@@ -46,7 +54,11 @@ ms.lasthandoff: 05/07/2018
 
    ```bash
    sudo zypper refresh
+<<<<<<< HEAD
    sudo zypper install --from azure-cli -y azure-cli
+=======
+   sudo zypper install -y azure-cli
+>>>>>>> parent of 7162ac3... Delete diff files
    ```
 
 然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。

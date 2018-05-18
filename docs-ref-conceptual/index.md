@@ -9,11 +9,19 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
+<<<<<<< HEAD
 ms.openlocfilehash: ee82c06e5b5b614b5557c6e6426d2da488468318
 ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
+=======
+ms.openlocfilehash: 966f75811487bafaa35edbcb26274bcc9f72c709
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/28/2018
+>>>>>>> parent of 7162ac3... Delete diff files
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
@@ -32,7 +40,10 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 
 可借助以下示例了解如何使用 Azure CLI 2.0 执行常见方案：
 - [Linux 虚拟机](/azure/virtual-machines/virtual-machines-linux-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+<<<<<<< HEAD
 - 交互式：[创建 Linux 虚拟机](https://docs.microsoft.com/learn/azure-cli-2-0/index)
+=======
+>>>>>>> parent of 7162ac3... Delete diff files
 - [Windows 虚拟机](/azure/virtual-machines/virtual-machines-windows-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [Web 应用](/azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [SQL 数据库](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
