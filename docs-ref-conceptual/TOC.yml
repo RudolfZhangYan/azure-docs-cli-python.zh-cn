@@ -30,9 +30,9 @@
         - name: 托管服务标识
           items:
             - name: 为 Azure VM 配置 MSI
-              href: /azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+              href: /azure/active-directory/managed-service-identity/qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
             - name: 在 Azure VM 上使用 MSI 登录
-              href: /azure/active-directory/msi-how-to-get-access-token-using-msi?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+              href: '/azure/active-directory/managed-service-identity/how-to-use-vm-sign-in#azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json'
     - name: 交互模式
       href: interactive-azure-cli.md
     - name: 部署模板
@@ -66,11 +66,8 @@
   items:
     - name: 创建虚拟机
       href: azure-cli-vm-tutorial.yml
-<<<<<<< HEAD
     - name: 训练 - 创建 VM
       href: 'https://docs.microsoft.com/learn/azure-cli-2-0/index'
-=======
->>>>>>> parent of 7162ac3... Delete diff files
 - name: 示例脚本
   items:
     - name: Linux VM

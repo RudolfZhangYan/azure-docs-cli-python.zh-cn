@@ -4,17 +4,17 @@ description: 了解如何通过 Azure CLI 2.0 创建和使用服务主体。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/12/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: c7c993e54d3b9bcfa098d89ea89ec15eecba359f
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 86fa8b448089bd9f6ede46c92b7e95abb7c88dad
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -26,31 +26,31 @@ ms.lasthandoff: 04/28/2018
 
 * `--password` 用于基于密码的身份验证。 请确保按照 [Azure Active Directory 密码规则和限制](/azure/active-directory/active-directory-passwords-policy)创建强密码。 如果未指定密码，系统将为你创建一个。
 
-  ```azurecli
+  ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName --password PASSWORD
   ```
 
 * `--cert` 用于现有证书的基于证书的身份验证，为 PEM 或 DER 公共字符串，或用于加载文件的 `@{file}`。
 
-  ```azurecli
+  ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName --cert {CertStringOrFile} 
   ```
 
   可以添加 `--keyvault` 参数以指示证书存储在 Azure Key Vault 中。 在这种情况下，`--cert` 值引用 Key Vault 中证书的名称。
 
-  ```azurecli
+  ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault VaultName
   ```
 
 * `--create-cert` 创建用于身份验证的_自签名_证书。 如果未提供 `--cert` 参数，将会生成随机证书名称。
 
-  ```azurecli
+  ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName --create-cert
   ```
 
   可以添加 `--keyvault` 参数以将证书存储在 Azure Key Vault 中。 使用 `--keyvault` 时，也必须提供 `--cert` 参数。
 
-  ```azurecli
+  ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName
   ```
 
@@ -85,7 +85,7 @@ Azure CLI 2.0 提供以下命令用于管理角色分配。
 
 此示例将添加“读者”角色并删除“参与者”角色。
 
-```azurecli
+```azurecli-interactive
 az role assignment create --assignee APP_ID --role Reader
 az role assignment delete --assignee APP_ID --role Contributor
 ```
@@ -94,7 +94,7 @@ az role assignment delete --assignee APP_ID --role Contributor
 
 可以通过列出分配的角色来验证所做的更改。
 
-```azurecli
+```azurecli-interactive
 az role assignment list --assignee APP_ID
 ```
 
@@ -107,19 +107,20 @@ az role assignment list --assignee APP_ID
 
 若要使用密码登录，请以参数的形式提供密码。
 
-```azurecli
+```azurecli-interactive
 az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
 ```
 
 若要使用证书登录，则必须在本地以 PEM 或 DER 文件的形式提供。
 
-```azurecli
+```azurecli-interactive
 az login --service-principal --username APP_ID --tenant TENANT_ID --password PATH_TO_CERT
 ```
+
 ## <a name="reset-credentials"></a>重置凭据
 
 如果你忘记了服务主体的凭据，可以使用 [az ad sp reset-credentials](https://docs.microsoft.com/en-us/cli/azure/ad/sp#az-ad-sp-reset-credentials) 命令重置凭据。 用于创建新服务主体的相同限制和选项在此处同样适用。
 
-```azurecli
+```azurecli-interactive
 az ad sp reset-credentials --name APP_ID --password NEW_PASSWORD
 ```

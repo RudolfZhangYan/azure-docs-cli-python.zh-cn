@@ -5,16 +5,16 @@ keywords: Azure CLI, 扩展
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/15/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 01d7b3d58bf24d5a30386564fb64630d4db055e3
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: fde52c29a3ec82a1c6a03438a5d84dd4684e296a
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>将扩展与 Azure CLI 2.0 配合使用
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/28/2018
 
 若要了解有哪些扩展可用，可以使用 [az extension list-available](/cli/azure/extension#az-extension-list-available)。 此命令列出由 Microsoft 提供并维护的正式扩展。
 
-```azurecli
+```azurecli-interactive
 az extension list-available --output table
 ```
 
@@ -36,13 +36,13 @@ az extension list-available --output table
 
 找到要安装的扩展后，请使用 [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-add) 获取它。 如果该扩展在 `az extension list-available` 中列出，可以按名称安装该扩展。
 
-```azurecli
+```azurecli-interactive
 az extension add --name <extension-name>
 ```
 
 如果此扩展来自外部资源，或者你有指向它的直接链接，则可以提供源 URL 或本地路径。 这_必须_是已编译的 Python wheel 文件。
 
-```azurecli
+```azurecli-interactive
 az extension add --source <URL-or-path>
 ```
 
@@ -52,7 +52,7 @@ az extension add --source <URL-or-path>
 
 如果已按名称安装了扩展，可以使用 [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-update) 更新该扩展。
 
-```azurecli
+```azurecli-interactive
 az extension update --name <extension-name>
 ```
 
@@ -64,7 +64,7 @@ az extension update --name <extension-name>
 
 如果不再需要某个扩展，可以使用 [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-remove) 进行卸载。
 
-```azurecli
+```azurecli-interactive
 az extension remove --name <extension-name>
 ```
 

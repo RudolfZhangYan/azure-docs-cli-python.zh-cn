@@ -11,11 +11,11 @@ ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: db676c7d81d1ea5628ebb52f3bcead763c5527f9
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 11f81e5d710763c818a2ed3cdf347dc657a6f664
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
@@ -63,7 +63,7 @@ az login -u <username> -p <password>
 
 如果使用多个租户，可以使用 `--tenant` 参数选择要登录到的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 可以采用交互方式登录，也可以使用 `--user` 和 `--password` 参数提供凭据。 
 
-```
+```azurecli
 az login --tenant <tenant>
 ```
 
@@ -80,7 +80,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 租户值是与服务主体关联的 Azure Active Directory 租户。 这可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。
 可使用以下命令获取当前登录名的租户对象 ID：
 
-```azurecli
+```azurecli-interactive
 az account show --query 'tenantId' -o tsv
 ```
 

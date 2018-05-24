@@ -4,16 +4,16 @@ description: 了解如何将 Azure CLI 2.0 命令的输出格式设置为表、�
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/15/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1eb0fa1421fc2a5f52ccebec7d535824c2434ed2
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 016465080e95af3ab0650146e955dd8cffc569e8
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Azure CLI 2.0 命令的输出格式
 
@@ -30,7 +30,7 @@ Azure CLI 2.0 使用 json 作为默认输出选项，但允许通过多种方法
 
 以下示例以默认 json 格式显示订阅中的虚拟机列表。
 
-```azurecli
+```azurecli-interactive
 az vm list --output json
 ```
 
@@ -68,7 +68,7 @@ az vm list --output json
 
 `table` 输出格式提供格式化为排序规则数据的行和列的无格式输出，以便更轻松地读取和扫描。 嵌套对象不包含在表输出中，但仍可以作为查询的一部分进行筛选。 还从表数据中省略了一些字段，因此当你想要数据的快速、人工可搜索的概述时，此格式最佳。
 
-```azurecli
+```azurecli-interactive
 az vm list --out table
 ```
 
@@ -81,13 +81,14 @@ demovm213    DEMORG1          westus
 KBDemo001VM  RGDEMO001        westus
 KBDemo020    RGDEMO001        westus
 ```
+
 可以使用 `--query` 参数来自定义要在列表输出中显示的属性和列。 以下示例演示如何只在 `list` 命令中选择 VM 名称和资源组名称。
 
 ```azurecli
 az vm list --query "[].{resource:resourceGroup, name:name}" -o table
 ```
 
-```
+```output
 Resource    Name
 ----------  -----------
 DEMORG1     DemoVM010
@@ -112,7 +113,7 @@ RGDEMO001   KBDemo020
 
 在前面的示例中使用 `tsv` 选项会输出制表符分隔结果。
 
-```azurecli
+```azurecli-interactive
 az vm list --out tsv
 ```
 
@@ -141,7 +142,7 @@ KBDemo020
 
 使用交互式 `az configure` 命令设置环境并建立输出格式的默认设置。 默认输出格式为 `json`。 
 
-```azurecli
+```azurecli-interactive
 az configure
 ```
 

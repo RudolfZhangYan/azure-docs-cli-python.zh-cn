@@ -4,16 +4,16 @@ description: 使用 Azure CLI 2.0 创建、登录和管理多个云。
 author: sptramer
 manager: carmonm
 ms.author: sttramer
-ms.date: 10/20/2017
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 98915fb43f2ad3eb45164f7e47c1a41345f3f9c5
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 7ccee3a336f4c596f29783a70ba0cd4398e20b95
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>使用 Azure CLI 2.0 管理多个云
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/28/2018
 
 获取活动的云以及所有可用云的列表：
 
-```azurecli
+```azurecli-interactive
 az cloud list --output table
 ```
 
@@ -40,7 +40,7 @@ True        AzureCloud         latest
 
 在 `IsActive` 列中，当前处于活动状态的云的值为 `True`。 在任何时候，只能有一个云处于活动状态。 若要获取有关某个云的更多详细信息，包括它对 Azure 服务使用的终结点，请使用 `cloud show` 命令：
 
-```azurecli
+```azurecli-interactive
 az cloud show --name AzureChinaCloud --output json
 ```
 
@@ -75,7 +75,7 @@ az cloud show --name AzureChinaCloud --output json
 
 若要切换当前处于活动状态的云，请运行 [az cloud set](/cli/azure/cloud#az-cloud-set) 命令。 此命令采用一个必需参数，即云的名称。
 
-```azurecli
+```azurecli-interactive
 az cloud set --name AzureChinaCloud
 ```
 
@@ -100,6 +100,6 @@ az cloud set --name AzureChinaCloud
 
 如果不再需要某个已注册的云，可以使用 [az cloud unregister](/cli/azure/cloud#az-cloud-unregister) 命令将其注销：
 
-```azurecli
+```azurecli-interactive
 az cloud unregister --name MyCloud
 ```
