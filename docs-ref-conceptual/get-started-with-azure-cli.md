@@ -5,16 +5,16 @@ keywords: Azure CLI, CLI 帮助, Azure 帮助, 查询, 自动化,
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/05/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: afed3b187f9e5437ecd42217a374b82fb12699b8
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 0c7746e70125dcc1678ed19f93322efea8a2b01b
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -54,13 +54,13 @@ CLI 中的命令以_组_的_子命令_形式提供。
 
 若要搜索命令，请使用 [az find](/cli/azure/reference-index#az-find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
 
-```azurecli
+```azurecli-interactive
 az find -q secret
 ```
 
 如果你知道要使用哪组命令，`--help` 参数可能是更好的选择。 此参数不仅显示某个命令的详细信息，而且在用于命令组时，会显示所有可用的子命令。 例如，用于网络安全组 (NSG) 时，可以查找可用的 NSG 子组和命令。
 
-```azurecli
+```azurecli-interactive
 az network nsg --help
 ```
 
@@ -79,11 +79,15 @@ CLI 为 bash shell 下的命令提供完整 tab 键补全。
 
 ## <a name="interactive-mode"></a>交互模式
 
-CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地选择子命令。 使用 [az interactive](/cli/azure/reference-index#az-interactive) 命令即可进入交互模式。 有关交互模式以及它如何帮助你了解 CLI 的详细信息，请参阅 [Azure CLI 2.0 交互模式](interactive-azure-cli.md)。
+CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地选择子命令。 使用 [az interactive](/cli/azure/reference-index#az-interactive) 命令即可进入交互模式。
+
+```azurecli-interactive
+az interactive
+```
+
+有关交互模式的详细信息，请参阅 [Azure CLI 2.0 交互模式](interactive-azure-cli.md)。
 
 此外，还有提供交互体验的 [Visual Studio Code 插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)，包括自动完成和鼠标悬停显示的文档。
-
-
 
 ## <a name="learn-cli-basics-with-quickstarts-and-tutorials"></a>使用快速入门和教程了解 CLI 基础知识
 
@@ -106,6 +110,6 @@ CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地�
 
 我们欢迎你提供有关 CLI 的反馈以帮助我们改进和解决 bug。 可以[在 Github 上提出问题](https://github.com/azure/azure-cli/issues)，或利用 CLI 的内置功能来通过 [az feedback](/cli/azure/reference-index#az-feedback) 命令留下常规反馈。
 
-```azurecli
+```azurecli-interactive
 az feedback
 ```

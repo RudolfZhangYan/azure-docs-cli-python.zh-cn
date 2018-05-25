@@ -1,10 +1,14 @@
 ---
-ms.assetid: 16dae88b-a4b8-4bfd-aa3c-25245a9ad975
-ms.openlocfilehash: 25222cb5ed7c1659be749e8c1478fab906ce8e4a
-ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.date: 05/16/2018
+ms.topic: include
+ms.openlocfilehash: cace08e129e67c91d3fe45cd1712fcf27ab75204
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 05/18/2018
 ---
 1. 运行登录命令。
 
@@ -14,9 +18,6 @@ ms.lasthandoff: 01/26/2018
 
    将获得要在下一步骤中使用的代码。
 
-1. 使用 Web 浏览器打开页面 [https://aka.ms/devicelogin](https://aka.ms/devicelogin)，输入该代码进行身份验证。
+2. 使用 Web 浏览器打开页面 [https://aka.ms/devicelogin](https://aka.ms/devicelogin)，然后输入该代码进行身份验证。
 
-    系统会提示使用凭据登录。
-
-1. 登录。
-
+3. 在浏览器中使用帐户凭据登录。

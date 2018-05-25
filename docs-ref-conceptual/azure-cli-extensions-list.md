@@ -4,16 +4,16 @@ description: 官方支持的 Azure CLI 2.0 扩展的完整列表。
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 05/16/2018
+ms.date: 05/23/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 82f2aec902ff7a9061f056139551990334ff6fb9
-ms.sourcegitcommit: 42f1ba77b2f562d89dadd302655d1f02ee4b6130
+ms.openlocfilehash: fdf67f7d041f95b194beb5c72e2c3b905b9b3133
+ms.sourcegitcommit: bdc7db76b48e007a2022e4c2b23fdd1bc1d25600
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Azure CLI 2.0 的可用扩展
 
@@ -30,9 +30,9 @@ az extension list-available --output table
 | [aem](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | 管理适用于 SAP 的 Azure 增强型监视扩展 |  |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.1 | 支持命令别名 | 是 |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.2.2 | 用于操作 Azure Batch 服务的其他命令 |  |
-| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.4.4 | 为 Azure IoT 中心、IoT Edge 和 IoT 设备预配服务提供数据平面命令层 |  |
+| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.4.5 | 为 Azure IoT 中心、IoT Edge 和 IoT 设备预配服务提供数据平面命令层 |  |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.0.1 | 支持 Azure 机器人服务 2017-12-01 预览版功能 | 是 |
-| [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Dev Spaces 为团队提供快速、迭代的 Kubernetes 开发体验。 | 是 |
+| [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Dev Spaces 为团队提供快速、迭代的 Kubernetes 开发体验。 | 是 |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | 适用于 DNS 区域的 Azure CLI 扩展 |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.0 | 对 Azure EventGrid 2018-05-01-preview 功能的支持 | 是 |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.6 | 对在区域之间复制托管 VM 映像的支持 |  |

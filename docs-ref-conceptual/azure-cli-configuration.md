@@ -5,22 +5,22 @@ keywords: Azure CLI, 配置, 设置, Azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 12/13/2017
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dac383fa0dbd785f9448514e3d0a3242e4853038
-ms.sourcegitcommit: 42f1ba77b2f562d89dadd302655d1f02ee4b6130
+ms.openlocfilehash: b0d26beac83a7ce3bba44d5e64d129a211c82836
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Azure CLI 2.0 配置
 
 在 Azure CLI 2.0 中，可以使用用户配置来替代日志记录和数据收集等内部设置，并为某些必需参数提供默认选项。 CLI 提供一个便捷的命令 `az configure` 用于管理其中的某些值；可在配置文件中或使用环境变量设置其他值。
 
-CLI 使用的配置值按以下优先顺序计算，列表中位于较高顺序的项优先。
+CLI 使用的配置值按以下优先顺序计算，列表中位于较高位置的项优先。
 
 1. 命令行参数
 2. 环境变量
@@ -45,7 +45,7 @@ CLI 使用的配置值按以下优先顺序计算，列表中位于较高顺序�
 
 例如，可按如下所示设置所有命令的默认资源组和位置。
 
-```azurecli
+```azurecli-interactive
 az configure --defaults location=westus2 group=MyResourceGroup
 ```
 
@@ -61,7 +61,7 @@ CLI 配置文件包含用于管理 CLI 行为的其他设置。 配置文件本�
 
 以下示例 CLI 配置文件禁用任何确认提示，并设置在 `/var/log/azure` 目录中进行日志记录。
 
-```
+```ini
 [core]
 disable_confirm_prompt=Yes
 
