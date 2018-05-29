@@ -1118,13 +1118,9 @@
 	"az webapp": {
 		"TocTitle": "Web Apps",
 		"PageTitle": "Web Apps"
-<<<<<<< HEAD
 	},
 	"az ams": {
 		"TocTitle": "Azure Media Services",
 		"PageTitle": "Azure Media Services (AMS)"
 	}	
-=======
-	}
->>>>>>> parent of 7162ac3... Delete diff files
 }
