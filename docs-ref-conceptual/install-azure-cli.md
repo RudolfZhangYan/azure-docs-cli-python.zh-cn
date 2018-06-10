@@ -9,29 +9,18 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-<<<<<<< HEAD
-ms.openlocfilehash: 2a2f60baed0b30c6437497006565a0fceb6bdbaa
-ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
+ms.openlocfilehash: 9eee413ad667262a9e30093723a0717805c960d9
+ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-=======
-ms.openlocfilehash: 79266015106f125d893455e82ec7b6800c5c276d
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
->>>>>>> parent of 7162ac3... Delete diff files
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34799220"
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
 Azure CLI 2.0 是一个命令行工具，可为 Azure 资源管理提供优异的体验。 CLI 旨在简化脚本编写、提高数据查询灵活性、支持非阻塞进程形式的长时间操作，等等。 欢迎立即试用 CLI 的功能！
 
-<<<<<<< HEAD
-CLI 的当前版本为 __2.0.32__。 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
-=======
-CLI 的当前版本为 __2.0.31__。 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
->>>>>>> parent of 7162ac3... Delete diff files
+CLI 的当前版本为 __2.0.34__。 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
 * [在 Windows 上安装](install-azure-cli-windows.md)
 * [在 macOS 上安装](install-azure-cli-macos.md)

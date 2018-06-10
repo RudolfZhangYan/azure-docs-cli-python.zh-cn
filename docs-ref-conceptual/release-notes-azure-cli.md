@@ -4,19 +4,153 @@ description: 了解 Azure CLI 2.0 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/10/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-<<<<<<< HEAD
-ms.openlocfilehash: 254c7b306440d921cef6b611268839150fdf3196
-ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
+ms.openlocfilehash: 57f13c7d17e2d248132e2e9c49bb0b4994f041f5
+ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34799254"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="june-5-2018"></a>2018 年 6 月 5 日
+
+版本 2.0.34
+
+### <a name="core"></a>核心
+
+* 增加了对跨租户资源引用的支持
+* 增强了遥测数据上传可靠性
+
+### <a name="acr"></a>ACR
+
+* 增加了对 VSTS 充当远程源位置的支持
+* 添加了 `acr import` 命令
+
+### <a name="aks"></a>AKS
+
+* 更改了 `aks get-credentials`，可以使用更安全的文件系统权限来创建 kube 配置文件
+
+### <a name="batch"></a>Batch
+
+* 修复了池列表表格式设置中的 Bug [[问题 #4378](https://github.com/Azure/azure-cli/issues/4378)]
+
+### <a name="iot"></a>IOT
+
+* 增加了对创建基本层 IoT 中心的支持
+
+### <a name="network"></a>网络
+
+* 改进了 `network vnet peering`
+
+### <a name="policy-insights"></a>策略见解
+
+* 初始版本
+
+### <a name="arm"></a>ARM
+
+* 增加了 `account management-group` 命令。
+
+### <a name="sql"></a>SQL
+
+* 增加了新的托管实例命令：
+  * `sql mi create`
+  * `sql mi show`
+  * `sql mi list`
+  * `sql mi update`
+  * `sql mi delete`
+* 增加了新的托管数据库命令：
+  * `sql midb create`
+  * `sql midb show`
+  * `sql midb list`
+  * `sql midb restore`
+  * `sql midb delete`
+
+### <a name="storage"></a>存储
+
+* 增加了可以从文件扩展名推断且适用于 json 和 javascript 的额外 mimetype
+
+### <a name="vm"></a>VM
+
+* 更改了 `vm list-skus`，可以使用固定列并可添加表明要删除 `Tier` 和 `Size` 的警告
+* 为 `vm create` 添加了 `--accelerated-networking` 选项
+* 为 `identity create` 添加了 `--tags`
+
+## <a name="may-22-2018"></a>2018 年 5 月 22 日
+
+版本 2.0.33
+
+### <a name="core"></a>核心
+
+* 增加了对在文件名中扩展 `@` 的支持
+
+### <a name="acs"></a>ACS
+
+* 增加了新的 Dev-Spaces 命令：`aks use-dev-spaces` 和 `aks remove-dev-spaces`
+* 修复了帮助消息中的拼写错误
+
+### <a name="appservice"></a>应用服务
+
+* 改进了泛型更新命令
+* 增加了对 `webapp deployment source config-zip` 的异步支持
+
+### <a name="container"></a>容器
+
+* 增加了对以 yaml 格式导出容器组的支持
+* 增加了对使用 yaml 文件创建/更新容器组的支持
+
+### <a name="extension"></a>分机
+
+* 改进了扩展的删除方式
+
+### <a name="interactive"></a>交互
+
+* 更改了日志记录，在完成时将分析器静音
+* 改进了错误的帮助缓存的处理
+
+### <a name="keyvault"></a>KeyVault
+
+* 修复了 keyvault 命令，使之可以在 Cloud Shell 或 VM 中与标识一起使用
+
+### <a name="network"></a>网络
+
+* 修复了 `network watcher show-topology` 无法与 vnet 和/或子网名称一起使用的问题 [#6326](https://github.com/Azure/azure-cli/issues/6326)
+* 修复了某些 `network watcher` 命令宣称未为区域启用网络观察程序而实际上却已经启用的问题 [#6264](https://github.com/Azure/azure-cli/issues/6264)
+
+### <a name="sql"></a>SQL
+
+* [重大更改] 更改了从 `db` 和 `dw` 命令返回的响应对象：
+    * 已将 `serviceLevelObjective` 属性重命名为 `currentServiceObjectiveName`
+    * 删除了 `currentServiceObjectiveId` 和 `requestedServiceObjectiveId` 属性 
+    * 已将 `maxSizeBytes` 属性更改为整数值而不是字符串
+* [重大更改] 已将下面的 `db` 和 `dw` 属性更改为只读：
+    * `requestedServiceObjectiveName`。  若要更新，请使用 `--service-objective` 参数或设置 `sku.name` 属性
+    * `edition`。 若要更新，请使用 `--edition` 参数或设置 `sku.tier` 属性
+    * `elasticPoolName`。 若要更新，请使用 `--elastic-pool` 参数或设置 `elasticPoolId` 属性
+* [重大更改] 已将下面的 `elastic-pool` 属性更改为只读：
+    * `edition`。 若要更新，请使用 `--edition` 参数
+    * `dtu`。 若要更新，请使用 `--capacity` 参数
+    *  `databaseDtuMin`。 若要更新，请使用 `--db-min-capacity` 参数
+    *  `databaseDtuMax`。 若要更新，请使用 `--db-max-capacity` 参数
+* 为 `db`、`dw` 和 `elastic-pool` 命令增加了 `--family` 和 `--capacity` 参数。
+* 为 `db`、`dw` 和 `elastic-pool` 命令增加了表格式化程序。
+
+### <a name="storage"></a>存储
+
+* 增加了 `--account-name` 参数的补全选项
+* 修复了 `storage entity query` 的问题
+
+### <a name="vm"></a>VM
+
+* [重大更改] 从 `vm create` 中删除了 `--write-accelerator`。 可以通过 `vm update` 或 `vm disk attach` 访问同一支持
+* 修复了 `[vm|vmss] extension` 中的扩展映像匹配问题
+* 为 `vm create` 添加了 `--boot-diagnostics-storage`，可以捕获启动日志
+* 为 `[vm|vmss] update` 添加了 `--license-type`
 
 ## <a name="may-7-2018"></a>2018 年 5 月 7 日
 
@@ -149,16 +283,6 @@ ms.lasthandoff: 05/07/2018
 * 更改了 `vm resize`，系统会检查请求的大小是否不同于当前设置的大小，只在二者有变化时进行更新
 
 
-=======
-ms.openlocfilehash: fd5d82e34089a9a884c25c9a5620526f9d30577a
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
----
-# <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
-
->>>>>>> parent of 7162ac3... Delete diff files
 ## <a name="april-10-2018"></a>2018 年 4 月 10 日
 
 版本 2.0.31
@@ -739,7 +863,7 @@ ms.lasthandoff: 04/28/2018
 
 ### <a name="consumption"></a>消耗
 
-* 添加了用于保留的新命令：`consumption reservations summaries` 和 `consumption reservations details`
+* 添加了用于预留的新命令：`consumption reservations summaries` 和 `consumption reservations details`
 
 ### <a name="event-grid"></a>事件网格
 
@@ -927,11 +1051,7 @@ ms.lasthandoff: 04/28/2018
 * 添加了将 Azure 文件共享装载为卷的支持
 * 更新了帮助器文档
 
-<<<<<<< HEAD
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
-=======
-### <a name="data-lake-analytics"></a>数据湖分析
->>>>>>> parent of 7162ac3... Delete diff files
 
 * 更改了 `[job|account] list` 以返回更简洁的信息
 
@@ -959,7 +1079,7 @@ ms.lasthandoff: 04/28/2018
 * 修复了在采用某种 VNET 创建方式时 `vnet update --dns-servers` 无法正常运行的问题
 * 修复了 `dns zone import` 错误导入相对 DNS 名称的问题
 
-### <a name="reservations"></a>保留
+### <a name="reservations"></a>预留
 
 * 初始预览版
 
@@ -1367,7 +1487,7 @@ ms.lasthandoff: 04/28/2018
 * 添加了容器命令
 * 添加了计费和消耗模块
 
-```
+```text
 azure-cli (2.0.12)
 
 acr (2.0.9)
@@ -1474,11 +1594,7 @@ vm (2.0.11)
 * 修复了允许使用自定义分区键创建集合的问题
 * 添加了对集合默认 TTL 的支持
 
-<<<<<<< HEAD
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
-=======
-### <a name="data-lake-analytics"></a>数据湖分析
->>>>>>> parent of 7162ac3... Delete diff files
 
 * 在 `dla account compute-policy` 标题下添加了用于计算策略管理的命令
 * 添加了 `dla job pipeline show`
@@ -1649,7 +1765,7 @@ vm (2.0.11)
 * 添加“az -v”作为“az --version”的快捷方式 ([#2926](https://github.com/Azure/azure-cli/issues/2926))
 * 提高加载包和执行命令的性能 ([#2819](https://github.com/Azure/azure-cli/issues/2819))
 
-```
+```text
 azure-cli (2.0.6)
 
 acr (2.0.4)
@@ -1727,11 +1843,7 @@ vm (2.0.6)
 * 增加对数据库帐户启用自动故障转移的支持
 * 增加对新一致性策略 ConsistentPrefix 的支持
 
-<<<<<<< HEAD
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
-=======
-### <a name="data-lake-analytics"></a>数据湖分析
->>>>>>> parent of 7162ac3... Delete diff files
 
 * 修复了在筛选作业结果和状态列表时会引发错误的 bug
 * 增加对新目录项类型的支持：包。 访问方法：`az dla catalog package`
@@ -1850,7 +1962,7 @@ vm (2.0.6)
 
 此版本中已发布 ACR、Batch、KeyVault 和 SQL 组件
 
-```
+```text
 azure-cli (2.0.2)
 
 acr (2.0.0)
@@ -1940,7 +2052,7 @@ vm (2.0.2)
 
 若要验证 CLI 的版本，请使用 `az --version`。输出中将列出 CLI 本身的版本（在此发行版中为 2.0.0）、各个命令模块的版本，以及所用 Python 和 GCC 的版本。
 
-```
+```text
 azure-cli (2.0.0)
 
 acs (2.0.0)

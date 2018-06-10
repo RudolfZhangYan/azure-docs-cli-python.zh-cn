@@ -4,24 +4,17 @@ description: 如何使用 apt 包管理器安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/06/2018
+ms.date: 05/24/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-<<<<<<< HEAD
-ms.openlocfilehash: 7eb04b408f403264f3951bf663d43686601c4ab8
-ms.sourcegitcommit: 1d18f667af28b59f5524a3499a4b7dc12af5163d
+ms.openlocfilehash: 7b5835581bf1e14e2d9fdc7c9584c704d1a5d82f
+ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-=======
-ms.openlocfilehash: 86d601fdc375ec59c4f7cbf0881bc67a08e24b19
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
->>>>>>> parent of 7162ac3... Delete diff files
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703173"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
@@ -32,26 +25,19 @@ ms.lasthandoff: 04/28/2018
 
 ## <a name="install"></a>安装
 
-1. 修改源列表：
+1. <a name="install-step-1"/> 修改源列表：
 
-     ```bash
-     AZ_REPO=$(lsb_release -cs)
-     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-          sudo tee /etc/apt/sources.list.d/azure-cli.list
-     ```
+    ```bash
+    AZ_REPO=$(lsb_release -cs)
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
+    ```
 
-2. 获取 Microsoft 签名密钥：
+2. <a name="signingKey"></a>获取 Microsoft 签名密钥：
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
+   curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
    ```
-
-  > [!WARNING]
-  > 此签名密钥已弃用，将在 2018 年 5 月底被替换。 为了能够通过 `apt` 持续获得更新，另请确保安装新密钥：
-  > 
-  > ```bash
-  > curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-  > ``` 
 
 3. 安装 CLI：
 
@@ -59,6 +45,9 @@ ms.lasthandoff: 04/28/2018
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
+
+   > [!WARNING]
+   > 签名密钥已在 2018 年 5 月更新，并已被替换。 如果收到签名密钥错误，请确保已[获得最新的签名密钥](#signingKey)。
 
 然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
 
@@ -72,7 +61,6 @@ az login
 
 下面是使用 `apt` 安装时出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
 
-<<<<<<< HEAD
 ### <a name="lsbrelease-fails-with-command-not-found"></a>lsb_release 失败，出现“找不到命令”错误
 
 运行 `lsb_release` 命令时，可能会看到类似于以下错误的输出：
@@ -87,8 +75,10 @@ az login
 sudo apt-get install lsb-release
 ```
 
-=======
->>>>>>> parent of 7162ac3... Delete diff files
+### <a name="lsbrelease-does-not-return-the-base-distribution-version"></a>lsb_release 没有返回基础发行版本
+
+某些 Ubuntu 或 Debian 派生的版本（例如 Linux Mint）不会通过 `lsb_release` 返回正确的版本名称。 此值在安装过程中用于确定要安装的包。 如果知道自己的发行版派生自的版本的名称，则可在[安装步骤 1](#install-step-1) 中手动设置 `AZ_REPO` 值。 否则，请查看发行版的信息，了解如何确定基础发行版名称，然后将 `AZ_REPO` 设置为正确值。
+
 ### <a name="apt-key-fails-with-no-dirmngr"></a>apt-key 失败，出现“没有 dirmngr”
 
 运行 `apt-key` 命令时，可能会看到类似于以下错误的输出：
@@ -123,6 +113,9 @@ sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-
    sudo apt-get update && sudo apt-get upgrade
    ```
 
+> [!WARNING]
+> 签名密钥已在 2018 年 5 月更新，并已被替换。 如果收到签名密钥错误，请确保已[获得最新的签名密钥](#signingKey)。
+   
 > [!NOTE]
 > 此命令将会升级系统上所有未发生依赖关系更改的已安装包。
 > 若只要升级 CLI，请使用 `apt-get install`。
