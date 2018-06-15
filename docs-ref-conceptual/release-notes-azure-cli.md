@@ -9,14 +9,38 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 57f13c7d17e2d248132e2e9c49bb0b4994f041f5
-ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
+ms.openlocfilehash: 72e667d74ff8d55f26ecbf3b3c8845c9c03b56be
+ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34799254"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35512897"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="june-13-2018"></a>2018 年 6 月 13 日
+
+版本 2.0.36
+
+### <a name="aks"></a>AKS
+
+* 为 `aks create` 添加了高级网络选项
+* 为 `aks create` 添加了参数以启用监视和 HTTP 路由 
+* 为 `aks create` 添加了 `--no-ssh-key` 参数
+* 为 `aks create` 添加了 `--enable-rbac` 参数
+* [PREVIEW] 为 `aks create` 添加了对 Azure Active Directory 身份验证的支持
+
+### <a name="appservice"></a>应用服务
+
+* 修复了不兼容 urllib 版本的问题
+
+## <a name="june-5-2018"></a>2018 年 6 月 5 日
+
+版本 2.0.35
+
+### <a name="interactive"></a>交互
+
+* 添加了对交互模式的依赖项的限制
 
 ## <a name="june-5-2018"></a>2018 年 6 月 5 日
 
