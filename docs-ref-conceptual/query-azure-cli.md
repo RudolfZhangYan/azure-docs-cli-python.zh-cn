@@ -14,6 +14,7 @@ ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306159"
 ---
 # <a name="use-jmespath-queries-with-azure-cli-20"></a><span data-ttu-id="aa396-103">在 Azure CLI 2.0 中使用 JMESPath 查询</span><span class="sxs-lookup"><span data-stu-id="aa396-103">Use JMESPath queries with Azure CLI 2.0</span></span>
 

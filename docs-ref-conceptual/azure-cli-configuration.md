@@ -15,6 +15,7 @@ ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34305870"
 ---
 # <a name="azure-cli-20-configuration"></a><span data-ttu-id="6afb1-104">Azure CLI 2.0 配置</span><span class="sxs-lookup"><span data-stu-id="6afb1-104">Azure CLI 2.0 configuration</span></span>
 

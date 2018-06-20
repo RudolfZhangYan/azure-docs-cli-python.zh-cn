@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33815970"
 ---
 # <a name="install-azure-cli-20-on-windows"></a><span data-ttu-id="2fa03-103">在 Windows 上安装 Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="2fa03-103">Install Azure CLI 2.0 on Windows</span></span>
 
