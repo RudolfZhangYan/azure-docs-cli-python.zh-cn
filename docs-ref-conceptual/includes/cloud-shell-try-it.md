@@ -5,10 +5,11 @@ manager: carmonm
 ms.date: 01/19/2018
 ms.topic: include
 ms.openlocfilehash: af927d4ddd1811b05c4f9f2f6bf0f4a1b2a9ff51
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36262738"
 ---
 Azure Cloud Shell 是免费的交互式 shell，可以使用它运行本文中的步骤。 它预安装有常用 Azure 工具并将其配置与帐户一起使用。 请直接单击“复制”对代码进行复制，将其粘贴到 Cloud Shell 中，然后按 Enter 来运行它。  可通过多种方式来启动 Cloud Shell：
 
