@@ -9,14 +9,109 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 72e667d74ff8d55f26ecbf3b3c8845c9c03b56be
-ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
+ms.openlocfilehash: 64db2b58ca883518757d8e189bf7263ed818b283
+ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2018
-ms.locfileid: "35512897"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36262652"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="june-19-2018"></a>2018 年 6 月 19 日
+
+版本 2.0.38
+
+### <a name="core"></a>核心
+
+* 为大多数命令增加了对 `--subscription` 的全局支持
+
+### <a name="acr"></a>ACR
+
+* 增加了 `azure-storage-blob` 作为依赖项
+* 更改了 `acr build-task create` 的默认 CPU 配置，允许使用 2 核心
+
+### <a name="acs"></a>ACS
+
+* 更新了 `aks use-dev-spaces` 命令的选项。 增加了 `--update` 支持
+* 更改了 `aks get-credentials --admin`，不替换 `$HOME/.kube/config` 中的用户上下文
+* 公开了托管群集上的只读 `nodeResourceGroup` 属性
+* 修复了 `acs browse` 命令错误
+* 将 `--connector-name` 设置为 `aks install-connector`、`aks upgrade-connector` 和 `aks remove-connector` 的可选项
+* 为 `aks install-connector` 增加了新的 Azure 容器实例区域
+* 为 helm 版本名称增加了规范化位置，并为 `aks install-connector` 增加了节点名称 
+
+### <a name="appservice"></a>应用服务
+
+* 增加了对更新版 urllib 的支持
+* 为 `functionapp create` 增加了支持，可以使用外部资源组的应用服务计划
+
+### <a name="batch"></a>Batch
+
+* 删除了 `azure-batch-extensions` 依赖项
+
+### <a name="batch-ai"></a>Batch AI
+
+* 添加了对工作区的支持。 可以通过工作区将群集、文件服务器和试验按组分组，去除了对可以创建的资源数的限制
+* 增加了对试验的支持。 可以通过试验将作业按集合分组，去除了对已创建作业的数目限制
+* 增加了为 Docker 容器中运行的作业配置 `/dev/shm` 的支持
+* 增加了 `batchai cluster node exec` 和 `batchai job node exec` 命令。 这些命令允许在节点上直接执行任何命令，提供用于端口转发的功能。
+* 为 `batchai` 命令增加了对 `--ids` 的支持 
+* [重大更改] 所有群集和文件服务器必须在工作区创建
+* [重大更改] 作业必须在试验中创建
+* [重大更改] 从 `cluster create` 和 `job create` 命令中删除了 `--nfs-resource-group`。 若要装载属于其他工作区/资源组的 NFS，请通过 `--nfs` 选项提供文件服务器的 ARM ID
+* [重大更改] 从 `job create` 命令中删除了 `--cluster-resource-group`。 若要在属于其他工作区/资源组的群集上提交作业，请通过 `--cluster` 选项提供群集的 ARM ID
+* [重大更改] 从作业、群集和文件服务器中删除了 `location` 特性。 位置现在是工作区的特性。
+* [重大更改] 从 `job create`、`cluster create` 和 `file-server create` 命令中删除了 `--location`
+* [重大更改] 更改了短选项的名称，使接口更一致：
+ - [`--config`, `-c`] 已重命名为 [`--config-file`, `-f`]
+ - [`--cluster`, `-r`] 已重命名为 [`--cluster`, `-c`]
+ - [`--cluster`, `-n`] 已重命名为 [`--cluster`, `-c`]
+ - [`--job`, `-n`] 已重命名为 [`--job`, `-j`]
+
+### <a name="maps"></a>地图
+
+* [重大更改] 更改了 `maps account create`，要求通过交互式提示或 `--accept-tos` 标志接受《服务条款》
+
+### <a name="network"></a>网络
+
+* 为 `network lb probe create` [#6571](https://github.com/Azure/azure-cli/issues/6571) 增加了对 `https` 的支持
+* 修复了 `--endpoint-status` 区分大小写的问题。 [#6502](https://github.com/Azure/azure-cli/issues/6502)
+
+### <a name="reservations"></a>预留
+
+* [重大更改] 为 `reservations catalog show` 增加了必需参数 `ReservedResourceType`
+* 为 `reservations catalog show` 增加了参数 `Location`
+* [重大更改] 从 `ReservationProperties` 中删除了 `kind`
+* [重大更改] 已在 `Catalog` 中将 `capabilities` 重命名为 `sku_properties`
+* [重大更改] 从 `Catalog` 中删除了 `size` 和 `tier` 属性
+* 为 `reservations reservation update` 增加了参数 `InstanceFlexibility`
+
+### <a name="role"></a>角色
+
+* 改进了错误处理
+
+### <a name="sql"></a>SQL
+
+* 修复了针对不可供订阅使用的位置运行 `az sql db list-editions` 时出现的令人困惑的错误
+
+### <a name="storage"></a>存储
+
+* 更改了 `storage blob download` 的表输出，使之更为可读
+
+### <a name="vm"></a>VM
+
+* 针对 `vm create` 中的加速网络支持，改进了 refine vm size check
+* 增加了针对 `vmss create` 的警告：默认的 VM 大小将从 `Standard_D1_v2` 切换为 `Standard_DS1_v2`
+* 为 `[vm|vmss] extension set` 增加了 `--force-update`，即使在配置未变的情况下也可以更新扩展
+
+## <a name="june-13-2018"></a>2018 年 6 月 13 日
+
+版本 2.0.37
+
+### <a name="core"></a>核心
+
+* 改进了交互式遥测
 
 ## <a name="june-13-2018"></a>2018 年 6 月 13 日
 
