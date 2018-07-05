@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: d250cb2d35a128c789fccd3aca17c47074121a25
-ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
+ms.openlocfilehash: cd9a41b66d18410afa091ede50ca24e7d4b5e9ed
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34703105"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439952"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -101,7 +101,7 @@ az role assignment list --assignee APP_ID
 > [!NOTE] 
 > 如果帐户无权分配角色，则将显示错误消息“你的帐户无权在范围 '/subscriptions/{guid}' 内执行操作 'Microsoft.Authorization/roleAssignments/write'”。请与 Azure Active Directory 管理员联系以管理角色。
 
-## <a name="log-in-using-the-service-principal"></a>使用服务主体登录
+## <a name="sign-in-using-the-service-principal"></a>使用服务主体登录
 
 可以通过在 Azure CLI 中登录到新的服务主体下来测试其登录和权限。 使用 `appId`、`tenant` 和凭据值以新服务主体身份登录。 所提供的身份验证信息将根据你选择使用密码还是使用证书创建服务主体而有所变化。
 
