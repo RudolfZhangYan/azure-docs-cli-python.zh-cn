@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: c3ed3585b601ee55b267ea6cfc43ce41c54f084a
-ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
+ms.openlocfilehash: d662333f828c65fa709fa622de7de3a18bea58d8
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33815970"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439818"
 ---
 # <a name="install-azure-cli-20-on-windows"></a>在 Windows 上安装 Azure CLI 2.0
 
@@ -30,11 +30,9 @@ MSI 发行版用于在 Windows 上安装、更新和卸载 `az` 命令。
 
 当安装程序询问是否可以对计算机进行更改时，请单击“是”框。
 
-现在可以通过 Windows 命令提示符或 PowerShell 使用 `az` 命令运行 Azure CLI 了。 PowerShell 提供了 Windows 命令提示符所不能提供的一些 Tab 键补全功能。 若要登录，请运行 `az login` 命令。
+现在可以通过 Windows 命令提示符或 PowerShell 使用 `az` 命令运行 Azure CLI 了。 PowerShell 提供了 Windows 命令提示符所不能提供的一些 Tab 键补全功能。 若要登录，请运行 [az login](/cli/azure/reference-index#az-login) 命令。
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 

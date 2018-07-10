@@ -10,12 +10,12 @@ ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: 4d5bee6514477c494ec53d2bd7bba778301ba490
-ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
+ms.openlocfilehash: bbd64458b49d3e6c6a533a489d5c8105f364d3d7
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34703139"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439867"
 ---
 # <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
@@ -26,9 +26,9 @@ ms.locfileid: "34703139"
 
 登录后，将针对默认订阅运行 CLI 命令。 如果有多个订阅，可以[更改默认订阅](manage-azure-subscriptions-azure-cli.md)。
 
-## <a name="interactive-log-in"></a>交互式登录
+## <a name="interactive-sign-in"></a>交互式登录
 
-通过 Web 浏览器以交互方式登录。
+Azure CLI 的默认身份验证方法是以交互方式从 Web 浏览器登录。
 
 [!INCLUDE [interactive_login](includes/interactive-login.md)]
 

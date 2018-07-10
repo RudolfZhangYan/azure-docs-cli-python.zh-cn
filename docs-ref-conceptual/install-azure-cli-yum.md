@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: b3c82825af3d1d2420b0111d1a370a17f37d9426
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 7729077d9240f09e0ad93ad8ab154d1477d8c3fd
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32043697"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439884"
 ---
 # <a name="install-azure-cli-20-with-yum"></a>使用 yum 安装 Azure CLI 2.0
 
@@ -42,11 +42,9 @@ ms.locfileid: "32043697"
    sudo yum install azure-cli
    ```
 
-然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请使用 [az login](/cli/azure/reference-index#az-login) 命令。
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 

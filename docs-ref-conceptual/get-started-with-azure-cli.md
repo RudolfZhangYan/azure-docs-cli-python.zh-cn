@@ -10,28 +10,26 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dbb6233e8fed15b440282b8396d3b3bd056e80f7
-ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
+ms.openlocfilehash: c973d31312fbe0f9232bf3f0f3ed5f3b70b6559a
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2018
-ms.locfileid: "35512931"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439935"
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
 欢迎使用 Azure CLI 2.0！ CLI 是旨在让你快速、高效地使用 Azure 服务且主要侧重于自动化的工具。 本文介绍 CLI 功能，并提供可帮助你高效工作的外部资源的链接。
 
-## <a name="install-and-log-in"></a>安装和登录
+## <a name="install-and-sign-in"></a>安装和登录
 
 [安装 CLI](install-azure-cli.md)（如果尚未安装），或试用 [Azure Cloud Shell](/azure/cloud-shell/overview)。
 
 对本地安装使用任何 CLI 命令之前，需要使用 [az login](/cli/azure/reference-index#az-login) 登录。
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-此命令会提示你通过网站使用身份验证代码登录。 非交互方式登录有很方法，在[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)中详细介绍。
+非交互方式登录有多种方法，这些方法在[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)中已详细介绍。
 
 ## <a name="common-commands"></a>常用命令
 

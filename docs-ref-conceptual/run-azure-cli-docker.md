@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: d88dbcec947372aa154bce939edd99f65cd9480f
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 0eb3694c8dcb085e1aeb8cde54a21ac16157b26b
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32043714"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439817"
 ---
 # <a name="run-azure-cli-20-in-a-docker-container"></a>在 Docker 容器中运行 Azure CLI 2.0
 
@@ -28,20 +28,19 @@ ms.locfileid: "32043714"
    docker run -it microsoft/azure-cli
    ```
 
-CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。 若要登录，请运行 `az login` 命令。
-
-```azurecli
-az login
-```
-
-若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
-
 > [!NOTE]
 > 如果要从用户环境选取 SSH 密钥，可以使用 `-v ${HOME}:/root` 将 $HOME 装载为 `/root`。
 
 > ```bash
 > docker run -it -v ${HOME}:/root microsoft/azure-cli
 > ```
+
+CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。 若要登录，请运行 [az login](/cli/azure/reference-index#az-login) 命令。
+
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
+
+若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+
 
 ## <a name="update-docker-image"></a>更新 Docker 映像
 

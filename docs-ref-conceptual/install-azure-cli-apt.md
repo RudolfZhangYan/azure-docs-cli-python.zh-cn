@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: abbffb1c474d752130dfffa8e60937b3d632fa14
-ms.sourcegitcommit: c6c3058254974b3a1d5d2fa2cd231a900c53d321
+ms.openlocfilehash: 3f52f1545dc4bad44280c7e58ad17ec2302fd436
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126576"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439612"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
@@ -49,11 +49,9 @@ ms.locfileid: "37126576"
    > [!WARNING]
    > 签名密钥已在 2018 年 5 月更新，并已被替换。 如果收到签名密钥错误，请确保已[获得最新的签名密钥](#signingKey)。
 
-然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请使用 [az login](/cli/azure/reference-index#az-login) 命令。
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 

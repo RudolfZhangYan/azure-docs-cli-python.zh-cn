@@ -4,19 +4,100 @@ description: 了解 Azure CLI 2.0 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 06/01/2018
+ms.date: 07/03/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 64db2b58ca883518757d8e189bf7263ed818b283
-ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
+ms.openlocfilehash: 102152b7d99de253ccb2fea09b99be91e3c9135e
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36262652"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439663"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="july-3-2018"></a>2018 年 7 月 3 日
+
+版本 2.0.41
+
+### <a name="aks"></a>AKS
+
+* 更改了监视以使用订阅 ID
+
+## <a name="july-3-2018"></a>2018 年 7 月 3 日
+
+版本 2.0.40
+
+### <a name="core"></a>核心
+
+* 添加了用于交互式登录的新授权代码流
+
+### <a name="acr"></a>ACR
+
+* 添加了轮询生成状态
+* 添加了对不区分大小写的枚举值的支持
+* 为 `show-manifests` 添加了 `--top` 和 `--orderby` 参数
+
+### <a name="acs"></a>ACS
+
+* [重大更改] 默认情况下启用 Kubernetes 基于角色的访问控制
+* 添加了 `--disable-rbac` 参数并弃用了 `--enable-rbac`，因为它现在是默认值
+* 更新了 `aks browse` 命令的选项。 增加了 `--listen-port` 支持
+* 为 `aks install-connector` 命令更新了默认 helm chart 包。 使用 virtual-kubelet-for-aks-latest.tgz
+* 添加了 `aks enable-addons` 和 `aks disable-addons` 命令以更新现有群集
+
+### <a name="appservice"></a>应用服务
+
+* 添加了对通过 `webapp identity remove` 禁用标识的支持
+* 删除了标识功能的 `preview` 标记
+
+### <a name="backup"></a>备份
+
+* 更新了模块定义
+
+### <a name="batchai"></a>BatchAI
+
+* 修复了 `batchai cluster node list` 和 `batchai job node list` 命令的表输出
+
+### <a name="cloud"></a>云
+
+* 为云配置添加了 `acr login` 服务器后缀
+
+### <a name="container"></a>容器
+
+* 更改了 `container create` 以将其默认为长时间运行的操作
+* 添加了 Log Analytics 参数 `--log-analytics-workspace` 和 `--log-analytics-workspace-key`
+* 添加了 `--protocol` 参数来指定要使用哪个网络协议
+
+### <a name="extension"></a>分机
+
+* 更改了 `extension list-available` 以仅显示与 CLI 版本兼容的扩展
+
+### <a name="network"></a>网络
+
+* 修复了记录类型区分大小写的问题 ([#6602](https://github.com/Azure/azure-cli/issues/6602))
+
+### <a name="rdbms"></a>Rdbms
+
+* 添加了 `[postgres|myql] server vnet-rule` 命令
+
+### <a name="resource"></a>资源
+
+* 添加了新操作组 `deployment`
+
+### <a name="vm"></a>VM
+
+* 添加了对删除系统分配标识的支持
+
+## <a name="june-25-2018"></a>2018 年 6 月 25日
+
+版本 2.0.39
+
+### <a name="cli"></a>CLI
+
+* 更新了 MSI 安装程序中的文件修整以修复扩展安装问题
 
 ## <a name="june-19-2018"></a>2018 年 6 月 19 日
 
@@ -1554,7 +1635,7 @@ ms.locfileid: "36262652"
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
 * 修复了处理资源文件 SAS URL 时的 bug
-* Batch 帐户终结点现在支持可选的“https://” 前缀
+* Batch 帐户终结点现在支持可选的 “https://” 前缀
 * 支持将包含 100 多个任务的列表添加到作业
 * 添加了加载扩展命令模块的调试日志记录
 

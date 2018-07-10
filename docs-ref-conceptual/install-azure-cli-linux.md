@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: b11ab99626227cb53a604d429fa32c560e4255d9
-ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
+ms.openlocfilehash: dade772f178ed9fd321ff45727aea991acd6d311
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34703122"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439629"
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI 2.0
 
@@ -41,11 +41,9 @@ curl -L https://aka.ms/InstallAzureCli | bash
 
 也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。 
 
-然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请运行 `az login` 命令。
+然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请使用 [az login](/cli/azure/reference-index#az-login) 命令。
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
