@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 92714f32736e0a1a0ea7c8dd4a615b158c955931
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 5f185e02217d6a3b54a9c252825c0f3fed3ab09e
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32044003"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967667"
 ---
 # <a name="install-the-azure-cli-10"></a>安装 Azure CLI 1.0
 
@@ -33,6 +33,7 @@ ms.locfileid: "32044003"
 安装 Azure CLI 1.0 后，[将它连接到 Azure 订阅](/cli/azure/authenticate-azure-cli)，并从命令行接口（Bash、终端、命令提示符等）运行 **azure** 命令，从而使用 Azure 资源。
 
 ## <a name="option-1-install-an-npm-package"></a>选项 1：安装 npm 包
+
 若要通过 npm 包安装 CLI，请确保已下载并安装了[最新的 Node.js 和 npm](https://nodejs.org/en/download/package-manager/)。 然后，运行 npm install，安装 azure-cli 包：
 
 ```bash
@@ -55,6 +56,7 @@ npm install -g <path to downloaded tar file>
 ```
 
 ## <a name="option-2-use-an-installer"></a>选项 2：使用安装程序
+
 如果使用的是 Mac 或 Windows 计算机，可以下载以下 CLI 安装程序：
 
 * [Mac OS X 安装程序][mac-installer]
@@ -64,6 +66,7 @@ npm install -g <path to downloaded tar file>
 > 在 Windows 上，还可以下载 [Web 平台安装程序](https://go.microsoft.com/?linkid=9828653)来安装 CLI。 此安装程序允许在安装 CLI 后安装附加的 Azure SDK 和命令行工具。
 
 ## <a name="option-3-use-a-docker-container"></a>选项 3：使用 Docker 容器
+
 如果已将计算机设置为 [Docker](https://docs.docker.com/engine/understanding-docker/) 主机，可以在 Docker 容器中运行最新的 Azure CLI 1.0。 运行以下命令（在 Linux 分发版中，可能需要使用 **sudo**）：
 
 ```bash
@@ -71,6 +74,7 @@ docker run -it microsoft/azure-cli:0.10.17
 ```
 
 ## <a name="run-azure-cli-10-commands"></a>运行 Azure CLI 1.0 命令
+
 安装 Azure CLI 1.0 后，从命令行用户界面（Bash、终端、命令提示符等）运行 **azure** 命令。 例如，若要运行帮助命令，请键入以下命令：
 
 ```azurecli
@@ -96,6 +100,7 @@ azure --version
 > 首次使用 Azure CLI 时，会看到一条消息，询问是否允许 Microsoft 收集使用情况信息。 参与为自愿性质。 如果选择参与，通过运行 `azure telemetry --disable` 即可随时停止参与。 若要随时启用参与，请运行 `azure telemetry --enable`。
 
 ## <a name="update-the-cli"></a>更新 CLI
+
 Microsoft 会频繁发布 Azure CLI 的更新版本。 使用适用于操作系统的安装程序来重新安装 CLI，或运行最新的 Docker 容器。 如果已安装最新的 Node.js 和 npm，请键入以下命令（在 Linux 分发版中可能需要使用 **sudo**）进行更新。
 
 ```bash
@@ -103,6 +108,7 @@ npm update -g azure-cli
 ```
 
 ## <a name="enable-tab-completion"></a>启用 tab 自动补全
+
 Mac 和 Linux 支持 tab 自动补全 CLI 命令。
 
 如要在 zsh 中启用，运行：
@@ -118,12 +124,11 @@ azure --completion >> ~/azure.completion.sh
 echo 'source ~/azure.completion.sh' >> ~/.bash_profile
 ```
 
-
 ## <a name="next-steps"></a>后续步骤
+
 * [从 CLI 连接到 Azure 订阅](/cli/azure/authenticate-azure-cli)以创建和管理 Azure 资源。
 * 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
 * 如果在使用 Azure CLI 或 Azure 方面有疑问，请访问 [Azure 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurescripting)。
-
 
 [mac-installer]: http://aka.ms/mac-azure-cli
 [windows-installer]: http://aka.ms/webpi-azure-cli

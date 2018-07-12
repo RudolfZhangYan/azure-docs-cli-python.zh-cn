@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 102152b7d99de253ccb2fea09b99be91e3c9135e
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: b44a387a144b9d7daca8d87309d8a5e1a47b078a
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439663"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967871"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
 
@@ -120,7 +120,7 @@ ms.locfileid: "37439663"
 * 修复了 `acs browse` 命令错误
 * 将 `--connector-name` 设置为 `aks install-connector`、`aks upgrade-connector` 和 `aks remove-connector` 的可选项
 * 为 `aks install-connector` 增加了新的 Azure 容器实例区域
-* 为 helm 版本名称增加了规范化位置，并为 `aks install-connector` 增加了节点名称 
+* 为 helm 版本名称增加了规范化位置，并为 `aks install-connector` 增加了节点名称
 
 ### <a name="appservice"></a>应用服务
 
@@ -137,7 +137,7 @@ ms.locfileid: "37439663"
 * 增加了对试验的支持。 可以通过试验将作业按集合分组，去除了对已创建作业的数目限制
 * 增加了为 Docker 容器中运行的作业配置 `/dev/shm` 的支持
 * 增加了 `batchai cluster node exec` 和 `batchai job node exec` 命令。 这些命令允许在节点上直接执行任何命令，提供用于端口转发的功能。
-* 为 `batchai` 命令增加了对 `--ids` 的支持 
+* 为 `batchai` 命令增加了对 `--ids` 的支持
 * [重大更改] 所有群集和文件服务器必须在工作区创建
 * [重大更改] 作业必须在试验中创建
 * [重大更改] 从 `cluster create` 和 `job create` 命令中删除了 `--nfs-resource-group`。 若要装载属于其他工作区/资源组的 NFS，请通过 `--nfs` 选项提供文件服务器的 ARM ID
@@ -201,7 +201,7 @@ ms.locfileid: "37439663"
 ### <a name="aks"></a>AKS
 
 * 为 `aks create` 添加了高级网络选项
-* 为 `aks create` 添加了参数以启用监视和 HTTP 路由 
+* 为 `aks create` 添加了参数以启用监视和 HTTP 路由
 * 为 `aks create` 添加了 `--no-ssh-key` 参数
 * 为 `aks create` 添加了 `--enable-rbac` 参数
 * [PREVIEW] 为 `aks create` 添加了对 Azure Active Directory 身份验证的支持
@@ -326,7 +326,7 @@ ms.locfileid: "37439663"
 
 * [重大更改] 更改了从 `db` 和 `dw` 命令返回的响应对象：
     * 已将 `serviceLevelObjective` 属性重命名为 `currentServiceObjectiveName`
-    * 删除了 `currentServiceObjectiveId` 和 `requestedServiceObjectiveId` 属性 
+    * 删除了 `currentServiceObjectiveId` 和 `requestedServiceObjectiveId` 属性
     * 已将 `maxSizeBytes` 属性更改为整数值而不是字符串
 * [重大更改] 已将下面的 `db` 和 `dw` 属性更改为只读：
     * `requestedServiceObjectiveName`。  若要更新，请使用 `--service-objective` 参数或设置 `sku.name` 属性
@@ -432,7 +432,7 @@ ms.locfileid: "37439663"
 
 ### <a name="network"></a>网络
 
-* [重大更改] 删除了以下项的 `--ids` 参数： 
+* [重大更改] 删除了以下项的 `--ids` 参数：
   * `express-route auth list`
   * `express-route peering list`
   * `nic ip-config list`
@@ -477,7 +477,7 @@ ms.locfileid: "37439663"
   * `vm secret list`
   * `vm unmanaged-disk list`
   * `vmss nic list`
-* 增加了写入加速器支持 
+* 增加了写入加速器支持
 * 添加了 `vmss perform-maintenance`
 * 修复了 `vm diagnostics set` 问题，可以可靠地检测 VM 的 OS 类型
 * 更改了 `vm resize`，系统会检查请求的大小是否不同于当前设置的大小，只在二者有变化时进行更新
@@ -561,7 +561,7 @@ ms.locfileid: "37439663"
 
 * 修复了 [#5936](https://github.com/Azure/azure-cli/issues/5936)：无法设置 `application-gateway create` 标记
 * 添加了参数 `--auth-certs`，以附加 `application-gateway http-settings [create|update]` 的身份验证证书。 [#4910](https://github.com/Azure/azure-cli/issues/4910)
-* 添加了 `ddos-protection` 命令用于创建 DDoS 保护计划 
+* 添加了 `ddos-protection` 命令用于创建 DDoS 保护计划
 * 为 `vnet [create|update]` 添加了 `--ddos-protection-plan` 支持，以便将 VNet 关联到 DDoS 保护计划
 * 修复了 `network route-table [create|update]` 中 `--disable-bgp-route-propagation` 标志的问题
 * 删除了 `network lb [create|update]` 的虚拟参数 `--public-ip-address-type` 和 `--subnet-type`
@@ -726,7 +726,7 @@ ms.locfileid: "37439663"
 
 * [重大更改] 已将 `advisor configuration get` 重命名为 `advisor configuration list`
 * [重大更改] 已将 `advisor configuration set` 重命名为 `advisor configuration update`
-* [重大更改] 删除了 `advisor recommendation generate` 
+* [重大更改] 删除了 `advisor recommendation generate`
 * 为 `advisor recommendation list` 添加了 `--refresh` 参数
 * 添加了 `advisor recommendation show` 命令
 
@@ -998,7 +998,7 @@ ms.locfileid: "37439663"
 * 修复了 `dns zone export` 存在的以下问题：
   * 修复了未正确导出长 TXT 记录的问题
   * 修复了不使用转义引号无法正确导出带引号的 TXT 记录的问题
-* 修复了使用 `dns zone import` 某些记录会导入两次的问题 
+* 修复了使用 `dns zone import` 某些记录会导入两次的问题
 * 已还原 `vnet-gateway root-cert` 和 `vnet-gateway revoked-cert` 命令
 
 ### <a name="profile"></a>配置文件
@@ -1013,7 +1013,7 @@ ms.locfileid: "37439663"
 
 * 修复了将存储 V1 帐户迁移到存储 V2 时出现的问题
 * 为所有上传/下载命令添加了进度报告
-* 修复了 `storage account check-name` 不显示“-n”参数选项的 bug  
+* 修复了 `storage account check-name` 不显示“-n”参数选项的 bug
 * 向 `blob [list|show]` 的表输出添加了“snapshot”列
 * 修复了需要作为整数分析的各种参数的 bug
 

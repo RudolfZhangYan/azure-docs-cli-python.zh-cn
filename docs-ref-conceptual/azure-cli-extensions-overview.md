@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1b983faef4c1678763b3483192e94a6c96e24f32
-ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
+ms.openlocfilehash: b503c51ffc55ceda30738e34171c7da92532f328
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34479463"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967718"
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>将扩展与 Azure CLI 2.0 配合使用
 
@@ -59,7 +59,7 @@ az extension update --name <extension-name>
 
 否则，可以按照[安装扩展](#install-extensions)说明，从源更新扩展。
 
-如果扩展名无法由 CLI 解析，请将该扩展卸载，然后尝试重新安装。 此外，还存在扩展已脱离预览阶段并成为 CLI 内置命令的可能性。 请按照[安装 Azure CLI 2.0](install-azure-cli.md) 中的说明尝试更新 CLI，查看扩展的命令是否已添加。 
+如果扩展名无法由 CLI 解析，请将该扩展卸载，然后尝试重新安装。 此外，还存在扩展已脱离预览阶段并成为 CLI 内置命令的可能性。 请按照[安装 Azure CLI 2.0](install-azure-cli.md) 中的说明尝试更新 CLI，查看扩展的命令是否已添加。
 
 ## <a name="uninstall-extensions"></a>卸载扩展
 
@@ -69,7 +69,8 @@ az extension update --name <extension-name>
 az extension remove --name <extension-name>
 ```
 
-还可以通过从安装扩展的位置删除它来进行手动删除。 这将是 `$AZURE_EXTENSION_DIR` shell 变量的值。 如果此变量未设置，默认情况下在 Linux 和 macOS 上该值为 `$HOME/.azure/cliextensions`，在 Windows 上为 `%USERPROFILE%\.azure\cliextensions`。
+还可以通过从安装扩展的位置删除它来进行手动删除。 这将是 `$AZURE_EXTENSION_DIR` shell 变量的值。
+如果此变量未设置，默认情况下在 Linux 和 macOS 上该值为 `$HOME/.azure/cliextensions`，在 Windows 上为 `%USERPROFILE%\.azure\cliextensions`。
 
 ```bash
 rm -rf $AZURE_EXTENSION_DIR/<extension-name>
@@ -77,7 +78,7 @@ rm -rf $AZURE_EXTENSION_DIR/<extension-name>
 
 建议使用 `az extension remove` 进行卸载。
 
-## <a name="faq"></a>常见问题
+## <a name="faq"></a>常见问题解答
 
 以下是一些有关 CLI 扩展的其他常见问题的答案。
 
@@ -95,8 +96,8 @@ rm -rf $AZURE_EXTENSION_DIR/<extension-name>
 
 ### <a name="can-extensions-depend-upon-each-other"></a>扩展是否可以彼此依赖？
 
-不会。 扩展必须是不依赖于其他扩展的单个包。 这是因为 CLI 不能保证何时加载扩展，因此不能保证依赖关系使人满意。 安装扩展将仅安装该扩展，并且它应继续工作，即使你删除其他扩展也是如此。
+不是。 扩展必须是不依赖于其他扩展的单个包。 这是因为 CLI 不能保证何时加载扩展，因此不能保证依赖关系使人满意。 安装扩展将仅安装该扩展，并且它应继续工作，即使你删除其他扩展也是如此。
 
 ### <a name="are-extensions-updated-along-with-the-cli"></a>扩展是否随 CLI 一起更新？
 
-不会。 扩展必须单独更新，如[更新扩展](#update-extensions)所述。
+不是。 扩展必须单独更新，如[更新扩展](#update-extensions)所述。

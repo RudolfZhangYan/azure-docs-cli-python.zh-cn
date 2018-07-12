@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: ed8f8ac160dd8225170ffcfff9619d94b92e456a
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: 97fcd9d5b5a65480957734cec0ead68029918a49
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306159"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967786"
 ---
 # <a name="use-jmespath-queries-with-azure-cli-20"></a>在 Azure CLI 2.0 中使用 JMESPath 查询
 
@@ -67,7 +67,7 @@ az vm show -g QueryDemo -n TestVM --query 'storageProfile.{image:imageReference.
 
 ## <a name="work-with-list-output"></a>使用列表输出
 
-可能会返回多个值的 CLI 命令总是会返回一个数组。 数组可以使其元素按索引进行访问，但 CLI 中永远不会有顺序保证。 查询数组值的最佳方法是使用 `[]` 运算符平展这些值。 该运算符写在数组的键后面，或写为表达式中的第一个元素。 平展时将针对数组中的每个单独元素运行该运算符后的查询，并将结果值放入一个新数组。 以下示例输出资源组中每个 VM 的名称以及其上运行的 OS。 
+可能会返回多个值的 CLI 命令总是会返回一个数组。 数组可以使其元素按索引进行访问，但 CLI 中永远不会有顺序保证。 查询数组值的最佳方法是使用 `[]` 运算符平展这些值。 该运算符写在数组的键后面，或写为表达式中的第一个元素。 平展时将针对数组中的每个单独元素运行该运算符后的查询，并将结果值放入一个新数组。 以下示例输出资源组中每个 VM 的名称以及其上运行的 OS。
 
 ```azurecli-interactive
 az vm list -g QueryDemo --query '[].{name:name, image:storageProfile.imageReference.offer}'
@@ -120,7 +120,8 @@ az vm list --query '[?osProfile.windowsConfiguration!=null].name'
 
 ## <a name="experiment-with-queries-interactively"></a>以交互方式试验查询
 
-为了试验 JMESPath 表达式，你可能希望以一种可以快速编辑查询并检查输出的方式工作。 [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal) Python 包提供了一种交互式环境，允许通过管道传输数据作为输入并随后编写程序内查询来提取数据。
+为了试验 JMESPath 表达式，你可能希望以一种可以快速编辑查询并检查输出的方式工作。 
+  [JMESPath-terminal](https://github.com/jmespath/jmespath.terminal) Python 包提供了一种交互式环境，允许通过管道传输数据作为输入并随后编写程序内查询来提取数据。
 
 ```bash
 pip install jmespath-terminal

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 9b6f7a5c79033c0b0bec2bf8b56eb40831484f1a
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: ffa435f8c6ee5aa82d2efe2e09d7bcb1f1dc434b
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306244"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967684"
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
@@ -32,8 +32,8 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
 下面的示例可帮助你开始在 Azure CLI 2.0 中执行常见任务：
+
 - [Linux 虚拟机](/azure/virtual-machines/virtual-machines-linux-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
-- 交互式：[创建 Linux 虚拟机](https://docs.microsoft.com/learn/azure-cli-2-0/index)
 - [Windows 虚拟机](/azure/virtual-machines/virtual-machines-windows-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [Web 应用](/azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [SQL 数据库](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
