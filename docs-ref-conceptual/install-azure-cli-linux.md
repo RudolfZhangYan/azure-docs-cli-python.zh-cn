@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dade772f178ed9fd321ff45727aea991acd6d311
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: 7e73ae8bbbba80bf48c6f01fc1c37a3c32c6eb31
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439629"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967548"
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI 2.0
 
@@ -39,17 +39,18 @@ ms.locfileid: "37439629"
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。 
+也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。
 
 然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请使用 [az login](/cli/azure/reference-index#az-login) 命令。
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="troubleshooting"></a>故障排除
 
 下面是手动安装过程中可能出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
+
 ### <a name="curl-object-moved-error"></a>curl“对象已移动”错误
 
 如果从有关 `-L` 参数的 `curl` 收到错误，或者收到包含“对象已移动”的错误消息，请尝试使用完整 URL 而不是 `aka.ms` 重定向：
@@ -86,6 +87,7 @@ hash -r
   rm -r <install location>/lib/azure-cli
   rm <install location>/bin/az
   ```
+
 2. 修改 `$HOME/.bash_profile` 文件，删除以下行：
 
   ```text

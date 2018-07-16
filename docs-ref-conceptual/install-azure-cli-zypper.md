@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 3a63c491b883c5a28e7309145e7a5eeb41e36b46
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: a7329784f26edfaeebc3520b63d12faed11fe38f
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439918"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967531"
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>使用 zypper 安装 Azure CLI 2.0
 
@@ -52,7 +52,7 @@ ms.locfileid: "37439918"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="update"></a>更新
 
@@ -85,4 +85,3 @@ sudo zypper update azure-cli
   MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
   sudo rpm -e --allmatches gpg-pubkey-$MSFT_KEY
   ```
-

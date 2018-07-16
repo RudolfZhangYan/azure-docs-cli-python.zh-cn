@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: c973d31312fbe0f9232bf3f0f3ed5f3b70b6559a
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: f45c3acfdb4edb82cde755472d240ae18d82aba2
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439935"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967735"
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -29,7 +29,7 @@ ms.locfileid: "37439935"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-非交互方式登录有多种方法，这些方法在[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)中已详细介绍。
+有多种方法可用来以非交互方式登录，[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)中详细介绍了这些方法。
 
 ## <a name="common-commands"></a>常用命令
 
@@ -74,7 +74,6 @@ CLI 为 bash shell 下的命令提供完整 tab 键补全。
 * `--query` 使用 [JMESPath 查询语言](http://jmespath.org/)筛选从 Azure 服务返回的输出。 若要了解有关查询的详细信息，请参阅[使用 Azure CLI 2.0 查询命令结果](query-azure-cli.md)和 [JMESPath 教程](http://jmespath.org/tutorial.html)。
 * `--verbose` 输出有关操作期间在 Azure 中创建的资源的信息和其他有用信息。
 * `--debug` 输出有关 CLI 操作的更详细信息，用于调试目的。 如果遇到 bug，在提交 bug 报告时，请提供启用 `--debug` 标志生成的输出。
-
 
 ## <a name="interactive-mode"></a>交互模式
 

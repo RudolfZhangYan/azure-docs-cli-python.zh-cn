@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 3f52f1545dc4bad44280c7e58ad17ec2302fd436
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: a0908c5b5bda7ec903b702eecb61eabbbedaf533
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439612"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967837"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
@@ -25,7 +25,7 @@ ms.locfileid: "37439612"
 
 ## <a name="install"></a>安装
 
-1. <a name="install-step-1"/> 修改源列表：
+1. <div id="install-step-1"/>修改源列表：
 
     ```bash
     AZ_REPO=$(lsb_release -cs)
@@ -33,7 +33,7 @@ ms.locfileid: "37439612"
         sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
-2. <a name="signingKey"></a>获取 Microsoft 签名密钥：
+2. <div id="signingKey"/>获取 Microsoft 签名密钥：
 
    ```bash
    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -53,7 +53,7 @@ ms.locfileid: "37439612"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="troubleshooting"></a>故障排除
 
@@ -113,7 +113,7 @@ sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-
 
 > [!WARNING]
 > 签名密钥已在 2018 年 5 月更新，并已被替换。 如果收到签名密钥错误，请确保已[获得最新的签名密钥](#signingKey)。
-   
+>
 > [!NOTE]
 > 此命令将会升级系统上所有未发生依赖关系更改的已安装包。
 > 若只要升级 CLI，请使用 `apt-get install`。

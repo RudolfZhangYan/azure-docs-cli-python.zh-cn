@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: cd9a41b66d18410afa091ede50ca24e7d4b5e9ed
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: 956a1c10c3e4321651df58f86f6f2c21ede5061f
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439952"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967905"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -33,7 +33,7 @@ ms.locfileid: "37439952"
 * `--cert` 用于现有证书的基于证书的身份验证，为 PEM 或 DER 公共字符串，或用于加载文件的 `@{file}`。
 
   ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --cert {CertStringOrFile} 
+  az ad sp create-for-rbac --name ServicePrincipalName --cert {CertStringOrFile}
   ```
 
   可以添加 `--keyvault` 参数以指示证书存储在 Azure Key Vault 中。 在这种情况下，`--cert` 值引用 Key Vault 中证书的名称。
@@ -73,7 +73,7 @@ ms.locfileid: "37439952"
 > [!NOTE]
 > 如果帐户没有足够的权限创建服务主体，则将显示一条错误消息指出“权限不足，无法完成该操作”。 请与 Azure Active Directory 管理员联系以创建服务主体。
 
-## <a name="manage-service-principal-roles"></a>管理服务主体角色 
+## <a name="manage-service-principal-roles"></a>管理服务主体角色
 
 Azure CLI 2.0 提供以下命令用于管理角色分配。
 
@@ -98,12 +98,12 @@ az role assignment delete --assignee APP_ID --role Contributor
 az role assignment list --assignee APP_ID
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > 如果帐户无权分配角色，则将显示错误消息“你的帐户无权在范围 '/subscriptions/{guid}' 内执行操作 'Microsoft.Authorization/roleAssignments/write'”。请与 Azure Active Directory 管理员联系以管理角色。
 
 ## <a name="sign-in-using-the-service-principal"></a>使用服务主体登录
 
-可以通过在 Azure CLI 中登录到新的服务主体下来测试其登录和权限。 使用 `appId`、`tenant` 和凭据值以新服务主体身份登录。 所提供的身份验证信息将根据你选择使用密码还是使用证书创建服务主体而有所变化。
+可以通过在 Azure CLI 中采用新服务主体的凭据登录来对其进行测试。 使用 `appId`、`tenant` 和凭据值以新服务主体身份登录。 所提供的身份验证信息将根据你选择使用密码还是使用证书创建服务主体而有所变化。
 
 若要使用密码登录，请以参数的形式提供密码。
 
@@ -111,7 +111,7 @@ az role assignment list --assignee APP_ID
 az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
 ```
 
-若要使用证书登录，则必须在本地以 PEM 或 DER 文件的形式提供。
+若要使用证书登录，则证书必须在本地以 PEM 或 DER 文件的形式存在。
 
 ```azurecli-interactive
 az login --service-principal --username APP_ID --tenant TENANT_ID --password PATH_TO_CERT

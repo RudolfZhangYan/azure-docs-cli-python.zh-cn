@@ -4,31 +4,31 @@ description: 使用 Azure CLI 2.0 以交互方式登录或使用本地凭据登�
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/13/2018
+ms.date: 07/09/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: bbd64458b49d3e6c6a533a489d5c8105f364d3d7
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: a0e05b3306cc273486b1b5fc887ceedbf78cb779
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439867"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967752"
 ---
-# <a name="log-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
+# <a name="sign-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
-使用 Azure CLI 可通过多种方式进行登录和身份验证。 入门的最简单方法是通过浏览器使用 Azure Cloud Shell 或 `az login` 命令以交互方式登录。
+使用 Azure CLI 可通过多种方式进行身份验证。 最简单的入门方法是通过浏览器使用 Azure Cloud Shell 或 `az login` 命令以交互方式登录。
 建议的方法是使用帐户权限受限制的服务主体。 通过授予服务主体所需的最低适当权限，可以确保自动化脚本更加安全。
 
-私有凭据信息均不存储在本地。 身份验证令牌由 Azure 生成并存储。 登录后，如果登录令牌未经使用，那么将它在 14 天内保持有效。 登录令牌失效时，你将需要重新进行身份验证。
+私有凭据信息均不存储在本地。 身份验证令牌由 Azure 生成并存储。 登录后，如果身份验证令牌未经使用，那么将它在 14 天内保持有效。 登录令牌失效时，你将需要重新进行身份验证。
 
 登录后，将针对默认订阅运行 CLI 命令。 如果有多个订阅，可以[更改默认订阅](manage-azure-subscriptions-azure-cli.md)。
 
 ## <a name="interactive-sign-in"></a>交互式登录
 
-Azure CLI 的默认身份验证方法是以交互方式从 Web 浏览器登录。
+Azure CLI 的默认身份验证方法是使用 Web 浏览器和访问令牌进行登录。
 
 [!INCLUDE [interactive_login](includes/interactive-login.md)]
 
@@ -45,13 +45,13 @@ az login -u <username> -p <password>
 
 > [!IMPORTANT]
 > 如果想要避免在控制台中显示自己的密码并以交互方式使用 `az login`，请在 `bash` 下面使用 `read -s` 命令。
-> 
+>
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
 > ```
 >
 > 在 PowerShell 中，使用 `Read-Host -AsSecureString` cmdlet 和安全字符串转换。
-> 
+>
 > ```powershell
 > $securePass =  Read-Host "Azure password: " -AsSecureString;
 > $AzPass = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass));
@@ -59,15 +59,15 @@ az login -u <username> -p <password>
 > $AzPass = ""
 > ```
 
-## <a name="log-in-with-a-specific-tenant"></a>使用特定租户登录
+## <a name="sign-in-with-a-specific-tenant"></a>使用特定租户登录
 
-如果使用多个租户，可以使用 `--tenant` 参数选择要登录到的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 可以采用交互方式登录，也可以使用 `--user` 和 `--password` 参数提供凭据。 
+如果使用多个租户，可以使用 `--tenant` 参数选择要登录到的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 可以采用交互方式登录，也可以使用 `--user` 和 `--password` 参数提供凭据。
 
 ```azurecli
 az login --tenant <tenant>
 ```
 
-## <a name="log-in-with-a-service-principal"></a>使用服务主体登录
+## <a name="sign-in-with-a-service-principal"></a>使用服务主体进行登录
 
 服务主体是未绑定到任何特定用户的帐户，这些帐户具有通过预定义角色分配的权限。 使用服务主体进行身份验证是编写安全脚本或程序的最佳方法，因为这样可以同时应用权限限制和本地存储的静态凭据信息。 若要了解有关服务主体的详细信息，请参阅[使用 Azure CLI 创建 Azure 服务主体](create-an-azure-service-principal-azure-cli.md)。
 
@@ -78,7 +78,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 ```
 
 租户值是与服务主体关联的 Azure Active Directory 租户。 这可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。
-可使用以下命令获取当前登录名的租户对象 ID：
+可使用以下命令获取当前处于活动状态的帐户的对象 ID：
 
 ```azurecli-interactive
 az account show --query 'tenantId' -o tsv
@@ -86,13 +86,13 @@ az account show --query 'tenantId' -o tsv
 
 > [!IMPORTANT]
 > 如果想要避免在控制台中显示自己的密码并以交互方式使用 `az login`，请在 `bash` 下面使用 `read -s` 命令。
-> 
+>
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>
 > ```
 >
 > 在 PowerShell 中，使用 `Read-Host -AsSecureString` cmdlet 和安全字符串转换。
-> 
+>
 > ```powershell
 > $securePass =  Read-Host "Azure password: " -AsSecureString;
 > $AzPass = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass));

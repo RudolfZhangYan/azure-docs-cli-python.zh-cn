@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7729077d9240f09e0ad93ad8ab154d1477d8c3fd
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: 03276af8fc9640b6c74f7417ecdaecfe48762782
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439884"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967514"
 ---
 # <a name="install-azure-cli-20-with-yum"></a>使用 yum 安装 Azure CLI 2.0
 
@@ -36,7 +36,7 @@ ms.locfileid: "37439884"
    sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
    ```
 
-3. 使用 `yum install` 命令安装。 
+3. 使用 `yum install` 命令安装。
 
    ```bash
    sudo yum install azure-cli
@@ -46,7 +46,7 @@ ms.locfileid: "37439884"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同登录方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
 
 ## <a name="update"></a>更新
 
