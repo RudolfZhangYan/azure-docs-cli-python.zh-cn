@@ -9,14 +9,83 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: b44a387a144b9d7daca8d87309d8a5e1a47b078a
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 8d4f0879a18d2cf99ea7a284155bec86413406f8
+ms.sourcegitcommit: da34d0eecf19c676826bd32ab254a92bd0976124
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967871"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39138230"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="july-18-2018"></a>2018 年 7 月 18 日
+
+版本 2.0.42
+
+### <a name="core"></a>核心
+
+* 在 WSL bash 窗口中添加了对基于浏览器的登录的支持
+* 为所有通用更新命令添加了 `--force-string` 标志
+* [重大更改]更改了“show”命令以记录错误消息，并在缺少资源时退出代码为 3
+
+### <a name="acr"></a>ACR
+
+* [重大更改]在“acr build”命令中将“--no-push”更新为纯标志
+* 在 `acr repository` 组下添加了 `show` 和 `update` 命令
+* 为 `show-manifests` 和 `show-tags`添加了 `--detail` 标记以显示更详细的信息
+* 添加了 `--image` 参数以支持通过图像获取构建详细信息或日志
+
+### <a name="acs"></a>ACS
+
+* 如果 `--max-pods` 小于 5，则将 `az aks create` 更改为错误输出
+
+### <a name="appservice"></a>应用服务
+
+* 添加了对 PremiumV2 sku 的支持
+
+### <a name="batch"></a>Batch
+
+* 修复了在 Cloud Shell 模式下使用令牌凭据时的 bug
+* 将 JSON 输入更改为不区分大小写
+
+### <a name="batch-ai"></a>Batch AI
+
+* 修复了 `az batchai job exec` 命令
+
+### <a name="container"></a>容器
+
+* 删除了非 dockerhub 注册表的用户名和密码要求
+* 修复了从 yaml 文件创建容器组时的错误
+
+### <a name="network"></a>网络
+
+* 为 `network nic [create|update|delete]` 添加了 `--no-wait` 支持 
+* 添加了 `network nic wait`
+* 对 `network vnet [subnet|peering] list` 弃用了 `--ids` 参数
+* 添加了 `--include-default` 标志以在 `network nsg rule list` 的输出中包含默认安全规则  
+
+### <a name="resource"></a>资源
+
+* 为 `group deployment delete` 添加了 `--no-wait` 支持
+* 为 `deployment delete` 添加了 `--no-wait` 支持
+* 添加了 `deployment wait` 命令
+* 修复了订阅级别 `az deployment` 命令对于配置文件 2017-03-09-profile 错误显示的问题
+
+### <a name="sql"></a>SQL
+
+* 修复了为 `sql db copy` 和 `sql db replica create` 命令指定弹性池名称时“提供的资源组名称与 URL 中的名称不匹配”错误
+* 允许通过执行 `az configure --defaults sql-server=<name>` 配置默认 SQL Server
+* 为 `sql server`、`sql server firewall-rule`、`sql list-usages` 和 `sql show-usage` 命令实现了表格式化程序
+
+### <a name="storage"></a>存储
+
+* 将 `pageRanges` 属性添加到了将为页 blob 填充的 `storage blob show` 输出
+
+### <a name="vm"></a>VM
+
+* [重大更改] 将 `vmss create` 更改为使用 `Standard_DS1_v2` 作为默认实例大小
+* 向 `vm extension [set|delete]` 和 `vmss extension [set|delete]` 添加了 `--no-wait` 支持
+* 添加了 `vm extension wait`
 
 ## <a name="july-3-2018"></a>2018 年 7 月 3 日
 
@@ -1635,7 +1704,7 @@ ms.locfileid: "38967871"
 * 已更新到 Batch SDK 3.1.0 和 Batch Management SDK 4.1.0
 * 添加了新命令用于显示作业的任务计数
 * 修复了处理资源文件 SAS URL 时的 bug
-* Batch 帐户终结点现在支持可选的 “https://” 前缀
+* Batch 帐户终结点现在支持可选的“https://” 前缀
 * 支持将包含 100 多个任务的列表添加到作业
 * 添加了加载扩展命令模块的调试日志记录
 
