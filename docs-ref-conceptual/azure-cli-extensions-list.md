@@ -4,17 +4,17 @@ description: 官方支持的 Azure CLI 2.0 扩展的完整列表。
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 07/02/2018
+ms.date: 07/30/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 80af5542b222754ae94c35392a183d8d3c2372ac
-ms.sourcegitcommit: e3d060c045d93fabe5000ef66e21efbe680b9dac
+ms.openlocfilehash: 92d2ac36d0176469f8f5a77e7a27d0b11ab6d947
+ms.sourcegitcommit: 70bb8b115f7b9079ca1fdb65c7f5582b060a466f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37347217"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39356601"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Azure CLI 2.0 的可用扩展
 
@@ -30,16 +30,18 @@ az extension list-available --output table
 |------|---------|---------|---------|
 | [aem](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | 管理适用于 SAP 的 Azure 增强型监视扩展 |  |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.1 | 支持命令别名 | 是 |
-| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.3.0 | 用于操作 Azure Batch 服务的其他命令 |  |
-| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.5.0 | 为 Azure IoT 中心、IoT Edge 和 IoT 设备预配服务提供数据平面命令层 |  |
+| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.4.1 | 用于操作 Azure Batch 服务的其他命令 |  |
+| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.5.1 | 为 Azure IoT 中心、IoT Edge 和 IoT 设备预配服务提供数据平面命令层 |  |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.0.3 | 支持 Azure 机器人服务 2017-12-01 预览版功能 | 是 |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Dev Spaces 为团队提供快速、迭代的 Kubernetes 开发体验。 | 是 |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | 适用于 DNS 区域的 Azure CLI 扩展 |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | 对 Azure EventGrid 2018-05-01-preview 功能的支持 | 是 |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.7 | 对在区域之间复制托管 VM 映像的支持 |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | 预览 Azure Key Vault 命令。 | 是 |
+| [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.2 | 支持 Azure Log Analytics 查询功能。 | 是 |
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | 适用于管理组的 Azure CLI 扩展 |  |
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | 支持“管理合作伙伴”预览版 |  |
+| [mesh](https://github.com/Azure/azure-cli-extensions) | 0.9.1 | 支持 Microsoft Azure Service Fabric 网格 - 公共预览版 | 是 |
 | [rdbms-vnet](https://github.com/Azure/azure-cli-extensions) | 10.0.0 | 支持 Azure MySQL 和 Azure PostgreSQL 资源中的虚拟网络规则 |  |
 | [signalr](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | 支持 signalr 管理预览版。 | 是 |
 | [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.1.3 | 提供即将推出的存储功能的预览版。 | 是 |

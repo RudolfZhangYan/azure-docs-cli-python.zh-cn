@@ -9,14 +9,72 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 8d4f0879a18d2cf99ea7a284155bec86413406f8
-ms.sourcegitcommit: da34d0eecf19c676826bd32ab254a92bd0976124
+ms.openlocfilehash: d0f8c01495cc95ecfbf6a41d510eb4bc54d47ba2
+ms.sourcegitcommit: 8019690502e9f89c083839d83a0a245cc812e8b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39138230"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39392347"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="july-31-2018"></a>2018 年 7 月 31 日
+
+版本 2.0.43
+
+### <a name="acr"></a>ACR
+
+* 在 `acr build-task show` 命令中添加了 `--with-secure-properties` 标志
+* 添加了 `acr build-task update-build` 命令
+
+### <a name="acs"></a>ACS
+
+* 更改为按 [Ctrl+C] 结束 `az aks browse` 时返回“0 (成功)”
+
+### <a name="batch"></a>Batch
+
+* 修复了在 cloudshell 中显示 AAD 令牌时的 bug
+
+### <a name="container"></a>容器
+
+* 删除了在设置订阅时 `--log-analytics-workspace-key` 对名称或 ID 的要求
+
+### <a name="network"></a>网络
+
+* 为 Azure Stack 添加了对 2017-03-09-profile 的 dns 支持 
+
+### <a name="resource"></a>资源
+
+* 将 `--rollback-on-error` 添加到 `group deployment create` 以在出错时执行已知良好的部署
+* 修复了将 `--parameters {}` 用于 `group deployment create` 导致错误的问题
+
+### <a name="role"></a>角色
+
+* 添加了对堆栈配置文件 2017-03-09-profile 的支持
+* 修复了 `app update` 的通用更新参数无法正常工作的问题
+
+### <a name="search"></a>搜索
+
+* 为 Azure 搜索服务添加了命令
+
+### <a name="service-bus"></a>服务总线
+
+* 添加了迁移命令组，以将命名空间从服务总线标准版迁移到高级版
+* 为服务总线队列和订阅添加了新的可选属性
+  *  `queue` 中的 `--enable-batched-operations` 和 `--enable-dead-lettering-on-message-expiration`
+  *  `subscriptions` 中的 `--dead-letter-on-filter-exceptions`
+
+### <a name="storage"></a>存储
+
+* 添加了对使用单个连接下载大型文件的支持
+* 转换了在缺少资源时未能失败并显示退出代码 3 的 `show` 命令
+
+### <a name="vm"></a>VM
+
+* 添加了对按订阅列出可用性集的支持
+* 添加了对 `StandardSSD_LRS` 的支持
+* 添加了在创建 VM 规模集时对应用程序安全组的支持
+* [重大更改]更改了`[vm|vmss] create`、`[vm|vmss] identity assign` 和 `[vm|vmss] identity remove`，以便以字典格式输出用户指定的标识
 
 ## <a name="july-18-2018"></a>2018 年 7 月 18 日
 
