@@ -4,17 +4,17 @@ description: 官方支持的 Azure CLI 2.0 扩展的完整列表。
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 07/30/2018
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 92d2ac36d0176469f8f5a77e7a27d0b11ab6d947
-ms.sourcegitcommit: 70bb8b115f7b9079ca1fdb65c7f5582b060a466f
+ms.openlocfilehash: 36657d29f6708bc60f7d9386ffa0671a9639edc9
+ms.sourcegitcommit: 772aad0d9696156d6e87fa00e255dfd0b6394d23
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356601"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39718025"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Azure CLI 2.0 的可用扩展
 
@@ -36,6 +36,7 @@ az extension list-available --output table
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Dev Spaces 为团队提供快速、迭代的 Kubernetes 开发体验。 | 是 |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | 适用于 DNS 区域的 Azure CLI 扩展 |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | 对 Azure EventGrid 2018-05-01-preview 功能的支持 | 是 |
+| [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.0 | 使用 ExpressRoute 跨连接管理客户的 ExpressRoute 线路。 |  |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.7 | 对在区域之间复制托管 VM 映像的支持 |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | 预览 Azure Key Vault 命令。 | 是 |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.2 | 支持 Azure Log Analytics 查询功能。 | 是 |
@@ -46,4 +47,4 @@ az extension list-available --output table
 | [signalr](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | 支持 signalr 管理预览版。 | 是 |
 | [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.1.3 | 提供即将推出的存储功能的预览版。 | 是 |
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | 支持订阅管理预览版。 |  |
-| [webapp](https://github.com/Azure/azure-cli-extensions) | 0.2.6 | 用于管理应用服务资源的 Azure CLI 扩展 | 是 |
+| [webapp](https://github.com/Azure/azure-cli-extensions) | 0.2.7 | 用于管理应用服务资源的 Azure CLI 扩展 | 是 |
