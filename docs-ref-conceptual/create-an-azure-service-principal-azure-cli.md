@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: 956a1c10c3e4321651df58f86f6f2c21ede5061f
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 3f20892e846bd07f8e97ccf788d05c4305fe3301
+ms.sourcegitcommit: 83826ca154c9f32c6091c63ce4b3e480694ba8d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967905"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "43144879"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
 
@@ -122,5 +122,5 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password PAT
 如果你忘记了服务主体的凭据，可以使用 [az ad sp reset-credentials](https://docs.microsoft.com/en-us/cli/azure/ad/sp#az-ad-sp-reset-credentials) 命令重置凭据。 用于创建新服务主体的相同限制和选项在此处同样适用。
 
 ```azurecli-interactive
-az ad sp reset-credentials --name APP_ID --password NEW_PASSWORD
+az ad sp credential reset --name APP_ID --password NEW_PASSWORD
 ```
