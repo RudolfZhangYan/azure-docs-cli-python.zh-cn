@@ -4,19 +4,159 @@ description: 了解 Azure CLI 2.0 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/03/2018
+ms.date: 08/28/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 549317fb3ffffbe5f392e7a2bbc5cb4ed10b7e89
-ms.sourcegitcommit: 772aad0d9696156d6e87fa00e255dfd0b6394d23
+ms.openlocfilehash: 62e57d048666f478b670f182bb9348dba90de6a0
+ms.sourcegitcommit: 8f060bc009278eafc0ed448bad4b7d08c742ff63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39718008"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43145084"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="auguest-28-2018"></a>2018 年 8 月 28 日
+
+版本 2.0.45
+
+### <a name="core"></a>核心
+
+* 修复了加载空配置文件的问题
+* 增加了对 Azure Stack 的 `2018-03-01-hybrid` 配置文件的支持
+
+### <a name="acr"></a>ACR
+
+* 增加了在没有 ARM 请求的情况下针对运行时操作的解决方法
+* 从默认情况下 `build` 命令中上传的 tar 更改为 exclude 版本控制文件（例如，.git、.gitignore）
+
+### <a name="acs"></a>ACS
+
+* 将 `aks create` 更改为默认的 `Standard_DS2_v2` VM
+* 更改了 `aks get-credentials`，现在可以通过调用新 API 来获取群集凭据
+
+### <a name="appservice"></a>应用服务
+
+* 在 functionapp 和 webapp 中增加了对 CORS 的支持
+* 在 create 命令中增加了 ARM 标记支持
+* 更改了 `[webapp|functionapp] identity show`，将会在资源缺失的情况下退出并显示代码 3
+
+### <a name="backup"></a>备份
+
+* 更改了 `backup vault backup-properties show`，将会在资源缺失的情况下退出并显示代码 3
+
+### <a name="bot-service"></a>Bot 服务
+
+* 初始机器人服务 CLI 版本
+
+### <a name="cognitive-services"></a>认知服务
+
+* 添加了新参数 `--api-properties,`，此参数是创建某些服务所需的
+
+### <a name="iot"></a>IoT
+
+* 修复了关联已链接中心的问题
+
+### <a name="monitor"></a>监视
+
+* 增加了适用于近实时指标警报的 `monitor metrics alert` 命令
+* 弃用了 `monitor alert` 命令
+
+### <a name="network"></a>网络
+
+* 更改了 `network application-gateway ssl-policy predefined show`，将会在资源缺失的情况下退出并显示代码 3
+
+### <a name="resource"></a>资源
+
+* 更改了 `provider operation show`，将会在资源缺失的情况下退出并显示代码 3
+
+### <a name="storage"></a>存储
+
+* 更改了 `storage share policy show`，将会在资源缺失的情况下退出并显示代码 3
+
+### <a name="vm"></a>VM
+
+* 更改了 `vm/vmss identity show`，将会在资源缺失的情况下退出并显示代码 3 
+* 弃用了适用于 `vm create` 的 `--storage-caching`
+
+## <a name="auguest-14-2018"></a>2018 年 8 月 14 日
+
+版本 2.0.44
+
+### <a name="core"></a>核心
+
+* 修复了 `table` 输出中的数字显示问题
+* 增加了 YAML 输出格式
+
+### <a name="telemetry"></a>遥测
+
+* 改进了遥测报告
+
+### <a name="acr"></a>ACR
+
+* 添加了 `content-trust policy` 命令
+* 修复了 `.dockerignore` 未正确处置的问题
+
+### <a name="acs"></a>ACS
+
+* 更改了 `az acs/aks install-cli`，可以在 Windows 的 `%USERPROFILE%\.azure-kubectl` 下安装
+* 更改了 `az aks install-connector`，可检测群集是否有 RBAC 并可正确配置 ACI 连接器
+* 更改了角色分配方式，可以将提供的角色分配到子网
+* 增加了新选项，对于已提供角色的子网，可以“跳过角色分配”                                 
+* 更改了角色分配，对于已存在分配的子网，可以跳过角色分配                
+
+### <a name="appservice"></a>应用服务
+
+* 修复了妨碍在外部资源组中使用存储帐户创建 function-app 的 Bug
+* 修复了在进行 zip 部署时发生崩溃的问题
+
+### <a name="batchai"></a>BatchAI
+
+* 更改了创建自动存储帐户时的记录器输出，现在会指定“资源组”。        
+
+### <a name="container"></a>容器
+
+* 增加了 `--secure-environment-variables`，用于将安全的环境变量传递到容器      
+
+### <a name="iot"></a>IoT
+
+* [重大更改] 删除了弃用的命令，这些命令已移至 IoT 扩展
+* 更新了元素，现在不采用 `azure-devices.net` 域
+
+### <a name="iot-central"></a>IoT 中心
+
+* IoT Central 模块的初始版本
+
+### <a name="keyvault"></a>KeyVault
+
+
+* 增加了用于管理存储帐户和 SAS 定义的命令
+* 增加了用于网络规则的命令                                                           
+* 增加了针对机密、密钥和证书操作的 `--id` 参数
+* 增加了对 KV 管理多 API 版本的支持
+* 增加了对 KV 数据平面多 API 版本的支持
+
+### <a name="relay"></a>中继
+
+* 初始版本
+
+### <a name="sql"></a>Sql
+
+* 添加了 `sql failover-group` 命令
+
+### <a name="storage"></a>存储
+
+* [重大更改] 更改了 `storage account show-usage`，现在需要 `--location` 参数并且会按区域列出
+* 更改了 `--resource-group` 参数，现在此参数为 `storage account` 命令的可选参数
+* 对于适用于单个聚合消息的批处理命令中的单个失败，删除了“前提条件失败”警告
+* 更改了 `[blob|file] delete-batch` 命令，不再输出 null 数组
+* 更改了 `blob [download|upload|delete-batch]` 命令，现在可以读取容器 URL 中的 SAS 令牌
+
+### <a name="vm"></a>VM
+
+* 为 `vm list-skus` 添加了常用筛选器，方便用户使用
 
 ## <a name="july-31-2018"></a>2018 年 7 月 31 日
 
