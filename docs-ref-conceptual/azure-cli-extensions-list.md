@@ -4,17 +4,17 @@ description: 官方支持的 Azure CLI 2.0 扩展的完整列表。
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 08/08/2018
+ms.date: 08/13/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 36657d29f6708bc60f7d9386ffa0671a9639edc9
-ms.sourcegitcommit: 772aad0d9696156d6e87fa00e255dfd0b6394d23
+ms.openlocfilehash: 09735708946e40fd0d515bcd43bbf4798c70673d
+ms.sourcegitcommit: 4cf5784b741dd55c0a4240443d3180d8ec83526c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39718025"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43144924"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Azure CLI 2.0 的可用扩展
 
@@ -37,6 +37,7 @@ az extension list-available --output table
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | 适用于 DNS 区域的 Azure CLI 扩展 |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | 对 Azure EventGrid 2018-05-01-preview 功能的支持 | 是 |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.0 | 使用 ExpressRoute 跨连接管理客户的 ExpressRoute 线路。 |  |
+| [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.1.0 | 适用于 CLI 信息的智能查询。 | 是 |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.7 | 对在区域之间复制托管 VM 映像的支持 |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | 预览 Azure Key Vault 命令。 | 是 |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.2 | 支持 Azure Log Analytics 查询功能。 | 是 |

@@ -5,22 +5,23 @@ keywords: Azure CLI, 安装 Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: carmonm
+ms.date: 08/28/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 6cdf2db90ed41d88b857a4bcad38ca12fb063fc7
-ms.sourcegitcommit: 8019690502e9f89c083839d83a0a245cc812e8b6
+ms.openlocfilehash: 16b698b8afbc5954308b7b035f1321f18d3885c3
+ms.sourcegitcommit: 8f060bc009278eafc0ed448bad4b7d08c742ff63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39392313"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43144948"
 ---
 # <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
 
 Azure CLI 2.0 是一个命令行工具，可为 Azure 资源管理提供优异的体验。 CLI 旨在简化脚本编写、提高数据查询灵活性、支持非阻塞进程形式的长时间操作，等等。 欢迎立即试用 CLI 的功能！
 
-CLI 的当前版本为 __2.0.43__。 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
+CLI 的当前版本为 __2.0.45__。 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
 * [在 Windows 上安装](install-azure-cli-windows.md)
 * [在 macOS 上安装](install-azure-cli-macos.md)

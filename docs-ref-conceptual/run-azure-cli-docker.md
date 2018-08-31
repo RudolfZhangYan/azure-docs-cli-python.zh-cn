@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 65d8140bd12a260c127efa2adb064c2f9294810b
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 7a50682d549f6383e68128f2c2aef02dc2877a8e
+ms.sourcegitcommit: 83826ca154c9f32c6091c63ce4b3e480694ba8d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967769"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "43144910"
 ---
 # <a name="run-azure-cli-20-in-a-docker-container"></a>在 Docker 容器中运行 Azure CLI 2.0
 
@@ -29,10 +29,10 @@ ms.locfileid: "38967769"
    ```
 
 > [!NOTE]
-> 如果要从用户环境选取 SSH 密钥，可以使用 `-v ${HOME}:/root` 将 $HOME 装载为 `/root`。
+> 若要从用户环境中选取 SSH 密钥，可以使用 `-v ${HOME}/.ssh:/root/.ssh` 在环境中装载 SSH 密钥。
 >
 > ```bash
-> docker run -it -v ${HOME}:/root microsoft/azure-cli
+> docker run -it -v ${HOME}/.ssh:/root/.ssh microsoft/azure-cli
 > ```
 
 CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。 若要登录，请运行 [az login](/cli/azure/reference-index#az-login) 命令。
