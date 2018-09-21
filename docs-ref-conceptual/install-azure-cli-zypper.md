@@ -4,21 +4,21 @@ description: 如何使用 zypper 安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 01/29/2018
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: a7329784f26edfaeebc3520b63d12faed11fe38f
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: ed92443b6de4e538eaf5da41376e836aa2c771a0
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967531"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388297"
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>使用 zypper 安装 Azure CLI 2.0
 
-如果运行附带 `zypper` 的发行版（例如 openSUSE 或 SLES），则可以安装适用于 Azure CLI 的包。 此包已在 openSUSE 42.2 和 SLES 12 SP 2 中测试。
+对于附带 `zypper` 的 Linux 分发版（例如 openSUSE 或 SLES），可以安装适用于 Azure CLI 的包。 此包已在 openSUSE 42.2 和 SLES 12 SP 2 中测试。
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 

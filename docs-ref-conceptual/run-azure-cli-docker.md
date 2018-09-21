@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7a50682d549f6383e68128f2c2aef02dc2877a8e
-ms.sourcegitcommit: 83826ca154c9f32c6091c63ce4b3e480694ba8d1
+ms.openlocfilehash: 277d9d3423af4941fb7f7fb57130fa1b7af7d32e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "43144910"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388331"
 ---
 # <a name="run-azure-cli-20-in-a-docker-container"></a>在 Docker 容器中运行 Azure CLI 2.0
 
-可以使用 Docker 运行已预装 Azure CLI 2.0 的独立 Linux 容器。 借助 Docker 可以从某个环境快速上手，在其中试用 CLI 以确定它是否适合自己；或者将我们的映像用作部署的基础。
+可以使用 Docker 运行已预装 Azure CLI 2.0 的独立 Linux 容器。 Docker 可让你快速开始创建一个用于运行 CLI 的隔离环境。 映像也可以用作你自己的部署的基础。
 
 ## <a name="run-in-a-docker-container"></a>在 Docker 容器中运行
 
@@ -29,7 +29,7 @@ ms.locfileid: "43144910"
    ```
 
 > [!NOTE]
-> 若要从用户环境中选取 SSH 密钥，可以使用 `-v ${HOME}/.ssh:/root/.ssh` 在环境中装载 SSH 密钥。
+> 若要从用户环境中选取 SSH 密钥，请使用 `-v ${HOME}/.ssh:/root/.ssh` 在环境中装载 SSH 密钥。
 >
 > ```bash
 > docker run -it -v ${HOME}/.ssh:/root/.ssh microsoft/azure-cli

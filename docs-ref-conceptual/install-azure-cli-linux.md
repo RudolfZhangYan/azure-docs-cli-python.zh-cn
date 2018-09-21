@@ -4,28 +4,28 @@ description: 如何在 Linux 上手动安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 01/29/2018
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7e73ae8bbbba80bf48c6f01fc1c37a3c32c6eb31
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: c5c7ea61a35e915760081897e88d8c43b80919e0
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967548"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388348"
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>在 Linux 上手动安装 Azure CLI 2.0
 
-如果发行版中没有提供 Azure CLI 包，始终可以通过运行安装脚本来手动安装 CLI。
+如果没有适用于你的分发版的 Azure CLI 包，请运行一个脚本来手动安装 CLI。
 
 > [!NOTE]
-> 我们强烈建议使用 CLI 的包管理器。 使用包管理器可确保始终获得最新更新，并保证 CLI 组件的稳定性。 在手动安装之前，请检查发行版是否有对应的包。
+> 强烈建议使用包管理器安装 CLI。 使用包管理器可确保始终获得最新更新，并保证 CLI 组件的稳定性。 在手动安装之前，请检查发行版是否有对应的包。
 
 ## <a name="prerequisites"></a>先决条件
 
-若要安装 CLI，需确保系统中存在下述软件：
+CLI 需要以下软件：
 
 * [Python 2.7 或 Python 3.x](https://www.python.org/downloads/)
 * [libffi](https://sourceware.org/libffi/)
@@ -33,13 +33,13 @@ ms.locfileid: "38967548"
 
 ## <a name="install-or-update"></a>安装或更新
 
-不管是安装还是更新 CLI，都需要执行完整安装。 具备先决条件以后，即可通过运行 `curl` 来安装 CLI。
+安装和更新 CLI 都需要重新运行安装脚本。 运行 `curl` 来安装 CLI。
 
 ```bash
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-也可以下载并在本地运行脚本。 可能需要重启 shell 才能使更改生效。
+也可以下载并在本地运行该脚本。 可能需要重启 shell 才能使更改生效。
 
 然后即可使用 `az` 命令来运行 Azure CLI。 若要登录，请使用 [az login](/cli/azure/reference-index#az-login) 命令。
 
@@ -49,7 +49,7 @@ curl -L https://aka.ms/InstallAzureCli | bash
 
 ## <a name="troubleshooting"></a>故障排除
 
-下面是手动安装过程中可能出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
+下面是手动安装过程中可能出现的一些常见问题。 如果遇到的问题未在本文中列出，请[在 github 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
 ### <a name="curl-object-moved-error"></a>curl“对象已移动”错误
 

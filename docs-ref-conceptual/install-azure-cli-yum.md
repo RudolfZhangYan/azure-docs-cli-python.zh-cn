@@ -4,21 +4,21 @@ description: 如何使用 yum 安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 01/29/2018
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 03276af8fc9640b6c74f7417ecdaecfe48762782
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: e76572900113d13feaeaf050a9e7e3cc142cbf72
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967514"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388263"
 ---
 # <a name="install-azure-cli-20-with-yum"></a>使用 yum 安装 Azure CLI 2.0
 
-如果运行附带 `yum` 的发行版（例如 RHEL、Fedora 或 CentOS），则可以安装适用于 Azure CLI 的包。 此包已在 RHEL 7、Fedora 19 和更高版本以及 CentOS 7 中测试。
+对于附带 `yum` 的 Linux 分发版（例如 RHEL、Fedora 或 CentOS），可以安装适用于 Azure CLI 的包。 此包已在 RHEL 7、Fedora 19 和更高版本以及 CentOS 7 中测试。
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 

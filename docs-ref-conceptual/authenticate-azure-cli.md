@@ -4,35 +4,34 @@ description: 使用 Azure CLI 2.0 以交互方式登录或使用本地凭据登�
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/09/2018
+ms.date: 09/07/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: a9476937af004609b35fae7a748d8c254f370541
-ms.sourcegitcommit: 252e5e1b5d0ab868044a9c03f2c9fefc22d362b4
+ms.openlocfilehash: ef77f407284752ad4f4a1585f8a4036b32b3eb1b
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43380894"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388314"
 ---
 # <a name="sign-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
-使用 Azure CLI 可通过多种方式进行身份验证。 最简单的入门方法是通过浏览器使用 Azure Cloud Shell 或 `az login` 命令以交互方式登录。
-建议的方法是使用帐户权限受限制的服务主体。 通过授予服务主体所需的最低适当权限，可以确保自动化脚本更加安全。
+Azure CLI 有多种身份验证类型。 最简单的入门方法是使用 [Azure Cloud Shell](/azure/cloud-shell/overview)，这样可以自动登录。 在本地，可以通过浏览器使用 `az login` 命令以交互方式登录。 编写脚本时，建议的方法是使用服务主体。 通过授予服务主体所需的最低适当权限，可以确保自动化的安全性。
 
-私有凭据信息均不存储在本地。 身份验证令牌由 Azure 生成并存储。 登录后，如果身份验证令牌未经使用，那么它会在 90 天内保持有效。 登录令牌失效时，你将需要重新进行身份验证。
+CLI 不会存储任何登录信息。 身份验证令牌由 Azure 生成并存储。 登录后，如果身份验证令牌未经使用，那么它会在 90 天内保持有效。
 
-登录后，将针对默认订阅运行 CLI 命令。 如果有多个订阅，可以[更改默认订阅](manage-azure-subscriptions-azure-cli.md)。
+登录后，将针对默认订阅运行 CLI 命令。 如果你有多个订阅，可以[更改默认订阅](manage-azure-subscriptions-azure-cli.md)。
 
-## <a name="interactive-sign-in"></a>交互式登录
+## <a name="sign-in-interactively"></a>以交互方式登录
 
 Azure CLI 的默认身份验证方法是使用 Web 浏览器和访问令牌进行登录。
 
 [!INCLUDE [interactive_login](includes/interactive-login.md)]
 
-## <a name="command-line"></a>命令行
+## <a name="sign-in-with-credentials-on-the-command-line"></a>在命令行中使用凭据登录。
 
 在命令行中提供 Azure 用户凭据。
 
@@ -61,7 +60,7 @@ az login -u <username> -p <password>
 
 ## <a name="sign-in-with-a-specific-tenant"></a>使用特定租户登录
 
-如果使用多个租户，可以使用 `--tenant` 参数选择要登录到的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 可以采用交互方式登录，也可以使用 `--user` 和 `--password` 参数提供凭据。
+可以使用 `--tenant` 参数选择用于登录的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 交互式登录方法和命令行登录方法都可以配合 `--tenant` 来使用。
 
 ```azurecli
 az login --tenant <tenant>
@@ -71,17 +70,14 @@ az login --tenant <tenant>
 
 服务主体是未绑定到任何特定用户的帐户，这些帐户具有通过预定义角色分配的权限。 使用服务主体进行身份验证是编写安全脚本或程序的最佳方法，因为这样可以同时应用权限限制和本地存储的静态凭据信息。 若要了解有关服务主体的详细信息，请参阅[使用 Azure CLI 创建 Azure 服务主体](create-an-azure-service-principal-azure-cli.md)。
 
-若要使用服务主体登录，请提供用户名、密码或证书 PEM 文件，以及与服务主体关联的租户：
+若要使用服务主体登录，需要：
+
+* 与该服务主体关联的 URL 或名称
+* 该服务主体的密码，或用于创建该服务主体的 X509 证书（PEM 格式）
+* 与该服务主体关联的租户（`.onmicrosoft.com` 域或 Azure 对象 ID）
 
 ```azurecli
 az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant>
-```
-
-租户值是与服务主体关联的 Azure Active Directory 租户。 这可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。
-可使用以下命令获取当前处于活动状态的帐户的对象 ID：
-
-```azurecli-interactive
-az account show --query 'tenantId' -o tsv
 ```
 
 > [!IMPORTANT]

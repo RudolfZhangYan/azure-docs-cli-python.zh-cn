@@ -4,17 +4,17 @@ description: 安装适用于 Mac、Linux 和 Windows 的 Azure CLI 1.0 即可使
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/20/2017
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 5f185e02217d6a3b54a9c252825c0f3fed3ab09e
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: dd2d8658819c03742ae65c639717837ca940659e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967667"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388603"
 ---
 # <a name="install-the-azure-cli-10"></a>安装 Azure CLI 1.0
 
@@ -75,7 +75,7 @@ docker run -it microsoft/azure-cli:0.10.17
 
 ## <a name="run-azure-cli-10-commands"></a>运行 Azure CLI 1.0 命令
 
-安装 Azure CLI 1.0 后，从命令行用户界面（Bash、终端、命令提示符等）运行 **azure** 命令。 例如，若要运行帮助命令，请键入以下命令：
+安装 Azure CLI 1.0 后，从命令行用户界面运行 **azure** 命令。 例如，若要运行 help 命令：
 
 ```azurecli
 azure help
@@ -94,7 +94,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 azure --version
 ```
 
-现在已准备就绪！ 若要访问所有 CLI 命令来使用自己的资源，请[从 Azure CLI 连接到 Azure 订阅](/cli/azure/authenticate-azure-cli)。
+若要访问所有 CLI 命令，请[从 Azure CLI 连接到自己的 Azure 订阅](/cli/azure/authenticate-azure-cli)。
 
 > [!NOTE]
 > 首次使用 Azure CLI 时，会看到一条消息，询问是否允许 Microsoft 收集使用情况信息。 参与为自愿性质。 如果选择参与，通过运行 `azure telemetry --disable` 即可随时停止参与。 若要随时启用参与，请运行 `azure telemetry --enable`。
@@ -130,8 +130,8 @@ echo 'source ~/azure.completion.sh' >> ~/.bash_profile
 * 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
 * 如果在使用 Azure CLI 或 Azure 方面有疑问，请访问 [Azure 论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurescripting)。
 
-[mac-installer]: http://aka.ms/mac-azure-cli
-[windows-installer]: http://aka.ms/webpi-azure-cli
-[linux-installer]: http://aka.ms/linux-azure-cli
+[mac-installer]: https://aka.ms/mac-azure-cli
+[windows-installer]: https://aka.ms/webpi-azure-cli
+[linux-installer]: https://aka.ms/linux-azure-cli
 [cliasm]: /cli/azure/get-started-with-az-cli2
 [cliarm]: ./virtual-machines/azure-cli-arm-commands.md

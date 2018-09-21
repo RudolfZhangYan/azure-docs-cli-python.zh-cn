@@ -5,17 +5,17 @@ keywords: Azure CLI, CLI 帮助, Azure 帮助, 查询, 自动化,
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/16/2018
+ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f45c3acfdb4edb82cde755472d240ae18d82aba2
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 165da295d187edf7dbc19a332670fd49d8f8bdd5
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967735"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388552"
 ---
 # <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
 
@@ -33,8 +33,7 @@ ms.locfileid: "38967735"
 
 ## <a name="common-commands"></a>常用命令
 
-此表列出了 CLI 中使用的常用命令，并链接到外部参考中的其文档页。
-这些组的所有子命令及其文档可以在联机参考中查找，或使用 `--help` 参数查找。
+此表列出了 CLI 中的一些常用命令及其参考文档的链接。
 
 | 资源类型 | Azure CLI 命令组 |
 |---------------|-------------------------|
@@ -48,8 +47,7 @@ ms.locfileid: "38967735"
 
 ## <a name="finding-commands"></a>查找命令
 
-CLI 中的命令以_组_的_子命令_形式提供。
-每个组表示由 Azure 提供的一个服务，而子组将这些服务的命令划分为逻辑分组。
+CLI 中的命令以组命令的形式进行组织。 每个组表示一个 Azure 服务，命令针对该服务运行。
 
 若要搜索命令，请使用 [az find](/cli/azure/reference-index#az-find)。 例如，若要搜索包含 `secret` 的命令名称，请使用以下命令：
 
@@ -57,7 +55,7 @@ CLI 中的命令以_组_的_子命令_形式提供。
 az find -q secret
 ```
 
-如果你知道要使用哪组命令，`--help` 参数可能是更好的选择。 此参数不仅显示某个命令的详细信息，而且在用于命令组时，会显示所有可用的子命令。 例如，用于网络安全组 (NSG) 时，可以查找可用的 NSG 子组和命令。
+使用 `--help` 参数获取组的命令和子组的完整列表。 例如，若要查找用于处理网络安全组 (NSG) 的 CLI 命令，请运行：
 
 ```azurecli-interactive
 az network nsg --help
@@ -73,7 +71,7 @@ CLI 为 bash shell 下的命令提供完整 tab 键补全。
 * `--output` 可更改输出格式。 可用的输出格式包括 `json`、`jsonc`（彩色 JSON）、`tsv`（制表符分隔值）和 `table`（用户可读 ASCII 表）。 默认情况下，CLI 输出 `json`。 若要了解有关可用输出格式的详细信息，请参阅 [Azure CLI 2.0 的输出格式](format-output-azure-cli.md)。
 * `--query` 使用 [JMESPath 查询语言](http://jmespath.org/)筛选从 Azure 服务返回的输出。 若要了解有关查询的详细信息，请参阅[使用 Azure CLI 2.0 查询命令结果](query-azure-cli.md)和 [JMESPath 教程](http://jmespath.org/tutorial.html)。
 * `--verbose` 输出有关操作期间在 Azure 中创建的资源的信息和其他有用信息。
-* `--debug` 输出有关 CLI 操作的更详细信息，用于调试目的。 如果遇到 bug，在提交 bug 报告时，请提供启用 `--debug` 标志生成的输出。
+* `--debug` 输出有关 CLI 操作的更详细信息，用于调试目的。 如果发现了 bug，在提交 bug 报告时，请提供启用 `--debug` 标志生成的输出。
 
 ## <a name="interactive-mode"></a>交互模式
 
@@ -94,7 +92,7 @@ az interactive
 > [!div class="nextstepaction"]
 > [使用 Azure CLI 2.0 教程创建虚拟机](azure-cli-vm-tutorial.yml)
 
-如果你更关注其他服务，有多种使用 CLI 的 Azure 服务的快速入门。
+其他热门服务也有快速入门教程。
 
 * [使用 Azure CLI 创建存储帐户](/azure/storage/common/storage-quickstart-create-storage-account-cli)
 * [使用 CLI 向/从 Azure Blob 存储转移对象](/azure/storage/blobs/storage-quickstart-blobs-cli)

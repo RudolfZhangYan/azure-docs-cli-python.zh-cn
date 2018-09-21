@@ -4,17 +4,17 @@ description: 如何使用 apt 包管理器安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/24/2018
+ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: a0908c5b5bda7ec903b702eecb61eabbbedaf533
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 88b4570f62858ec1e12898aea51a5dbce6d677b5
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967837"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388408"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
 
@@ -57,7 +57,7 @@ ms.locfileid: "38967837"
 
 ## <a name="troubleshooting"></a>故障排除
 
-下面是使用 `apt` 安装时出现的一些常见问题。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
+下面是使用 `apt` 安装时出现的一些常见问题。 如果遇到的问题未在本文中列出，请[在 github 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
 ### <a name="lsbrelease-fails-with-command-not-found"></a>lsb_release 失败，出现“找不到命令”错误
 
@@ -67,7 +67,7 @@ ms.locfileid: "38967837"
 -bash: lsb_release: command not found
 ```
 
-此错误是由于未安装 lsb_release。 可以通过安装 `lsb-release` 包解决此错误。
+发生该错误的原因是未安装 `lsb_release` 命令。 可以通过安装 `lsb-release` 包解决此错误。
 
 ```bash
 sudo apt-get install lsb-release
@@ -101,7 +101,7 @@ sudo apt-get install dirmngr
 sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-HOST>:<PROXY-PORT>/ --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
 ```
 
-如果不知道是否有代理，请与系统管理员联系。 如果代理不需要登录，则省略用户、密码和 `@` 令牌。
+若要确定是否有代理，请与系统管理员联系。 如果代理不需要登录，请省略用户、密码和 `@` 令牌。
 
 ## <a name="update"></a>更新
 

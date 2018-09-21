@@ -4,21 +4,21 @@ description: 如何在 macOS 上安装 Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 01/29/2018
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 76b9afec92aa3da916382b85d2261547b6877e03
-ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
+ms.openlocfilehash: fd829c6ff9162b660a889d3e08615a76f42aeb97
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38228914"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388467"
 ---
 # <a name="install-azure-cli-20-on-macos"></a>在 macOS 上安装 Azure CLI 2.0
 
-对于 macOS 平台，可以通过 [homebrew 包管理器](http://brew.sh)安装 Azure CLI。 使用 Homebrew 可以轻松保持 CLI 的最新安装状态。 该 CLI 包已在 macOS 10.9 和更高版本中测试。
+对于 macOS 平台，可以通过 [homebrew 包管理器](https://brew.sh)安装 Azure CLI。 使用 Homebrew 可以轻松保持 CLI 的最新安装状态。 该 CLI 包已在 macOS 10.9 和更高版本中测试。
 
 ## <a name="install"></a>安装
 
@@ -39,13 +39,14 @@ brew update && brew install azure-cli
 
 ## <a name="troubleshooting"></a>故障排除
 
-如果在通过 Homebrew 安装 CLI 时遇到问题，会显示以下常见错误。 如果出现的问题未在此处列出，请[在 Github 上提问](https://github.com/Azure/azure-cli/issues)。
+如果在通过 Homebrew 安装 CLI 时遇到问题，会显示以下常见错误。 如果遇到的问题未在本文中列出，请[在 github 上提出问题](https://github.com/Azure/azure-cli/issues)。
 
 ### <a name="unable-to-find-python-or-installed-packages"></a>找不到 Python 或安装的包
 
-如果安装后找不到 Python 或安装的包，则可能是在 Homebrew 安装过程中出现了轻度的版本不匹配问题或其他问题。 由于 CLI 不使用 Python 虚拟环境，因此它必须能够找到正确的 Python 版本。 可以通过重新链接 Python 安装来解决这些问题。
+在执行 Homebrew 安装期间，可能会出现次要版本不匹配或其他问题。 CLI 不会使用 Python 虚拟环境，因此，它只能查找已安装的 Python 版本。 可行的解决方法之一是从 Homebrew 安装并重新链接 `python3` 依赖项。
 
 ```bash
+brew update && brew install python3 && brew upgrade python3
 brew link --overwrite python3
 ```
 

@@ -4,21 +4,21 @@ description: 如何使用 Azure CLI 2.0 别名扩展
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/16/2018
+ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 39996693d6b796c2d9a45cd909121829f00291a8
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: a2cd277640ab0a55d2e1da5ecb491e72eee1e0df
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306261"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388620"
 ---
 # <a name="the-azure-cli-20-alias-extension"></a>Azure CLI 2.0 别名扩展
 
-使用别名扩展，用户可以通过使用现有命令定义自定义 Azure CLI 命令。 通过允许使用快捷方式并提供使用位置参数的能力，别名可帮助工作流保持简洁和简单。 由于别名由 Jinja2 模板引擎提供支持，它们甚至能够提供高级参数处理。
+使用别名扩展，用户可以通过使用现有命令定义自定义 Azure CLI 命令。 别名允许快捷方式，因此可以简化工作流。 由于别名由 Jinja2 模板引擎提供支持，它们甚至能够提供高级参数处理。
 
 > [!NOTE]
 > 别名扩展处于公共预览阶段。 功能和配置文件格式可能发生变化。
@@ -47,7 +47,7 @@ alias
 
 ## <a name="keep-the-extension-up-to-date"></a>使扩展保持最新
 
-该别名扩展处于活跃开发阶段，新版本将定期发布。 每当更新 CLI 时，新版本不会自动安装。 请使用 [az extension update](/cli/azure/extension#az-extension-update) 安装该扩展的更新。
+该别名扩展处于活跃开发阶段，新版本将定期发布。 更新 CLI 时不会安装新版本。 请使用 [az extension update](/cli/azure/extension#az-extension-update) 安装该扩展的更新。
 
 ```azurecli-interactive
 az extension update --name alias
@@ -55,7 +55,7 @@ az extension update --name alias
 
 ## <a name="manage-aliases-for-the-azure-cli"></a>管理 Azure CLI 的别名
 
-别名扩展提供便捷和用户熟悉的命令用于管理别名。 若要查看所有可用命令和参数详细信息，请结合 `--help` 调用别名命令。
+使用别名扩展可以创建和管理其他 CLI 命令的别名。 若要查看所有可用命令和参数详细信息，请结合 `--help` 运行别名命令。
 
 ```azurecli-interactive
 az alias --help
@@ -115,7 +115,7 @@ az alias create \
 az get-vm-ip MyResourceGroup MyVM
 ```
 
-还可以在别名调用的命令中使用环境变量，这些变量在运行时将受到评估。 下一个示例将添加 `create-rg` 别名，该别名在 `eastus` 中创建资源组，并且添加 `owner` 标记。 此标记被分配了本地环境变量 `USER` 的值。
+还可以在别名命令中使用环境变量，在运行时会评估这些环境变量。 下一个示例将添加 `create-rg` 别名，该别名在 `eastus` 中创建资源组，并且添加 `owner` 标记。 此标记被分配了本地环境变量 `USER` 的值。
 
 ```azurecli-interactive
 az alias create \
@@ -127,9 +127,9 @@ az alias create \
 
 ## <a name="process-arguments-using-jinja2-templates"></a>使用 Jinja2 模板处理参数
 
-别名扩展中的参数替换由 [Jinja2](http://jinja.pocoo.org/docs/2.10/) 执行，使你可以完全访问 Jinja2 模板引擎的功能。 模板可用于执行对字符串进行数据提取和替换之类的操作。
+别名扩展中的参数替换由 [Jinja2](http://jinja.pocoo.org/docs/2.10/) 执行。 使用 Jinja2 模板可以操控参数。
 
-使用 Jinja2 模板，可以编写接受与基础命令不同类型的参数的别名。 例如，可以编写接受存储 URL 的别名。 然后，此 URL 将受到分析，以将帐户和容器名称传递给存储命令。
+使用 Jinja2 模板可以编写接受与基础命令不同类型的参数的别名。 例如，可以编写接受存储 URL 的别名。 然后，此 URL 将受到分析，以将帐户和容器名称传递给存储命令。
 
 ```azurecli-interactive
 az alias create \
@@ -159,7 +159,7 @@ command = invoked_commands_including_args
 
 ## <a name="create-an-alias-command-with-arguments-via-the-alias-configuration-file"></a>通过别名配置文件创建带有参数的别名命令
 
-以下别名配置文件包含带有参数的示例别名命令，该命令获取 VM 的公共 IP 地址。 请确保调用的命令不换行，并且包含别名中定义的相同参数。
+以下示例演示了包含参数的命令的别名。 此命令获取 VM 的公共 IP 地址。 别名命令必须在一行中输入，并在别名中使用所有参数。
 
 ```ini
 [get-vm-ip {{ resourceGroup }} {{ vmName }}]
@@ -174,4 +174,4 @@ command = vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vm
 az extension remove --name alias
 ```
 
-如果是由于该扩展的 bug 或其他问题而进行了卸载，请[提出 GitHub 问题](https://github.com/Azure/azure-cli-extensions/issues)以便我们可以提供修复。
+如果由于出现 bug 或其他扩展问题而卸载了该扩展，请[提出 GitHub 问题](https://github.com/Azure/azure-cli-extensions/issues)，以便我们可以提供修复。

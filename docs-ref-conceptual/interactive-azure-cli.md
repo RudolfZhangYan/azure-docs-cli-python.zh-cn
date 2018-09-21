@@ -4,22 +4,22 @@ description: 以交互模式使用 Azure CLI 2.0。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/06/2017
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1ee7da8dfdde402d4d536f7ab4bb0599a8f3fa1d
-ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
+ms.openlocfilehash: f07689a323314c076f1eb2a8844875d9543d4b2e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38229186"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388569"
 ---
 # <a name="interactive-azure-cli-20"></a>交互式 Azure CLI 2.0
 
 通过运行 `az interactive` 命令，能够以交互模式使用 Azure CLI 2.0。
-会进入交互式 shell，其中命令会自动完成，有权访问命令说明、参数说明和命令示例。
+此模式会将你置于交互式 shell，并提供自动完成功能、命令说明和示例。
 
 ![交互模式](./media/interactive-azure-cli/webapp-create.png)
 
@@ -31,7 +31,7 @@ ms.locfileid: "38229186"
 ## <a name="configure"></a>配置
 
 交互模式会有选择性地显示命令说明、参数说明和命令示例。
-使用 `F1` 可打开或关闭说明和示例。
+使用 `F1` 打开或关闭说明和示例。
 
 ![说明和示例](./media/interactive-azure-cli/descriptions-and-examples.png)
 
