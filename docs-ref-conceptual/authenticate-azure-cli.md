@@ -10,18 +10,18 @@ ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: ef77f407284752ad4f4a1585f8a4036b32b3eb1b
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: f6f3e8bc015420795dda48da093bc92bbf246529
+ms.sourcegitcommit: 8e6e3129f8f4824a8acfa12edb5dae52466d4be8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388314"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45626918"
 ---
 # <a name="sign-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
 
 Azure CLI 有多种身份验证类型。 最简单的入门方法是使用 [Azure Cloud Shell](/azure/cloud-shell/overview)，这样可以自动登录。 在本地，可以通过浏览器使用 `az login` 命令以交互方式登录。 编写脚本时，建议的方法是使用服务主体。 通过授予服务主体所需的最低适当权限，可以确保自动化的安全性。
 
-CLI 不会存储任何登录信息。 身份验证令牌由 Azure 生成并存储。 登录后，如果身份验证令牌未经使用，那么它会在 90 天内保持有效。
+CLI 不会存储任何登录信息。 [身份验证刷新令牌](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-id-and-access-tokens#refresh-tokens)由 Azure 生成并存储。 自 2018 年 8 月起，此令牌在不活动 90 天后将被撤销，但此值可由 Microsoft 或租户管理员更改。 令牌被撤销后，你会收到来自 CLI 的消息，指示你需要重新登录。
 
 登录后，将针对默认订阅运行 CLI 命令。 如果你有多个订阅，可以[更改默认订阅](manage-azure-subscriptions-azure-cli.md)。
 

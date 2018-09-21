@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: fd829c6ff9162b660a889d3e08615a76f42aeb97
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 1dab4d6aece78999e9d97ac5c8e3598c55a8a55d
+ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388467"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46469923"
 ---
 # <a name="install-azure-cli-20-on-macos"></a>在 macOS 上安装 Azure CLI 2.0
 
@@ -71,3 +71,10 @@ brew update && brew upgrade azure-cli
 ```bash
 brew uninstall azure-cli
 ```
+
+## <a name="next-steps"></a>后续步骤
+
+现在你已经安装了 Azure CLI，下面简要介绍其功能和常用命令。
+
+> [!div class="nextstepaction"]
+> [Azure CLI 入门](get-started-with-azure-cli.md)

@@ -4,19 +4,123 @@ description: 了解 Azure CLI 2.0 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 08/28/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 5d179a49ad64201270be7848a72535b871081125
-ms.sourcegitcommit: c90bc90c9a2b3adf2836d7cfb84951cd3ab51317
+ms.openlocfilehash: f6dd04e088651527b1ac13e719b7fc3c5522b310
+ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43828739"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46470059"
 ---
 # <a name="azure-cli-20-release-notes"></a>Azure CLI 2.0 发行说明
+
+## <a name="september-21-2018"></a>2018 年 9 月 21 日
+
+版本 20.46
+
+### <a name="acr"></a>ACR
+* 添加了 ACR 任务命令
+* 添加了快速运行命令
+* 已弃用 `build-task` 命令组
+* 添加了 `helm` 命令组，以支持使用 ACR 管理 helm 图表
+* 添加了幂等创建托管注册表的支持
+* 添加了无格式标志用于显示生成日志
+
+### <a name="acs"></a>ACS
+* 更改了 `install-connector` 命令以设置 AKS 主 FQDN
+* 修复了未指定服务主体和 skip-role-assignemnt 时为 vnet-subnet-id 创建角色分配的问题
+
+### <a name="appservice"></a>应用服务
+
+* 添加了 Webjobs（连续和触发）操作管理的支持
+* az webapp config set 支持 --fts-state 属性。另外，添加了 az functionapp config set 和 show 的支持
+* 添加了为 Web 应用自带存储的支持
+* 添加了列出和还原已删除 Web 应用的支持
+
+### <a name="batch"></a>Batch
+* 更改了通过 `--json-file` 添加任务的方法，以支持 AddTaskCollectionParameter 语法
+* 更新了接受 `--json-file` 格式的文档
+* 为 `batch pool create` 添加了 `--max-tasks-per-node-option`
+* 更改了 `batch account` 的行为，以便在未指定选项时显示当前已登录的帐户
+
+### <a name="batch-ai"></a>Batch AI 
+* 修复了在 `batchai cluster create` 命令中自动创建存储帐户失败的问题
+
+### <a name="cognitive-services"></a>认知服务
+* 为 `--sku`、`--kind` 和 `--location` 参数添加了补全选项
+* 添加了命令 `cognitiveservices account list-usage`
+* 添加了命令 `cognitiveservices account list-kinds`
+* 添加了命令 `cognitiveservices account list`
+* 弃用了 `cognitiveservices list`
+* 已将 `--name` 更改为 `cognitiveservices account list-skus` 的可选参数
+
+### <a name="container"></a>容器
+* 添加了重启和停止正在运行的容器组的功能
+* 添加了 `--network-profile` 用于传入网络配置文件
+* 添加了 `--subnet` 和 `--vnet_name`，以便在 VNET 中创建容器组
+* 更改了表输出，以显示容器组的状态
+
+### <a name="datalake"></a>Datalake
+* 添加了针对虚拟网络规则的命令
+
+### <a name="interactive-shell"></a>交互式 Shell
+* 在 Windows 中修复了当命令无法正常运行时发生的错误
+* 修复了交互模式下已弃用对象导致的命令加载问题
+
+### <a name="iot"></a>IoT
+* 添加了路由 IoT 中心的支持
+
+### <a name="key-vault"></a>Key Vault
+* 修复了 RSA 密钥的 Key Vault 密钥导入问题
+
+### <a name="network"></a>网络
+* 添加了 `network public-ip prefix` 命令以支持公共 IP 前缀功能
+* 添加了 `network service-endpoint` 命令以支持服务终结点策略功能
+* 添加了 `network lb outbound-rule` 命令以支持创建标准负载均衡器出站规则
+* 为 `network lb frontend-ip create/update` 添加了 `--public-ip-prefix`，以支持使用公共 IP 前缀的前端 IP 配置
+* 为 `network lb rule/inbound-nat-rule/inbound-nat-pool create/update` 添加了 `--enable-tcp-reset`
+* 为 `network lb rule create/update` 添加了 `--disable-outbound-snat`
+* 允许对经典 NSG 使用 `network watcher flow-log show/configure`
+* 添加 `network watcher run-configuration-diagnostic` 命令
+* 修复了`network watcher test-connectivity` 命令，并添加了 `--method`、`--valid-status-codes` 和 `--headers` 属性
+* `network express-route create/update`：添加了 `--allow-global-reach` 标志
+* `network vnet subnet create/update`：添加了 `--delegation` 支持
+* 添加了 `network vnet subnet list-available-delegations` 命令
+* `network traffic-manager profile create/update`：为 Monitor 配置添加了 `--interval`、`--timeout` 和 `--max-failures` 支持。已弃用选项 `--monitor-path`、`--monitor-port` 和 `--monitor-protocol`，改用 `--path`、`--port` 和 `--protocol`
+* `network lb frontend-ip create/update`：修复了用于设置专用 IP 分配方法的逻辑。如果提供了专用 IP 地址，则分配是静态的。如果未提供专用 IP 地址，或者为专用 IP 地址提供了空字符串，则分配是动态的。
+* `dns record-set * create/update`：添加了 `--target-resource` 支持
+* 添加了 `network interface-endpoint` 命令用于查询接口终结点对象
+* 添加了 `network profile show/list/delete` 用于对网络配置文件进行部分管理
+* 添加了 `network express-route peering connection` 命令用于管理 ExpressRoute 之间的对等连接
+
+### <a name="rdbms"></a>RDBMS
+* 添加了 MariaDB 服务的支持
+
+### <a name="reservation"></a>保留
+* 在保留的资源枚举类型中添加了 CosmosDb
+* 在修补模型中添加了名称属性
+
+### <a name="manage-app"></a>管理应用
+* 修复了 `managedapp create --kind MarketPlace` 中导致创建市场托管应用的实例时发生崩溃的 bug
+* 更改了 `feature` 命令，使其限制为受支持的配置文件
+
+### <a name="role"></a>角色
+* 添加了列出用户组成员身份的支持
+
+### <a name="signalr"></a>SignalR
+* 首次发布
+
+### <a name="storage"></a>存储
+* 添加了 `--auth-mode login` 参数，以及使用用户的登录凭据进行 Blob 和队列授权
+* 添加了 `storage container immutability-policy/legal-hold` 用于管理不可变存储
+
+### <a name="vm"></a>VM
+* 修复了当公钥文件缺失时，`vm create --generate-ssh-keys` 覆盖私钥文件的问题（#4725、#6780）
+* 通过 `az sig` 添加了对共享映像库的支持
 
 ## <a name="august-28-2018"></a>2018 年 8 月 28 日
 

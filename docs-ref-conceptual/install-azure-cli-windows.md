@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 30bdb327601c7d898b5e64a3a472a104dc5db3b4
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 6e57837313faf0edd95d822132ae282ed416aae7
+ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388450"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46469957"
 ---
 # <a name="install-azure-cli-20-on-windows"></a>在 Windows 上安装 Azure CLI 2.0
 
@@ -44,3 +44,10 @@ MSI 发行版用于在 Windows 上安装、更新和卸载 `az` 命令。
 
 > [!div class="nextstepaction"]
 > [下载 MSI 安装程序](https://aka.ms/installazurecliwindows)
+
+## <a name="next-steps"></a>后续步骤
+
+现在你已经安装了 Azure CLI，下面简要介绍其功能和常用命令。
+
+> [!div class="nextstepaction"]
+> [Azure CLI 入门](get-started-with-azure-cli.md)
