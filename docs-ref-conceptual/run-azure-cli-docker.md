@@ -1,6 +1,6 @@
 ---
-title: 在 Docker 容器中运行 Azure CLI 2.0
-description: 如何运行托管 Azure CLI 2.0 的 Docker 容器
+title: 在 Docker 容器中运行 Azure CLI
+description: 如何运行托管 Azure CLI 的 Docker 容器
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f22962717ec6a623dd69a266f660b67f2523b204
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 40e6865ce07b6ccb8e84a2666f0bcd6df3b5cfcf
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46470025"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177753"
 ---
-# <a name="run-azure-cli-20-in-a-docker-container"></a>在 Docker 容器中运行 Azure CLI 2.0
+# <a name="run-azure-cli-in-a-docker-container"></a>在 Docker 容器中运行 Azure CLI
 
-可以使用 Docker 运行已预装 Azure CLI 2.0 的独立 Linux 容器。 Docker 可让你快速开始创建一个用于运行 CLI 的隔离环境。 映像也可以用作你自己的部署的基础。
+可以使用 Docker 运行已预装 Azure CLI 的独立 Linux 容器。 Docker 可让你快速开始创建一个用于运行 CLI 的隔离环境。 映像也可以用作你自己的部署的基础。
 
 ## <a name="run-in-a-docker-container"></a>在 Docker 容器中运行
 
@@ -39,7 +39,7 @@ CLI 作为 `/usr/local/bin` 中的 `az` 命令安装在映像中。 若要登录
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
 ## <a name="update-docker-image"></a>更新 Docker 映像
 

@@ -1,6 +1,6 @@
 ---
-title: 通过 Azure CLI 2.0 使用 Azure 服务主体
-description: 了解如何通过 Azure CLI 2.0 创建和使用服务主体。
+title: 通过 Azure CLI 使用 Azure 服务主体
+description: 了解如何通过 Azure CLI 创建和使用服务主体。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -8,15 +8,14 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.service: role-based-access-control
-ms.openlocfilehash: 5f98fd8d3897b11a9b37eefa6295b8b25b2b1c95
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 5ba7d8b0bf313a8d8ea1b20fb861c2ac0086b2be
+ms.sourcegitcommit: f7554c00b5d5dca0ec716cbf996eb6654183ec37
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388433"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47237606"
 ---
-# <a name="create-an-azure-service-principal-with-azure-cli-20"></a>使用 Azure CLI 2.0 创建 Azure 服务主体
+# <a name="create-an-azure-service-principal-with-azure-cli"></a>使用 Azure CLI 创建 Azure 服务主体
 
 如果想要创建具有访问限制的单独登录名，可以通过服务主体来执行此操作。 服务主体是可与帐户关联的单独标识。 服务主体对于处理必须自动执行的应用程序和任务很有用。 本文将引导你完成创建服务主体的步骤。
 
@@ -75,7 +74,7 @@ ms.locfileid: "44388433"
 
 ## <a name="manage-service-principal-roles"></a>管理服务主体角色
 
-Azure CLI 2.0 提供以下命令用于管理角色分配。
+Azure CLI 提供以下命令来管理角色分配。
 
 * [az role assignment list](/cli/azure/role/assignment#az-role-assignment-list)
 * [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create)

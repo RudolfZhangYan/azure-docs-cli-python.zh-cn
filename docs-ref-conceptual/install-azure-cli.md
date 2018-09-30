@@ -1,6 +1,6 @@
 ---
-title: 安装 Azure CLI 2.0
-description: Azure CLI 2.0 安装参考
+title: 安装 Azure CLI
+description: Azure CLI 安装参考
 keywords: Azure CLI, 安装 Azure CLI
 author: sptramer
 ms.author: sttramer
@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 67367926aa7d01635417b1f6e11c8898a402db55
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: dafde67d4d5685367ffbf0202c258b2d1f70b8ec
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469991"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177617"
 ---
-# <a name="install-azure-cli-20"></a>安装 Azure CLI 2.0
+# <a name="install-the-azure-cli"></a>安装 Azure CLI
 
-Azure CLI 2.0 是一个命令行工具，可为 Azure 资源管理提供优异的体验。 CLI 旨在简化脚本编写、查询数据、支持长时间运行的操作，等等。 欢迎立即试用 CLI 的功能！
+Azure CLI 是一个命令行工具，可为 Azure 资源管理提供绝佳体验。 CLI 旨在简化脚本编写、查询数据、支持长时间运行的操作，等等。 欢迎立即试用 CLI 的功能！
 
 CLI 的当前版本为 __2.0.46__。 有关最新版本的信息，请参阅[发行说明](release-notes-azure-cli.md)。
 
@@ -33,4 +33,4 @@ CLI 的当前版本为 __2.0.46__。 有关最新版本的信息，请参阅[发
 * [在 Docker 容器中运行](run-azure-cli-docker.md)
 
 > [!NOTE]
-> 如果使用 Azure 经典部署模型，请[安装 Azure CLI 1.0](install-cli-version-1.0.md)。
+> 如果使用 Azure 经典部署模型，请[安装 Azure 经典 CLI](install-classic-cli.md)。

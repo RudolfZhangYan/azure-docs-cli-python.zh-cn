@@ -1,25 +1,25 @@
 ---
 title: Azure CLI 配置选项
-description: 如何配置 Azure CLI 2.0
+description: 如何配置 Azure CLI
 keywords: Azure CLI, 配置, 设置, Azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/16/2018
+ms.date: 06/11/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 75ea347b0d4d018142a26bf985ee3639f2b79924
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: f4f1e89e5541d741ef4e02f309a49eece033af5d
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388586"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177974"
 ---
-# <a name="azure-cli-20-configuration"></a>Azure CLI 2.0 配置
+# <a name="azure-cli-configuration"></a>Azure CLI 配置
 
-Azure CLI 2.0 允许用户配置日志记录、数据收集和默认参数值等设置。
+Azure CLI 允许用户配置日志记录、数据收集和默认参数值等设置。
 CLI 提供便捷命令 `az configure` 用于管理某些默认设置。 可在配置文件中或使用环境变量设置其他值。
 
 CLI 使用的配置值按以下优先顺序计算，列表中位于较高位置的项优先。
@@ -88,7 +88,7 @@ log_dir=/var/log/azure
 |---------|-----------|------|------------|
 | __core__ | output | 字符串 | 默认输出格式。 可以是 `json`、`jsonc`、`tsv` 或 `table`。 |
 | | disable\_confirm\_prompt | 布尔值 | 启用/禁用确认提示。 |
-| | collect\_telemetry | 布尔值 | 允许 Microsoft 收集有关 CLI 使用情况的匿名数据。 有关隐私信息，请参阅 [Azure CLI 2.0 使用条款](https://aka.ms/AzureCliLegal)。 |
+| | collect\_telemetry | 布尔值 | 允许 Microsoft 收集有关 CLI 使用情况的匿名数据。 有关隐私信息，请参阅 [Azure CLI 使用条款](http://aka.ms/AzureCliLegal)。 |
 | __logging__ | enable\_log\_file | 布尔值 | 启用/关闭日志记录。 |
 | | log\_dir | 字符串 | 要将日志写入到的目录。 此值默认为 `${AZURE_CONFIG_DIR}/logs`。 |
 | __storage__ | connection\_string | 字符串 | `az storage` 命令使用的默认连接字符串。 |

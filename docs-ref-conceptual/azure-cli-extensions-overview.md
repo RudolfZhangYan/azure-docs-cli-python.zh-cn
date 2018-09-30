@@ -1,6 +1,6 @@
 ---
-title: Azure CLI 2.0 扩展
-description: 将扩展与 Azure CLI 2.0 配合使用
+title: Azure CLI 扩展
+description: 使用 Azure CLI 的扩展
 keywords: Azure CLI, 扩展
 author: sptramer
 ms.author: sttramer
@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 8df4c82253e958fdad37ef1551c051f3d17fb191
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 0ba204063c00bf706f6af5a14dc59ba317385f95
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388535"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178110"
 ---
-# <a name="use-extensions-with-azure-cli-20"></a>使用 Azure CLI 2.0 的扩展
+# <a name="use-extensions-with-azure-cli"></a>使用 Azure CLI 的扩展 
 
-Azure CLI 2.0 提供用于加载扩展的功能。 扩展属于 Python wheel，它们未随附在 CLI 中，而是作为 CLI 命令运行。
+Azure CLI 提供用于加载扩展的功能。 扩展属于 Python wheel，它们未随附在 CLI 中，而是作为 CLI 命令运行。
 使用扩展可以访问试验性命令和预发行的命令，以及编写自己的 CLI 接口。 本文介绍如何管理扩展，并解答有关其用法的常见问题。
 
 ## <a name="find-extensions"></a>查找扩展
@@ -59,7 +59,7 @@ az extension update --name <extension-name>
 否则，可以按照[安装扩展](#install-extensions)说明，从源更新扩展。
 
 如果扩展名称无法由 CLI 解析，请卸载该扩展，然后尝试重新安装。 该扩展也可能属于基本 CLI。
-请按照[安装 Azure CLI 2.0](install-azure-cli.md) 中的说明尝试更新 CLI，查看扩展的命令是否已添加。
+请按照[安装 Azure CLI](install-azure-cli.md) 中的说明尝试更新 CLI，并查看扩展的命令是否已添加。
 
 ## <a name="uninstall-extensions"></a>卸载扩展
 

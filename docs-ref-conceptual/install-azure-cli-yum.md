@@ -1,6 +1,6 @@
 ---
-title: 使用 yum 在 Linux 上安装 Azure CLI 2.0
-description: 如何使用 yum 安装 Azure CLI 2.0
+title: 使用 yum 在 Linux 上安装 Azure CLI
+description: 如何使用 yum 安装 Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 25eb473aa56d3ddd34f8e1808b84ebb5f6324f2b
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 787b773a8717ff36a0d0ea689b7770ed80aa9439
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46470008"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177634"
 ---
-# <a name="install-azure-cli-20-with-yum"></a>使用 yum 安装 Azure CLI 2.0
+# <a name="install-azure-cli-with-yum"></a>使用 yum 安装 Azure CLI
 
 对于附带 `yum` 的 Linux 分发版（例如 RHEL、Fedora 或 CentOS），可以安装适用于 Azure CLI 的包。 此包已在 RHEL 7、Fedora 19 和更高版本以及 CentOS 7 中测试。
 
@@ -46,7 +46,7 @@ ms.locfileid: "46470008"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
 ## <a name="update"></a>更新
 

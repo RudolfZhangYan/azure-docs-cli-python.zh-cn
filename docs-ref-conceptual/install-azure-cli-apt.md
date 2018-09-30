@@ -1,6 +1,6 @@
 ---
-title: 使用 apt 在 Linux 上安装 Azure CLI 2.0
-description: 如何使用 apt 包管理器安装 Azure CLI 2.0
+title: 使用 apt 在 Linux 上安装 Azure CLI
+description: 如何使用 apt 包管理器安装 Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 13cc995e099cee47534a46097b2e1afd8e96e8b4
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: b388d3ecaf2d978aed11f925b9a479d8e95fb101
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469974"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178093"
 ---
-# <a name="install-azure-cli-20-with-apt"></a>使用 apt 安装 Azure CLI 2.0
+# <a name="install-azure-cli-with-apt"></a>使用 apt 安装 Azure CLI
 
 如果运行附带 `apt` 的发行版（例如 Ubuntu 或 Debian），则可以安装适用于 Azure CLI 的 64 位包。 此包已在以下项中测试：
 
@@ -53,7 +53,7 @@ ms.locfileid: "46469974"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
 ## <a name="troubleshooting"></a>故障排除
 

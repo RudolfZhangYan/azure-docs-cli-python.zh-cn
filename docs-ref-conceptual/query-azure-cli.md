@@ -1,6 +1,6 @@
 ---
-title: 使用 Azure CLI 2.0 查询命令结果
-description: 了解如何针对 Azure CLI 2.0 命令的输出执行 JMESPath 查询。
+title: 使用 Azure CLI 查询命令结果
+description: 了解如何针对 Azure CLI 命令的输出执行 JMESPath 查询。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 55880b87e1bffc37bbdeaeb84206deb5b9b7b227
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 4522242952e5d257449c9c593885c62de2f56d0f
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388365"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178025"
 ---
-# <a name="use-jmespath-queries-with-azure-cli-20"></a>在 Azure CLI 2.0 中使用 JMESPath 查询
+# <a name="use-jmespath-queries-with-azure-cli"></a>在 Azure CLI 中使用 JMESPath 查询 
 
-Azure CLI 2.0 使用 `--query` 参数针对命令的结果执行 [JMESPath 查询](http://jmespath.org)。 JMESPath 是用于 JSON 的查询语言，提供从 CLI 输出中选择和显示数据的能力。 先针对 JSON 输出执行这些查询，然后再针对任何显示格式执行。
+Azure CLI 使用 `--query` 参数针对命令的结果执行 [JMESPath 查询](http://jmespath.org)。 JMESPath 是用于 JSON 的查询语言，提供从 CLI 输出中选择和显示数据的能力。 先针对 JSON 输出执行这些查询，然后再针对任何显示格式执行。
 
 Azure CLI 中的所有命令均支持 `--query` 参数。 本文中的示例涵盖了常见用例，并演示了如何使用 JMESPath 的功能。
 
@@ -56,7 +56,7 @@ az vm show -g QueryDemo -n TestVM --query 'storageProfile.{image:imageReference.
 }
 ```
 
-以 `table` 输出格式显示信息时，字典显示允许设置你自己的列标题。 有关输出格式的详细信息，请参阅 [Azure CLI 2.0 命令的输出格式](/cli/azure/format-output-azure-cli)。
+以 `table` 输出格式显示信息时，字典显示允许设置你自己的列标题。 有关输出格式的详细信息，请参阅 [Azure CLI 命令的输出格式](/cli/azure/format-output-azure-cli)。
 
 > [!NOTE]
 > 某些键已筛选掉，未在表视图中输出。 这些键为 `id`、`type` 和 `etag`。 如果需要查看此信息，可以更改键名称并避免筛选。

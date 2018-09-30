@@ -1,6 +1,6 @@
 ---
-title: Azure CLI 2.0 别名扩展
-description: 如何使用 Azure CLI 2.0 别名扩展
+title: Azure CLI 别名扩展
+description: 如何使用 Azure CLI 别名扩展
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: a2cd277640ab0a55d2e1da5ecb491e72eee1e0df
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 47afede5cb1954ddd33f03fd4a6a6dc6c5ed7aee
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388620"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177923"
 ---
-# <a name="the-azure-cli-20-alias-extension"></a>Azure CLI 2.0 别名扩展
+# <a name="the-azure-cli-alias-extension"></a>Azure CLI 别名扩展
 
 使用别名扩展，用户可以通过使用现有命令定义自定义 Azure CLI 命令。 别名允许快捷方式，因此可以简化工作流。 由于别名由 Jinja2 模板引擎提供支持，它们甚至能够提供高级参数处理。
 
@@ -25,7 +25,7 @@ ms.locfileid: "44388620"
 
 ## <a name="install-the-alias-extension"></a>安装别名扩展
 
-为使用别名扩展而需安装的最低 Azure CLI 版本为 **2.0.28**。 若要检查 CLI 版本，请运行 `az --version`。 如果需要更新安装，请按照[安装 Azure CLI 2.0](./install-azure-cli.md) 中的说明执行操作。
+为使用别名扩展而需安装的最低 Azure CLI 版本为 **2.0.28**。 若要检查 CLI 版本，请运行 `az --version`。 如果需要更新安装，请按照[安装 Azure CLI](./install-azure-cli.md) 中的说明执行操作。
 
 使用 [az extension add](/cli/azure/extension#az-extension-add) 命令安装该扩展。
 

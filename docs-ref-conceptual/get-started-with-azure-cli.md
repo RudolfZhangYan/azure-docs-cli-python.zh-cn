@@ -1,6 +1,6 @@
 ---
-title: Azure CLI 2.0 入门
-description: 学习命令基础知识开始使用 Azure CLI 2.0。
+title: Azure CLI 入门
+description: 学习命令基础知识，开始使用 Azure CLI。
 keywords: Azure CLI, CLI 帮助, Azure 帮助, 查询, 自动化,
 author: sptramer
 ms.author: sttramer
@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 00cfca8d55f0b404cae32ba9b4ce464dfa8afa08
-ms.sourcegitcommit: 8318ce761c279afa4cd45a81a58d83fc38c616bc
+ms.openlocfilehash: d23548a9cdfe307c2597d992dc014125f80704d0
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45561569"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177991"
 ---
-# <a name="get-started-with-azure-cli-20"></a>Azure CLI 2.0 入门
+# <a name="get-started-with-azure-cli"></a>Azure CLI 入门
 
-欢迎使用 Azure CLI 2.0！ CLI 是旨在让你快速、高效地使用 Azure 服务且主要侧重于自动化的工具。 本文介绍 CLI 功能，并提供可帮助你高效工作的外部资源的链接。
+欢迎使用 Azure CLI！ CLI 是旨在让你快速、高效地使用 Azure 服务且主要侧重于自动化的工具。 本文介绍 CLI 功能，并提供可帮助你高效工作的外部资源的链接。
 
 ## <a name="install-or-run-in-azure-cloud-shell"></a>在 Azure Cloud Shell 中安装或运行
 
@@ -33,7 +33,7 @@ ms.locfileid: "45561569"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-有多种方法可用来以非交互方式登录，[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)中详细介绍了这些方法。
+有多种方法可用来以非交互方式登录，[使用 Azure CLI 登录](authenticate-azure-cli.md)中详细介绍了这些方法。
 
 ## <a name="common-commands"></a>常用命令
 
@@ -72,8 +72,8 @@ CLI 为 bash shell 下的命令提供完整 tab 键补全。
 有一些参数可用于每条命令。
 
 * `--help` 会输出有关命令及其参数的 CLI 参考信息并列出可用的子组和命令。
-* `--output` 可更改输出格式。 可用的输出格式包括 `json`、`jsonc`（彩色 JSON）、`tsv`（制表符分隔值）和 `table`（用户可读 ASCII 表）。 默认情况下，CLI 输出 `json`。 若要了解有关可用输出格式的详细信息，请参阅 [Azure CLI 2.0 的输出格式](format-output-azure-cli.md)。
-* `--query` 使用 [JMESPath 查询语言](http://jmespath.org/)筛选从 Azure 服务返回的输出。 若要了解有关查询的详细信息，请参阅[使用 Azure CLI 2.0 查询命令结果](query-azure-cli.md)和 [JMESPath 教程](http://jmespath.org/tutorial.html)。
+* `--output` 可更改输出格式。 可用的输出格式包括 `json`、`jsonc`（彩色 JSON）、`tsv`（制表符分隔值）和 `table`（用户可读 ASCII 表）。 默认情况下，CLI 输出 `json`。 若要详细了解可用输出格式，请参阅 [Azure CLI 的输出格式](format-output-azure-cli.md)。
+* `--query` 使用 [JMESPath 查询语言](http://jmespath.org/)筛选从 Azure 服务返回的输出。 若要详细了解查询，请参阅[使用 Azure CLI 查询命令结果](query-azure-cli.md)和 [JMESPath 教程](http://jmespath.org/tutorial.html)。
 * `--verbose` 输出有关操作期间在 Azure 中创建的资源的信息和其他有用信息。
 * `--debug` 输出有关 CLI 操作的更详细信息，用于调试目的。 如果发现了 bug，在提交 bug 报告时，请提供启用 `--debug` 标志生成的输出。
 
@@ -85,16 +85,16 @@ CLI 提供一种交互模式，可自动显示帮助信息，并可更轻松地�
 az interactive
 ```
 
-有关交互模式的详细信息，请参阅 [Azure CLI 2.0 交互模式](interactive-azure-cli.md)。
+有关交互模式的详细信息，请参阅 [Azure CLI 交互模式](interactive-azure-cli.md)。
 
 此外，还有提供交互体验的 [Visual Studio Code 插件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)，包括自动完成和鼠标悬停显示的文档。
 
 ## <a name="learn-cli-basics-with-quickstarts-and-tutorials"></a>使用快速入门和教程了解 CLI 基础知识
 
-若要开始使用 Azure CLI 2.0，请试用深入教程以设置虚拟机并利用 CLI 的功能查询 Azure 资源。
+若要开始使用 Azure CLI，请试用深入教程以设置虚拟机并利用 CLI 的功能查询 Azure 资源。
 
 > [!div class="nextstepaction"]
-> [使用 Azure CLI 2.0 教程创建虚拟机](azure-cli-vm-tutorial.yml)
+> [使用 Azure CLI 教程创建虚拟机](azure-cli-vm-tutorial.yml)
 
 其他热门服务也有快速入门教程。
 

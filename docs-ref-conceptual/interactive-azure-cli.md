@@ -1,6 +1,6 @@
 ---
-title: Azure CLI 2.0 交互模式
-description: 以交互模式使用 Azure CLI 2.0。
+title: Azure CLI 交互模式
+description: 以交互模式使用 Azure CLI。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f07689a323314c076f1eb2a8844875d9543d4b2e
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 2a07b77873f4b0439e494a96243b0298f7d77b8d
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388569"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177685"
 ---
-# <a name="interactive-azure-cli-20"></a>交互式 Azure CLI 2.0
+# <a name="azure-cli-interactive-mode"></a>Azure CLI 交互模式
 
-通过运行 `az interactive` 命令，能够以交互模式使用 Azure CLI 2.0。
+可以通过运行 `az interactive` 命令以交互模式使用 Azure CLI。
 此模式会将你置于交互式 shell，并提供自动完成功能、命令说明和示例。
 
 ![交互模式](./media/interactive-azure-cli/webapp-create.png)
@@ -96,7 +96,7 @@ az>> ? [*].provisioningState
 ]
 ```
 
-若要深入了解如何查询命令结果，请参阅[使用 Azure 2.0 查询命令结果](query-azure-cli.md)。
+若要深入了解如何查询命令结果，请参阅[使用 Azure CLI 查询命令结果](query-azure-cli.md)。
 
 ## <a name="bash-commands"></a>Bash 命令
 

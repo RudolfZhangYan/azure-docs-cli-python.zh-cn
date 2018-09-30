@@ -1,6 +1,6 @@
 ---
-title: 使用 Azure CLI 2.0 选择云
-description: 使用 Azure CLI 2.0 创建、登录和管理多个云。
+title: 使用 Azure CLI 选择云
+description: 使用 Azure CLI 创建、登录和管理多个云。
 author: sptramer
 manager: carmonm
 ms.author: sttramer
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 26b9f414ddaba3cc3f834b4749dee9807d84aa79
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 92910e68a52fad3b3577db1bd01e918b69a895d7
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388399"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177702"
 ---
-# <a name="select-clouds-with-azure-cli-20"></a>使用 Azure CLI 2.0 选择云
+# <a name="select-clouds-with-the-azure-cli"></a>使用 Azure CLI 选择云 
 
 如果跨不同的区域工作或使用 [Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/)，可能需要使用多个云。 Microsoft 提供符合区域法规和客户用途的云。 本文介绍如何获取有关云的信息、更改当前云，以及注册或取消注册新云。
 
@@ -82,11 +82,11 @@ az cloud set --name AzureChinaCloud
 
 > [!IMPORTANT]
 > 如果已激活的云的身份验证已过期，则在执行其他任何 CLI 任务之前，需要重新进行身份验证。 首次切换到新云时，还需要设置活动的订阅。
-> 有关身份验证的说明，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。 有关订阅管理的信息，请参阅[使用 Azure CLI 2.0 管理 Azure 订阅](manage-azure-subscriptions-azure-cli.md)
+> 有关身份验证的说明，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。 有关订阅管理的信息，请参阅[使用 Azure CLI 管理 Azure 订阅](manage-azure-subscriptions-azure-cli.md)
 
 ## <a name="register-a-new-cloud"></a>注册新云
 
-如果对 Azure Stack 使用了自己的终结点，请注册新云。 可以使用 [az cloud register](/cli/azure/cloud#az-cloud-register) 命令创建云。 此命令需要一个名称和一组服务终结点。 若要了解如何注册用于 Azure Stack 的云，请参阅[在 Azure Stack 中配合 Azure CLI 2.0 使用 API 版本配置文件](/azure/azure-stack/user/azure-stack-version-profiles-azurecli2#connect-to-azure-stack)。
+如果对 Azure Stack 使用了自己的终结点，请注册新云。 可以使用 [az cloud register](/cli/azure/cloud#az-cloud-register) 命令创建云。 此命令需要一个名称和一组服务终结点。 若要了解如何注册用于 Azure Stack 的云，请参阅[在 Azure Stack 中配合 Azure CLI 使用 API 版本配置文件](/azure/azure-stack/user/azure-stack-version-profiles-azurecli2#connect-to-azure-stack)。
 
 在中国、美国政府或德国区域，不需要注册自己的云。 这些云由 Microsoft 管理，并且默认已开通。  有关所有可用终结点设置的详细信息，请参阅 [`az cloud register` 的文档](/cli/azure/cloud#az-cloud-register)。
 

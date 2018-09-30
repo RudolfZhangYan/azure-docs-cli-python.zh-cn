@@ -1,6 +1,6 @@
 ---
-title: Azure CLI 2.0 的输出格式
-description: 了解如何将 Azure CLI 2.0 命令的输出格式设置为表、列表或 json。
+title: Azure CLI 的输出格式
+description: 了解如何将 Azure CLI 命令的输出格式设置为表、列表或 json。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1430d817a7e6c10a8f8021cf9d763f62d560ba71
-ms.sourcegitcommit: 8318ce761c279afa4cd45a81a58d83fc38c616bc
+ms.openlocfilehash: 5b5d962e244037d9c904fc5c75314661130d1910
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45561552"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178059"
 ---
-# <a name="output-formats-for-azure-cli-20-commands"></a>Azure CLI 2.0 命令的输出格式
+# <a name="output-formats-for-azure-cli-commands"></a>Azure CLI 命令的输出格式
 
-Azure CLI 2.0 使用 JSON 作为默认输出格式，但提供其他格式。  使用 `--output`（`--out` 或 `-o`）参数设置 CLI 输出的格式。 输出的参数值和类型为：
+Azure CLI 使用 JSON 作为默认输出格式，但提供其他格式。  使用 `--output`（`--out` 或 `-o`）参数设置 CLI 输出的格式。 输出的参数值和类型为：
 
 --output | Description
 ---------|-------------------------------
@@ -137,7 +137,7 @@ RGDEMO001   KBDemo020
 > az vm list --query "[].{objectID:id}" -o table
 > ```
 
-有关使用查询筛选数据的详细信息，请参阅[在 Azure CLI 2.0 中使用 JMESPath 查询](/cli/azure/query-azure-cli)。
+若要详细了解如何使用查询来筛选数据，请参阅[在 Azure CLI 中使用 JMESPath 查询](/cli/azure/query-azure-cli)。
 
 ## <a name="tsv-output-format"></a>TSV 输出格式
 
@@ -196,4 +196,4 @@ What default output format would you like?
 Please enter a choice [1]:
 ```
 
-若要了解有关配置环境的详细信息，请参阅 [Azure CLI 2.0 配置](/cli/azure/azure-cli-configuration)。
+若要详细了解如何配置环境，请参阅 [Azure CLI 配置](/cli/azure/azure-cli-configuration)。

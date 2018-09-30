@@ -1,6 +1,6 @@
 ---
-title: 使用 zypper 在 Linux 上安装 Azure CLI 2.0
-description: 如何使用 zypper 安装 Azure CLI 2.0
+title: 使用 zypper 在 Linux 上安装 Azure CLI
+description: 如何使用 zypper 安装 Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: d5197e1d62b89bc293970a85bcf976a38898862e
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 201cce81046d5039a313b918ac48b2849352995c
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469906"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177668"
 ---
-# <a name="install-azure-cli-20-with-zypper"></a>使用 zypper 安装 Azure CLI 2.0
+# <a name="install-azure-cli-with-zypper"></a>使用 zypper 安装 Azure CLI
 
 对于附带 `zypper` 的 Linux 分发版（例如 openSUSE 或 SLES），可以安装适用于 Azure CLI 的包。 此包已在 openSUSE 42.2 和 SLES 12 SP 2 中测试。
 
@@ -52,7 +52,7 @@ ms.locfileid: "46469906"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-若要了解有关不同身份验证方法的详细信息，请参阅[使用 Azure CLI 2.0 登录](authenticate-azure-cli.md)。
+若要详细了解不同的身份验证方法，请参阅[使用 Azure CLI 登录](authenticate-azure-cli.md)。
 
 ## <a name="update"></a>更新
 
@@ -85,7 +85,6 @@ sudo zypper update azure-cli
   MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
   sudo rpm -e --allmatches gpg-pubkey-$MSFT_KEY
   ```
-
 ## <a name="next-steps"></a>后续步骤
 
 现在你已经安装了 Azure CLI，下面简要介绍其功能和常用命令。

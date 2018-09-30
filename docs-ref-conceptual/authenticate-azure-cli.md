@@ -1,6 +1,6 @@
 ---
-title: 使用 Azure CLI 2.0 登录
-description: 使用 Azure CLI 2.0 以交互方式登录或使用本地凭据登录
+title: 使用 Azure CLI 登录
+description: 使用 Azure CLI 以交互方式登录或使用本地凭据登录
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -8,16 +8,15 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: f6f3e8bc015420795dda48da093bc92bbf246529
-ms.sourcegitcommit: 8e6e3129f8f4824a8acfa12edb5dae52466d4be8
+ms.openlocfilehash: 6176fbbbe58e72ae45fc9769514478ffe4a8fea5
+ms.sourcegitcommit: f7554c00b5d5dca0ec716cbf996eb6654183ec37
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45626918"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47237623"
 ---
-# <a name="sign-in-with-azure-cli-20"></a>使用 Azure CLI 2.0 登录
+# <a name="sign-in-with-azure-cli"></a>使用 Azure CLI 登录 
 
 Azure CLI 有多种身份验证类型。 最简单的入门方法是使用 [Azure Cloud Shell](/azure/cloud-shell/overview)，这样可以自动登录。 在本地，可以通过浏览器使用 `az login` 命令以交互方式登录。 编写脚本时，建议的方法是使用服务主体。 通过授予服务主体所需的最低适当权限，可以确保自动化的安全性。
 
@@ -58,14 +57,6 @@ az login -u <username> -p <password>
 > $AzPass = ""
 > ```
 
-## <a name="sign-in-with-a-specific-tenant"></a>使用特定租户登录
-
-可以使用 `--tenant` 参数选择用于登录的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 交互式登录方法和命令行登录方法都可以配合 `--tenant` 来使用。
-
-```azurecli
-az login --tenant <tenant>
-```
-
 ## <a name="sign-in-with-a-service-principal"></a>使用服务主体进行登录
 
 服务主体是未绑定到任何特定用户的帐户，这些帐户具有通过预定义角色分配的权限。 使用服务主体进行身份验证是编写安全脚本或程序的最佳方法，因为这样可以同时应用权限限制和本地存储的静态凭据信息。 若要了解有关服务主体的详细信息，请参阅[使用 Azure CLI 创建 Azure 服务主体](create-an-azure-service-principal-azure-cli.md)。
@@ -95,3 +86,21 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 > az login --service-principal -u <app-url> -p $AzPass --tenant <tenant>;
 > $AzPass = ""
 > ```
+
+## <a name="sign-in-with-a-different-tenant"></a>使用其他租户身份登录
+
+可以使用 `--tenant` 参数选择用于登录的租户。 此参数的值可以是 `.onmicrosoft.com` 域或租户的 Azure 对象 ID。 交互式登录方法和命令行登录方法都可以配合 `--tenant` 来使用。
+
+```azurecli
+az login --tenant <tenant>
+```
+
+## <a name="sign-in-with-a-managed-identity"></a>使用托管标识登录
+
+在针对 Azure 资源托管标识配置的资源上，可以使用托管标识登录。 使用资源的标识登录时，登录操作通过 `--identity` 标记来完成。
+
+```azurecli
+az login --identity
+```
+
+若要详细了解 Azure 资源的托管标识，请参阅[配置 Azure 资源的托管标识](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm)和[使用 Azure 资源的托管标识进行登录](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in)。
