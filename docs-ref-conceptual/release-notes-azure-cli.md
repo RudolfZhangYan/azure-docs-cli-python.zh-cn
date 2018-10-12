@@ -4,23 +4,85 @@ description: 了解 Azure CLI 的最新更新
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 09/21/2018
+ms.date: 10/09/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f0ee84c3f70cf168818de447289d6c7ab5a40c9e
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.openlocfilehash: 0aec9dce0eda007c71df3693b39c7ec8cc9856cd
+ms.sourcegitcommit: 0fc354c24454f5c9c5ff4b7296ad7b18ffdf31b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47178076"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48904780"
 ---
 # <a name="azure-cli-release-notes"></a>Azure CLI 发行说明
 
+## <a name="october-9-2018"></a>2018 年 10 月 9 日
+
+版本 2.0.47
+
+### <a name="core"></a>核心
+* 改进了“错误请求”错误的错误处理
+
+### <a name="acr"></a>ACR
+* 添加了对与 helm 客户端类似的表格格式的支持
+
+### <a name="acs"></a>ACS
+* 添加了 `aks [create|scale] --nodepool-name` 以配置节点池名称，该名称截断为 12 个字符，默认值为 nodepool1 
+* 已修复以在 Parimiko 失败时回退到“scp”
+* 已将 `aks create` 更改为不再需要 `--aad-tenant-id`
+* 改进了存在重复条目时 Kubernetes 凭据的合并
+
+### <a name="container"></a>容器
+* 更改了 `functionapp create` 以支持使用特定运行时创建 Linux 消耗计划类型
+* [预览] 添加了对在 Windows 容器上托管 Web 应用的支持
+
+### <a name="event-hub"></a>事件中心
+* 修复了 `eventhub update` 命令
+* [重大更改] 更改了 `list` 命令，以便以典型方式处理资源 NotFound(404) 错误，而不是显示空列表
+
+### <a name="extensions"></a>扩展
+* 修复了尝试添加已安装的扩展的问题
+
+### <a name="hdinsight"></a>HDInsight
+* 初始版本
+
+### <a name="iot"></a>IoT
+* 添加了扩展安装命令，以便首次运行横幅
+
+### <a name="keyvault"></a>KeyVault
+* 已更改为将 keyvault storage 命令限制为使用最新 API 配置文件
+
+### <a name="network"></a>网络
+* 已修复 `network dns zone create`：即使用户已配置默认位置，命令也会成功。 请参阅 #6052
+* 弃用了适用于 `network vnet peering create` 的 `--remote-vnet-id`
+* 向 `network vnet peering create` 添加了 `--remote-vnet` 以接受名称或 ID
+* 使用 `--subnet-prefixes` 向 `network vnet create` 添加了对多个子网前缀的支持
+* 使用 `--address-prefixes` 向 `network vnet subnet [create|update]` 添加了对多个子网前缀的支持
+* 修复了 `network application-gateway create` 存在的阻止使用 `WAF_v2` 或 `Standard_v2` SKU 创建网关的问题
+* 向 `network vnet subnet update` 添加了 `--service-endpoint-policy` 便利参数
+
+### <a name="role"></a>角色
+* 添加了对将 Azure AD 应用所有者列为 `ad app owner` 的支持
+* 添加了对将 Azure AD 服务主体所有者列入 `ad sp owner` 的支持
+* 已更改为确保角色定义创建和更新命令接受多个权限配置
+* 已更改 `ad sp create-for-rbac`，以确保主页 URI 始终为“https”
+
+### <a name="service-bus"></a>服务总线
+* [重大更改] 更改了 `list` 命令，以便以典型方式处理资源 NotFound(404) 错误，而不是显示空列表
+
+### <a name="vm"></a>VM
+* 修复了 `disk grant-access` 中的空 `accessSas` 字段
+* 已更改 `vmss create`，以保留足够大的前端端口范围来处理过度预配
+* 修复了 `sig` 的更新命令
+* 在 `sig` 中添加了 `--no-wait` 支持以便管理映像版本
+* 已更改 `vm list-ip-addresses`，以显示公共 IP 地址的可用性区域
+* 已更改 `[vm|vmss] disk attach`，以将磁盘的默认 lun 设置为第一个可用位置
+
 ## <a name="september-21-2018"></a>2018 年 9 月 21 日
 
-版本 20.46
+版本 2.0.46
 
 ### <a name="acr"></a>ACR
 * 添加了 ACR 任务命令
