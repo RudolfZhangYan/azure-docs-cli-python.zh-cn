@@ -4,17 +4,17 @@ description: 官方支持的 Azure CLI 扩展的完整列表。
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 10/09/2018
+ms.date: 10/11/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 44f640f59b8796d5778e20a0e013e69ce2546550
-ms.sourcegitcommit: 0fc354c24454f5c9c5ff4b7296ad7b18ffdf31b1
+ms.openlocfilehash: 76512c665728ada85edebc867edfcd772be6237c
+ms.sourcegitcommit: f0e00f09db87617328a081d43cd53bb8b16db0fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48904712"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49113316"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Azure CLI 的可用扩展
 
@@ -35,7 +35,7 @@ az extension list-available --output table
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.1.0 | 管理 Azure 防火墙资源。 | 是 |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.4.1 | 本机 botservice CLI 命令模块中的 bug 和问题修复。 | 是 |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Dev Spaces 为团队提供快速、迭代的 Kubernetes 开发体验。 | 是 |
-| [dms-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/dms-preview) | 0.4.0 | 支持新的数据库迁移服务方案。 | 是 |
+| [dms-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/dms-preview) | 0.5.0 | 支持新的数据库迁移服务方案。 | 是 |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | 适用于 DNS 区域的 Azure CLI 扩展 |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | 对 Azure EventGrid 2018-05-01-preview 功能的支持 | 是 |
 | [express-route](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route) | 0.1.0 | 使用预览功能管理 ExpressRoutes。 | 是 |
