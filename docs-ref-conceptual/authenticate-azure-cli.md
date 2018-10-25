@@ -1,5 +1,5 @@
 ---
-title: 使用 Azure CLI 登录
+title: 使用 Azure CLI 登录测试版
 description: 使用 Azure CLI 以交互方式登录或使用本地凭据登录
 author: sptramer
 ms.author: sttramer
